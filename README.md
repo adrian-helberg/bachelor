@@ -1,0 +1,2 @@
+# bachelor
+Bachelorproject, documentation, information 
