@@ -17,3 +17,7 @@ Thesis
   * How many relations do exist between seamen and ships?
       * -> Mind-map of Relations?
   * Would constraints be a feasable method for the algorithm?
+------
+>>> Due to thesis change, the bachelorproject has reset <<<
+
+10.05.2020 Initial presentation sent via email
