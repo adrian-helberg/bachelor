@@ -1,0 +1,60 @@
+%! Author = Adrian Helberg
+%! Date = 21.09.2020
+
+% Preamble
+\documentclass[11pt]{article}
+% Packages
+\usepackage{ngerman}
+\usepackage{amsmath}
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\title{\textbf{Exposé} zur Bachelorarbeit von Adrian Helberg bei Prof. Dr. Jenke}
+
+% Document
+\begin{document}
+
+    \maketitle
+
+    \section{Problemstellung}
+    Zu behandelndes Problem:
+    \begin{itemize}
+        \item Modellierung von Vegetation dauert lange
+        \item Sieht nicht natürlich aus, wenn man immer nur das selbe Modell platziert
+        \item Designer müssen Programmierkenntnisse haben, wenn sie auf prozedurale Porgrammierung setzen möchten
+    \end{itemize}
+
+    \section{Ziele der Arbeit}
+    System programmieren zur Generierung von ``ähnlich aussehenden Modellen"' anhand eines Input-Modells
+
+    \section{Ablauf}
+    Zweiwöchige Meilensteine mit Besprechungen (Videokonferenz, Treffen)
+
+    \section{Organisatorisches}
+    \section{Voraussetzungen}
+
+    \newpage
+
+    \section{Zeitplan}
+    \begin{todolist}
+        \item[\done] bis 29.08.2020: Erarbeitung Basisquelle \cite{basisquelle}
+        \item[\done] 14.09.2020: Kennenlerngespräch, erstes Themengespräch
+        \item bis 28.09.2020: Version 0.1 des Exposés für die Bachelorarbeit
+        \item bis 12.10.2020: Literaturrecherche, Mindmap der untersuchten Quellen
+        \item bis 16.10.2020: Ausarbeitung des Software-/Hardwarestacks
+        \item bis 26.10.2020: Erstellung des Projektplans
+        \item ab 26.10.2020: Bearbeitung des praktischen Teils der Bachelorarbeit
+    \end{todolist}
+
+    ~\nocite{*}
+    \bibliography{literature}
+    \bibliographystyle{plain}
+
+\end{document}

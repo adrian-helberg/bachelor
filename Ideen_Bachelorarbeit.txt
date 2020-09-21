@@ -1,9 +1,0 @@
-Ideen und Konzepte
-------------------
-* Strukturerkennung mittels Heatmaps?
-* Parameter als Verteilung (Histogramme) lernen
-* L-Systeme
-* Gradient-based Learning vermutlich nur im 2D
-* Mit Paramtern den Output veränder? (Wind, Licht, usw.)
-* Kein Modell als Input, sondern ein Set aus gelabelten Teilmodellen, die verschieden zusammengesetzt werden
-* Gibt es beim Bayesschen Ansatz eine Grammatik ohne das "Grammar-Splitting" zu finden?

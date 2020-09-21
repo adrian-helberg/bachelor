@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{docking}
+Martin Bokeloh, Michael Wand, and Hans-Peter Seidel.
+\newblock A {C}onnection between {P}artial {S}ymmetry and {I}nverse
+  {P}rocedural {M}odeling.
+\newblock {\em ACM Transaction on Graphics}, 29(104).
+
+\bibitem{basisquelle}
+Gen Nishida, Ignacio Garcia-Dorado, Daniel~G. Aliaga, Bedreich Benes, and
+  Adrien Bousseau.
+\newblock Interactive {S}ketching of {U}rban {P}rocedural {M}odels.
+\newblock {\em ACM Transaction on Graphics}, 35(130).
+
+\bibitem{hierarchy}
+Jerry Talton, Lingfeng Yang, Ranjitha Kumar, Maxine Lim, Noah Goodman, and
+  Radomir Mech.
+\newblock Learning {D}esign {P}atterns with {B}ayesian grammar {I}nduction.
+\newblock {\em UIST '12: Proceedings of the 25th annual ACM symposium on User
+  interface software and technology}, pages 63--74.
+
+\end{thebibliography}
