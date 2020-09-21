@@ -18,14 +18,17 @@ Bachelor- project, documentation, information
 * Referenzquellen der Hauptquelle nach Themen, wie Planzen, Inverse Procedural Modeling, Pattern extraction, usw. durchsucht
 * Quelle 24 entdeckt: Allgemeine Methode zum Lernen von Design-Patterns durch Bayessche Grammatik Induktion
 * Einige weitere Quellen entdeckt, die Vielversprechen sein können und markiert
+----------
 
 ### 19.09.2020
-----------
+
 * Quelle 24 Abstract, Introduction, Background erarbeitet
+----------
 
 ### 21.09.2020
 * Expose angefangen
 * Research: Möglichkeiten der Strukturerkennung
+----------
 
 ## Schedules
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
