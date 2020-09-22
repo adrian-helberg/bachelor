@@ -1,5 +1,5 @@
 # Bachelor
-Bachelor- project, documentation, information
+Bachelor- projekt, dokumentation, information
 
 ## Ideas
 * Docking/Segmentation -> User kann sich alle passenden Dockings anseheen und eines auswählen
@@ -11,6 +11,9 @@ Bachelor- project, documentation, information
 * Mit Paramtern den Output veränder? (Wind, Licht, usw.)
 * Kein Modell als Input, sondern ein Set aus gelabelten Teilmodellen, die verschieden zusammengesetzt werden
 * Gibt es beim Bayesschen Ansatz eine Grammatik ohne das "Grammar-Splitting" zu finden?
+* Erkennung von "Einzelteilen" eines 3D-Input-Objekts mithilfe einer prädefinierten, formalen Grammatik
+* 3D Mesh Segmentation
+* 3D Model -> Graph -> Grammatik
 
 ## Protocol
 
