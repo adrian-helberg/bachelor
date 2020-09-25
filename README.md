@@ -33,6 +33,13 @@ Bachelor- projekt, dokumentation, information
 * Research: Möglichkeiten der Strukturerkennung
 ----------
 
+### 24.09.2020
+* Paper "Inverse Procedural Modeling of Branching Structures by Inferring L-Systems" entdeckt
+----------
+
+### 25.09.2020
+* o.g. Paper bearbeitet
+
 ## Schedules
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
 * 27.08.2020: Quelle Thema "Sketch-basierte Modellierung" erhalten
