@@ -1,7 +1,7 @@
-# Bachelor
+# Bachelorarbeit
 Bachelor- projekt, dokumentation, information
 
-## Ideas
+## Ideen
 * Docking/Segmentation -> User kann sich alle passenden Dockings anseheen und eines auswählen
 * Input: Model -> Output: Model Variationen, die ähnlich sind
 * Verschiedene Möglichkeiten der Strukturerkennung?
@@ -15,7 +15,7 @@ Bachelor- projekt, dokumentation, information
 * 3D Mesh Segmentation
 * 3D Model -> Graph -> Grammatik
 
-## Protocol
+## Protokoll
 
 ### 18.09.2020
 * Referenzquellen der Hauptquelle nach Themen, wie Planzen, Inverse Procedural Modeling, Pattern extraction, usw. durchsucht
@@ -40,7 +40,7 @@ Bachelor- projekt, dokumentation, information
 ### 25.09.2020
 * o.g. Paper bearbeitet
 
-## Schedules
+## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
 * 27.08.2020: Quelle Thema "Sketch-basierte Modellierung" erhalten
 * 29.08.2020: Quelle und einige Referenzquellen bearbeitet
