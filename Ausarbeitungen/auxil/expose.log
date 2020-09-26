@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.8)  26 SEP 2020 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.8)  26 SEP 2020 17:29
 entering extended mode
 **./expose.tex
 (expose.tex
@@ -166,99 +166,112 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (21.57755pt too wide) in paragraph at lines 29--40
+Overfull \hbox (21.57755pt too wide) in paragraph at lines 29--41
 \OT1/cmr/m/n/10.95 Effizientes Objektdesign und -modellierung sind entscheidend
 e Kernkompetenzen
  []
 
 
-Overfull \hbox (7.34247pt too wide) in paragraph at lines 29--40
+Overfull \hbox (7.34247pt too wide) in paragraph at lines 29--41
 \OT1/cmr/m/n/10.95 in verschiedenen Bereichen der digitalen Welt. Da die Erstel
 lung geometrischer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--40
+Overfull \hbox (16.71086pt too wide) in paragraph at lines 29--41
+\OT1/cmr/m/n/10.95 Hierzu soll ein prototypische Implementierung zur []Uberf[]u
+hrung des Algorithmus
+ []
+
+
+Overfull \hbox (7.55542pt too wide) in paragraph at lines 29--41
+\OT1/cmr/m/n/10.95 vom zweidimensionalen in den dreisimensionalen Raum implemen
+tiert werden. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--41
 
  []
 
 
-Overfull \hbox (2.23256pt too wide) in paragraph at lines 42--48
+Overfull \hbox (2.23256pt too wide) in paragraph at lines 43--49
 \OT1/cmr/m/n/10.95 Mit der Digitalisierung der Welt erlangt die Erstellung von 
 digitalen Inhalten,
  []
 
 
-Overfull \hbox (3.09132pt too wide) in paragraph at lines 48--52
+Overfull \hbox (3.09132pt too wide) in paragraph at lines 49--53
 []\OT1/cmr/bx/n/10.95 Modellierung\OT1/cmr/m/n/10.95 : Um einen physikalischen 
 K[]orper in ein digitales Objekt
  []
 
+[1
 
-expose.tex:54: Package inputenc Error: Unicode character − (U+2212)
+{C:/Users/Adrian Helberg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+expose.tex:55: Package inputenc Error: Unicode character − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54         parameters."'}
+l.55         parameters."'}
                            ~\cite{1} \\
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Overfull \hbox (21.2871pt too wide) in paragraph at lines 52--57
+Overfull \hbox (21.2871pt too wide) in paragraph at lines 53--58
 []\OT1/cmr/bx/n/10.95 Prozedurale Modellierung\OT1/cmr/m/n/10.95 : []\OT1/cmr/m
 /it/10.95 It encompasses a wide variety of generative
  []
 
 
-Overfull \hbox (5.63924pt too wide) in paragraph at lines 52--57
+Overfull \hbox (5.63924pt too wide) in paragraph at lines 53--58
 \OT1/cmr/m/n/10.95 (semi-)automatisch spezifische, digitale Inhalte anhand von 
 deskriptiven
  []
 
-[1
 
-{C:/Users/Adrian Helberg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (7.1601pt too wide) in paragraph at lines 61--72
+Overfull \hbox (7.1601pt too wide) in paragraph at lines 62--73
 \OT1/cmr/m/n/10.95 langwierige Erstellung von Objekten. Hierbei hat der Designe
 r (= Modellierer)
  []
 
 
-Overfull \hbox (23.84366pt too wide) in paragraph at lines 61--72
+Overfull \hbox (23.84366pt too wide) in paragraph at lines 62--73
 \OT1/cmr/m/n/10.95 erstellenden physikalischen Objektes generalisiert und meist
  []uber eine Grammatik
  []
 
 
-Overfull \hbox (1.53294pt too wide) in paragraph at lines 61--72
+Overfull \hbox (1.53294pt too wide) in paragraph at lines 62--73
 \OT1/cmr/m/n/10.95 und globale Parameter abgebildet. W[]ahrend bei der klassisc
 hen Modellierung
  []
 
 
-Overfull \hbox (37.88089pt too wide) in paragraph at lines 61--72
+Overfull \hbox (37.88089pt too wide) in paragraph at lines 62--73
 \OT1/cmr/m/n/10.95 die menschliche Intuition und bei der prozeduralen Modellier
 ung eine parametrisierte
  []
 
 
-Overfull \hbox (5.47197pt too wide) in paragraph at lines 74--75
+Overfull \hbox (5.47197pt too wide) in paragraph at lines 75--76
 []\OT1/cmr/m/n/10.95 Kontrollierte Generierung durch Finden optimaler Prameter 
 und Regeln 
  []
 
 
-Overfull \hbox (15.56863pt too wide) in paragraph at lines 78--80
+Overfull \hbox (15.56863pt too wide) in paragraph at lines 79--81
 \OT1/cmr/m/it/10.95 Folgende Stichworte werden sp[]ater ausf[]uhrlich erkl[]art
  und die Quellen markiert\OT1/cmr/m/n/10.95 : 
  []
 
 [2]
-Overfull \hbox (4.14874pt too wide) in paragraph at lines 103--104
+Overfull \hbox (4.14874pt too wide) in paragraph at lines 104--105
 []\OT1/cmr/m/n/10.95 Zweiw[]ochige Meilensteine mit Besprechungen (Videokonfere
 nz, Treffen) 
  []
@@ -282,8 +295,8 @@ fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/SDKs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmti10.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
 E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/SDKs/MiKTeX/f
 onts/type1/urw/zapfding/uzdr.pfb>
-Output written on E:/git\bachelor\Ausarbeitungen\out\expose.pdf (4 pages, 12786
-2 bytes).
+Output written on E:/git\bachelor\Ausarbeitungen\out\expose.pdf (4 pages, 12801
+0 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
