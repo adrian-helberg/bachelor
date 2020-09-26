@@ -1,22 +1,32 @@
 \begin{thebibliography}{1}
 
-\bibitem{docking}
-Martin Bokeloh, Michael Wand, and Hans-Peter Seidel.
-\newblock A {C}onnection between {P}artial {S}ymmetry and {I}nverse
-  {P}rocedural {M}odeling.
-\newblock {\em ACM Transaction on Graphics}, 29(104).
+\bibitem{2}
+Daniel~G. Aliaga, Ilke Demir, Bedrich Benes, and Michael Wand.
+\newblock Inverse procedural modeling of 3d models for virtual worlds.
+\newblock In {\em ACM SIGGRAPH 2016 Courses}, SIGGRAPH '16, New York, NY, USA,
+  2016. Association for Computing Machinery.
+
+\bibitem{github}
+Github.
+\newblock \url{https://github.com/adrian-helberg/bachelor}.
+\newblock GitHub, Inc. (2020).
 
 \bibitem{basisquelle}
-Gen Nishida, Ignacio Garcia-Dorado, Daniel~G. Aliaga, Bedreich Benes, and
-  Adrien Bousseau.
-\newblock Interactive {S}ketching of {U}rban {P}rocedural {M}odels.
-\newblock {\em ACM Transaction on Graphics}, 35(130).
+Jianwei Guo, Haiyong Jiang, Bedrich Benes, Oliver Deussen, Xiaopeng Zhang, Dani
+  Lischinski, and Hui Huang.
+\newblock Inverse procedural modeling of branching structures by inferring
+  l-systems.
+\newblock {\em ACM Trans. Graph.}, 39(5), June 2020.
 
-\bibitem{hierarchy}
-Jerry Talton, Lingfeng Yang, Ranjitha Kumar, Maxine Lim, Noah Goodman, and
-  Radomir Mech.
-\newblock Learning {D}esign {P}atterns with {B}ayesian grammar {I}nduction.
-\newblock {\em UIST '12: Proceedings of the 25th annual ACM symposium on User
-  interface software and technology}, pages 63--74.
+\bibitem{1}
+Ruben~M. Smelik, Tim Tutenel, Rafael Bidarra, and Bedrich Benes.
+\newblock A survey on procedural modelling for virtual worlds.
+\newblock {\em Comput. Graph. Forum}, 33(6):31–50, September 2014.
+
+\bibitem{blender}
+Pablo Vazquez and Francesco Siddi.
+\newblock About blender.
+\newblock \url{https://www.blender.org/about/}, 2017.
+\newblock Blender Foundation (2002).
 
 \end{thebibliography}

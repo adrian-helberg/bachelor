@@ -6,6 +6,7 @@
 % Packages
 \usepackage{ngerman}
 \usepackage{amsmath}
+\usepackage{url}
 \usepackage{enumitem,amssymb}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
@@ -24,33 +25,113 @@
     \maketitle
 
     \section{Problemstellung}
-    Zu behandelndes Problem:
+
+    Effizientes Objektdesign und -modellierung sind entscheidende Kernkompetenzen in verschiedenen Bereichen der
+    digitalen Welt.
+    Da die Erstellung geometrischer Objekte unintuitiv ist und ein großes Maß an Erfahrung und Expertise
+    erfordert, ist dieses stetig wachsende Feld für Neueinsteiger nur sehr schwer zu erschließen.
+    Die Forschung liefert hierzu einige Arbeiten zu prozeduraler Modellierung, um digitale Inhalte schneller und
+    automatisiert zu erstellen.
+    Die Bachelorarbeit soll sich auf die Erkenntnisse einer Basisquelle~\cite{basisquelle} stützen und im
+    dreidimensionalen Kontext die inverse prozedurale Modellierung von Verzweigungsstrukturen beschreiben.
+    Das in der Basisquelle beschriebene System generiert zweidimensionale Objekte mit Verzweigungsstrukturen.
+    Hierzu soll ein prototypische Implementierung erstellt werden.\\~\\
+    \textit{Die Einführung des Themas könnte wie folgt aussehen}:
+
+    \subsection{Einführung}
+    Mit der Digitalisierung der Welt erlangt die Erstellung von digitalen Inhalten, wie 3D Modelle für Computerspiele,
+    Webdesigns oder Visualisierung von Architektur, zunehmend an Bedeutung.
+    Darum werden Verfahren gesucht, um Objekte dieser Felder formal zu beschreiben und somit kodifizierbar
+    (\textit{engl. codify}) zu machen.
+    Hierbei bilden sich folgende Klassen heraus:
     \begin{itemize}
-        \item Modellierung von Vegetation dauert lange
-        \item Sieht nicht natürlich aus, wenn man immer nur das selbe Modell platziert
-        \item Designer müssen Programmierkenntnisse haben, wenn sie auf prozedurale Porgrammierung setzen möchten
+        \item \textbf{Modellierung}: Um einen physikalischen Körper in ein digitales Objekt zu überführen, wird mithilfe
+        von Abstraktion (oder Modellierung) ein mathematisches Modell erstellt, dass diesen Körper formal beschreibt.
+        3D Grafiksoftware, wie Blender~\cite{blender}, wird genutzt um geometrische Körper zu modellieren, texturieren
+        und zu animieren.
+        \item \textbf{Prozedurale Modellierung}: \textit{"`It encompasses a wide variety of generative techniques that
+        can (semi-−)automatically produce a specific type of content based on a set of input
+        parameters."'}~\cite{1} \\
+        "`Prozedurale Modellierung beschreibt generative Techniken, die \\(semi-)automatisch spezifische, digitale
+        Inhalte anhand von deskriptiven Parametern erzeugen"' (\textit{Übersetzt durch den Autor})
+        \item \textbf{Inverse prozedurale Modellierung (IPM)}:\textit{Aliaga et al.}~\cite{2}
+        spricht bei der inversen prozeduralen Modellierung von dem Finden einer prozeduralen Repräsentation von
+        Strukturen bestehender Modelle.
+    \end{itemize}
+    Die Modellierung mithilfe von Grafiksoftware ist eine vergleichbar händische, langwierige Erstellung von
+    Objekten.
+    Hierbei hat der Designer (= Modellierer) die volle Kontrolle über die Strukturen des Objektes.\\
+    Bei der prozeduralen Modellierung werden spezifische Strukturen eines zu erstellenden physikalischen Objektes
+    generalisiert und meist über eine Grammatik und globale Parameter abgebildet.
+    Während bei der klassischen Modellierung die menschliche Intuition und bei der prozeduralen Modellierung eine
+    parametrisierte Grammatik vorausgesetzt wird, arbeitet IPM mit bestehenden Modellen und extrahiert ("`lernt"')
+    die Strukturen des Objektes, die automatisch in eine formale Grammatik überführt werden können.
+    Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\cite{2}.\\
+    Aktuelle Ansätze sind:
+    \begin{itemize}
+        \item Segmentierung von geometrischen Objekten in Ähnlichkeitsgruppen, um Muster (\textit{engl. Patterns}) zu
+        erkennen und
+        \item Kontrollierte Generierung durch Finden optimaler Prameter und Regeln
     \end{itemize}
 
+    \subsection{Vorangehende Arbeiten}
+    \textit{Folgende Stichworte werden später ausführlich erklärt und die Quellen markiert}:
+    \begin{itemize}
+        \item Prozedurale Modellierung
+        \item Inverse Prozedurale Modellierung
+        \item Formale Grammatik (parametrisiert und probabilistisch)
+        \begin{itemize}
+            \item L-Systeme (spezielle, formale Grammatik zur beschreibung von natürlicher Vegetation)
+        \end{itemize}
+        \item Neurale Netzwerke zum Erkennen von Objekten und Strukturen
+    \end{itemize}
+
+
     \section{Ziele der Arbeit}
-    System programmieren zur Generierung von ``ähnlich aussehenden Modellen"' anhand eines Input-Modells
+    \begin{itemize}
+        \item Erarbeitung eines Software-/Harwarestacks
+        \item Erstellung eines Projektplans
+        \item Herausarbeiten einer Softwarearchitektur
+        \item Aufsetzen eines "`Bachelortagebuchs"'
+        \item Prototypische Entwicklung eines Systems zur Erstellung "`ähnlicher"' 3D-Objekte anhand eines
+        vorgefertigten Input-Modells mit grafischer Oberfläche
+        \item Schriftliche Ausarbeitung der Ergebnisse
+    \end{itemize}
 
     \section{Ablauf}
-    Zweiwöchige Meilensteine mit Besprechungen (Videokonferenz, Treffen)
+    \begin{itemize}
+        \item Zweiwöchige Meilensteine mit Besprechungen (Videokonferenz, Treffen)
+        \item Phasen:
+        \begin{itemize}
+            \item Vorbereitung
+            \item Literaturstudium
+            \item Problemstudium
+            \item Praktische Arbeit
+            \item Schriftliche Arbeit
+        \end{itemize}
+    \end{itemize}
 
     \section{Organisatorisches}
+    \begin{itemize}
+        \item 12. Oktober 2020: Anmeldung der Bachelorarbeit (?)
+        \item Online Repository~\cite{github}
+    \end{itemize}
+
     \section{Voraussetzungen}
+    \ldots
 
     \newpage
 
     \section{Zeitplan}
     \begin{todolist}
-        \item[\done] bis 29.08.2020: Erarbeitung Basisquelle \cite{basisquelle}
+        \item[\done] bis 29.08.2020: Erarbeitung Basisquelle
         \item[\done] 14.09.2020: Kennenlerngespräch, erstes Themengespräch
         \item bis 28.09.2020: Version 0.1 des Exposés für die Bachelorarbeit
         \item bis 12.10.2020: Literaturrecherche, Mindmap der untersuchten Quellen
         \item bis 16.10.2020: Ausarbeitung des Software-/Hardwarestacks
         \item bis 26.10.2020: Erstellung des Projektplans
-        \item ab 26.10.2020: Bearbeitung des praktischen Teils der Bachelorarbeit
+        \item ab 26.10.2020: Bearbeitung des praktischen Teils der Bachelorarbeit, paralleler Beginn des
+        schriftlichen Teils
     \end{todolist}
 
     ~\nocite{*}

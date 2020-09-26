@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.8)  21 SEP 2020 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.8)  26 SEP 2020 16:35
 entering extended mode
 **./expose.tex
 (expose.tex
@@ -87,6 +87,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
+(E:\SDKs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (E:\SDKs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \enitkv@toks@=\toks20
@@ -132,27 +136,27 @@ File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 (E:/git\bachelor\Ausarbeitungen\auxil\expose.aux)
 \openout1 = `expose.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 
 (E:\SDKs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (E:\SDKs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -162,41 +166,126 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (11.63127pt too wide) in paragraph at lines 31--32
-[]\OT1/cmr/m/n/10.95 Designer m[]ussen Programmierkenntnisse haben, wenn sie au
-f prozedurale
+Overfull \hbox (21.57755pt too wide) in paragraph at lines 29--40
+\OT1/cmr/m/n/10.95 Effizientes Objektdesign und -modellierung sind entscheidend
+e Kernkompetenzen
  []
 
 
-Overfull \hbox (2.24161pt too wide) in paragraph at lines 35--36
-\OT1/cmr/m/n/10.95 System programmieren zur Generierung von ``[]ahnlich aussehe
-nden Modellen\
+Overfull \hbox (7.34247pt too wide) in paragraph at lines 29--40
+\OT1/cmr/m/n/10.95 in verschiedenen Bereichen der digitalen Welt. Da die Erstel
+lung geometrischer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--40
+
+ []
+
+
+Overfull \hbox (2.23256pt too wide) in paragraph at lines 42--48
+\OT1/cmr/m/n/10.95 Mit der Digitalisierung der Welt erlangt die Erstellung von 
+digitalen Inhalten,
+ []
+
+
+Overfull \hbox (3.09132pt too wide) in paragraph at lines 48--52
+[]\OT1/cmr/bx/n/10.95 Modellierung\OT1/cmr/m/n/10.95 : Um einen physikalischen 
+K[]orper in ein digitales Objekt
+ []
+
+
+expose.tex:54: Package inputenc Error: Unicode character − (U+2212)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54         parameters."'}
+                           ~\cite{1} \\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (21.2871pt too wide) in paragraph at lines 52--57
+[]\OT1/cmr/bx/n/10.95 Prozedurale Modellierung\OT1/cmr/m/n/10.95 : []\OT1/cmr/m
+/it/10.95 It encompasses a wide variety of generative
+ []
+
+
+Overfull \hbox (5.63924pt too wide) in paragraph at lines 52--57
+\OT1/cmr/m/n/10.95 (semi-)automatisch spezifische, digitale Inhalte anhand von 
+deskriptiven
  []
 
 [1
 
 {C:/Users/Adrian Helberg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(E:/git\bachelor\Ausarbeitungen\auxil\expose.bbl) [2]
+Overfull \hbox (7.1601pt too wide) in paragraph at lines 61--72
+\OT1/cmr/m/n/10.95 langwierige Erstellung von Objekten. Hierbei hat der Designe
+r (= Modellierer)
+ []
+
+
+Overfull \hbox (23.84366pt too wide) in paragraph at lines 61--72
+\OT1/cmr/m/n/10.95 erstellenden physikalischen Objektes generalisiert und meist
+ []uber eine Grammatik
+ []
+
+
+Overfull \hbox (1.53294pt too wide) in paragraph at lines 61--72
+\OT1/cmr/m/n/10.95 und globale Parameter abgebildet. W[]ahrend bei der klassisc
+hen Modellierung
+ []
+
+
+Overfull \hbox (37.88089pt too wide) in paragraph at lines 61--72
+\OT1/cmr/m/n/10.95 die menschliche Intuition und bei der prozeduralen Modellier
+ung eine parametrisierte
+ []
+
+
+Overfull \hbox (5.47197pt too wide) in paragraph at lines 74--75
+[]\OT1/cmr/m/n/10.95 Kontrollierte Generierung durch Finden optimaler Prameter 
+und Regeln 
+ []
+
+
+Overfull \hbox (15.56863pt too wide) in paragraph at lines 78--80
+\OT1/cmr/m/it/10.95 Folgende Stichworte werden sp[]ater ausf[]uhrlich erkl[]art
+ und die Quellen markiert\OT1/cmr/m/n/10.95 : 
+ []
+
+[2]
+Overfull \hbox (4.14874pt too wide) in paragraph at lines 103--104
+[]\OT1/cmr/m/n/10.95 Zweiw[]ochige Meilensteine mit Besprechungen (Videokonfere
+nz, Treffen) 
+ []
+
+[3] (E:/git\bachelor\Ausarbeitungen\auxil\expose.bbl) [4]
 (E:/git\bachelor\Ausarbeitungen\auxil\expose.aux) ) 
 Here is how much of TeX's memory you used:
- 2098 strings out of 483073
- 27147 string characters out of 2959693
- 257474 words of memory out of 3000000
- 17439 multiletter control sequences out of 15000+200000
- 541479 words of font info for 57 fonts, out of 3000000 for 9000
+ 2181 strings out of 483073
+ 28079 string characters out of 2959693
+ 259561 words of memory out of 3000000
+ 17516 multiletter control sequences out of 15000+200000
+ 542262 words of font info for 60 fonts, out of 3000000 for 9000
  55 hyphenation exceptions out of 8191
- 30i,6n,31p,233b,214s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,31p,220b,285s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Adrian Helberg\Ap
 pData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><E:/SDKs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/SDKs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/SDKs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><E:/SDKs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msam10.pfb><E:/SDKs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on E:/git\bachelor\Ausarbeitungen\out\expose.pdf (2 pages, 90207
- bytes).
+MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/SDKs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/SDKs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/SDKs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
+E:/SDKs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><E:/SDKs/MiKTeX/f
+onts/type1/urw/zapfding/uzdr.pfb>
+Output written on E:/git\bachelor\Ausarbeitungen\out\expose.pdf (4 pages, 12786
+2 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
