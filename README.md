@@ -15,6 +15,11 @@ Bachelor- projekt, dokumentation, information
 * 3D Mesh Segmentation
 * 3D Model -> Graph -> Grammatik
 
+## Harware-/Softwarestack
+* Programmiersprachen: Java, C#, Javascript, Haskel
+* Entwicklungsumgebung: JetBrains IntelliJ / Rider / Webstorm, VS Code
+* Webserver möglich
+
 ## Protokoll
 
 ### 18.09.2020
