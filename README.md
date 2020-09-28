@@ -49,12 +49,15 @@ Bachelor- projekt, dokumentation, information
 
 ### 26.09.2020
 * Expose Version 0.1 fertiggestellt
+----------
 
 ### 26.09.2020
 * Expose Version 0.1 fertiggestellt
+----------
 
 ### 28.09.2020
 * 
+----------
 
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
