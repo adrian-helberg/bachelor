@@ -15,6 +15,12 @@ Bachelor- projekt, dokumentation, information
 * 3D Mesh Segmentation
 * 3D Model -> Graph -> Grammatik
 
+## TODOs
+* Ausformulieren der Teilschritte (Konzept) des Exposes
+* Erste Ideen zu einem Lösungsansatz liefern
+* Expose 0.2 abgeben
+* Zweitgutachter auswählen
+
 ## Protokoll
 
 ### 18.09.2020
@@ -40,9 +46,16 @@ Bachelor- projekt, dokumentation, information
 ### 25.09.2020
 * o.g. Paper bearbeitet
 
+### 26.09.2020
+* Expose Version 0.1 fertiggestellt
+
+### 28.09.2020
+* 
+
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
 * 27.08.2020: Quelle Thema "Sketch-basierte Modellierung" erhalten
 * 29.08.2020: Quelle und einige Referenzquellen bearbeitet
 * 14.09.2020: Einigung auf Thema
-* 28.09.2020: 
+* 28.09.2020: Expose Version 0.1 besprochen, Basisquelle festgelegt
+* 12.10.2020:

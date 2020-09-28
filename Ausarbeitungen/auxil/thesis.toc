@@ -1,9 +1,0 @@
-\babel@toc {ngerman}{}
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{v}{chapter*.2}%
-\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{vi}{chapter*.3}%
-\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Lorem Ipsum}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Blind Text}{3}{section.1.2}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{6}{chapter*.6}%
-\contentsline {chapter}{\numberline {A}Anhang}{7}{appendix.A}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{9}{appendix.A}%
