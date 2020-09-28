@@ -45,6 +45,10 @@ Bachelor- projekt, dokumentation, information
 
 ### 25.09.2020
 * o.g. Paper bearbeitet
+----------
+
+### 26.09.2020
+* Expose Version 0.1 fertiggestellt
 
 ### 26.09.2020
 * Expose Version 0.1 fertiggestellt
