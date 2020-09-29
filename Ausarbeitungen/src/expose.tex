@@ -37,49 +37,84 @@
     dreidimensionalen Kontext die inverse prozedurale Modellierung von Verzweigungsstrukturen beschreiben.
     Das in der Basisquelle beschriebene System generiert zweidimensionale Objekte mit Verzweigungsstrukturen.
     Hierzu soll ein prototypische Implementierung zur Überführung des Algorithmus vom zweidimensionalen in den
-    dreisimensionalen Raum implementiert werden.\\
+    dreisimensionalen Raum implementiert werden.
+
+    \newpage
 
     \subsection{Konzepte und Ideen}
-    Im Folgenden wird auf die Methodik zum Inferrieren eines L-Systems, das eine zweidimensionale Verzweigungsstrukturen
-    repräsentiert der Basisquelle~\cite{basisquelle} eingegangen und eigene Konzepte und Lösungsansätze präsentiert.\\~\\
+    Im Folgenden wird auf die Methodik zum Ableiten eines L-Systems, das eine zweidimensionale Verzweigungsstrukturen
+    repräsentiert der Basisquelle~\cite{basisquelle} eingegangen und Konzepte und eigene Lösungsansätze präsentiert.
 
     \begin{figure}[H]
        \centering
-       \includegraphics[width=\textwidth]{../images/System_2D.PNG}
+       \includegraphics[width=14cm]{../images/System_2D.PNG}
        \caption[Systemarchitektur 2D]{Architektur des Systems der Basisquelle~\cite{basisquelle}}
     \end{figure}
 
     \subsubsection{System}
     Ziel des Systems ist die Erstellung von Ähnlichkeitsabbildern eines Input-Bildes.
-    Hierzu wird eine beliebig verschachtelte Verzweigungsstruktur eingelesen und eine Sammlung an ähnlichen Strukturen
-    ausgegeben.
+    Hierzu wird eine beliebig verschachtelte Verzweigungsstruktur eingelesen, um eine Sammlung an ähnlichen Strukturen
+    auszugeben.
 
     \subsubsection{Voraussetzungen}
-    Das Input-Bild kann als Sammlung verschiedener, atomarer Stukturen (=\textbf{Templates}) gesehen werden, die mit
+    Das Input-Bild kann als Sammlung verschiedener, atomarer Stukturen\\(=\textbf{Templates}) gesehen werden, die mit
     diversen Parametern transformiert wurden.
     Um diese Strukturen zu erkennen, wird ein neuronales Netz anhand von generierten Trainingsdaten angelernt.
-    Die Trainingsdaten werden anhand vordefinierter Templates, eines vordefinierten L-Systems, das die Anordnung
-    der Templates beschreibt, und randomisierten Parametern generiert.\\~\\
-    Die in Input-Bildern erwarteten Verzweigungsstrukturen bilden die Templates.\\~\\
+    Die Trainingsdaten werden anhand vordefinierter Templates, eines vordefinierten L-Systems und randomisierten
+    Parametern generiert.\\
+    Die in Input-Bildern erwarteten Verzweigungsstrukturen bilden die Templates, die jeweils an einen Schlüssel
+    (=\textbf{Label}) gebunden sind.\\
     Um eine Zeichenkette, die Symbole eines L-Systems beinhaltet, zu visualisieren wird ein \textbf{Logo-Turtle-Algorithmus}
     genutzt~\cite{3}.
+
+    \newpage
 
     \subsubsection{Überblick}
     \textit{Abbildung 1 zeigt, wie das o.g. System aufgebaut ist}:
     \begin{itemize}
-        \item[I.] \textbf{Training}: Hier wird ein neuronales Netz (CNN), das zur Erkennung von
-        Verzweigungsstrukturen benötigt wird, angelernt.
+        \item[I.] \underline{Training}: Ein neuronales Netz (\textbf{CNN}), das zur Erkennung von\\
+        Verzweigungsstrukturen benötigt wird, wird trainiert.
         \begin{itemize}
-            \item[a)] \textbf{Datengenerierung}: Mit dem vordefinierten L-System
-            \item[b)] \textbf{Training}:
+            \item[a)] \textbf{Datengenerierung}: Mit dem vordefinierten L-System, einer zufälligen Auswahl an
+            Templates und zufälligen Werten für Parameter werden Testdaten in Form von Bilden, die mit dem
+            Logo-Turtle-Algorithmus gezeichnet werden, generiert.
+            \item[b)] \textbf{Training}: Die generierten Bilder werden als Input in ein neuronales Netz gespeist
         \end{itemize}
-        \item[II.] Testing
+        \item[II.] \underline{Testing}: Die Grammatik über Ähnlichkeitsabbilder des Input-Bildes wird abgeleitet.
         \begin{itemize}
-            \item[a)] \textbf{Erkennung}:
-            \item[b)] \textbf{Inferenz}:
-            \item[c)] \textbf{Optimisierung}:
-            \item[d)] \textbf{Bearbeitung}:
+            \item[a)] \textbf{Erkennung}: Das trainierte CNN ist in der Lage Strukturen eines unbekannten Input-Bildes
+            zu erkennen und einem Schlüssel zuzuordnen
+            \item[b)] \textbf{Inferenz}: Die erkannten Strukturen werden in einer Baumtopologie organisiert mit einem
+            Startsymbol als Wurzelknoten, Terminalen als Knoten und Nicht-Terminalen als Blattknoten.
+            Die Kanten des Baumes bilden die jeweils relative Transformation zum Elternknoten.
+            Aus der Baumstruktur kann eine möglichst "`kleine"' Grammatik, die nur das Input-Bild beschreibt, abgeleitet
+            werden.
+            \item[c)] \textbf{Optimierung}: Die kompakte Grammatik wird um Rekursionen und nicht-deterministische
+            Regeln erweitert, um ein L-System zu konstruieren, das nicht nur dem Input-Objekt entspricht, sondern
+            eine größere Vielfalt repräsentiert.
+            Anschließend werden ähnliche Regeln zu neuen Symbolen der Grammatik verbunden (\textbf{Generalisiserung}).
+            \item[d)] \textbf{Bearbeitung}: Die Parameter der generalisierten Grammatik können vom Benutzer verändert
+            werden, um das Ergebnis des Systems zu beeinflussen.
         \end{itemize}
+    \end{itemize}
+
+    \newpage
+
+    \subsubsection{Umsetzung}
+    \textit{Um das beschriebene System vom zweidimensionalen in den dreidimensionalen Raum zu überführen, sind einige
+    Schritte nötig:}
+    \begin{itemize}
+        \item Das vordefinierte L-System muss Objekte im dreidimensionalen Raum erstellen
+        \item Der Logo-Turtle-Algorithmus erhält eine weitere Dimension, um Objekte im 3D darstellen zu können.
+        Derzeit gibt es eine 3D-Turtle-Grafik-Bibliothek~\cite{cheloniidae} für Java
+        \item Die Struktur des neuronalen Netzes verändert sich, da sich die Trainingsdaten ändern.
+        \item Evtl. sind "`Schnappschuss"'- Bilder des generierten 3D-Objektes aus verschiedenen Kameraperspektiven
+        nötig, damit das CNN\\ Verzweigungsstrukturen im dreidimensionalen Raum erkennen kann~\cite{4}.
+        \item Begrenzungskörper (\textbf{bounding boxes}), die als Schlüssel verwendet werden, müssen dreidimensional
+        sein.
+        \item Evtl. müssen Metriken zu Abstandsberechnung zweier Strukturen und heuristische Verfahren, wie der
+        Greedy-Algorithmus zur Minimierung der Kostenfunktion bei der Generalisierung eines L-Systems,\\ dementsprechend
+        angepasst werden
     \end{itemize}
 
     \subsection{Einführung}
@@ -89,6 +124,9 @@
     Darum werden Verfahren gesucht, um Objekte dieser Felder formal zu beschreiben und somit kodifizierbar
     (\textit{engl. codify}) zu machen.
     Hierbei bilden sich folgende Klassen heraus:
+
+    \newpage
+
     \begin{itemize}
         \item \textbf{Modellierung}: Um einen physikalischen Körper in ein digitales Objekt zu überführen, wird mithilfe
         von Abstraktion (oder Modellierung) ein mathematisches Modell erstellt, dass diesen Körper formal beschreibt.
@@ -119,6 +157,8 @@
         \item Kontrollierte Generierung durch Finden optimaler Prameter und Regeln
     \end{itemize}
 
+    \newpage
+
     \subsection{Vorangehende Arbeiten}
     \textit{Folgende Stichworte werden später ausführlich erklärt und die Quellen markiert (Version 1.0)}:
     \begin{itemize}
@@ -131,6 +171,7 @@
         \item Neurale Netzwerke zum Erkennen von Objekten und Strukturen
     \end{itemize}
 
+    \newpage
 
     \section{Ziele der Arbeit}
     \begin{itemize}
@@ -163,13 +204,15 @@
         \item Zweitgutachter: - (bis spätentens 12.10.2020 auswählen)
     \end{itemize}
 
+    \newpage
+
     \section{Zeitplan}
     \begin{todolist}
         \item[\done] bis 29.08.2020: Erarbeitung Basisquelle
         \item[\done] 14.09.2020: Kennenlerngespräch, erstes Themengespräch
         \item[\done] bis 28.09.2020: Version 0.1 des Exposés
-        \item bis 05.10.2020: Version 0.2 des Exposés, Zweitgutachter auswählen
-        \item bis 12.10.2020: Literaturrecherche, Mindmap der untersuchten Quellen
+        \item bis 05.10.2020: Version 1.0 des Exposés, Zweitgutachter auswählen
+        \item bis 12.10.2020: Literaturrecherche, Anmeldung der Bachelorarbeit
         \item bis 16.10.2020: Ausarbeitung des Software-/Hardwarestacks
         \item bis 26.10.2020: Erstellung des Projektplans
         \item ab 26.10.2020: Bearbeitung des praktischen Teils der Bachelorarbeit, paralleler Beginn des
