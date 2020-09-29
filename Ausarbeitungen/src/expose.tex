@@ -7,6 +7,8 @@
 \usepackage{ngerman}
 \usepackage{amsmath}
 \usepackage{url}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage{enumitem,amssymb}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
@@ -21,7 +23,6 @@
 
 % Document
 \begin{document}
-
     \maketitle
 
     \section{Problemstellung}
@@ -38,11 +39,47 @@
     Hierzu soll ein prototypische Implementierung zur Überführung des Algorithmus vom zweidimensionalen in den
     dreisimensionalen Raum implementiert werden.\\
 
-    \subsection{Ideen und Konzepte}
-    Bis 05.10.2020 zu schreiben.
+    \subsection{Konzepte und Ideen}
+    Im Folgenden wird auf die Methodik zum Inferrieren eines L-Systems, das eine zweidimensionale Verzweigungsstrukturen
+    repräsentiert der Basisquelle~\cite{basisquelle} eingegangen und eigene Konzepte und Lösungsansätze präsentiert.\\~\\
+
+    \begin{figure}[H]
+       \centering
+       \includegraphics[width=\textwidth]{../images/System_2D.PNG}
+       \caption[Systemarchitektur 2D]{Architektur des Systems der Basisquelle~\cite{basisquelle}}
+    \end{figure}
+
+    \subsubsection{System}
+    Ziel des Systems ist die Erstellung von Ähnlichkeitsabbildern eines Input-Bildes.
+    Hierzu wird eine beliebig verschachtelte Verzweigungsstruktur eingelesen und eine Sammlung an ähnlichen Strukturen
+    ausgegeben.
+
+    \subsubsection{Voraussetzungen}
+    Das Input-Bild kann als Sammlung verschiedener, atomarer Stukturen (=\textbf{Templates}) gesehen werden, die mit
+    diversen Parametern transformiert wurden.
+    Um diese Strukturen zu erkennen, wird ein neuronales Netz anhand von generierten Trainingsdaten angelernt.
+    Die Trainingsdaten werden anhand vordefinierter Templates, eines vordefinierten L-Systems, das die Anordnung
+    der Templates beschreibt, und randomisierten Parametern generiert.\\~\\
+    Die in Input-Bildern erwarteten Verzweigungsstrukturen bilden die Templates.\\~\\
+    Um eine Zeichenkette, die Symbole eines L-Systems beinhaltet, zu visualisieren wird ein \textbf{Logo-Turtle-Algorithmus}
+    genutzt~\cite{3}.
+
+    \subsubsection{Überblick}
+    \textit{Abbildung 1 zeigt, wie das o.g. System aufgebaut ist}:
     \begin{itemize}
-        \item Konzept des Papers erlklären (oberflächlich)
-        \item Eigenens Konzept angeben, erste Ideen zu Lösungsansätzen liefern
+        \item[I.] \textbf{Training}: Hier wird ein neuronales Netz (CNN), das zur Erkennung von
+        Verzweigungsstrukturen benötigt wird, angelernt.
+        \begin{itemize}
+            \item[a)] \textbf{Datengenerierung}: Mit dem vordefinierten L-System
+            \item[b)] \textbf{Training}:
+        \end{itemize}
+        \item[II.] Testing
+        \begin{itemize}
+            \item[a)] \textbf{Erkennung}:
+            \item[b)] \textbf{Inferenz}:
+            \item[c)] \textbf{Optimisierung}:
+            \item[d)] \textbf{Bearbeitung}:
+        \end{itemize}
     \end{itemize}
 
     \subsection{Einführung}
@@ -140,6 +177,8 @@
     \end{todolist}
 
     \newpage
+
+    \listoffigures
 
     ~\nocite{*}
     \bibliography{literature}
