@@ -1,19 +1,8 @@
 # Bachelorarbeit
 Bachelor- projekt, dokumentation, information
 
-## Ideen
-* Docking/Segmentation -> User kann sich alle passenden Dockings anseheen und eines auswählen
-* Input: Model -> Output: Model Variationen, die ähnlich sind
-* Verschiedene Möglichkeiten der Strukturerkennung?
-* Parameter als Verteilung (Histogramme) lernen
-* L-Systeme
-* Gradient-based Learning vermutlich nur im 2D
-* Mit Paramtern den Output veränder? (Wind, Licht, usw.)
-* Kein Modell als Input, sondern ein Set aus gelabelten Teilmodellen, die verschieden zusammengesetzt werden
-* Gibt es beim Bayesschen Ansatz eine Grammatik ohne das "Grammar-Splitting" zu finden?
-* Erkennung von "Einzelteilen" eines 3D-Input-Objekts mithilfe einer prädefinierten, formalen Grammatik
-* 3D Mesh Segmentation
-* 3D Model -> Graph -> Grammatik
+## Organisatorisches
+Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu finden
 
 ## TODOs
 * Ausformulieren der Teilschritte (Konzept) des Exposes
@@ -55,7 +44,7 @@ Bachelor- projekt, dokumentation, information
 * Expose Version 0.1 fertiggestellt
 ----------
 
-### 28.09.2020
+### 29.09.2020
 * 
 ----------
 
