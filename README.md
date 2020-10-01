@@ -5,9 +5,6 @@ Bachelor- projekt, dokumentation, information
 Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu finden
 
 ## Todo
-* Ausformulieren der Teilschritte (Konzept) des Exposes
-* Erste Ideen zu einem Lösungsansatz liefern
-* Expose 1.0 abgeben
 * Zweitgutachter auswählen
 
 ## Protokoll
@@ -19,7 +16,6 @@ Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu find
 ----------
 
 ### 19.09.2020
-
 * Quelle 24 Abstract, Introduction, Background erarbeitet
 ----------
 
