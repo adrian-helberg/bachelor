@@ -4,7 +4,7 @@ Bachelor- projekt, dokumentation, information
 ## Organisatorisches
 Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu finden
 
-## TODOs
+## Todo
 * Ausformulieren der Teilschritte (Konzept) des Exposes
 * Erste Ideen zu einem Lösungsansatz liefern
 * Expose 1.0 abgeben
