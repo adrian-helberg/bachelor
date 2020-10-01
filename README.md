@@ -50,6 +50,10 @@ Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu find
 * Erste Lösungsansätze beschrieben
 ----------
 
+### 01.10.2020
+* Expose Version 1.0 fertiggestellt und abgeschickt
+----------
+
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
 * 27.08.2020: Quelle Thema "Sketch-basierte Modellierung" erhalten
