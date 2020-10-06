@@ -5,3 +5,5 @@
 **/chapters
 **/configuration
 *.gz
+**/BBox
+**/darknet
