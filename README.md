@@ -6,6 +6,7 @@ Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu find
 
 ## Todo
 * Zweitgutachter auswählen
+* Expose 2.0 erstellen
 
 ## Protokoll
 
@@ -54,8 +55,8 @@ Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu find
 * Neues Thema, da Machine-Learning-Anteil zu groß/aufwendig
 * Eingabe: UI-generierte Strukturen entgegennehmen
 * Verarbeitung: Finden einer Grammatik, die die Struktur rekonstruiert
-* Ausgabe: Grammatik wird parametrisiert und verwendet um ähnliche Objekte zu erzeugen
-* Nächster Termin: Abgebe neues Expose
+* Synthese: Grammatik wird parametrisiert und verwendet um ähnliche Objekte zu erzeugen
+* Ausgabe: Der Eingabe ähnliche Strukturen
 ----------
 
 ## Termine
