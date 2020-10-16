@@ -2,11 +2,10 @@
 Bachelor- projekt, dokumentation, information
 
 ## Organisatorisches
-Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu finden
+Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/out/expose_2_0.pdf` zu finden
 
 ## Todo
 * Zweitgutachter auswählen
-* Expose 2.0 erstellen
 
 ## Protokoll
 
@@ -58,6 +57,9 @@ Das Expose zur Bachelorarbeit ist unter `/Ausarbeitungen/out/expose.pdf` zu find
 * Synthese: Grammatik wird parametrisiert und verwendet um ähnliche Objekte zu erzeugen
 * Ausgabe: Der Eingabe ähnliche Strukturen
 ----------
+
+### 16.10.2020
+* Expose V2.0 fertiggestellt
 
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
