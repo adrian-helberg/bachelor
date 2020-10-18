@@ -12,7 +12,7 @@
 \usepackage{enumitem,amssymb}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
-\usepackage{pifont}
+\usepackage{pifont}% Diverse symbols
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 \newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
@@ -29,14 +29,14 @@
 
     Effizientes Objektdesign und -modellierung sind entscheidende Kernkompetenzen in verschiedenen Bereichen der
     digitalen Welt.
-    Da die Erstellung geometrischer Objekte unintuitiv ist und ein großes Maß an Erfahrung und Expertise
+    Da die Erstellung geometrischer Objekte für Laien unintuitiv ist und ein großes Maß an Erfahrung und Expertise
     erfordert, ist dieses stetig wachsende Feld für Neueinsteiger nur sehr schwer zu erschließen.
     Die Forschung liefert hierzu einige Arbeiten zur \textbf{prozeduralen Modellierung}, um digitale Inhalte schneller
     und automatisiert zu erstellen.
     Gerade wenn es um die Darstellung natürlicher Umgebung geht, ist die Erstellung von ähnlichen Objekten, wie
     zum Beispiel verschiedene Bäume derselben Gattung eines Waldes, ein schwieriges Problem.
     Kleine Änderungen in prozeduralen Systemen können zu großen Veränderungen der Ergebnisse führen.
-    Darum beschäftigt sich die \textbf{inverse prozedurale Modellierung} unter Anderem mit dem Inferieren von Regeln
+    Darum beschäftigt sich die \textbf{inverse prozedurale Modellierung} unter anderem mit dem Inferieren von Regeln
     und Mustern aus gegeben Objekten, um diese nach bestimmten Regeln zu modellieren.
     Ein wichtiges Werkzeug hierbei ist die Verwendung einer \textbf{formalen Grammatik}, eine fundamentale Datenstruktur
     der Informatik, um Strukturen zu beschreiben.
@@ -106,7 +106,7 @@
         parameters."'}~\cite{1} \\
         "`Prozedurale Modellierung beschreibt generative Techniken, die \\(semi-)automatisch spezifische, digitale
         Inhalte anhand von deskriptiven Parametern erzeugen"' (\textit{Übersetzt durch den Autor})
-        \item \textbf{Inverse prozedurale Modellierung (IPM)}:\textit{Aliaga et al.}~\cite{2}
+        \item \textbf{Inverse prozedurale Modellierung (IPM)}:\textit{Aliaga et al.}~\cite{4}
         spricht bei der inversen prozeduralen Modellierung von dem Finden einer prozeduralen Repräsentation von
         Strukturen bestehender Modelle.
     \end{itemize}
@@ -118,7 +118,7 @@
     Während bei der klassischen Modellierung die menschliche Intuition und bei der prozeduralen Modellierung eine
     parametrisierte Grammatik vorausgesetzt wird, arbeitet IPM mit bestehenden Modellen und extrahiert ("`lernt"')
     die Strukturen des Objektes, die automatisch in eine formale Grammatik überführt werden können.
-    Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\cite{2}.
+    Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\cite{4}.
 
     \newpage
 
@@ -129,18 +129,35 @@
         \item Kontrollierte Generierung durch Finden optimaler Prameter und Regeln
     \end{itemize}
 
-    \subsection{Vorangehende Arbeiten}
+    \subsection{Grundlegende Arbeiten}
     \textit{Dieses Kapitel beschreibt die relevanten Themen der Bachelorarbeit und stellt einige wissenenschaftliche
-    Quellen vor:}
+    Quellen vor}
     \begin{itemize}
-        \item (Inverse) Prozedurale Modellierung~\cite{2} und~\cite{1}:\\Siehe Kapitel 1.2 Einführung
-        \item Logo-Turtle-Algorithmus~\cite{3}:\\ Der Logo-Turtle-Algorithmus bezeichnet eine Methode zur Generierung
-        von Bildern mithilfe einer Zeichenkette, deren Symbole jeweils für einen bestimmten Befehl zur Steuerung einer
-        "`Schildkröte"' (\textit{engl. turtle}) stehen.
-        Die Visualisierung von Fraktalen und natürlicher Vegetation stellen zwei Beispiele für die Anwendung dar.
-        \item L-System~\cite{5}:\\ L-Systeme sind spezielle, formale Grammatiken zur Beschreibung von
-        natürlicher Vegetation.
-        Lindenmayer führte dieses Stringersetzungssystem ein, um Zellteilung formal zu beschreiben.
+        \item[\ding{46}] \underline{L-Systeme}~\cite{2} sind Ersetzungssystem, die zur
+        formalen Beschreibung von Zellteilung eingeführt wurden, und atomare Teile mithilfe von Produktionsregeln
+        ersetzen. Die bekanntesten L-Systeme sind Zeichenketten-basiert und wurden von \textit{Noam Chomsky} eingeführt.
+        Sie ersetzen parallel Buchstaben eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
+        L-Systeme können parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
+        \begin{itemize}
+            \item[\ding{237}] Der \underline{Logo-Turtle-Algorithmus}~\cite{5} beschreibt ein Vorgehen zur graphischen
+            Beschreibung von L-Systemen, bei dem jeder Buchstabe in einem Wort einer bestimmten Zeichenoperation
+            zugewiesen wird.
+        \end{itemize}
+        \item[\ding{46}] \underline{Prozedurale Modellierung}~\cite{1}: Siehe Kapitel 1.2 Einführung
+        \begin{itemize}
+            \item[\ding{237}] \underline{Inverse prozedurale Modellierung}~\cite{4} gilt als Ansatz für
+            "`Reverse Engineering"' von Eingabedaten zum Lernen von Regeln und Merkmalen, die zur prozeduralen
+            Modellierung verwendet werden können.
+        \end{itemize}
+    \end{itemize}
+
+    \subsection{Verwandte Arbeiten}
+
+    \textit{Relevanten Arbeiten zu den o.g. Themen werden hier aufgeführt}
+
+    \begin{itemize}
+        \item[\ding{46}] Unter \underline{Inferieren von L-Systemen}~\cite{3} versteht man eine Vielzahl an
+        Algorithmen, die Daten untersuchen, um automatisiert L-Systeme zu generieren, die diese Daten beschreiben.
     \end{itemize}
 
     \newpage
@@ -149,14 +166,10 @@
 
     \end{itemize}
 
-    \section{Ablauf}
+    \section{Organisatorisches}
     \begin{itemize}
-        \item Erarbeitung eines Software-/Harwarestacks
-        \item Erstellung eines Projektplans mit Arbeitspaketen
-        \item Herausarbeiten einer Softwarearchitektur
         \item Prototypische Entwicklung eines Systems zur Erstellung "`ähnlicher"' 2D-Strukturen anhand eines
         Input-Bildes, das mit einer grafischer Oberfläche erstellt wird
-        \item Schriftliche Ausarbeitung der Ergebnisse
         \item Zweiwöchige Meilensteine mit Besprechungen (Videokonferenz)
         \item Phasen:
         \begin{itemize}
@@ -166,6 +179,7 @@
             \item Praktische Arbeit
             \item Schriftliche Arbeit
         \end{itemize}
+        \item Das Online-Repository ist unter~\item{github} zu finden
     \end{itemize}
 
     \section{Zeitplan}
@@ -175,14 +189,17 @@
         \item[\done] bis 28.09.2020: Version 1.0 des Exposés
         \item[\done] bis 13.10.2020: Einigung auf eine neue Fragestellung
         \item[\done] bis 18.10.2020: Version 2.0 des Exposés, Zweitgutachter auswählen
-        \item bis 23.10.2020: Problemstudium, Anmeldung der Bachelorarbeit, Ausarbeitung des Software-/Hardwarestacks
-        \item bis 26.10.2020: Erstellung des Projektplans mit Arbeitspaketen
-        \item ab 26.10.2020: Bearbeitung des praktischen Teils der Bachelorarbeit, paralleler Beginn des schriftlichen Teils
+        \item bis 25.10.2020: Problemstudium, Anmeldung der Bachelorarbeit
+        \item bis 27.10.2020: Ausarbeitung des Software-/Hardwarestacks
+        \item bis 01.11.2020: Erstellung des Projektplans mit Arbeitspaketen
+        \item ab 02.11.2020: Bearbeitung des praktischen Teils der Bachelorarbeit, paralleler Beginn des schriftlichen
+        Teils
     \end{todolist}
+
+    \newpage
 
     \listoffigures
 
-    ~\nocite{*}
     \bibliography{literature_2}
     \bibliographystyle{plain}
 

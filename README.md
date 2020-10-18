@@ -7,6 +7,9 @@ Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/
 ## Todo
 * Zweitgutachter auswählen
 
+## Ideen
+* Graph rewriting / Graphersetzungssystem
+
 ## Protokoll
 
 ### 18.09.2020
@@ -60,6 +63,7 @@ Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/
 
 ### 16.10.2020
 * Expose V2.0 fertiggestellt
+----------
 
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
