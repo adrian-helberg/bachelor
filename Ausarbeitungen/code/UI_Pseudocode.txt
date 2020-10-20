@@ -1,0 +1,7 @@
+Erster Anker ist vorselektiert
+Widerhole, bis Struktur erstellt ist:
+    Selektiere ein Template aus der Liste
+    Setze Parameter
+    Bestätige Auswahl und Parameter
+    Zeichne ausgewähltes Template mit Parametern
+    Wähle nächsten Anker aus
