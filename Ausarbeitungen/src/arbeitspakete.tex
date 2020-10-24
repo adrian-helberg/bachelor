@@ -6,6 +6,8 @@
 \usetheme{Marburg}
 \usepackage{ngerman}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{wrapfig}
 
 \title{Arbeitspakete}
 \author{Adrian Helberg}
@@ -16,16 +18,26 @@
     \maketitle
 
     \section{Arbeitspaket 1}
+    \label{sec:1}
+
     \begin{frame}
-        \frametitle{Beschreibung}
-        In Arbeitspaket 1 soll die grafische Benutzeroberfläche erstellt werden. Es umfasst die
-        Bereiche:
+        \frametitle{Arbeitspaket 1}
+        Hier soll die Benutzerschnittstelle erstellt werden.
+        Es umfasst die Bereiche:
         \begin{itemize}
             \item[I.] Strukturieren
             \item[II.] Visualisieren
         \end{itemize}
-        \\~\\
-        \textit{siehe Exposé Kapitel 1.1.2 Überblick}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Beschreibung}
+        \begin{itemize}
+            \setlength\itemsep{1em}
+            \item Der Benutzer des Systems nutzt die Benutzerschnittstelle, um eine Verzweigungsstruktur zu erstellen
+            \item Ziel ist die Weitergabe der erstellten Struktur mit Informationen wie Topologie und Transformationen an den
+            nächsten Arbeitsschritt
+        \end{itemize}
     \end{frame}
 
     \begin{frame}[fragile]
@@ -44,8 +56,8 @@
         \end{itemize}
     \end{frame}
 
-    \begin{frame}
-        \frametitle{Layout}
+    \begin{frame}[fragile]
+        \frametitle{Schlüsselwörter}
         \begin{figure}
             \centering
             \includegraphics[width=3cm]{../images/UI_Legende.PNG}
@@ -96,21 +108,125 @@
     \end{frame}
 
     \section{Arbeitspaket 2}
+    \label{sec:2}
+
+    \begin{frame}
+        \frametitle{Arbeitspaket 2}
+        Hier soll eine Baumstruktur aufgebaut werden.
+        Es umfasst die Bereiche:
+        \begin{itemize}
+            \item[III.] Datengenerierung
+        \end{itemize}
+    \end{frame}
+
     \begin{frame}
         \frametitle{Beschreibung}
-        In Arbeitspaket 2 soll die Baumstruktur aufgebaut werden
+        \begin{itemize}
+            \item \textbf{Templates} sind beliebige, atomare Verzweigungsstrukturen
+            \item \textbf{Instanzen} sind transformierte Templates (z.B. skalierte, rotierte Templates)
+            \item Die in Arbeitspaket 1 erstellte Struktur stellt eine Sammlung von verknüpften Template-Instanzen dar
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Beschreibung}
+        \textit{Topologie und Transformation der Struktur sollen in einer  Baumstruktur organisiert werden:}
+        \begin{itemize}
+            \item \textbf{Knoten} entprechen Instanzen
+            \item \textbf{Kanten} verknüpfen Eltern-Knoten mit ihren Kind-Knoten und stellen Parameter wie Rotation
+            und Skalierung (relativ zum Eltern-Knoten) dar
+            \item \textbf{Blätter} sind Instanzen ohne Kindknoten
+            \item Jeder Kindknoten hate \underline{genau} einen Elternknoten, also eine eingehende Kante, und n
+            Kindknoten, also n ausgehende Kanten
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Baum}
+        Der resultierende Baum ist ein Wurzelbaum:\\~\\
+        \textit{Ein Wurzelbaum ist ein gerichteter, azyklischer Graph, in dem genau ein Knoten $w$ Eingangsgrad 0 besitzt und
+        alle anderen Knoten Eingangsgrad 1 besitzen. Knoten $w$ heißt die Wurzel des Graphen}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Beispiel - Templates}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.3cm]{../images/Template_4.PNG}
+            \includegraphics[width=1.1cm]{../images/Template_1.PNG}
+            \\~\\
+            \includegraphics[width=0.6cm]{../images/Template_2.PNG}
+            \includegraphics[width=0.6cm]{../images/Template_3.PNG}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Struktur}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \centering
+                    \begin{tikzpicture}
+                        \node (w) at (0,0) [circle, shade, draw] {$w$};
+                        \node (a) at (0,-1.5) [circle, draw] {\includegraphics[width=0.1cm]{../images/Template_4.PNG}};
+                        \node (b) at (0,-3) [circle, draw] {\includegraphics[width=0.3cm]{../images/Template_1.PNG}};
+                        \node (c) at (-1.5,-4.5) [circle, draw] {\includegraphics[width=0.2cm]{../images/Template_2.PNG}};
+                        \node (d) at (0,-4.5) [circle, draw] {\includegraphics[width=0.1cm]{../images/Template_4.PNG}};
+                        \node (e) at (1.5,-4.5) [circle, draw] {\includegraphics[width=0.2cm]{../images/Template_3.PNG}};
+                        \node (f) at (1,-6) [circle, draw] {\includegraphics[width=0.2cm]{../images/Template_2.PNG}};
+                        \node (g) at (2,-6) [circle, shade, draw] {$x$};
+                        \draw [->, thick] (w) to (a);
+                        \draw [->, thick] (a) to (b);
+                        \draw [->, thick] (b) to (c);
+                        \draw [->, thick] (b) to (d);
+                        \draw [->, thick] (b) to (e);
+                        \draw [->, thick] (e) to (f);
+                        \draw [->, thick] (e) to (g);
+                    \end{tikzpicture}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=4cm]{../images/Tree_1.PNG}
+                \end{figure}
+            \end{column}
+        \end{columns}
+
     \end{frame}
 
     \section{Arbeitspaket 3}
+    \label{sec:3}
+
+    \begin{frame}
+        \frametitle{Arbeitspaket 3}
+        Hier soll ein "`kleines"'\footnote{Smallest Grammar Problem} L-System, das \underline{nur} die Input-Struktur beschreibt aus der
+        Baumstruktur
+        inferiert werden Es umfasst die Bereiche:
+        \begin{itemize}
+            \item[IV.] Inferieren
+        \end{itemize}
+    \end{frame}
+
     \begin{frame}
         \frametitle{Beschreibung}
-        Arbeitspaket 3
+        Die Anzahl aller Symbole rechter Seiten (\textbf{RHS}) von Produktionsregeln definiert die Länge einer Grammatik
     \end{frame}
 
     \section{Arbeitspaket 4}
+    \label{sec:4}
+
     \begin{frame}
         \frametitle{Beschreibung}
         Arbeitspaket 4
+    \end{frame}
+
+    \section{Arbeitspaket 5}
+    \label{sec:5}
+
+    \begin{frame}
+        \frametitle{Beschreibung}
+        Arbeitspaket 5
     \end{frame}
 
 \end{document}
