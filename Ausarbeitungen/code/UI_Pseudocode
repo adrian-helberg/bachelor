@@ -1,0 +1,15 @@
+M = F, S
+R = S -> A
+w = S
+k = Kind von S
+l = neues Symbol zu M hinzufügen
+
+Wiederhole:
+	wort = Wort des markierten Knotens
+	Für alle Symbole {X, Y, Z} aus wort
+		Ersetze Symbol mit neuem Symbol, das nicht in M enthalten
+		neues Symbol M hinzufügen
+	r = l -> wort
+	r zu R hinzufügen
+	l = nächstes Symbol aus M, für das es keine Regel (LHS) gibt ?? break
+	k = Nächsten Knoten

@@ -143,9 +143,9 @@
 
     \begin{frame}
         \frametitle{Baum}
-        Der resultierende Baum ist ein Wurzelbaum:\\~\\
-        \textit{Ein Wurzelbaum ist ein gerichteter, azyklischer Graph, in dem genau ein Knoten $w$ Eingangsgrad 0 besitzt und
-        alle anderen Knoten Eingangsgrad 1 besitzen. Knoten $w$ heißt die Wurzel des Graphen}
+        Der resultierende Baum ist ein Wurzelbaum (Syntaxbaum):\\~\\
+        \textit{Der Baum ist ein gerichteter, geordneter, azyklischer Graph, in dem genau ein Knoten $w$ Eingangsgrad 0
+        besitzt und alle anderen Knoten Eingangsgrad 1 besitzen. Knoten $w$ heißt die Wurzel des Graphen}
     \end{frame}
 
     \begin{frame}
@@ -192,7 +192,6 @@
                 \end{figure}
             \end{column}
         \end{columns}
-
     \end{frame}
 
     \section{Arbeitspaket 3}
@@ -209,8 +208,70 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Beschreibung}
-        Die Anzahl aller Symbole rechter Seiten (\textbf{RHS}) von Produktionsregeln definiert die Länge einer Grammatik
+        \frametitle{Überlegungen}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{../images/Beispiel_1.PNG}
+            \caption{Beispiel}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kompaktes L-System aufbauen}
+        $L = \{V, S, w, P\}$ mit
+        \begin{itemize}
+            \item $V$ als alle nicht-terminalen Symbole
+            \item $S$ als alle terminalen Symbole
+            \item $w$ als Axiom (Startwort)
+            \item $P$ als Menge von Produktionsregeln (geordnete Paare bsp. $A \rightarrow X$ mit $X$ aus $V \cup S$
+            (Alphabet))
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Kompaktes L-System aufbauen}
+        $L = \{M, \omega, R\}$ mit
+        \begin{itemize}
+            \item $M$ als Menge von Modulen (bsp. $A(P)$ mit $P$ als Liste von Parametern)
+            \item $w$ als Axiom (Startwort)
+            \item $R$ als Menge von Produktionsregeln
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Ablauf 1/2}
+        \textit{Initialisierung:}
+        \begin{itemize}
+            \item[1.] Alphabet $M=\{F,S\}$, Regelmenge $R=\emptyset$, Axiom $\omega=S$
+            \item[2.] Füge neue Regel $\alpha$: $S \rightarrow A$ der Regelmenge $R$ hinzu
+            \item[3.] Knoten $\beta=$ nächster Knoten\footnote{nach Breitensuche, beginnend bei Wurzelknoten S}
+            \item[4.] Füge nächstes Symbol $\gamma$ aus $\{A,B,\dots,Z\}$, das nicht in $M$ enthalten ist, zu $M$ hinzu
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Ablauf 2/2}
+        \textit{Schleife:}
+        \begin{itemize}
+            \item[5.] Wiederhole:
+            \begin{itemize}
+                \item[a.] Wort $\delta=$ Wort von $\beta$
+                \item[b.] Für alle Symbole $\{X,Y,Z\}$ aus $\delta$
+                \begin{itemize}
+                    \item[I.] Ersetze Symbol mit neuem Symbol, das nicht in $M$ enthalten ist und füge es $M$ hinzu
+                \end{itemize}
+                \item[d.] Füge $\gamma\rightarrow\delta$ der Regelmenge $R$ hinzu
+                \item[e.] Wenn es ein Symbol in $M$ gibt, für das es keine Regel gibt, dann:
+                \begin{itemize}
+                    \item $\gamma=$ nächstes Symbol aus $M$, für das es keine Regel gibt
+                \end{itemize}
+                \item[f.] Ansonsten:
+                \begin{itemize}
+                    \item Breche \textit{Schleife} ab
+                \end{itemize}
+                \item[g.] $\beta=$ nächster\footnote{nach Breitensuche, beginnend bei Wurzelknoten S} Knoten
+            \end{itemize}
+        \end{itemize}
     \end{frame}
 
     \section{Arbeitspaket 4}
