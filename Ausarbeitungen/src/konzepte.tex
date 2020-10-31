@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{pifont}
+% Title ToC
 
 \title{\textbf{Konzepte} zur Bachelorarbeit\\\large{Template-basierte Synthese von\\Verzweigungsstrukturen mittels
 L-Systemen}}
@@ -35,7 +36,7 @@ L-Systemen}}
     Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
     einer Bachelorarbeit bietet.
     Zum einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
-    anderen können die Arbeitspakete durch Iterationen abgedeckt werden.
+    anderen können die Arbeitspakete durch Releases abgedeckt werden.
     \newpage
 
     \subsection{Vorgehen}
@@ -53,9 +54,9 @@ L-Systemen}}
             \item Iterationsplanung:\\Umwandlung der User Stories in kleine Arbeitsschritte,\\Festlegen der Dauer einer
             Implementierung
         \end{itemize}
-        \item Entwurf: Architektur, Klassendiagramme
-        \item Testing: (Automatisierte) Modultests und Regressionstests
-        \item Programmierung: Umsetzung der Features, Implementierung
+        \item Entwurf: Architektur, Klassendiagramme, Schnittstellen
+        \item Testing: (Automatisierte) Modul- und Regressionstests
+        \item Programmierung: Umsetzung der Features, Implementierung, Modularisierung
     \end{itemize}
     \begin{figure}[H]
         \centering
@@ -65,11 +66,15 @@ L-Systemen}}
 
     \subsection{Technnologien}
     \begin{itemize}
-        \item Programmiersprache: Java Version X
-        \item Versionskontrolle: Github Repo
-        \item IDE: JetBrains IntelliJ IDEA 2020.2.2 (Ultimate Edition)
-        \item Betriebssystem: Microsoft\textregistered Windows 10 Pro 64 Bit
-        \item Prozessor: Intel\textregistered Core\texttrademark i5-3570K CPU @ 3.40GHz
+        \item Programmiersprache: Java Version X mit
+        \begin{itemize}
+            \item JavaFX Version X
+        \end{itemize}
+        \item Build-Management-Tool: Gradle\cite{gradle} Version X
+        \item Versionskontrolle: Github Repository\cite{github} via Git\cite{git}
+        \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
+        \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
+        \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
     \end{itemize}
 
     \newpage
@@ -111,7 +116,33 @@ L-Systemen}}
         \item[10.] Eidesstattliche Erklärung
     \end{itemize}
 
-    \section{Quellen}
+    \section{Releases}
+
+    \subsection{Release 1}
+    \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}
+    \\~\\
+    Erstellung der grafischen Benutzeroberfläche zur Erstellung einer Verzweigungsstruktur
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=5cm]{../images/Konzepte_Release_1.PNG}
+        \caption{Architektur Release 1}
+    \end{figure}
+    Funktionen:
+    \begin{itemize}
+        \item Programm öffnen
+        \item Programm schließen
+        \item Informationen über den Entwickler und das Projekt sehen
+        \item Übersicht Funktionalitäten sehen
+        \item Verzweigungsstruktur sehen
+        \item Verzweigungsstruktur erstellen
+    \end{itemize}
+
+    \section{Implementation}
+    Da die Arbeitspakete (Releases) iterativ und abgeschlossen erarbeitet werden, wird das
+    \textbf{Pipeline} Design Pattern\cite{pipeline} genutzt.
+
+    \newpage
 
     ~\nocite{*}
     \bibliography{konzepte}
