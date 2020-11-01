@@ -5,10 +5,9 @@ Bachelor- projekt, dokumentation, information
 Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/out/expose_2_0.pdf` zu finden
 
 ## Todo
-* Zweitgutachter auswählen
+* Konzepte erarbeiten
 
 ## Ideen
-* Graph rewriting / Graphersetzungssystem
 
 ## Protokoll
 
@@ -65,6 +64,11 @@ Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/
 * Expose V2.0 fertiggestellt
 ----------
 
+### 01.11.2020
+* Konzepte ausarbeiten
+* Softwaretechnik erarbeitet
+* User Story Map erstellt
+
 ## Termine
 * 20.08.2020: Kontakaufnahme mit Prof. Jenke
 * 27.08.2020: Quelle Thema "Sketch-basierte Modellierung" erhalten
@@ -72,3 +76,4 @@ Das aktuelle Expose zur Bachelorarbeit (Version 2.0) ist unter `/Ausarbeitungen/
 * 14.09.2020: Einigung auf Thema
 * 28.09.2020: Expose Version 0.1 besprochen, Basisquelle festgelegt
 * 13.10.2020: Neues Thema besprochen
+* 26.10.2020: Vorstellung Arbeitspakete 1-3
