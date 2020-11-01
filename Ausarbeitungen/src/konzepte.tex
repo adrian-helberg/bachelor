@@ -75,6 +75,7 @@ L-Systemen}}
         \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
         \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
         \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
+        \item User Story Map: Trello Board\cite{trello}
     \end{itemize}
 
     \newpage
@@ -117,26 +118,25 @@ L-Systemen}}
     \end{itemize}
 
     \section{Releases}
+    Dieses Kapitel beschreibt die Release-Planung des Softwareprojekts im Sinne eines XP-orientierten Ansatzes:\\
+    Zuerst werden die Funktionalitäten, die im entsprechenden Release umgesetzt werden sollen definiert und \textbf{Epics}
+    zugeteilt.
+    Anschließend werden feingranulare User Stories formuliert, die mit einer Aufwandseinschätzung versehen werden.
+    Parallel findet das Anforderungsmanagement (\textit{engl. Requirements Engineering}), das sich mit der Steuerung,
+    Kontrolle und Verwaltung der Anforderungen an das System beschäftigt, statt.
+    Mit diesen Informationen lässt sich dann die Iterationsplanung umsetzen.
+    Die Umwandlung der User Stories in Arbeitsschritte (\textbf{Tasks}) und das Festlegen deren Dauer wird hier umgesetzt.
 
     \subsection{Release 1}
-    \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}
-    \\~\\
-    Erstellung der grafischen Benutzeroberfläche zur Erstellung einer Verzweigungsstruktur
-    
+    Erstellung einer grafischen Benutzeroberfläche zur Erstellung von Verzweigungsstrukturen\\
+    \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}\\~\\
     \begin{figure}[H]
         \centering
-        \includegraphics[width=5cm]{../images/Konzepte_Release_1.PNG}
-        \caption{Architektur Release 1}
+        \includegraphics[width=12cm]{../images/User_Story_Map.PNG}
+        \caption{User Story Map mit Releases, Epics und User Stories}
     \end{figure}
-    Funktionen:
-    \begin{itemize}
-        \item Programm öffnen
-        \item Programm schließen
-        \item Informationen über den Entwickler und das Projekt sehen
-        \item Übersicht Funktionalitäten sehen
-        \item Verzweigungsstruktur sehen
-        \item Verzweigungsstruktur erstellen
-    \end{itemize}
+
+    \subsection{Release 2}
 
     \section{Implementation}
     Da die Arbeitspakete (Releases) iterativ und abgeschlossen erarbeitet werden, wird das
@@ -145,7 +145,9 @@ L-Systemen}}
     \newpage
 
     ~\nocite{*}
+    \renewcommand{\refname}{Quellen}
     \bibliography{konzepte}
     \bibliographystyle{plain}
+    \addcontentsline{toc}{section}{Quellen}
 
 \end{document}
