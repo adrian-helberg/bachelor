@@ -18,10 +18,11 @@ L-Systemen}}
     \maketitle
     \tableofcontents
     \newpage
-    \section{Softwareprojekt}
-    \subsection{Vorgehensmodell}
-    Eine Fallstudie der Universität Karlsruhe\cite{1} untersucht den Einsatz der Softwaretechnik \textbf{Extreme Programming}
-    (XP) im Kontext der Erstellung von Abschlussarbeiten im Universitätsumfeld.\\~\\
+    \section{Literaturübersicht}
+    \subsection{Softwaretechnik}
+    Eine Fallstudie der Universität Karlsruhe~\cite{1} untersucht den Einsatz der Softwaretechnik \textbf{Extreme
+    Programming}
+    (XP) im Kontext der Erstellung von Abschlussarbeiten im Universitätsumfeld.
     Hierzu werden folgende Schlüsselpraktiken untersucht:
     \begin{itemize}
         \item XP als Softwaretechnik zur schrittweisen Annäherung an die Anforderungen eines Systems
@@ -36,47 +37,31 @@ L-Systemen}}
     Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
     einer Bachelorarbeit bietet.
     Zum einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
-    anderen können die Arbeitspakete durch Releases abgedeckt werden.
-    \newpage
+    anderen können Arbeitspakete durch Releases abgebildet werden.
 
-    \subsection{Vorgehen}
-    Das Programm zu dieser Arbeit wird mit einem XP-basierten Ansatz erarbeitet.
-    Hierbei beinhaltet ein \textbf{Release} Funktionen, die insgesamt für eine neue Version des Systems ausreichen;
-    also ein vollständig funktionsfähiges Programm liefern.
-    \textbf{User Stories} sind innerhalb der Iterationen umzusetzende Teilaufgaben und deren Aufwandseinschätzung gibt
-    Auskunft über den Entwicklungsaufwand einer Umsetzung.\\~\\
-    Umsetzung des Softwareprojektes in Iterationen mit folgenden Phasen:
-    \begin{itemize}
-        \item Planung:
-        \begin{itemize}
-            \item Release-Planung:\\"`\textit{Welche Features werden in diesem Release umgesetzt?}"',\\User Stories,
-            Aufwandsschätzung, Anforderungsmanagement
-            \item Iterationsplanung:\\Umwandlung der User Stories in kleine Arbeitsschritte,\\Festlegen der Dauer einer
-            Implementierung
-        \end{itemize}
-        \item Entwurf: Architektur, Klassendiagramme, Schnittstellen
-        \item Testing: (Automatisierte) Modul- und Regressionstests
-        \item Programmierung: Umsetzung der Features, Implementierung, Modularisierung
-    \end{itemize}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=15cm]{../images/extreme_programming.PNG}
-        \caption{Ablaufdiagramm}
-    \end{figure}
+    \subsection{Grundlagen}
+    Die Quellen~\cite{3},~\cite{4} und~\cite{5} beschreiben die Grundlagen für \textbf{L-Systeme} und eine grafische
+    Umsetzung (\textbf{Turtle-Algorithmus}).
 
-    \subsection{Technnologien}
+    \subsection{Basisquelle}
+    Bei \textit{Inverse Procedural Modeling of Branching Structures by Inferring L-Systems}\cite{2} geht es um ein
+    Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen Lernens (\textit{Deep
+    Learning}) anhand beliebiger Grafiken.
+    Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarchische Topologie (Baumstruktur)
+    aufgebaut, aus der ein L-System inferiert und mit einem \textbf{Greedy} Algorithmus optimiert wird.
+    Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
+    erstellt werden können.\\
+    Aus dieser Quelle werden folgende Konzepte genutzt:
     \begin{itemize}
-        \item Programmiersprache: Java Version X mit
-        \begin{itemize}
-            \item JavaFX Version X
-        \end{itemize}
-        \item Build-Management-Tool: Gradle\cite{gradle} Version X
-        \item Versionskontrolle: Github Repository\cite{github} via Git\cite{git}
-        \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
-        \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
-        \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
-        \item User Story Map: Trello Board\cite{trello}
+        \item Nutzer einer Baumstruktur zur Organisation von genutzten atomaren Verzweigungsstrukturen
+        (\textbf{Templates}) mit Knoten für Templates und Kanten für geometrische Transformationen
+        \item Untersuchen der Baumstruktur auf Wiederholungen
+        \item Parametrisierte L-Systeme (L-System mit \textbf{Modulen}) zur Abbildung von Transformationsparameternn
     \end{itemize}
+
+
+    \section{Eigenleistung}
+    Die Eigenleistung der Bachelorarbeit besteht aus \ldots
 
     \newpage
 
@@ -117,6 +102,47 @@ L-Systemen}}
         \item[10.] Eidesstattliche Erklärung
     \end{itemize}
 
+    \section{Softwareprojekt}
+
+    \subsection{Vorgehen}
+    Das Programm zu dieser Arbeit wird mit einem XP-basierten Ansatz erarbeitet.
+    Hierbei beinhaltet ein \textbf{Release} Funktionen, die insgesamt für eine neue Version des Systems ausreichen;
+    also ein vollständig funktionsfähiges Programm liefern.
+    \textbf{User Stories} sind innerhalb der Iterationen umzusetzende Teilaufgaben und deren Aufwandseinschätzung gibt
+    Auskunft über den Entwicklungsaufwand einer Umsetzung.\\~\\
+    Umsetzung des Softwareprojektes in Iterationen mit folgenden Phasen:
+    \begin{itemize}
+        \item Planung:
+        \begin{itemize}
+            \item Release-Planung:\\"`\textit{Welche Features werden in diesem Release umgesetzt?}"',\\User Stories,
+            Aufwandsschätzung, Anforderungsmanagement
+            \item Iterationsplanung:\\Umwandlung der User Stories in kleine Arbeitsschritte,\\Festlegen der Dauer einer
+            Implementierung
+        \end{itemize}
+        \item Entwurf: Architektur, Klassendiagramme, Schnittstellen
+        \item Testing: (Automatisierte) Modul- und Regressionstests
+        \item Programmierung: Umsetzung der Features, Implementierung, Modularisierung
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=15cm]{../images/extreme_programming.PNG}
+        \caption{Ablaufdiagramm}
+    \end{figure}
+
+    \subsection{Technnologien}
+    \begin{itemize}
+        \item Programmiersprache: Java Version X mit
+        \begin{itemize}
+            \item JavaFX Version X
+        \end{itemize}
+        \item Build-Management-Tool: Gradle\cite{gradle} Version X
+        \item Versionskontrolle: Github Repository\cite{github} via Git\cite{git}
+        \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
+        \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
+        \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
+        \item User Story Map: Trello Board\cite{trello}
+    \end{itemize}
+
     \section{Releases}
     Dieses Kapitel beschreibt die Release-Planung des Softwareprojekts im Sinne eines XP-orientierten Ansatzes:\\
     Zuerst werden die Funktionalitäten, die im entsprechenden Release umgesetzt werden sollen definiert und \textbf{Epics}
@@ -127,16 +153,39 @@ L-Systemen}}
     Mit diesen Informationen lässt sich dann die Iterationsplanung umsetzen.
     Die Umwandlung der User Stories in Arbeitsschritte (\textbf{Tasks}) und das Festlegen deren Dauer wird hier umgesetzt.
 
-    \subsection{Release 1}
+    \newpage
+
+    \underline{Beispiel: Release 1}\\~\\
     Erstellung einer grafischen Benutzeroberfläche zur Erstellung von Verzweigungsstrukturen\\
-    \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}\\~\\
+    \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}
+    
+    \subsection{Planung}
     \begin{figure}[H]
         \centering
         \includegraphics[width=12cm]{../images/User_Story_Map.PNG}
-        \caption{User Story Map mit Releases, Epics und User Stories}
+        \caption{Release-Planung: User Story Map mit Releases, Epics und User Stories}
     \end{figure}
 
-    \subsection{Release 2}
+    \newpage
+
+    Release 1 enthält 4 Epics wird also in 4 Iterationen erarbeitet:
+    \begin{itemize}
+        \item Iteration 1 (Epic Programm, 2 User Stories), Gesamtdauer: 6h
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=12cm]{../images/User_Story_1.PNG}
+        \caption{Iterationsplanung: User Story mit Tasks und Dauer}
+    \end{figure}
+    \begin{itemize}
+        \item Iteration 2 (Epic Visualisieren, 1 User Story), Dauer: 10h
+        \item Iteration 3 (Epic Strukturieren, x User Stories), Dauer: yh
+        \item Iteration 4 (Epic Protokollieren, 1 User Story), Dauer: 2h
+    \end{itemize}
+    
+    \subsection{Entwurf}
+    \subsection{Testing}
+    \subsection{Programmierung}
 
     \section{Implementation}
     Da die Arbeitspakete (Releases) iterativ und abgeschlossen erarbeitet werden, wird das
