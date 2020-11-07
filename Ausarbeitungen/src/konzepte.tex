@@ -40,8 +40,11 @@ L-Systemen}}
     anderen können Arbeitspakete durch Releases abgebildet werden.
 
     \subsection{Grundlagen}
-    Die Quellen~\cite{3},~\cite{4} und~\cite{5} beschreiben die Grundlagen für \textbf{L-Systeme} und eine grafische
-    Umsetzung (\textbf{Turtle-Algorithmus}).
+    \begin{itemize}
+        \item L-Systeme~\cite{3}
+        \item Turtle-Algorithmus~\cite{4}
+        \item Parametrisierte L-Syteme~\cite{5}
+    \end{itemize}
 
     \subsection{Basisquelle}
     Bei \textit{Inverse Procedural Modeling of Branching Structures by Inferring L-Systems}\cite{2} geht es um ein
@@ -56,7 +59,8 @@ L-Systemen}}
         \item Nutzer einer Baumstruktur zur Organisation von genutzten atomaren Verzweigungsstrukturen
         (\textbf{Templates}) mit Knoten für Templates und Kanten für geometrische Transformationen
         \item Untersuchen der Baumstruktur auf Wiederholungen
-        \item Parametrisierte L-Systeme (L-System mit \textbf{Modulen}) zur Abbildung von Transformationsparameternn
+        \item Parametrisierte L-Systeme (L-System mit \textbf{Modulen}) zur Abbildung von Transformationsparametern
+        \item Kostenfunktion zur Bewertung eines L-Systems
     \end{itemize}
 
 
@@ -64,6 +68,9 @@ L-Systemen}}
     Die Eigenleistung der Bachelorarbeit besteht aus:
     \begin{itemize}
         \item Algorithmus Baumstruktur $\rightarrow$ L-System
+        \item Leere Symbole ($\varepsilon$) als Dummy-Knoten für Terminale
+        \item Parameterverteilung als Histogramm
+        \item Gewichtetes Randomisieren von Parametern
     \end{itemize}
 
     \newpage
@@ -150,8 +157,6 @@ L-Systemen}}
     Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
     \subsection{Einführung und Ziele}
-
-    \subsubsection{Aufgabenstellung}
     Ziel ist die Erstellung eines Programms zur Synthetisierung von Ähnlichkeitsabbildungen einer vom Benutzer
     erstellten Verzweigungsstruktur mittels Inferieren und Optimieren von L-Systemen.
     Die wesentlichen Features des Programms sind:
@@ -161,13 +166,13 @@ L-Systemen}}
         \item Synthetisierung von ähnlichen Verzweigungsstrukturen anhand der erstellten Struktur
         \item Anzeigen von Verzweigungsstrukturen
     \end{itemize}
-
-    \subsubsection{Qualitätsziele}
-    Priorisierte (absteigend) Qualitätsziele, die bei der Erstellung des Systems umgesetzt werden sollten
+    \newpage
+    Priorisierte (absteigend) Qualitätsziele, die bei der Erstellung des Systems umgesetzt werden sollten:
     \begin{itemize}
         \item \textbf{Funktionalität} durch Umsetzung aller Teilsysteme
         \item \textbf{Interoperabilität} durch Nutzen einer allgemeinen Repräsentation von L-Systemen, damit diese
         auch in anderen Programmen oder Algorithmen verwendet werden kann
+        \item \textbf{Erweiterbarkeit} durch offene Entwurfsmuster (Design Pattern)
         \item \textbf{Modular}e Implementierung für effiziente Wartung und Erweiterung
         \item \textbf{Effizienz} durch effiziente Programmierung
         \item \textbf{Attraktivität} durch intuitive Benutzung (Benutzerfreundlichkeit)
@@ -175,12 +180,120 @@ L-Systemen}}
     \end{itemize}
 
     \subsection{Kontextabgrenzung}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6.2cm]{../images/Fachlicher_Kontext.PNG}
+        \caption{System und Systemumgebung}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=10cm]{../images/Technischer_Kontext.PNG}
+        \caption{Technische Interaktion zwischen System und Systemumgebung}
+    \end{figure}
+
     \subsection{Lösungsstrategie}
+    Gewählte Architekturansätze zur Erreichung der Qualitätsziele:
+    \begin{center}
+        \begin{tabular}{l|l}
+            \textbf{Qualitätsziel} & \textbf{Architekturansatz} \\
+            \hline \\
+            Funktionalität &
+            \begin{minipage}[t]{0.8\textwidth}
+                \begin{itemize}
+                    \item Grafische Benutzerschnittstelle: \textit{GUI}
+                    \item Generieren der Baumstruktur: \textit{TreeGenerator}
+                    \item Ableiten von L-Systemen aus Baumstrukturen: \textit{Inferer}
+                    \item Generalisieren von L-Systemen: \textit{Generalizer}
+                \end{itemize}
+            \end{minipage} \\
+            \\ \hline \\
+            Interoperabilität &
+            \begin{minipage}[t]{0.8\textwidth}
+                Durch das Nutzen allgemeingültiger mathematischer Beschreibungen sollen erstellte
+                L-Systeme in Fremdsystemen, wie Online Visualisierer, genutzt werden können
+            \end{minipage} \\
+            \\ \hline \\
+            Erweiterbarkeit &
+            \begin{minipage}[t]{0.8\textwidth}
+                Das Nutzen des \textbf{Pipeline Design Pattern}s soll das Erweitern des Systems durch
+                Hinzufügen weiterer Teilschritte (\textbf{Pipes}) erleichtern
+            \end{minipage} \\
+            \\ \hline \\
+            Modularität &
+            \begin{minipage}[t]{0.8\textwidth}
+                Sowohl eine sinnvolle Aufteilung von Funktionalitäten auf Dateien und Pakete (\textbf{Package}s), als
+                auch effiziente Datenkapselung und geschlossene Informationskontexte sorgen für Modularität des
+                Programms
+            \end{minipage} \\
+            \\ \hline
+        \end{tabular}
+    \end{center}
+    Die Implementierung des Programms setzt sich aus folgenden Teilschritten zusammen:
+    \begin{itemize}
+        \item Erstellung der \textit{GUI} (Paket gui, tree) mit
+        \begin{itemize}
+            \item UI-Elementen
+            \item Render-Canvas
+            \item Dateianbindung der Templates
+            \item Erstellung der repräsentativen Baumstruktur (Paket tree)
+        \end{itemize}
+        \item Implementierung der Subsysteme als Pipes
+        \begin{itemize}
+            \item \textit{Inferer} (Paket grammar): Ableiten eines kompakten L-Systems aus einer Baumstruktur
+            \item \textit{Generalizer} (Paket grammar): Generieren eines generalisierten L-Systems anhand eines
+            "`kleinen"' L-Systems
+            \item \textit{Randomizer} (Paket grammar): Erzeugung von L-Systemen, die der erstellen
+            Verzweigungsstruktur "`ähnlich"' sind
+        \end{itemize}
+        \item Komponenten- und Systemtests
+    \end{itemize}
+    \begin{center}
+        \begin{tabular}{l|l}
+            \textbf{Subsystem} & \textbf{Umsetzung} \\
+            \hline \\
+            GUI &
+            \begin{minipage}[t]{0.8\textwidth}
+               JavaFX als Framework zur Erstellung von grafischen und interaktiven Inhalten.
+                Erstellung der Baumstruktur über dynamisches Erzeugen von Konten während der Strukturierung der
+               Verzweigungsstruktur
+            \end{minipage} \\
+            \\ \hline \\
+            Inferer &
+            \begin{minipage}[t]{0.8\textwidth}
+                Algorithmus zum Iterieren maximaler Sub-Bäume und deren Reduzierung mittels Ersetzung durch Symbole
+                und der zugehörigen Produktionsregel, bis eine Kostengrenze, die durch eine Kostenfunktion abgebildet
+                werden kann, erreicht ist
+            \end{minipage} \\
+            \\ \hline \\
+            Generalizer &
+            \begin{minipage}[t]{0.8\textwidth}
+
+            \end{minipage} \\
+            \\ \hline \\
+            Randomizer &
+            \begin{minipage}[t]{0.8\textwidth}
+
+            \end{minipage} \\
+            \\ \hline
+        \end{tabular}
+    \end{center}
+
     \subsection{Bausteinsicht}
+    TODO
+
     \subsection{Laufzeitsicht}
+    TODO
+
     \subsection{Verteilungsicht}
+    TODO
+
     \subsection{Konzepte}
+    TODO
+
     \subsection{Entscheidungen}
+    TODO
+
+    \newpage
 
     \section{Releases}
     Dieses Kapitel beschreibt die Release-Planung des Softwareprojekts im Sinne eines XP-orientierten Ansatzes:\\
@@ -188,10 +301,8 @@ L-Systemen}}
     zugeteilt.
     Anschließend werden feingranulare User Stories formuliert, die mit einer Aufwandseinschätzung versehen werden.
     Mit diesen Informationen lässt sich dann die Iterationsplanung umsetzen.
-    Die Umwandlung der User Stories in Arbeitsschritte (\textbf{Tasks}) und das Festlegen deren Dauer wird hier umgesetzt.
-
-    \newpage
-
+    Die Umwandlung der User Stories in Arbeitsschritte (\textbf{Tasks}) und das Festlegen deren Dauer wird hier
+    umgesetzt.\\~\\
     \underline{Beispiel: Release 1}\\~\\
     Erstellung einer grafischen Benutzeroberfläche zur Erstellung von Verzweigungsstrukturen\\
     \textit{Siehe Exposé Kapitel 1.1.2 Überblick Punkt I. Strukturieren und II. Visualisieren}
