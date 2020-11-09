@@ -153,6 +153,8 @@ L-Systemen}}
         \item User Story Map: Trello Board\cite{trello}
     \end{itemize}
 
+    \newpage
+
     \section{Softwarearchitektur}
     Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
@@ -166,7 +168,6 @@ L-Systemen}}
         \item Synthetisierung von ähnlichen Verzweigungsstrukturen anhand der erstellten Struktur
         \item Anzeigen von Verzweigungsstrukturen
     \end{itemize}
-    \newpage
     Priorisierte (absteigend) Qualitätsziele, die bei der Erstellung des Systems umgesetzt werden sollten:
     \begin{itemize}
         \item \textbf{Funktionalität} durch Umsetzung aller Teilsysteme
@@ -191,6 +192,8 @@ L-Systemen}}
         \caption{Technische Interaktion zwischen System und Systemumgebung}
     \end{figure}
 
+    \newpage
+
     \subsection{Lösungsstrategie}
     Gewählte Architekturansätze zur Erreichung der Qualitätsziele:
     \begin{center}
@@ -204,6 +207,7 @@ L-Systemen}}
                     \item Generieren der Baumstruktur: \textit{TreeGenerator}
                     \item Ableiten von L-Systemen aus Baumstrukturen: \textit{Inferer}
                     \item Generalisieren von L-Systemen: \textit{Generalizer}
+                    \item Randomisieren von L-System Parametern: \textit{Randomizer}
                 \end{itemize}
             \end{minipage} \\
             \\ \hline \\
@@ -216,7 +220,9 @@ L-Systemen}}
             Erweiterbarkeit &
             \begin{minipage}[t]{0.8\textwidth}
                 Das Nutzen des \textbf{Pipeline Design Pattern}s soll das Erweitern des Systems durch
-                Hinzufügen weiterer Teilschritte (\textbf{Pipes}) erleichtern
+                Hinzufügen weiterer Teilschritte (\textbf{Pipes}) erleichtern.
+                Trennung der grafischen Oberfläche und der Logik durch Aufbauen des Szenengraphen über ein
+                XML-Dateiformat
             \end{minipage} \\
             \\ \hline \\
             Modularität &
@@ -228,6 +234,9 @@ L-Systemen}}
             \\ \hline
         \end{tabular}
     \end{center}
+
+    \newpage
+
     Die Implementierung des Programms setzt sich aus folgenden Teilschritten zusammen:
     \begin{itemize}
         \item Erstellung der \textit{GUI} (Paket gui, tree) mit
@@ -235,7 +244,7 @@ L-Systemen}}
             \item UI-Elementen
             \item Render-Canvas
             \item Dateianbindung der Templates
-            \item Erstellung der repräsentativen Baumstruktur (Paket tree)
+            \item Erstellung der repräsentativen Baumstruktur\\ (\textit{treeGenerator}, Paket tree)
         \end{itemize}
         \item Implementierung der Subsysteme als Pipes
         \begin{itemize}
@@ -279,19 +288,50 @@ L-Systemen}}
     \end{center}
 
     \subsection{Bausteinsicht}
-    TODO
+    \underline{Ebene 1}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=12cm]{../images/Bausteinsicht_Ebene_1.PNG}
+        \caption{Subsysteme mit fachlichen Abhängigkeiten}
+    \end{figure}
+    \underline{Ebene 2}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=9cm]{../images/Bausteinsicht_Ebene_2.PNG}
+        \caption{Subsystem GUI}
+    \end{figure}
 
     \subsection{Laufzeitsicht}
-    TODO
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=14cm]{../images/Laufzeitsicht.PNG}
+        \caption{Laufzeitsicht}
+    \end{figure}
 
     \subsection{Verteilungsicht}
-    TODO
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=10cm]{../images/Verteilungssicht.PNG}
+        \caption{Infrastruktur Windows-PC}
+    \end{figure}
 
-    \subsection{Konzepte}
-    TODO
+    \subsection{Konzepte (todo)}
+    \underline{Testbarkeit}\\~\\
+    \underline{Validierung}\\~\\
+    \underline{Fehlerbehandlung}
+    \begin{itemize}
+        \item Exception Handling
+        \item Logging
+    \end{itemize}
+    \underline{Datenstrukturen}\\~\\
+    \underline{Workflows}\\~\\
+    \underline{Algorithmen}
 
-    \subsection{Entscheidungen}
-    TODO
+    \subsection{Entscheidungen (todo)}
+        \underline{Risiken}\\~\\
+        \underline{Qualitätsmerkmale}\\~\\
+        \underline{Alternativen}\\~\\
+        \underline{Aufwand der Implementierung}
 
     \newpage
 
@@ -330,27 +370,22 @@ L-Systemen}}
         \item Iteration 3 (Epic Strukturieren, 5 User Stories), Dauer: 18h
         \item Iteration 4 (Epic Protokollieren, 1 User Story), Dauer: 2h
     \end{itemize}
+
+    \newpage
     
     \subsection{Entwurf}
-
-    \subsubsection{Kontext}
     Ein menschlicher Benutzer (\textbf{User}) nutzt das Programm, um eine Verzweigungsstruktur zu strukturieren.
     Hierzu wählt dieser einige Templates aus einer Sammlung vorgefertigter Templates aus, setzt Parameter und
     bestimmt den Ort der Platzierung.
-    Die zu erstellende Struktur ist jeder Zeit sichtbar (Visualisierung).
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=5cm]{../images/Release_1_fachlicher_Kontext.PNG}
-        \hspace{1cm}
-        \includegraphics[width=6.4cm]{../images/Release_1_technischer_Kontext.PNG}
-        \caption{Fachlicher und technischer Kontext}
-    \end{figure}
-
-    \subsubsection{Lösungsstrategie}
-    Das System wird als Java-Programm mit main-Routine erstellt.
+    Die zu erstellende Struktur ist jeder Zeit sichtbar (Visualisierung).\\~\\
+    Das System wird als Java-Programm mit main-Routine erstellt.\\~\\
+    TODO
 
     \subsection{Testing}
+    TODO
+
     \subsection{Programmierung}
+    TODO
 
     \section{Implementation}
     Da die Arbeitspakete (Releases) iterativ und abgeschlossen erarbeitet werden, wird das
