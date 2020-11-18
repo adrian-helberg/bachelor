@@ -7,7 +7,50 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{pifont}
-% Title ToC
+% code snippets
+\usepackage{listings}
+\usepackage{color}
+\usepackage{caption}
+
+\newcounter{nalg}[chapter] % defines algorithm counter for chapter-level
+\renewcommand{\thenalg}{\thechapter \arabic{nalg}} %defines appearance of the algorithm counter
+\DeclareCaptionLabelFormat{algocaption}{Algorithmus \thenalg} % defines a new caption label as Algorithm x.y
+
+\lstnewenvironment{algorithm}[1][] %defines the algorithm listing environment
+{
+\refstepcounter{nalg} %increments algorithm number
+\captionsetup{labelformat=algocaption,labelsep=colon} %defines the caption setup for: it ises label format as the declared caption label above and makes label and caption text to be separated by a ':'
+\lstset{ %this is the stype
+mathescape=true,
+frame=tB,
+numbers=left,
+numberstyle=\tiny,
+basicstyle=\scriptsize,
+keywordstyle=\color{black}\bfseries\em,
+keywords={,input, output, return, datatype, function, in, if, else, foreach, while, begin, end, } %add the keywords you want, or load a language as Rubens explains in his comment above.
+numbers=left,
+xleftmargin=.04\textwidth,
+#1 % this is to add specific settings to an usage of this environment (for instnce, the caption and referable label)
+}
+\lstset{literate=%
+{Ö}{{\"O}}1
+{Ä}{{\"A}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}1
+{ü}{{\"u}}1
+{ä}{{\"a}}1
+{ö}{{\"o}}1
+}
+}
+{}
+
+% Footnote without marker
+\newcommand\blfootnote[1]{%
+\begingroup
+\renewcommand\thefootnote{}\footnote{#1}%
+\addtocounter{footnote}{-1}%
+\endgroup
+}
 
 \title{\textbf{Konzepte} zur Bachelorarbeit\\\large{Template-basierte Synthese von\\Verzweigungsstrukturen mittels
 L-Systemen}}
@@ -80,12 +123,13 @@ L-Systemen}}
     \end{itemize}
     \\~\\
     Produktionsregeln sind geordnete Paare aus Wörtern über dem Alphabet, die bestimmte Ersetzungsregeln umsetzen. 
-    Hierbei werden Symbole aus einem Wort die einer rechten Seite (\textit{engl. right hand side (RHS)}) einer
+    Hierbei werden Symbole aus einem Wort, die einer rechten Seite (\textit{engl. right hand side (RHS)}) einer
     Produktionsregel entsprechen, durch die linke Seite des Paares (\textit{engl. left hand side (LHS)}) ersetzt.
     Sie sind folgendermaßen aufgabaut:
     \begin{center}
         $A(P)\rightarrow x,x\in M^*$
     \end{center}
+    $M^*$ ist die Menge aller möglichen Zeichenketten von M inklusive der leeren Zeichenkette $\varepsilon$.
     Ist die RHS jeder Produktionsregel ein einzelnes Symbol und gibt es zu jeder Variablen eine Regel, spricht man
     von einem kontextfreien, andernfalls von einem kontextsensitiven L-System.
     
@@ -152,8 +196,10 @@ L-Systemen}}
         \end{tabular}
     \end{center}
     \newpage
-    Alles zwischen den Symbolen $[$ und $]$ interpretiert man als Verzweigung.
-    Bsp. $FF[FF]F$ mit Verzweigung $[FF]$.
+    Alles zwischen den Symbolen $[$ und $]$ wird als Verzweigung interpretiert.
+    \begin{center}
+        Bsp. $FF[FF]F$ mit Verzweigung $[FF]$
+    \end{center}
 
     \begin{itemize}
         \item String matching~\cite{6}
@@ -432,19 +478,114 @@ L-Systemen}}
         \caption{Infrastruktur Windows-PC}
     \end{figure}
 
-    \subsection{Konzepte (todo)}
-    \underline{Testbarkeit}\\~\\
-    \underline{Validierung}\\~\\
-    \underline{Fehlerbehandlung}
-    \begin{itemize}
-        \item Exception Handling
-        \item Logging
-    \end{itemize}
-    \underline{Datenstrukturen}\\~\\
-    \underline{Workflows}\\~\\
-    \underline{Algorithmen}
+    \subsection{Konzepte}
 
-    \subsection{Entscheidungen (todo)}
+    \subsubsection{Testbarkeit}
+    Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmögliche zu testende Einheit definiert
+    und durch Komponententests geprüft.
+    Der Name eines Tests setzt sich aus dem Präfix als Name der zu testenden Klasse oder Releases und dem Suffix
+    "`Test"'
+    zusammen.
+    Testsubjekte werden als \textbf{Blackbox} behandelt, also anhand der Spezifikation getestet.
+    \begin{center}
+        Bsp.: Klasse \textit{Inferer} mit Komponententest \textit{InfererTest}
+    \end{center}
+    Da jedes Release der Implementierung ein funktionsfähiges System beinhaltet, kann auf Integrationstests
+    verzichtet werden.
+    Weiter wird ein Release anhand von funktionalen und nicht-funktionalen Anforderungen getestet.
+    Anhand dieser Systemtests wird geprüft, ob Gesamtspezifikationen umgesetzt worden sind.
+    \begin{center}
+        Bsp.: Release 2 mit Systemtest \textit{Release2Test}
+    \end{center}
+    Zum Schluss der Implementierung wird ein Akzeptanztest durchgeführt.
+
+    \subsubsection{Validierung}
+    Der Benutzer des Systems nutzt ein grafische Schnittstelle.
+    Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
+    Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
+    protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
+
+    \subsubsection{Fehlerbehandlung}
+    Zur Fehlersuche und -behandlung biete sich eine Protokollierung über Vorgänge, Fehler und Ausnahmen an.
+    Bestimmte Fehler werden dem Benutzer weitergegeben und grafisch angezeigt.
+    Folgende Subsysteme werden in das Programm integriert:
+    \begin{itemize}
+        \item Ausnahmebehandlung (Exception Handling) und
+        \item Protokollierung (Logging)
+    \end{itemize}
+
+    \subsubsection{Datenstrukturen}
+    \\~\\
+
+    \subsubsection{Workflows \& Algorithmen}
+    \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
+Erster Anker ist vorselektiert
+Wiederhole, bis Struktur fertiggestellt ist:
+    Selektiere ein Template aus der Liste
+    Setzt Parameter
+    Bestätige Auswahl und Parameter
+    Zeichne ausgewähltes Template mit Parametern
+    Wähle nächsten Anker aus
+    \end{algorithm}
+    \\~\\~\\
+    Für $\mathcal{L}=\langle M,\omega,R \rangle$:
+    \begin{algorithm}[caption={Inferieren eines L-Systems aus einer Baumstruktur}, label={alg1}]
+Initialisierung:
+    $M=\{F,S\}$
+    $\omega=S$
+    $R \gets \{\alpha$: $S \rightarrow A\}$
+    $\beta=$ nächster Knoten*
+    $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$
+
+Schleife:
+    $\delta=$ Wort von $\beta$
+    $\forall \{X,Y,Z\} \in \delta:$
+        Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$
+        $M \gets \zeta$
+    $R \gets \{\gamma\rightarrow\delta\}$
+    Wenn es ein Symbol $\eta$ in $M\setminus\{F,S\}$ gibt mit $\{\eta \rightarrow bel.\} \notin R$:
+        $\gamma=\eta$
+    Sonst:
+        Breche Schleife ab
+    $\beta=$ nächster Knoten*
+    \end{algorithm}
+    \blfootnote{* nach Breitensuche, beginnend bei Wurzelknoten S}
+
+%    \newpage
+%
+%    \underline{Algorithmus 2 ausgeschrieben}:\\~\\
+%    \textit{Initialisierung:}
+%    \begin{itemize}
+%        \item[1.] Alphabet $M=\{F,S\}$, Regelmenge $R=\emptyset$, Axiom $\omega=S$
+%        \item[2.] Füge neue Regel $\alpha$: $S \rightarrow A$ der Regelmenge $R$ hinzu
+%        \item[3.] Knoten $\beta=$ nächster Knoten*
+%        \item[4.] Füge nächstes Symbol $\gamma$ aus $\{A,B,\dots,Z\}$, das nicht in $M$ enthalten ist, zu $M$ hinzu
+%    \end{itemize}
+%    \textit{Schleife:}
+%    \begin{itemize}
+%        \item[5.] Wiederhole:
+%        \begin{itemize}
+%            \item[a.] Wort $\delta=$ Wort von $\beta$
+%            \item[b.] Für alle Symbole $\{X,Y,Z\}$ aus $\delta$:
+%            \begin{itemize}
+%                \item[] Ersetze Symbol mit neuem Symbol, das nicht in $M$ enthalten ist und füge es $M$ hinzu
+%            \end{itemize}
+%            \item[d.] Füge $\gamma\rightarrow\delta$ der Regelmenge $R$ hinzu
+%            \item[e.] Wenn es ein Symbol in $M\setminus\{F,S\}$ gibt, für das es keine Regel gibt, dann:
+%            \begin{itemize}
+%                \item[] $\gamma=$ nächstes Symbol aus $M$, für das es keine Regel gibt
+%            \end{itemize}
+%            \item[f.] Ansonsten:
+%            \begin{itemize}
+%                \item[] Breche \textit{Schleife} ab
+%            \end{itemize}
+%            \item[g.] $\beta=$ nächster Knoten*
+%        \end{itemize}
+%    \end{itemize}
+%    \blfootnote{* nach Breitensuche, beginnend bei Wurzelknoten S}
+
+    \subsubsection{Entscheidungen}
+        \underline{Mutable or Immutable Objects?}\\~\\
         \underline{Risiken}\\~\\
         \underline{Qualitätsmerkmale}\\~\\
         \underline{Alternativen}\\~\\
