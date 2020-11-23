@@ -439,12 +439,13 @@ L-Systemen}}
             \\ \hline \\
             Generalizer &
             \begin{minipage}[t]{0.8\textwidth}
-
+                Algorithmus zum Erweitern eines L-Systems um nicht-deterministischer Regeln und Erkennen rekursiver
+                Strukturen
             \end{minipage} \\
             \\ \hline \\
             Randomizer &
             \begin{minipage}[t]{0.8\textwidth}
-
+    ddd         sfevdhbnreaydtydbfsdxc
             \end{minipage} \\
             \\ \hline
         \end{tabular}
@@ -504,6 +505,8 @@ L-Systemen}}
     Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
     Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
     protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
+    Eine \textit{IllegalArgumentException} wird verzeichnet und ausgegeben, wenn eingelesene Template-Dateien
+    strukturelle Fehler aufweisen.
 
     \subsubsection{Fehlerbehandlung}
     Zur Fehlersuche und -behandlung biete sich eine Protokollierung über Vorgänge, Fehler und Ausnahmen an.
@@ -513,11 +516,15 @@ L-Systemen}}
         \item Ausnahmebehandlung (Exception Handling) und
         \item Protokollierung (Logging)
     \end{itemize}
+    Erwartete Exceptions werden jeweils mit eigenen Klassen abgebildet, die von einer entsprechenden Klasse aus der
+    Exception-Hierarchie abgeleitet sind.
+    Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
 
     \subsubsection{Datenstrukturen}
     \\~\\
 
     \subsubsection{Workflows \& Algorithmen}
+    Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgender Arbeitsablauf umgesetzt:
     \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
 Erster Anker ist vorselektiert
 Wiederhole, bis Struktur fertiggestellt ist:
@@ -528,8 +535,10 @@ Wiederhole, bis Struktur fertiggestellt ist:
     Wähle nächsten Anker aus
     \end{algorithm}
     \\~\\~\\
+    Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden:
+    \\~\\
     Für $\mathcal{L}=\langle M,\omega,R \rangle$:
-    \begin{algorithm}[caption={Inferieren eines L-Systems aus einer Baumstruktur}, label={alg1}]
+    \begin{algorithm}[caption={Inferieren eines L-Systems aus einer Baumstruktur}, label={alg2}]
 Initialisierung:
     $M=\{F,S\}$
     $\omega=S$
@@ -551,38 +560,44 @@ Schleife:
     \end{algorithm}
     \blfootnote{* nach Breitensuche, beginnend bei Wurzelknoten S}
 
-%    \newpage
-%
-%    \underline{Algorithmus 2 ausgeschrieben}:\\~\\
-%    \textit{Initialisierung:}
-%    \begin{itemize}
-%        \item[1.] Alphabet $M=\{F,S\}$, Regelmenge $R=\emptyset$, Axiom $\omega=S$
-%        \item[2.] Füge neue Regel $\alpha$: $S \rightarrow A$ der Regelmenge $R$ hinzu
-%        \item[3.] Knoten $\beta=$ nächster Knoten*
-%        \item[4.] Füge nächstes Symbol $\gamma$ aus $\{A,B,\dots,Z\}$, das nicht in $M$ enthalten ist, zu $M$ hinzu
-%    \end{itemize}
-%    \textit{Schleife:}
-%    \begin{itemize}
-%        \item[5.] Wiederhole:
-%        \begin{itemize}
-%            \item[a.] Wort $\delta=$ Wort von $\beta$
-%            \item[b.] Für alle Symbole $\{X,Y,Z\}$ aus $\delta$:
-%            \begin{itemize}
-%                \item[] Ersetze Symbol mit neuem Symbol, das nicht in $M$ enthalten ist und füge es $M$ hinzu
-%            \end{itemize}
-%            \item[d.] Füge $\gamma\rightarrow\delta$ der Regelmenge $R$ hinzu
-%            \item[e.] Wenn es ein Symbol in $M\setminus\{F,S\}$ gibt, für das es keine Regel gibt, dann:
-%            \begin{itemize}
-%                \item[] $\gamma=$ nächstes Symbol aus $M$, für das es keine Regel gibt
-%            \end{itemize}
-%            \item[f.] Ansonsten:
-%            \begin{itemize}
-%                \item[] Breche \textit{Schleife} ab
-%            \end{itemize}
-%            \item[g.] $\beta=$ nächster Knoten*
-%        \end{itemize}
-%    \end{itemize}
-%    \blfootnote{* nach Breitensuche, beginnend bei Wurzelknoten S}
+    \newpage
+
+    Um ein kompakteres, gewichtetes L-System zu erzeugen, werden sich wiederholende Unterrbäume gesucht und ersetzt.
+    Die Gewichtung wird angewendet, um das erzeugte L-System in ein System mit kleiner Regelmenge ($w_l=1$) oder mit
+    großer Regelmenge ($w_l=0$) umzuwandeln:
+    \begin{algorithm}[caption={Erstellen eines kompakten L-Systems mit Gewichtung $w_l$}, label={alg3}]
+Initialisierung:
+    $\mathcal{L}^+ \leftarrow L_s$*
+    $\mathcal{L}=\emptyset$
+    Setze Gewichtungsparameter $w_l \in [0,1]$
+    Finde maximalen Unterbaum $T'$ aus $T$** mit Wiederholung $n > 1$
+
+Schleife: Solange n > 1
+    Ersetze alle Vorkommen von $T'$ mit dem selben Symbol $\gamma \in \{A,B,\dots,Z\}$
+    $R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$
+    Wenn $C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$
+        Breche Schleife ab
+    Ansonsten
+        $T \leftarrow T'$
+        $\mathcal{L}^+ \leftarrow \mathcal{L}$
+        Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholung $n > 1$
+    \end{algorithm}
+    \blfootnote{* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mathcal{L}=\langle M,\omega,R \rangle$}
+    \blfootnote{** $T$ als Baumstruktur des L-Systems}
+
+    Die Kostenfunktion stellt die Anzahl Symbole aller \textit{RHS} der Produktionsregeln mit der Menge an
+    Anwendungen der \textit{LHS} gegenüber:
+    \begin{algorithm}[caption={Kostenfunktion $C_i$ mit Gewichtung $w_l$}, label={alg3}]
+$C_i(\mathcal{L})= \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} w_l * |M^*| + (1 - w_l) * N(A(P)\rightarrow
+M^*)$***
+    \end{algorithm}
+    \blfootnote{*** $N(\cdot)$ als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} einer Regel in einem
+    ausgeführten L-System}
+
+    Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden
+    nun ähnliche Regeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische
+    Regeln hinzuzufügen.
+
 
     \subsubsection{Entscheidungen}
         \underline{Mutable or Immutable Objects?}\\~\\
