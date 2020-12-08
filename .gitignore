@@ -1,13 +1,7 @@
-**/.idea
-**/Quellen
-**/auxil
-**/appendix
-**/chapters
-**/configuration
-*.gz
-**/BBox
-**/darknet
-**/TrainingData
-shape_grammar
-Prototyp/build
-*/.gradle
+# Gradle specific files
+.gradle/
+gradle/
+# IntelliJ specific files
+.idea/
+# Compile output
+build/

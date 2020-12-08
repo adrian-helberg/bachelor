@@ -1,22 +1,42 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id "org.openjfx.javafxplugin" version "0.0.9"
 }
 
 group 'de.haw'
+version '0.1'
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
+def currentOS = org.gradle.internal.os.OperatingSystem.current()
+def platform
+if (currentOS.isWindows()) {
+    platform = 'win'
+} else if (currentOS.isLinux()) {
+    platform = 'linux'
+} else if (currentOS.isMacOsX()) {
+    platform = 'mac'
+}
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    // Cross-platform support
+//    compile "org.openjfx:javafx-base:13:${platform}"
+//    compile "org.openjfx:javafx-graphics:13:${platform}"
+//    compile "org.openjfx:javafx-controls:13:${platform}"
+}
+
+test {
+    useJUnitPlatform()
 }
 
 javafx {
-    version = "15.0.1"
-    modules = [ 'javafx.controls' ]
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
-mainClassName = 'Application'
+mainClassName = 'de.haw.Prototyp'
