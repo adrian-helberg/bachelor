@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.haw.AboutController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="BtnOk" mnemonicParsing="false" text="OK" />
+        </buttons>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <center>
+      <TextArea prefHeight="197.0" prefWidth="300.0" text="This program is an addition to the bachelor thesis&#10;&quot;Template-based synthesis of branching structure&#10;using L-Systems&quot;.&#10;&#10;Author:          Adrian Helberg&#10;Institution:     Hochschule für Angewandte &#10;                      Wissenschaften Hamburg &#10;                      (HAW Hamburg)&#10;Department:  Informatik&#10;Jahr:               2020 &#10;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
