@@ -1,7 +1,7 @@
 package de.haw;
 
 import de.haw.gui.Template;
-import de.haw.gui.Templates;
+import de.haw.utils.Templates;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +20,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class PrototypeController {
+    // 300x300 canvas
     @FXML private Canvas canvas;
     @FXML private ListView<Template> lstTemplates;
     @FXML private Text txtStatus;
@@ -32,11 +33,8 @@ public class PrototypeController {
             @Override
             protected void updateItem(Template template, boolean empty) {
                 super.updateItem(template, empty);
-                if (empty || template == null || template.getWord().isEmpty()) {
-                    setText(null);
-                }
-                else {
-                    setText(template.getID() + ": " + template.getWord());
+                if (!empty && template != null && !template.getWord().isEmpty()) {
+                    setGraphic(template.getTurtleGraphic());
                 }
             }
         });
@@ -46,15 +44,15 @@ public class PrototypeController {
                 select();
             }
         });
-
-        var context = canvas.getGraphicsContext2D();
+        canvas.getGraphicsContext2D().strokeLine(10,10, 290, 290);
     }
 
     @FXML private void reset() {
         txtStatus.setText("");
         txtStatus.setFill(Color.BLACK);
-        Templates.clearIDs();
+        Templates.clearEntries();
         lstTemplates.getItems().clear();
+        canvas.getGraphicsContext2D().clearRect(0,0,canvas.getHeight(), canvas.getWidth());
     }
 
     @FXML private void select() {

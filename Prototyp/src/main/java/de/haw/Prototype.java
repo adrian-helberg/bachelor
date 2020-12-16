@@ -36,9 +36,10 @@ public class Prototype extends Application {
         // General window properties
         primaryStage.setTitle("Prototyp");
         primaryStage.setResizable(false);
-        // TODO: Application icon
+        // Application icon
         Image icon = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("icon.png")));
         primaryStage.getIcons().add(icon);
+
         primaryStage.show();
     }
 

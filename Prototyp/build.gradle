@@ -30,6 +30,7 @@ dependencies {
 //    compile "org.openjfx:javafx-graphics:13:${platform}"
 //    compile "org.openjfx:javafx-controls:13:${platform}"
     compile group: 'net.mikera', name: 'vectorz', version: '0.67.0'
+    compile group: 'org.javatuples', name: 'javatuples', version: '1.2'
 }
 
 test {
