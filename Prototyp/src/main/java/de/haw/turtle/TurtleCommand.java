@@ -1,4 +1,4 @@
-package de.haw.turtle.commands;
+package de.haw.turtle;
 
 @FunctionalInterface
 public interface TurtleCommand {

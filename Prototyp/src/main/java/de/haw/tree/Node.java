@@ -3,9 +3,8 @@ package de.haw.tree;
 import de.haw.gui.TemplateInstance;
 import mikera.vectorz.Vector;
 import org.javatuples.Pair;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+
+import java.util.*;
 
 /**
  * Node class that represents a node in a tree. A node has an anchor
@@ -13,14 +12,28 @@ import java.util.Objects;
  * node maps representing the the children
  */
 public class Node {
-    final Anchor anchor;
-    final TemplateInstance payload;
-    final List<Pair<Anchor, Node>> hooks;
+    private Anchor anchor;
+    private final TemplateInstance payload;
+    // TODO: Some test what data structure fits best
+    private Node next;
+    private final List<Anchor> children;
+    private final List<Pair<Anchor, Node>> hooks;
+    private final Map<Anchor, Node> hooks_;
+
+    public Node(TemplateInstance instance) {
+        payload = instance;
+        children = new ArrayList<>();
+        hooks = new ArrayList<>();
+        hooks_ = new LinkedHashMap<>();
+        setupHooks();
+    }
 
     public Node(Anchor hook, TemplateInstance instance) {
         anchor = hook;
         payload = instance;
+        children = new ArrayList<>();
         hooks = new ArrayList<>();
+        hooks_ = new HashMap<>();
         setupHooks();
     }
 
@@ -34,6 +47,10 @@ public class Node {
 
     public List<Pair<Anchor, Node>> getHooks() {
         return hooks;
+    }
+
+    public Map<Anchor, Node> getHooks_() {
+        return hooks_;
     }
 
     public Node getNodeAtHookIndex(int index) {
@@ -50,10 +67,22 @@ public class Node {
         hooks.set(0, tuple.setAt1(node));
     }
 
+    public void attachNode(Node node) {
+        if (!hooks_.containsKey(node.getAnchor())) return;
+        hooks_.put(node.getAnchor(), node);
+    }
+
+    public void attachNode(Node node, Anchor anchor) {
+        hooks_.put(anchor, node);
+    }
+
     private void setupHooks() {
         hooks.add(Pair.with(new Anchor(Vector.of(0,0)), null));
         hooks.add(Pair.with(new Anchor(Vector.of(1,1)), null));
         hooks.add(Pair.with(new Anchor(Vector.of(2,2)), null));
+        hooks_.put(new Anchor(Vector.of(0,0)), null);
+        hooks_.put(new Anchor(Vector.of(1,1)), null);
+        hooks_.put(new Anchor(Vector.of(2,2)), null);
     }
 
     @Override

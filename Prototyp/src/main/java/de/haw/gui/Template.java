@@ -2,6 +2,7 @@ package de.haw.gui;
 
 import de.haw.turtle.TurtleGraphic;
 import de.haw.utils.Templates;
+import javafx.scene.canvas.Canvas;
 import java.util.Objects;
 
 /**
@@ -21,7 +22,8 @@ public class Template {
         this.word = word;
         id = Templates.getNewID();
         if(!Templates.addToID(id, this)) throw new RuntimeException("Unable to create such a template");
-        turtleGraphic = new TurtleGraphic(20, 20, word);
+        turtleGraphic = new TurtleGraphic(20, 20);
+        turtleGraphic.parseWord(word);
     }
 
     /**
@@ -44,8 +46,8 @@ public class Template {
      * Returns the graphical representation of the template
      * @return Turtle graphic that represents the template
      */
-    public TurtleGraphic getTurtleGraphic() {
-        return turtleGraphic;
+    public Canvas getCanvas() {
+        return turtleGraphic.getCanvas();
     }
 
     /**

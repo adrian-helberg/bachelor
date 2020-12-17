@@ -1,5 +1,7 @@
 package de.haw.tree;
 
+import de.haw.gui.Template;
+import de.haw.test.Node_;
 import mikera.vectorz.Vector;
 
 import java.util.Objects;
@@ -9,6 +11,7 @@ import java.util.Objects;
  */
 public class Anchor {
     private final Vector position;
+    private Node_ node;
 
     /**
      * Creates a anchor on a specific position in 2D
@@ -16,7 +19,12 @@ public class Anchor {
      * @param position 2D vector
      */
     public Anchor(Vector position) {
+        this(position, null);
+    }
+
+    public Anchor(Vector position, Node_<Template> node) {
         this.position = position;
+        this.node = node;
     }
 
     /**
@@ -43,6 +51,6 @@ public class Anchor {
 
     @Override
     public String toString() {
-        return "Anchor{" + position + "}";
+        return "Anchor{" + position + ", " + node + "}";
     }
 }

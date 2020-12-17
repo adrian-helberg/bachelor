@@ -17,7 +17,7 @@ public class TemplateTest {
         assertNotNull(t);
         assertEquals(0, t.getID());
         assertEquals(word, t.getWord());
-        assertNotNull(t.getTurtleGraphic());
+        assertNotNull(t.getCanvas());
         assertDoesNotThrow(() -> new Template(word + "F(1)"));
     }
 

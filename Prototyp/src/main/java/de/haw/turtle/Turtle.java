@@ -10,7 +10,7 @@ public class Turtle {
     private double angle;
     private Stack<Pair<Vector, Double>> stack;
 
-    Turtle(int x, int y) {
+    public Turtle(int x, int y) {
         stack = new Stack<>();
         position = Vector.of(x, y);
         angle = 0;

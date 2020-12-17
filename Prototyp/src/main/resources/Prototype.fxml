@@ -37,7 +37,7 @@
       </MenuBar>
    </top>
    <left>
-      <Canvas fx:id="canvas" height="300.0" width="300.0" BorderPane.alignment="CENTER">
+      <Canvas fx:id="canvas" height="326.0" width="300.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="5.0" top="5.0" />
          </BorderPane.margin>

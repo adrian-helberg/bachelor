@@ -1,10 +1,14 @@
 package de.haw;
 
 import de.haw.gui.Template;
+import de.haw.tree.Anchor;
 import de.haw.utils.Templates;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -20,7 +24,6 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class PrototypeController {
-    // 300x300 canvas
     @FXML private Canvas canvas;
     @FXML private ListView<Template> lstTemplates;
     @FXML private Text txtStatus;
@@ -34,7 +37,7 @@ public class PrototypeController {
             protected void updateItem(Template template, boolean empty) {
                 super.updateItem(template, empty);
                 if (!empty && template != null && !template.getWord().isEmpty()) {
-                    setGraphic(template.getTurtleGraphic());
+                    setGraphic(template.getCanvas());
                 }
             }
         });
@@ -44,7 +47,6 @@ public class PrototypeController {
                 select();
             }
         });
-        canvas.getGraphicsContext2D().strokeLine(10,10, 290, 290);
     }
 
     @FXML private void reset() {
@@ -64,6 +66,26 @@ public class PrototypeController {
             txtStatus.setText("You selected: " + selectedTemplate.getID());
             txtStatus.setFill(Color.GREEN);
         }
+
+        Parent root = null;
+        ShowController controller;
+        try {
+            var loader = new FXMLLoader(Objects.requireNonNull(
+                    getClass().getClassLoader().getResource("Show.fxml")
+            ));
+            root = loader.load();
+            controller = loader.getController();
+            controller.draw(lstTemplates.getSelectionModel().getSelectedItem());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Show Template");
+        stage.setScene(new Scene(Objects.requireNonNull(root), 200, 200));
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML private void exit() {
@@ -88,12 +110,13 @@ public class PrototypeController {
         }
     }
 
-    @FXML private void loadTemplates() {
+    @FXML public void loadTemplates() {
         reset();
+        Scanner sc = null;
         try {
             var filePath = Prototype.class.getClassLoader().getResource("template_sample");
             if (filePath == null) throw new IOException("Templates file not found");
-            var sc = new Scanner(new File(filePath.getPath()));
+            sc = new Scanner(new File(filePath.getPath()));
 
             String line;
             ObservableList<Template> templateList = FXCollections.observableArrayList();
@@ -105,6 +128,8 @@ public class PrototypeController {
             lstTemplates.setItems(templateList);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (sc != null) sc.close();
         }
     }
 
@@ -122,5 +147,9 @@ public class PrototypeController {
         dialog.setTitle("How to use");
         dialog.setScene(Prototype.getModalScene(MODALS.HOWTOUSE));
         dialog.showAndWait();
+    }
+
+    public Canvas getCanvas() {
+        return canvas;
     }
 }
