@@ -1,13 +1,9 @@
 package de.haw;
 
-import de.haw.gui.Template;
-import de.haw.test.Node_;
-import de.haw.tree.Anchor;
 import de.haw.tree.Node;
 import de.haw.tree.Tree;
+import de.haw.turtle.Turtle;
 import de.haw.turtle.TurtleGraphic;
-import de.haw.utils.Anchors;
-import de.haw.utils.Drawings;
 import de.haw.utils.Templates;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -15,11 +11,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import mikera.vectorz.Vector;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
+import java.util.Vector;
 
 enum MODALS {
     ABOUT, HOWTOUSE
@@ -55,16 +50,15 @@ public class Prototype extends Application {
         primaryStage.getIcons().add(icon);
         primaryStage.show();
 
-        var turtleGraphic = new TurtleGraphic(controller.getCanvas());
-        var initialAnchor = new Anchor(turtleGraphic.getTurtle().getPosition());
+        // TEST
         controller.loadTemplates();
-        var n1 = new Node(initialAnchor, Templates.getTemplateFromID(1).instantiate());
-        var n2 = new Node(Templates.getTemplateFromID(0).instantiate());
+        var turtleGraphic = new TurtleGraphic(controller.getCanvas());
+        var turtle = new Turtle(turtleGraphic.getTurtle());
+        var n1 = new Node(Templates.getTemplateFromID(3).instantiate(), turtle);
 
-        // Build tree
-        n1.attachNode(n2, n1.getHooks_().keySet().iterator().next());
-
-        var n1_ = new Node_<>(Templates.getTemplateFromID(0), initialAnchor);
+        var firstChildAnchor = n1.getChildren().entrySet().iterator().next().getKey();
+        var n2 = new Node(Templates.getTemplateFromID(3).instantiate(), turtle);
+        n1.addChild(firstChildAnchor, n2);
 
         var tree = new Tree(n1);
         turtleGraphic.drawTree(tree);

@@ -8,16 +8,23 @@ import java.util.Stack;
 public class Turtle {
     private Vector position;
     private double angle;
-    private Stack<Pair<Vector, Double>> stack;
+    private final Stack<Pair<Vector, Double>> stack;
 
     public Turtle(int x, int y) {
-        stack = new Stack<>();
         position = Vector.of(x, y);
         angle = 0;
+        stack = new Stack<>();
+    }
+
+    // Copy constructor, maybe not needed if turtle was immutable
+    public Turtle(Turtle turtle) {
+        position = turtle.getPosition();
+        angle = turtle.angle;
+        stack = new Stack<>();
     }
 
     public Vector getPosition() {
-        return position;
+        return position.copy().toVector();
     }
 
     public double getAngle() {

@@ -1,8 +1,9 @@
 package de.haw.tree;
 
 import de.haw.gui.TemplateInstance;
+import de.haw.turtle.Turtle;
+import de.haw.turtle.TurtleGraphic;
 import mikera.vectorz.Vector;
-import org.javatuples.Pair;
 
 import java.util.*;
 
@@ -12,94 +13,50 @@ import java.util.*;
  * node maps representing the the children
  */
 public class Node {
-    private Anchor anchor;
-    private final TemplateInstance payload;
-    // TODO: Some test what data structure fits best
-    private Node next;
-    private final List<Anchor> children;
-    private final List<Pair<Anchor, Node>> hooks;
-    private final Map<Anchor, Node> hooks_;
+    private final Vector position;
+    private TemplateInstance data;
+    private Map<Vector, Node> children;
 
-    public Node(TemplateInstance instance) {
-        payload = instance;
-        children = new ArrayList<>();
-        hooks = new ArrayList<>();
-        hooks_ = new LinkedHashMap<>();
-        setupHooks();
+    public Node(Vector anchor) {
+        this(anchor, null, null);
     }
 
-    public Node(Anchor hook, TemplateInstance instance) {
-        anchor = hook;
-        payload = instance;
-        children = new ArrayList<>();
-        hooks = new ArrayList<>();
-        hooks_ = new HashMap<>();
-        setupHooks();
+    public Node(TemplateInstance templateInstance, Turtle turtle) {
+        this(turtle.getPosition(), templateInstance, turtle);
     }
 
-    public Anchor getAnchor() {
-        return anchor;
-    }
+    // TODO: Maybe remove first parameter anchor, because it ships with turtle
+    public Node(Vector anchor, TemplateInstance templateInstance, Turtle turtle) {
+        position = anchor;
+        data = templateInstance;
+        if (templateInstance == null || turtle == null) {
+            children = new LinkedHashMap<>();
 
-    public TemplateInstance getPayload() {
-        return payload;
-    }
-
-    public List<Pair<Anchor, Node>> getHooks() {
-        return hooks;
-    }
-
-    public Map<Anchor, Node> getHooks_() {
-        return hooks_;
-    }
-
-    public Node getNodeAtHookIndex(int index) {
-        if (index >= hooks.size()) throw new RuntimeException("Hook index out of range");
-        return hooks.get(index).getValue1();
-    }
-
-    public void addNodeAtHookIndex(Node node, int index) {
-        if (index >= hooks.size()) throw new RuntimeException("Hook index out of range");
-        var tuple = hooks.get(index);
-        if (tuple.getValue1() != null) {
-            throw new RuntimeException("Unable to attach node to hook");
+        } else {
+            children = new TurtleGraphic(turtle).getHooks(data.getWord());
         }
-        hooks.set(0, tuple.setAt1(node));
     }
 
-    public void attachNode(Node node) {
-        if (!hooks_.containsKey(node.getAnchor())) return;
-        hooks_.put(node.getAnchor(), node);
+    public void addData(TemplateInstance templateInstance, Turtle turtle) {
+        data = templateInstance;
+        children = new TurtleGraphic(turtle).getHooks(templateInstance.getWord());
     }
 
-    public void attachNode(Node node, Anchor anchor) {
-        hooks_.put(anchor, node);
+    public boolean addChild(Vector anchor, Node node) {
+        if (!children.containsKey(anchor)) return false;
+        return children.put(anchor, node) != null;
     }
 
-    private void setupHooks() {
-        hooks.add(Pair.with(new Anchor(Vector.of(0,0)), null));
-        hooks.add(Pair.with(new Anchor(Vector.of(1,1)), null));
-        hooks.add(Pair.with(new Anchor(Vector.of(2,2)), null));
-        hooks_.put(new Anchor(Vector.of(0,0)), null);
-        hooks_.put(new Anchor(Vector.of(1,1)), null);
-        hooks_.put(new Anchor(Vector.of(2,2)), null);
+    public Vector getPosition() {
+        return position.copy().toVector();
     }
 
-    @Override
-    public String toString() {
-        return "Node{" + anchor + ", " + payload + "}";
+    public TemplateInstance getData() {
+        return data;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Node node = (Node) o;
-        return Objects.equals(anchor, node.anchor);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(anchor);
+    // TODO: Remove; only for testing
+    public Map<Vector, Node> getChildren() {
+        return children;
     }
 }

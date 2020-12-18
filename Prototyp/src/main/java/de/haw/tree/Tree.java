@@ -1,5 +1,8 @@
 package de.haw.tree;
 
+import java.util.ArrayDeque;
+import java.util.Objects;
+
 /**
  * Tree class that represents the internal tree structure used
  * to organize anchors and nodes attached to them. There is one
@@ -11,10 +14,10 @@ public class Tree {
 
     /**
      * Create a tree with first anchor and root node
-     * @param node Root node
+     * @param rootNode Root anchor
      */
-    public Tree(Node node) {
-        root = node;
+    public Tree(Node rootNode) {
+        root = rootNode;
         selectedNode = root;
     }
 
@@ -30,7 +33,7 @@ public class Tree {
      * Get selected node
      * @return Current selected node
      */
-    public Node getSelectedNode() {
+    public Node getSelectedAnchor() {
         return selectedNode;
     }
 
@@ -38,7 +41,21 @@ public class Tree {
      * Select next node via BFS
      * @return True if successful. False if reached the end of the tree
      */
-    public boolean selectNextNode() {
+    public boolean selectNextAnchor() {
+        var queue = new ArrayDeque<Node>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node node = queue.pop();
+            for (var c : node.getChildren().values()) {
+                if (c != null) queue.add(c);
+            }
+
+            if (node.equals(selectedNode)) {
+                selectedNode = queue.poll();
+                return selectedNode != null;
+            }
+        }
+
         return false;
     }
 }

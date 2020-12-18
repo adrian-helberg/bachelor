@@ -1,7 +1,6 @@
 package de.haw;
 
 import de.haw.gui.Template;
-import de.haw.tree.Anchor;
 import de.haw.utils.Templates;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

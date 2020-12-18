@@ -1,15 +1,13 @@
 package de.haw.turtle;
 
 import de.haw.gui.TemplateInstance;
-import de.haw.tree.Anchor;
 import de.haw.tree.Node;
 import de.haw.tree.Tree;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+import mikera.vectorz.Vector;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -21,6 +19,14 @@ public class TurtleGraphic {
     private final Map<String, TurtleCommand> symbolCommands;
     private final Canvas canvas;
     private static Logger LOGGER = Logger.getLogger(TurtleGraphic.class.getName());
+
+    // When we only need to process a turtle without graphical use
+    public TurtleGraphic(Turtle turtle) {
+        this.turtle = turtle;
+        symbolCommands = new HashMap<>();
+        initializeCommands();
+        canvas = null;
+    }
 
     /**
      * Creates a turtle graphic on a canvas of a given word
@@ -54,6 +60,7 @@ public class TurtleGraphic {
         symbolCommands.put("F", params -> {
             final var previousPosition = turtle.getPosition().copy();
             turtle.forwards(params[0]);
+            if (canvas == null) return;
             canvas.getGraphicsContext2D().strokeLine(
                     previousPosition.get(0),
                     previousPosition.get(1),
@@ -65,6 +72,7 @@ public class TurtleGraphic {
         symbolCommands.put("+", params -> {
             final var previousPosition = turtle.getPosition().copy();
             turtle.turnRight(params[0]);
+            if (canvas == null) return;
             canvas.getGraphicsContext2D().strokeLine(
                     previousPosition.get(0),
                     previousPosition.get(1),
@@ -76,6 +84,7 @@ public class TurtleGraphic {
         symbolCommands.put("-", params -> {
             final var previousPosition = turtle.getPosition().copy();
             turtle.turnLeft(params[0]);
+            if (canvas == null) return;
             canvas.getGraphicsContext2D().strokeLine(
                     previousPosition.get(0),
                     previousPosition.get(1),
@@ -99,7 +108,6 @@ public class TurtleGraphic {
      * @param word Word to be processed
      */
     public void parseWord(String word) {
-        //canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         // Normalize word to remove variables
         var current = normalize(word);
         char push = '[', pop = ']';
@@ -132,6 +140,26 @@ public class TurtleGraphic {
         }
     }
 
+    public Map<Vector, Node> getHooks(String word) {
+        var hooks = new LinkedHashMap<Vector, Node>();
+        var variables = new ArrayList<Character>();
+        variables.add('X');
+        variables.add('Y');
+        variables.add('Z');
+
+        String sub = word;
+        for (var v : variables) {
+            int index = sub.indexOf(v);
+            if (index >= 0) {
+                parseWord(sub.substring(0, index));
+                hooks.put(getTurtle().getPosition(), null);
+                sub = sub.substring(index + 1);
+            }
+        }
+
+        return hooks;
+    }
+
     /**
      * Normalizes a given word by removing its variable symbols, like X,Y,Z
      * @param wordWithVariables Word to be normalized
@@ -152,26 +180,34 @@ public class TurtleGraphic {
 
     public void drawTree(Tree tree) {
         // Traverse tree
-        Node current;
         do {
-            current = tree.getSelectedNode();
-            drawAnchor(current.getAnchor());
-            drawNode(current.getPayload());
-        } while (tree.selectNextNode());
+            draw(tree.getSelectedAnchor());
+        } while (tree.selectNextAnchor());
     }
 
-    private void drawNode(TemplateInstance templateInstance) {
-        if (templateInstance == null) return;
+    private void draw(Node node) {
+        var templateInstance = node.getData();
+        if (node.getData() == null) return;
+        if (canvas == null) return;
+        var g = canvas.getGraphicsContext2D();
+        g.setStroke(Color.RED);
+        // Anchor the node is attached to
+        draw(node.getPosition());
+        // Template instance
+        g.setStroke(Color.BLUE);
         parseWord(templateInstance.getWord());
+        // Child anchors
+        g.setStroke(Color.GREEN);
+        for (var n : node.getChildren().entrySet()) {
+           draw(n.getKey());
+        }
     }
 
-    private void drawAnchor(Anchor anchor) {
+    private void draw(Vector anchor) {
         final int radius = 2;
-        canvas.getGraphicsContext2D().setStroke(Color.BLUE);
-        canvas.getGraphicsContext2D().setLineWidth(1.0);
-        canvas.getGraphicsContext2D().fillOval(
-                anchor.getPosition().get(0) - radius,
-                anchor.getPosition().get(1) - radius,
+        canvas.getGraphicsContext2D().strokeOval(
+                anchor.get(0) - radius,
+                anchor.get(1) - radius,
                 radius * 2, radius * 2
         );
     }
