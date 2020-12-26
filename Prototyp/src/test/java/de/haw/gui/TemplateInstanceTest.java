@@ -3,11 +3,21 @@ package de.haw.gui;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test object: de.haw.gui.TemplateInstance
+ */
 public class TemplateInstanceTest {
     @Test void testTemplateInstace() {
         var tI = new TemplateInstance("F(1)");
+
         assertNotNull(tI);
         assertEquals("F(1)", tI.getWord());
+    }
+
+    @Test void testToString() {
+        var tI = new TemplateInstance("F(1)");
+
+        assertEquals("Instance{F(1)}", tI.toString());
     }
 
     @Test void testEquality() {
@@ -17,11 +27,5 @@ public class TemplateInstanceTest {
 
         assertNotEquals(tI1, tI2);
         assertEquals(tI1, tI3);
-    }
-
-    @Test void testToString() {
-        var tI = new TemplateInstance("F(1)");
-
-        assertEquals("Instance{F(1)}", tI.toString());
     }
 }

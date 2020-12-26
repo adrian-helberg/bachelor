@@ -19,11 +19,25 @@ public class Template {
      * @param word Word that represents the structure of the template
      */
     public Template(String word) throws RuntimeException {
+        if (!validate(word)) throw new RuntimeException("Invalid word format");
         this.word = word;
         id = Templates.getNewID();
         if(!Templates.addToID(id, this)) throw new RuntimeException("Unable to create such a template");
-        turtleGraphic = new TurtleGraphic(20, 20);
+        turtleGraphic = new TurtleGraphic(
+                20,//(int) (20f * Float.parseFloat(Prototype.properties.getProperty("scaling"))),
+                20//(int) (20f * Float.parseFloat(Prototype.properties.getProperty("scaling")))
+        );
         turtleGraphic.parseWord(word);
+    }
+
+    /**
+     * TODO
+     * Validate a given word for correct format
+     * @param word Word to be validated
+     * @return True if valid, false otherwise
+     */
+    public boolean validate(String word) {
+        return true;
     }
 
     /**

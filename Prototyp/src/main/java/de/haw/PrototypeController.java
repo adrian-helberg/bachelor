@@ -46,6 +46,11 @@ public class PrototypeController {
                 select();
             }
         });
+
+        // Canvas mouse events
+//        canvas.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
+//            System.out.println("canvas clicked: (" + event.getX() + "|" + event.getY() + ")");
+//        });
     }
 
     @FXML private void reset() {
@@ -66,25 +71,7 @@ public class PrototypeController {
             txtStatus.setFill(Color.GREEN);
         }
 
-        Parent root = null;
-        ShowController controller;
-        try {
-            var loader = new FXMLLoader(Objects.requireNonNull(
-                    getClass().getClassLoader().getResource("Show.fxml")
-            ));
-            root = loader.load();
-            controller = loader.getController();
-            controller.draw(lstTemplates.getSelectionModel().getSelectedItem());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("Show Template");
-        stage.setScene(new Scene(Objects.requireNonNull(root), 200, 200));
-        stage.setResizable(false);
-        stage.show();
+        showTemplate(selectedTemplate);
     }
 
     @FXML private void exit() {
@@ -133,22 +120,74 @@ public class PrototypeController {
     }
 
     @FXML private void showAbout() {
+        Parent parent = null;
+        try {
+            var loader = new FXMLLoader(Objects.requireNonNull(
+                    Prototype.class.getClassLoader().getResource("About.fxml")));
+            parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         final Stage dialog = new Stage();
+        var scene = new Scene(Objects.requireNonNull(parent));
+        dialog.setHeight(400);
+        dialog.setWidth(400);
         dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.setTitle("About");
-        dialog.setScene(Prototype.getModalScene(MODALS.ABOUT));
+        dialog.setTitle("Show Template");
+        dialog.setResizable(false);
+        dialog.setScene(scene);
         dialog.showAndWait();
     }
 
     @FXML private void showHowToUse() {
+        Parent parent = null;
+        try {
+            var loader = new FXMLLoader(Objects.requireNonNull(
+                    Prototype.class.getClassLoader().getResource("HowToUse.fxml")));
+            parent = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         final Stage dialog = new Stage();
+        var scene = new Scene(Objects.requireNonNull(parent));
+        dialog.setHeight(400);
+        dialog.setWidth(400);
         dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.setTitle("How to use");
-        dialog.setScene(Prototype.getModalScene(MODALS.HOWTOUSE));
+        dialog.setTitle("Show Template");
+        dialog.setResizable(false);
+        dialog.setScene(scene);
+        dialog.showAndWait();
+    }
+
+    private void showTemplate(Template selectedTemplate) {
+        Parent parent = null;
+        ShowController controller = null;
+        try {
+            var loader = new FXMLLoader(Objects.requireNonNull(
+                    Prototype.class.getClassLoader().getResource("Show.fxml")));
+            parent = loader.load();
+            controller = loader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        final Stage dialog = new Stage();
+        var scene = new Scene(Objects.requireNonNull(parent));
+        dialog.setHeight(400);
+        dialog.setWidth(400);
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.setTitle("Show Template");
+        dialog.setResizable(false);
+        dialog.setScene(scene);
+
+        controller.draw(selectedTemplate);
         dialog.showAndWait();
     }
 
     public Canvas getCanvas() {
         return canvas;
+    }
+
+    public Text getText() {
+        return txtStatus;
     }
 }

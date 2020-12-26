@@ -9,6 +9,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.haw.PrototypeController">
@@ -63,4 +64,14 @@
          </BorderPane.margin>
       </ListView>
    </right>
+   <center>
+      <Pane fx:id="canvasPane" prefHeight="326.0" prefWidth="300.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvas" height="326.0" width="300.0" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+   </center>
 </BorderPane>

@@ -2,35 +2,58 @@ package de.haw;
 
 import de.haw.tree.Node;
 import de.haw.tree.Tree;
-import de.haw.turtle.Turtle;
 import de.haw.turtle.TurtleGraphic;
 import de.haw.utils.Templates;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Objects;
-import java.util.Vector;
+import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Logger;
 
-enum MODALS {
-    ABOUT, HOWTOUSE
-}
+public class Prototype extends Application implements EventHandler {
+    public static Properties properties;
+    private static final Logger LOGGER = Logger.getLogger(Prototype.class.getName());
 
-public class Prototype extends Application {
+    private Tree tree;
+    private TurtleGraphic turtleGraphic;
+    private PrototypeController controller;
 
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
+    public void init() throws Exception {
+        properties = new Properties();
+        try {
+            BufferedInputStream stream = new BufferedInputStream(
+                    new FileInputStream(Objects.requireNonNull(
+                            getClass().getClassLoader().getResource("app.properties")
+                    ).getFile())
+            );
+            properties.load(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void start(Stage primaryStage) {
         // Set up FXML from resources
         Parent root = null;
-        PrototypeController controller = null;
         try {
             var loader = new FXMLLoader(Objects.requireNonNull(
                     getClass().getClassLoader().getResource("Prototype.fxml")
@@ -50,37 +73,15 @@ public class Prototype extends Application {
         primaryStage.getIcons().add(icon);
         primaryStage.show();
 
-        // TEST
+        // TEST TODO: Remove
         controller.loadTemplates();
-        var turtleGraphic = new TurtleGraphic(controller.getCanvas());
-        var turtle = new Turtle(turtleGraphic.getTurtle());
-        var n1 = new Node(Templates.getTemplateFromID(3).instantiate(), turtle);
 
-        var firstChildAnchor = n1.getChildren().entrySet().iterator().next().getKey();
-        var n2 = new Node(Templates.getTemplateFromID(3).instantiate(), turtle);
-        n1.addChild(firstChildAnchor, n2);
-
-        var tree = new Tree(n1);
-        turtleGraphic.drawTree(tree);
+        turtleGraphic = new TurtleGraphic(controller.getCanvas());
+        turtleGraphic.setScene(scene);
     }
 
-    static Scene getModalScene(MODALS key) {
-        URL resource = null;
-        switch (key) {
-            case ABOUT:
-                resource = Prototype.class.getClassLoader().getResource("About.fxml");
-                break;
-            case HOWTOUSE:
-                resource = Prototype.class.getClassLoader().getResource("HowToUse.fxml");
-        }
-
-        Parent parent = null;
-        try {
-            parent = FXMLLoader.load(Objects.requireNonNull(resource));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return new Scene(Objects.requireNonNull(parent));
+    @Override
+    public void handle(Event event) {
+        LOGGER.info("Handle: " + event);
     }
 }

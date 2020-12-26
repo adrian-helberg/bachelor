@@ -1,12 +1,17 @@
 package de.haw.turtle;
 
-import de.haw.gui.TemplateInstance;
+import de.haw.Prototype;
 import de.haw.tree.Node;
 import de.haw.tree.Tree;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import mikera.vectorz.Vector;
-
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -15,32 +20,42 @@ import java.util.logging.Logger;
  * processed word
  */
 public class TurtleGraphic {
-    private final Turtle turtle;
+    private Turtle turtle;
     private final Map<String, TurtleCommand> symbolCommands;
     private final Canvas canvas;
-    private static Logger LOGGER = Logger.getLogger(TurtleGraphic.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(TurtleGraphic.class.getName());
+    private Tree tree;
+    private Scene scene;
+
+    /**
+     * Hide default constructor
+     */
+    private TurtleGraphic() {
+        turtle = null; symbolCommands = null; canvas = null;
+    }
 
     // When we only need to process a turtle without graphical use
     public TurtleGraphic(Turtle turtle) {
-        this.turtle = turtle;
-        symbolCommands = new HashMap<>();
-        initializeCommands();
-        canvas = null;
+        this(null, turtle);
     }
 
     /**
-     * Creates a turtle graphic on a canvas of a given word
+     * Creates a turtle graphic on a new canvas of a given word
      */
     public TurtleGraphic(int width, int height) {
-        this.canvas = new Canvas(width, height);
-        turtle = new Turtle(width / 2, height);
-        symbolCommands = new HashMap<>();
-        initializeCommands();
+        this(new Canvas(width, height), new Turtle(width / 2, height));
     }
 
+    /**
+     * Creates a turtle graphic on an existing canvas of a given word
+     */
     public TurtleGraphic(Canvas canvas) {
+        this(canvas, new Turtle((int) canvas.getWidth() / 2, (int) canvas.getHeight()));
+    }
+
+    private TurtleGraphic(Canvas canvas, Turtle turtle) {
         this.canvas = canvas;
-        turtle = new Turtle((int) canvas.getWidth() / 2, (int) canvas.getHeight());
+        this.turtle = turtle;
         symbolCommands = new HashMap<>();
         initializeCommands();
     }
@@ -52,14 +67,13 @@ public class TurtleGraphic {
     public Canvas getCanvas() {
         return canvas;
     }
-
     /**
      * Initializes a map of command symbols to corresponding actions
      */
     private void initializeCommands() {
         symbolCommands.put("F", params -> {
-            final var previousPosition = turtle.getPosition().copy();
-            turtle.forwards(params[0]);
+            final var previousPosition = turtle.getPosition();
+            turtle.forwards(params[0]);// * Float.parseFloat(Prototype.properties.getProperty("scaling")));
             if (canvas == null) return;
             canvas.getGraphicsContext2D().strokeLine(
                     previousPosition.get(0),
@@ -140,8 +154,8 @@ public class TurtleGraphic {
         }
     }
 
-    public Map<Vector, Node> getHooks(String word) {
-        var hooks = new LinkedHashMap<Vector, Node>();
+    public List<Node> getHooks(String word) {
+        var hooks = new ArrayList<Node>();
         var variables = new ArrayList<Character>();
         variables.add('X');
         variables.add('Y');
@@ -152,7 +166,8 @@ public class TurtleGraphic {
             int index = sub.indexOf(v);
             if (index >= 0) {
                 parseWord(sub.substring(0, index));
-                hooks.put(getTurtle().getPosition(), null);
+                Node node = new Node(turtle.copy());
+                hooks.add(node);
                 sub = sub.substring(index + 1);
             }
         }
@@ -179,36 +194,63 @@ public class TurtleGraphic {
     }
 
     public void drawTree(Tree tree) {
+        this.tree = tree;
+        canvas.getGraphicsContext2D().clearRect(0,0, canvas.getWidth(), canvas.getHeight());
         // Traverse tree
         do {
-            draw(tree.getSelectedAnchor());
-        } while (tree.selectNextAnchor());
+            draw(tree.getSelectedNode());
+            tree.selectNextNode();
+        } while (tree.getSelectedNode() != null);
+
+        // Draw selected anchor
+        draw(tree.getSelectedAnchor().getAnchor().getPosition(), false, Color.RED);
     }
 
     private void draw(Node node) {
+        if (node == null) return;
         var templateInstance = node.getData();
         if (node.getData() == null) return;
         if (canvas == null) return;
         var g = canvas.getGraphicsContext2D();
-        g.setStroke(Color.RED);
         // Anchor the node is attached to
-        draw(node.getPosition());
+        draw(node.getAnchor().getPosition(), true, Color.GREEN);
         // Template instance
+        turtle = node.getAnchor();
         g.setStroke(Color.BLUE);
         parseWord(templateInstance.getWord());
         // Child anchors
-        g.setStroke(Color.GREEN);
-        for (var n : node.getChildren().entrySet()) {
-           draw(n.getKey());
+        for (var n : node.getChildren()) {
+           draw(n.getAnchor().getPosition(), false, Color.GREEN);
         }
     }
 
-    private void draw(Vector anchor) {
-        final int radius = 2;
-        canvas.getGraphicsContext2D().strokeOval(
-                anchor.get(0) - radius,
-                anchor.get(1) - radius,
-                radius * 2, radius * 2
+    private void draw(Vector anchor, boolean filled, Paint color) {
+        var g = canvas.getGraphicsContext2D();
+        final int radius = (int) (2 + Float.parseFloat(Prototype.properties.getProperty("scaling")));
+
+        Circle circle = new Circle(
+                anchor.get(0),
+                anchor.get(1),
+                radius
         );
+        circle.setStroke(color);
+        circle.setFill(filled ? color : Color.WHITE);
+        circle.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
+            tree.selectAnchor(Vector.of(circle.getCenterX(), circle.getCenterY()));
+            circle.setFill(color);
+        });
+        circle.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> {
+            scene.setCursor(Cursor.HAND);
+            circle.setStroke(Color.RED);
+        });
+        circle.addEventFilter(MouseEvent.MOUSE_EXITED, event -> {
+            scene.setCursor(Cursor.DEFAULT);
+            circle.setStroke(color);
+        });
+        ((Pane) canvas.getParent()).getChildren().add(circle);
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 }
