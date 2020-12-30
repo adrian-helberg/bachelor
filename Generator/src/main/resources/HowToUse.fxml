@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.haw.HowToUseController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="BtnOk" mnemonicParsing="false" text="OK" />
+        </buttons>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <center>
+      <TextArea prefHeight="200.0" prefWidth="200.0" text="* The canvas on the left side shows the current state&#10;   of the branching structure&#10;* Use the &quot;Next anchor&quot; button to select an anchor&#10;   to attach the next template instance to&#10;* The &quot;Select&quot; button or doubleclicking a template &#10;   list item will  select a template to create an&#10;   instance with several properties to be set&#10;*  Hit the &quot;Generate&quot; button to finish the branching&#10;    structure to generate similar instances of the one&#10;    created" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
