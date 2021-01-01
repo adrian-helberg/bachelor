@@ -11,7 +11,6 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.TilePane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.haw.gui.GeneratorController">
@@ -43,14 +42,12 @@
    </bottom>
    <center>
        <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-           <TitledPane animated="false" collapsible="false" expanded="false" prefHeight="376.0" prefWidth="296.0" text="Branching Structure">
-               <Pane fx:id="pane_Branching_Structure" prefHeight="200.0" prefWidth="200.0" />
-           </TitledPane>
+           <TitledPane fx:id="titledPane_Branching_Structure" animated="false" collapsible="false" prefHeight="400.0" prefWidth="300.0" text="Branching Structure" />
          <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
             <content>
                <HBox prefHeight="333.0" prefWidth="296.0">
                   <children>
-                       <TitledPane animated="false" collapsible="false" prefHeight="380.0" prefWidth="296.0" text="Templates">
+                       <TitledPane fx:id="titledPane_templates" animated="false" collapsible="false" prefHeight="380.0" prefWidth="296.0" text="Templates">
                            <TilePane fx:id="tilePane_Templates" prefHeight="307.0" prefWidth="525.0" tileAlignment="TOP_LEFT">
                            <opaqueInsets>
                               <Insets />

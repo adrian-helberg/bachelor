@@ -1,6 +1,9 @@
 package de.haw.gui;
 
 import de.haw.Generator;
+import de.haw.gui.structure.Anchor;
+import de.haw.gui.structure.BranchingStructurePane;
+import de.haw.gui.templates.TemplatePane;
 import de.haw.gui.templates.TurtleGraphic;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,11 +11,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 
 import java.awt.*;
 import java.io.File;
@@ -28,9 +32,13 @@ import java.util.logging.Logger;
 public class GeneratorController {
     private static final Logger LOGGER = Logger.getLogger(GeneratorController.class.getName());
     private State state;
+    private TurtleGraphic paneBranchingStructure;
 
-    @FXML public Pane pane_Branching_Structure;
+    @FXML public TitledPane titledPane_Branching_Structure;
     @FXML public TilePane tilePane_Templates;
+    @FXML public TitledPane titledPane_templates;
+
+    private VBox templateSelectionContainer;
 
     /**
      *
@@ -43,9 +51,21 @@ public class GeneratorController {
         tilePane_Templates.setPrefColumns(4);
         tilePane_Templates.setMaxWidth(Region.USE_PREF_SIZE);
         tilePane_Templates.setAlignment(Pos.TOP_CENTER);
+
+        paneBranchingStructure = new BranchingStructurePane(
+                300,
+                300
+        );
+        var rootAnchor = new Anchor(
+                (int) paneBranchingStructure.getTurtle().getPosition().get(0),
+                (int) paneBranchingStructure.getTurtle().getPosition().get(1)
+        );
+        paneBranchingStructure.getChildren().add(rootAnchor);
+        titledPane_Branching_Structure.setContent(paneBranchingStructure);
     }
 
     @FXML public void loadTemplates() {
+        tilePane_Templates.getChildren().clear();
         try {
             var filePath = Generator.class.getClassLoader().getResource("templates");
             var sc = new Scanner(new File(Objects.requireNonNull(filePath).getPath()));
@@ -53,15 +73,17 @@ public class GeneratorController {
             String line;
             while (sc.hasNext()) {
                 line = sc.next();
-                var pane = new TurtleGraphic(
+                var pane = new TemplatePane(
                         Integer.parseInt(Generator.properties.getProperty("template_width")),
                         Integer.parseInt(Generator.properties.getProperty("template_height")),
-                        line);
+                        line
+                );
                 // Clicking
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
                     tilePane_Templates.getChildren().stream().filter(
-                            c -> c instanceof TurtleGraphic).forEach(tg -> ((TurtleGraphic) tg).unselect());
-                    ((TurtleGraphic)event.getSource()).select();
+                            c -> c instanceof TemplatePane).forEach(tg -> ((TemplatePane) tg).unselect()
+                    );
+                    ((TemplatePane)event.getSource()).select();
                 });
                 // Double clicking
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
@@ -69,7 +91,7 @@ public class GeneratorController {
                         selectTemplate();
                     }
                 });
-                // Hovering
+                // Hover
                 pane.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> {
                     state.getScene().setCursor(Cursor.HAND);
                 });
@@ -96,7 +118,7 @@ public class GeneratorController {
 
     @FXML public void reset() {
         tilePane_Templates.getChildren().clear();
-        pane_Branching_Structure.getChildren().clear();
+        paneBranchingStructure.getChildren().clear();
     }
 
     @FXML public void exit() {
@@ -117,16 +139,18 @@ public class GeneratorController {
                 alert.close();
             }
         });
+
+        if (templateSelectionContainer != null)
     }
 
     @FXML public void generate() {
 
     }
 
-    public TurtleGraphic getSelectedTemplate() {
-        return (TurtleGraphic) tilePane_Templates.getChildren().stream()
-                .filter(c -> c instanceof TurtleGraphic)
-                .filter(tg -> ((TurtleGraphic) tg)
+    public TemplatePane getSelectedTemplate() {
+        return (TemplatePane) tilePane_Templates.getChildren().stream()
+                .filter(c -> c instanceof TemplatePane)
+                .filter(tg -> ((TemplatePane) tg)
                 .isSelected())
                 .findFirst()
                 .orElse(null);

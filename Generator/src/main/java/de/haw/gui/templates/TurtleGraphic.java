@@ -16,50 +16,21 @@ import java.util.logging.Logger;
  * processed word
  */
 public class TurtleGraphic extends Pane {
-    private final static Logger LOGGER = Logger.getLogger(TurtleGraphic.class.getName());
     private final Turtle turtle;
     private final Map<String, TurtleCommand> symbolCommands;
-    private final BooleanProperty selectedProperty;
-    private final String word;
 
-    public TurtleGraphic(int width, int height, String word) {
+    public TurtleGraphic(int width, int height) {
         turtle = new Turtle(width / 2, height);
         symbolCommands = new HashMap<>();
-        this.word = word;
         initializeCommands();
         setMinWidth(width);
         setWidth(width);
         setMinHeight(height);
         setHeight(height);
-        setBorder(new Border(new BorderStroke(
-                Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)
-        ));
-        selectedProperty = new SimpleBooleanProperty(false);
-        selectedProperty.addListener((obs, old, newVal) -> {
-            if (newVal) {
-                setStyle("-fx-background-color: #00aa00");
-            } else {
-                setStyle("-fx-background-color: #FFFFFF");
-            }
-        });
-
-        parseWord(word);
     }
 
-    public String getWord() {
-        return word;
-    }
-
-    public String getWordNormalized() {
-        return normalize(word);
-    }
-
-    public boolean isSelected() {
-        return selectedProperty.get();
-    }
-
-    public BooleanProperty selectedPropertyProperty() {
-        return selectedProperty;
+    public Turtle getTurtle() {
+        return turtle;
     }
 
     /**
@@ -92,7 +63,7 @@ public class TurtleGraphic extends Pane {
      * and perform the corresponding action
      * @param word Word to be processed
      */
-    private void parseWord(String word) {
+    public void parseWord(String word) {
         // Normalize word to remove variables
         var current = normalize(word);
         char push = '[', pop = ']';
@@ -151,20 +122,12 @@ public class TurtleGraphic extends Pane {
      * @param wordWithVariables Word to be normalized
      * @return Word without variable symbols
      */
-    private String normalize(String wordWithVariables) {
+    String normalize(String wordWithVariables) {
         // Remove every x, y and z
         return wordWithVariables
                 .replace("X", "")
                 .replace("Y", "")
                 .replace("Z", "");
-    }
-
-    public void select() {
-        selectedProperty.setValue(true);
-    }
-
-    public void unselect() {
-        selectedProperty.setValue(false);
     }
 
     @Override
