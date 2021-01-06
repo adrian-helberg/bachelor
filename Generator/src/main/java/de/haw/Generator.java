@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,23 +22,24 @@ import java.util.logging.Logger;
 public class Generator extends Application {
     private static final Logger LOGGER = Logger.getLogger(Generator.class.getName());
     public static Properties properties;
-    private GeneratorController controller;
-    private State state;
 
     @Override
     public void start(Stage primaryStage) {
-        Parent root = null;
+        Parent mainWindow = null;
+        Parent selectedTemplateWindow = null;
+        GeneratorController mainController = null;
         try {
+            // Load main window
             var loader = new FXMLLoader(Objects.requireNonNull(
                     getClass().getClassLoader().getResource("Generator.fxml")
             ));
-            root = loader.load();
-            controller = loader.getController();;
+            mainWindow = loader.load();
+            mainController = loader.getController();
         } catch (IOException e) {
             LOGGER.severe("Unable to load generator FXML file");
             e.printStackTrace();
         }
-        Scene scene = new Scene(Objects.requireNonNull(root));
+        Scene scene = new Scene(Objects.requireNonNull(mainWindow));
         primaryStage.setScene(scene);
         // General window properties
         primaryStage.setTitle("Generator");
@@ -50,18 +50,17 @@ public class Generator extends Application {
         primaryStage.show();
 
         // Application state
-        state = new State(scene);
-
-        // TODO: Remove
-        controller.loadTemplates();
-        controller.setState(state);
-
+        State state = new State(
+                scene,
+                mainWindow
+        );
+        mainController.setState(state);
     }
 
     @Override
     public void init() {
         properties = new Properties();
-        BufferedInputStream stream = null;
+        BufferedInputStream stream;
         var filename = "generator.properties";
         try {
             stream = new BufferedInputStream(new FileInputStream(Objects.requireNonNull(

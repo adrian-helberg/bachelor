@@ -11,7 +11,7 @@ public class Turtle {
     private double angle;
     private final Stack<Pair<Vector, Double>> stack;
 
-    public Turtle(int x, int y) {
+    public Turtle(double x, double y) {
         position = Vector.of(x, y);
         angle = 0;
         stack = new Stack<>();

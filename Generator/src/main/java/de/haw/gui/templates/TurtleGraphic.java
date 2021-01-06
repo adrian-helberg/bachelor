@@ -1,12 +1,14 @@
 package de.haw.gui.templates;
 
 import de.haw.Generator;
+import de.haw.gui.State;
+import de.haw.gui.structure.Anchor;
+import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.turtle.Turtle;
 import de.haw.gui.turtle.TurtleCommand;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
+import javafx.scene.Cursor;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import java.util.*;
 import java.util.logging.Logger;
@@ -16,28 +18,40 @@ import java.util.logging.Logger;
  * processed word
  */
 public class TurtleGraphic extends Pane {
-    private final Turtle turtle;
+    private static final Logger LOGGER = Logger.getLogger(TemplatePane.class.getName());
+    private Turtle turtle;
+    private final Set<Character> templateVariables;
     private final Map<String, TurtleCommand> symbolCommands;
+    protected State state;
 
     public TurtleGraphic(int width, int height) {
-        turtle = new Turtle(width / 2, height);
+        //noinspection IntegerDivisionInFloatingPointContext
+        this(width, height, new Turtle(width / 2, height));
+    }
+
+    public TurtleGraphic(int width, int height, Turtle turtle) {
+        this.turtle = turtle;
+        templateVariables = new HashSet<>();
         symbolCommands = new HashMap<>();
+
         initializeCommands();
+        setVariables();
+
         setMinWidth(width);
         setWidth(width);
         setMinHeight(height);
         setHeight(height);
     }
 
-    public Turtle getTurtle() {
-        return turtle;
+    protected void init(State state) {
+        this.state = state;
     }
 
     /**
      * Initializes a map of command symbols to corresponding actions
      */
     private void initializeCommands() {
-        symbolCommands.put("F", params -> {
+        symbolCommands.put("F", (params, isDraft) -> {
             final var previousPosition = turtle.getPosition();
             turtle.forwards(params[0] * Float.parseFloat(Generator.properties.getProperty("scaling")));
             var line = new Line(
@@ -46,16 +60,41 @@ public class TurtleGraphic extends Pane {
                     turtle.getPosition().get(0),
                     turtle.getPosition().get(1)
             );
+            if (isDraft) line.getStrokeDashArray().addAll(2d);
             getChildren().add(line);
         });
 
-        symbolCommands.put("+", params -> turtle.turnRight(params[0]));
+        symbolCommands.put("+", (params, isDraft) -> turtle.turnRight(params[0]));
 
-        symbolCommands.put("-", params -> turtle.turnLeft(params[0]));
+        symbolCommands.put("-", (params, isDraft) -> turtle.turnLeft(params[0]));
 
-        symbolCommands.put("[", params -> turtle.pushState());
+        symbolCommands.put("[", (params, isDraft) -> turtle.pushState());
 
-        symbolCommands.put("]", params -> turtle.popState());
+        symbolCommands.put("]", (params, isDraft) -> turtle.popState());
+    }
+
+    private void setVariables() {
+        var vars = Generator.properties.getProperty("template_variables");
+        for (var v : vars.split(",")) templateVariables.add(v.charAt(0));
+    }
+
+    protected void setTurtle(Turtle turtle) {
+        this.turtle = turtle;
+    }
+
+    protected void addAnchor(Anchor anchor) {
+        anchor.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
+            getChildren().stream().filter(c -> c instanceof Anchor).forEach(a -> ((Anchor) a).unselect());
+            ((Anchor)event.getSource()).select();
+        });
+        anchor.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> {
+            state.getScene().setCursor(Cursor.HAND);
+        });
+        anchor.addEventFilter(MouseEvent.MOUSE_EXITED, event -> {
+            state.getScene().setCursor(Cursor.DEFAULT);
+        });
+        getChildren().add(anchor);
+        state.addAnchor(anchor);
     }
 
     /**
@@ -63,21 +102,25 @@ public class TurtleGraphic extends Pane {
      * and perform the corresponding action
      * @param word Word to be processed
      */
-    public void parseWord(String word) {
+    public void parseWord(String word, boolean isDraft) {
         // Normalize word to remove variables
-        var current = normalize(word);
+        var current = word;
         char push = '[', pop = ']';
-        int argumentEndIndex = 0;
-        while(argumentEndIndex <= current.length()) {
+        while(current.length() > 0) {
             char firstChar = current.charAt(0);
-            if (firstChar == push) {
-                symbolCommands.get(String.valueOf(push)).invoke(null);
+            if (templateVariables.contains(firstChar)) {
+                if (this instanceof BranchingStructurePane) {
+                    addAnchor(new Anchor(turtle.copy()));
+                }
+                current = current.substring(1);
+            } else if (firstChar == push) {
+                symbolCommands.get(String.valueOf(push)).invoke(null, isDraft);
                 current = current.substring(1);
             } else if (firstChar == pop) {
-                symbolCommands.get(String.valueOf(pop)).invoke(null);
+                symbolCommands.get(String.valueOf(pop)).invoke(null, isDraft);
                 current = current.substring(1);
             } else {
-                argumentEndIndex = current.indexOf(")") + 1;
+                var argumentEndIndex = current.indexOf(")") + 1;
                 // Actual current argument, e.g. F(1)
                 var argument = current.substring(0, argumentEndIndex);
                 // Symbol, e.g. F
@@ -88,7 +131,7 @@ public class TurtleGraphic extends Pane {
                 // Get corresponding command for the symbol and execute it
                 if (!symbolCommands.containsKey(symbol))
                     throw new RuntimeException("'" + symbol + "'-Symbol not present in command map");
-                symbolCommands.get(symbol).invoke(new Float[]{ Float.parseFloat(value) });
+                symbolCommands.get(symbol).invoke(new Float[]{ Float.parseFloat(value) }, isDraft);
 
                 // Remove processed substring from word
                 current = current.substring(argumentEndIndex);
@@ -96,38 +139,17 @@ public class TurtleGraphic extends Pane {
         }
     }
 
-//    public List<Node> getHooks(String word) {
-//        var hooks = new ArrayList<Node>();
-//        var variables = new ArrayList<Character>();
-//        variables.add('X');
-//        variables.add('Y');
-//        variables.add('Z');
-//
-//        String sub = word;
-//        for (var v : variables) {
-//            int index = sub.indexOf(v);
-//            if (index >= 0) {
-//                parseWord(sub.substring(0, index));
-//                Node node = new Node(turtle.copy());
-//                hooks.add(node);
-//                sub = sub.substring(index + 1);
-//            }
-//        }
-//
-//        return hooks;
-//    }
-
     /**
      * Normalizes a given word by removing its variable symbols, like X,Y,Z
      * @param wordWithVariables Word to be normalized
      * @return Word without variable symbols
      */
     String normalize(String wordWithVariables) {
-        // Remove every x, y and z
-        return wordWithVariables
-                .replace("X", "")
-                .replace("Y", "")
-                .replace("Z", "");
+        // Remove every variable
+        for (var t : templateVariables) {
+            wordWithVariables = wordWithVariables.replace(t.toString(), "");
+        }
+        return wordWithVariables;
     }
 
     @Override
