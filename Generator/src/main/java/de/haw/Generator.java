@@ -26,7 +26,6 @@ public class Generator extends Application {
     @Override
     public void start(Stage primaryStage) {
         Parent mainWindow = null;
-        Parent selectedTemplateWindow = null;
         GeneratorController mainController = null;
         try {
             // Load main window
@@ -50,10 +49,7 @@ public class Generator extends Application {
         primaryStage.show();
 
         // Application state
-        State state = new State(
-                scene,
-                mainWindow
-        );
+        State state = new State(scene);
         mainController.setState(state);
     }
 

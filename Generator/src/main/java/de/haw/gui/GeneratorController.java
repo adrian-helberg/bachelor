@@ -5,7 +5,6 @@ import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Property;
 import de.haw.gui.templates.TemplatePane;
 import javafx.application.Platform;
-import javafx.beans.binding.Bindings;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +20,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.util.Callback;
-
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,6 +40,9 @@ public class GeneratorController {
     @FXML public TitledPane titledPane_Branching_Structure;
     @FXML public TilePane tilePane_Templates;
     @FXML public ScrollPane scrollPane;
+    @FXML public HBox hBox_Templates;
+    @FXML public Button btn_Select_Template;
+    @FXML public Button btn_Generate;
 
     /**
      *
@@ -51,8 +52,6 @@ public class GeneratorController {
     @FXML private void initialize() {
         tilePane_Templates.setVgap(4);
         tilePane_Templates.setHgap(4);
-        tilePane_Templates.setPrefColumns(4);
-        tilePane_Templates.setMaxWidth(Region.USE_PREF_SIZE);
         tilePane_Templates.setAlignment(Pos.TOP_CENTER);
 
         paneBranchingStructure = new BranchingStructurePane(300,300);
@@ -67,7 +66,8 @@ public class GeneratorController {
 
             String line;
             while (sc.hasNext()) {
-                line = sc.next();
+                line = sc.nextLine();
+                if (line.startsWith("%") || line.isEmpty()) continue;
                 var pane = new TemplatePane(
                         Integer.parseInt(Generator.properties.getProperty("template_width")),
                         Integer.parseInt(Generator.properties.getProperty("template_height")),
@@ -97,9 +97,8 @@ public class GeneratorController {
             }
         } catch (NullPointerException | FileNotFoundException e) {
             LOGGER.severe("Unable to find templates file ");
-            // TODO: Handle exception
+            e.printStackTrace();
         }
-        paneBranchingStructure.init(state);
     }
 
     @FXML public void openFileLocation() {
@@ -113,9 +112,12 @@ public class GeneratorController {
     }
 
     @FXML public void reset() {
+        cancel();
+        state.clearCurrentDraft();
         tilePane_Templates.getChildren().clear();
         titledPane_Branching_Structure.getChildrenUnmodifiable().remove(paneBranchingStructure);
         paneBranchingStructure = new BranchingStructurePane(300,300);
+        paneBranchingStructure.init(state);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
     }
 
@@ -127,54 +129,85 @@ public class GeneratorController {
         if (selectedTemplateParent == null) {
             selectedTemplateParent = new VBox();
 
+            // TODO: Example data; Remove
             ObservableList<Property> data = FXCollections.observableArrayList();
             data.add(new Property("Size", 1.1));
             data.add(new Property("Rotation", 2.2));
 
-            var tableView = new TableView<Property>();
-            tableView.setEditable(true);
-            tableView.setMinWidth(300);
-            tableView.setMaxHeight(260);
-
-            Callback<TableColumn<Property, String>, TableCell<Property, String>> cellFactory =
-                    (TableColumn<Property, String> param) -> new PropertyCell();
-
-            var nameColumn = new TableColumn<Property, String>("Property");
-            nameColumn.setMinWidth(145);
-            nameColumn.setMaxWidth(145);
-            nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-
-            var valueColumn = new TableColumn<Property, String>("Value");
-            valueColumn.setMinWidth(145);
-            valueColumn.setMaxWidth(145);
-            valueColumn.setCellValueFactory(cellData -> cellData.getValue().valueProperty());
-            valueColumn.setCellFactory(cellFactory);
-            valueColumn.setOnEditCommit(
-                    (TableColumn.CellEditEvent<Property, String> t) -> {
-                        t.getTableView().getItems().get(t.getTablePosition().getRow()).setValue(t.getNewValue());
-                    }
-            );
-
-            tableView.getColumns().addAll(nameColumn, valueColumn);
+            // Property table
+            TableView<Property> tableView = initPropertyTable();
             tableView.setItems(data);
 
-            var titledPaneSelectedTemplate = new TitledPane("Selected Template", tableView);
-            titledPaneSelectedTemplate.setCollapsible(false);
-            titledPaneSelectedTemplate.setExpanded(true);
-            selectedTemplateParent.getChildren().add(titledPaneSelectedTemplate);
-
-
-            var applyButton = new Button("Apply");
-            var cancelButton = new Button("Cancel");
-            var bar = new HBox(cancelButton, applyButton);
-            bar.setPadding(new Insets(10,10,10,10));
-            bar.setSpacing(170);
-            selectedTemplateParent.getChildren().add(bar);
+            // Selected template view
+            initSelectedTemplateView(tableView);
         }
+        // Attach template to the branching structure as draft
+        paneBranchingStructure.parseWord(getSelectedTemplatePane().getWordNormalized(), true);
+
+        btn_Select_Template.setDisable(true);
+        btn_Generate.setDisable(true);
         scrollPane.setContent(selectedTemplateParent);
     }
 
+    private void initSelectedTemplateView(TableView<Property> tableView) {
+        var titledPaneSelectedTemplate = new TitledPane("Selected Template", tableView);
+        titledPaneSelectedTemplate.setCollapsible(false);
+        titledPaneSelectedTemplate.setExpanded(true);
+        selectedTemplateParent.getChildren().add(titledPaneSelectedTemplate);
+
+        var applyButton = new Button("Apply");
+        applyButton.setOnAction(e -> apply());
+        var cancelButton = new Button("Cancel");
+        cancelButton.setOnAction(e -> cancel());
+        var bar = new HBox(cancelButton, applyButton);
+        bar.setPadding(new Insets(10,10,10,10));
+        bar.setSpacing(170);
+        selectedTemplateParent.getChildren().add(bar);
+    }
+
+    private TableView<Property> initPropertyTable() {
+        var tableView = new TableView<Property>();
+        tableView.setEditable(true);
+        tableView.setMinWidth(300);
+        tableView.setMaxHeight(260);
+
+        Callback<TableColumn<Property, String>, TableCell<Property, String>> cellFactory =
+                (TableColumn<Property, String> param) -> new PropertyCell();
+
+        var nameColumn = new TableColumn<Property, String>("Property");
+        nameColumn.setMinWidth(145);
+        nameColumn.setMaxWidth(145);
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+
+        var valueColumn = new TableColumn<Property, String>("Value");
+        valueColumn.setMinWidth(145);
+        valueColumn.setMaxWidth(145);
+        valueColumn.setCellValueFactory(cellData -> cellData.getValue().valueProperty());
+        valueColumn.setCellFactory(cellFactory);
+        valueColumn.setOnEditCommit(
+                (TableColumn.CellEditEvent<Property, String> t) -> {
+                    t.getTableView().getItems().get(t.getTablePosition().getRow()).setValue(t.getNewValue());
+                }
+        );
+
+        tableView.getColumns().add(nameColumn);
+        tableView.getColumns().add(valueColumn);
+        return tableView;
+    }
+
     @FXML public void generate() {
+
+    }
+
+    public void apply() {
+
+    }
+
+    public void cancel() {
+        btn_Select_Template.setDisable(false);
+        btn_Generate.setDisable(false);
+        scrollPane.setContent(hBox_Templates);
+        paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft());
 
     }
 
@@ -191,9 +224,10 @@ public class GeneratorController {
             throw new IllegalStateException("State can only be initialized once");
         }
         this.state = state;
+        paneBranchingStructure.init(state);
     }
 
-    class PropertyCell extends TableCell<Property, String> {
+    static class PropertyCell extends TableCell<Property, String> {
         private TextField textField;
 
         private PropertyCell() {}

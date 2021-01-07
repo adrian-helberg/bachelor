@@ -60,7 +60,10 @@ public class TurtleGraphic extends Pane {
                     turtle.getPosition().get(0),
                     turtle.getPosition().get(1)
             );
-            if (isDraft) line.getStrokeDashArray().addAll(2d);
+            if (isDraft) {
+                line.getStrokeDashArray().addAll(2d);
+                state.addShape(line);
+            }
             getChildren().add(line);
         });
 
@@ -106,6 +109,9 @@ public class TurtleGraphic extends Pane {
         // Normalize word to remove variables
         var current = word;
         char push = '[', pop = ']';
+        if (state != null) state.clearCurrentDraft();
+        // Save current turtle for draft handling
+        final var previousTurtle = turtle.copy();
         while(current.length() > 0) {
             char firstChar = current.charAt(0);
             if (templateVariables.contains(firstChar)) {
@@ -137,6 +143,8 @@ public class TurtleGraphic extends Pane {
                 current = current.substring(argumentEndIndex);
             }
         }
+
+        if (isDraft) turtle = previousTurtle;
     }
 
     /**

@@ -6,8 +6,8 @@ import javafx.beans.property.*;
  *
  */
 public class Property {
-    private StringProperty name;
-    private StringProperty value;
+    private final StringProperty name;
+    private final StringProperty value;
 
     /**
      *
