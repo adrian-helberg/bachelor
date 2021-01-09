@@ -36,14 +36,14 @@ public class Anchor extends Circle implements Selectable {
         setStroke(color);
         setFill(white);
 
-        initProperties();
+        init();
     }
 
     public Turtle getTurtle() {
         return turtle.copy();
     }
 
-    public boolean isUsedProperty() {
+    public boolean isUsed() {
         return usedProperty.get();
     }
 
@@ -79,7 +79,7 @@ public class Anchor extends Circle implements Selectable {
     }
 
     @Override
-    public void initProperties() {
+    public void init() {
         selectedProperty.addListener((obs, old, newVal) -> {
             if (newVal) {
                 setStroke(color = Color.GREEN);

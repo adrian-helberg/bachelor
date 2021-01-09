@@ -4,5 +4,5 @@ public interface Selectable {
     boolean isSelected();
     void select();
     void unselect();
-    void initProperties();
+    void init();
 }

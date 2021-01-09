@@ -50,10 +50,6 @@ public class GeneratorController {
     public GeneratorController() {}
 
     @FXML private void initialize() {
-        tilePane_Templates.setVgap(4);
-        tilePane_Templates.setHgap(4);
-        tilePane_Templates.setAlignment(Pos.TOP_CENTER);
-
         paneBranchingStructure = new BranchingStructurePane(300,300);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
     }
@@ -96,7 +92,6 @@ public class GeneratorController {
                 tilePane_Templates.getChildren().add(pane);
             }
         } catch (NullPointerException | FileNotFoundException e) {
-            LOGGER.severe("Unable to find templates file ");
             e.printStackTrace();
         }
     }
@@ -113,9 +108,8 @@ public class GeneratorController {
 
     @FXML public void reset() {
         cancel();
-        state.clearCurrentDraft();
+        state.reset();
         tilePane_Templates.getChildren().clear();
-        titledPane_Branching_Structure.getChildrenUnmodifiable().remove(paneBranchingStructure);
         paneBranchingStructure = new BranchingStructurePane(300,300);
         paneBranchingStructure.init(state);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
@@ -126,13 +120,16 @@ public class GeneratorController {
     }
 
     @FXML public void selectTemplate() {
+        var selectedTemplate = getSelectedTemplatePane();
+        if (selectedTemplate == null) return;
         if (selectedTemplateParent == null) {
             selectedTemplateParent = new VBox();
 
             // TODO: Example data; Remove
             ObservableList<Property> data = FXCollections.observableArrayList();
-            data.add(new Property("Size", 1.1));
-            data.add(new Property("Rotation", 2.2));
+            data.add(selectedTemplate.getProperty("Scaling"));
+            data.add(selectedTemplate.getProperty("Rotation"));
+            //data.add(selectedTemplate.getProperty("Branching angle"));
 
             // Property table
             TableView<Property> tableView = initPropertyTable();
@@ -141,8 +138,10 @@ public class GeneratorController {
             // Selected template view
             initSelectedTemplateView(tableView);
         }
+        // Disable pane click events
+        paneBranchingStructure.setClickable(false);
         // Attach template to the branching structure as draft
-        paneBranchingStructure.parseWord(getSelectedTemplatePane().getWordNormalized(), true);
+        paneBranchingStructure.parseWord(getSelectedTemplatePane(), true);
 
         btn_Select_Template.setDisable(true);
         btn_Generate.setDisable(true);
@@ -186,7 +185,10 @@ public class GeneratorController {
         valueColumn.setCellFactory(cellFactory);
         valueColumn.setOnEditCommit(
                 (TableColumn.CellEditEvent<Property, String> t) -> {
-                    t.getTableView().getItems().get(t.getTablePosition().getRow()).setValue(t.getNewValue());
+                    t.getTableView().getItems()
+                            .get(t.getTablePosition().getRow()).setValue(t.getNewValue());
+                    // TODO: Redraw template draft
+                    paneBranchingStructure.parseWord(getSelectedTemplatePane(), true);
                 }
         );
 
@@ -200,15 +202,20 @@ public class GeneratorController {
     }
 
     public void apply() {
-
+        cancel();
+        paneBranchingStructure.parseWord(getSelectedTemplatePane(), false);
+        state.getSelectedAnchor().use();
+        state.selectFirst();
+        paneBranchingStructure.updateTurte(state.getSelectedAnchor().getTurtle());
     }
 
     public void cancel() {
         btn_Select_Template.setDisable(false);
         btn_Generate.setDisable(false);
         scrollPane.setContent(hBox_Templates);
+        paneBranchingStructure.setClickable(true);
         paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft());
-
+        state.clearCurrentDraft();
     }
 
     public TemplatePane getSelectedTemplatePane() {

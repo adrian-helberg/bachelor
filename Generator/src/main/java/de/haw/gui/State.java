@@ -1,6 +1,7 @@
 package de.haw.gui;
 
 import de.haw.gui.structure.Anchor;
+import de.haw.gui.structure.BranchingStructurePane;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -59,5 +60,18 @@ public class State {
         getAvailableAnchors().get(0).select();
     }
 
+    public void selectAnchor(Anchor anchor) {
+        var anchors = getAvailableAnchors();
+        if (!anchors.contains(anchor)) return;
+        if (anchor.equals(getSelectedAnchor())) return;
+        anchors.forEach(Anchor::unselect);
+        anchor.select();
+    }
+
     public void addAnchor(Anchor anchor) { anchors.add(anchor); }
+
+    public void reset() {
+        anchors.clear();
+        clearCurrentDraft();
+    }
 }

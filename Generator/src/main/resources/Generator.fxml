@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
@@ -43,16 +44,14 @@
            <TitledPane fx:id="titledPane_Branching_Structure" animated="false" collapsible="false" prefHeight="400.0" prefWidth="300.0" text="Branching Structure" />
            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0">
                <HBox fx:id="hBox_Templates" prefHeight="333.0" prefWidth="296.0">
-                   <TitledPane fx:id="titledPane_templates" animated="false" collapsible="false" prefHeight="380.0"
-                               prefWidth="296.0" text="Templates">
-                       <TilePane fx:id="tilePane_Templates" prefHeight="307.0" prefWidth="147.0"
-                                 tileAlignment="TOP_LEFT">
+                   <TitledPane fx:id="titledPane_templates" animated="false" collapsible="false" prefHeight="380.0" prefWidth="296.0" text="Templates">
+                       <TilePane fx:id="tilePane_Templates" alignment="TOP_CENTER" hgap="4.0" prefHeight="307.0" prefWidth="147.0" tileAlignment="TOP_LEFT" vgap="4.0">
                            <opaqueInsets>
-                               <Insets/>
+                               <Insets />
                            </opaqueInsets>
                        </TilePane>
                        <opaqueInsets>
-                           <Insets/>
+                           <Insets />
                        </opaqueInsets>
                    </TitledPane>
                </HBox>
