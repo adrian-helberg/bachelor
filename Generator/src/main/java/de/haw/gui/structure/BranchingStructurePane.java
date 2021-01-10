@@ -1,6 +1,7 @@
 package de.haw.gui.structure;
 
 import de.haw.gui.State;
+import de.haw.gui.templates.TemplatePane;
 import de.haw.gui.templates.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;
 import javafx.event.EventHandler;
@@ -48,5 +49,11 @@ public class BranchingStructurePane extends TurtleGraphic {
             return;
         }
         addEventFilter(MouseEvent.ANY, handler);
+    }
+
+    @Override
+    public void parseWord(TemplatePane templatePane, boolean isDraft) {
+
+        super.parseWord(templatePane, isDraft);
     }
 }

@@ -13,6 +13,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
 import java.util.*;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 /**
  * Turtle graphic class for use of graphical representation of a logo-turtle
@@ -103,12 +104,14 @@ public class TurtleGraphic extends Pane {
         state.addAnchor(anchor);
     }
 
+    // TODO: Override in BranchingStructurePane to split into properties-used and properties-not-used
     public void parseWord(TemplatePane templatePane, boolean isDraft) {
-        // TODO: Apply properties
-
-        var current = templatePane.getWord();
+        var current = applyProperties(templatePane);
         final char push = '[', pop = ']', f = 'F', turnRight = '+', turnLeft = '-';
-        if (state != null) state.clearCurrentDraft();
+        if (state != null) {
+            getChildren().removeAll(state.getCurrentDraft());
+            state.clearCurrentDraft();
+        }
         // Save current turtle for draft handling
         final var previousTurtle = turtle.copy();
         while(current.length() > 0) {
@@ -144,6 +147,31 @@ public class TurtleGraphic extends Pane {
             }
         }
         if (isDraft) turtle = previousTurtle;
+    }
+
+    private String applyProperties(TemplatePane templatePane) {
+        var word = templatePane.getWord();
+        var rotation = templatePane.getSpatialTransformation("Rotation");
+        var scaling = templatePane.getSpatialTransformation("Scaling");
+
+        // Rotation
+        if (word.startsWith("+") || word.startsWith("-")) {
+            word.replaceFirst("[0-9]+", String.valueOf(rotation));
+        } else {
+            word = (rotation < 0 ? "+" : "-") + "(" + rotation + ")" + word;
+        }
+
+        // Scaling
+        var fPattern = Pattern.compile("(F\\()([0-9]+)");
+        var fMatcher = fPattern.matcher(word);
+
+        word = fMatcher.replaceAll(match -> {
+            System.out.println(match.group());
+            return "F(" + (Integer.parseInt(match.group(2)) * scaling);
+        });
+        System.out.println(word);
+
+        return word;
     }
 
     @Override

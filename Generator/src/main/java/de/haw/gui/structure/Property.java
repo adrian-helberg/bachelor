@@ -25,10 +25,6 @@ public class Property {
         return name;
     }
 
-    public void setName(String name) {
-        this.name.set(name);
-    }
-
     public String getValue() {
         return value.get();
     }

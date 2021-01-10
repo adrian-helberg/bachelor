@@ -44,12 +44,12 @@ public class Turtle {
     }
 
     public void turnRight(float angle) {
-        if (angle <= 0) throw new RuntimeException("Angle needs to be positive");
+        if (angle < 0) throw new RuntimeException("Angle needs to be positive");
         this.angle += angle;
     }
 
     public void turnLeft(float angle) {
-        if (angle <= 0) throw new RuntimeException("Angle needs to be positive");
+        if (angle < 0) throw new RuntimeException("Angle needs to be positive");
         this.angle -= angle;
     }
 

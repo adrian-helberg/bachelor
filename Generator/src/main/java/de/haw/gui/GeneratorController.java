@@ -10,7 +10,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
@@ -20,10 +19,13 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.util.Callback;
+
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -36,6 +38,7 @@ public class GeneratorController {
     private State state;
     private BranchingStructurePane paneBranchingStructure;
     private VBox selectedTemplateParent;
+    private List<Property> properties;
 
     @FXML public TitledPane titledPane_Branching_Structure;
     @FXML public TilePane tilePane_Templates;
@@ -50,6 +53,7 @@ public class GeneratorController {
     public GeneratorController() {}
 
     @FXML private void initialize() {
+        properties = new ArrayList<>();
         paneBranchingStructure = new BranchingStructurePane(300,300);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
     }
@@ -122,22 +126,20 @@ public class GeneratorController {
     @FXML public void selectTemplate() {
         var selectedTemplate = getSelectedTemplatePane();
         if (selectedTemplate == null) return;
-        if (selectedTemplateParent == null) {
-            selectedTemplateParent = new VBox();
+        selectedTemplateParent = new VBox();
 
-            // TODO: Example data; Remove
-            ObservableList<Property> data = FXCollections.observableArrayList();
-            data.add(selectedTemplate.getProperty("Scaling"));
-            data.add(selectedTemplate.getProperty("Rotation"));
-            //data.add(selectedTemplate.getProperty("Branching angle"));
+        // TODO: Example data; Remove
+        ObservableList<Property> data = FXCollections.observableArrayList();
+        selectedTemplate.getSpatialTransformations().forEach((name, value) -> {
+            data.add(new Property(name, value));
+        });
 
-            // Property table
-            TableView<Property> tableView = initPropertyTable();
-            tableView.setItems(data);
+        // Property table
+        TableView<Property> tableView = initPropertyTable();
+        tableView.setItems(data);
 
-            // Selected template view
-            initSelectedTemplateView(tableView);
-        }
+        // Selected template view
+        initSelectedTemplateView(tableView);
         // Disable pane click events
         paneBranchingStructure.setClickable(false);
         // Attach template to the branching structure as draft
@@ -187,7 +189,8 @@ public class GeneratorController {
                 (TableColumn.CellEditEvent<Property, String> t) -> {
                     t.getTableView().getItems()
                             .get(t.getTablePosition().getRow()).setValue(t.getNewValue());
-                    // TODO: Redraw template draft
+                    var selectedTemplate = getSelectedTemplatePane();
+                    selectedTemplate.setSpatialTransformation(t.getRowValue().getName(), Float.parseFloat(t.getRowValue().getValue()));
                     paneBranchingStructure.parseWord(getSelectedTemplatePane(), true);
                 }
         );

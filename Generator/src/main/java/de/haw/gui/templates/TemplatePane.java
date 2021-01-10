@@ -6,8 +6,11 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.logging.Logger;
 
 /**
@@ -17,7 +20,7 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
     private static final Logger LOGGER = Logger.getLogger(TemplatePane.class.getName());
     private final BooleanProperty selectedProperty;
     private final String word;
-    private final Set<Property> properties;
+    private final Map<String, Float> spatialTransformations;
 
     /**
      *
@@ -27,9 +30,9 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
 
         this.word = word;
         selectedProperty = new SimpleBooleanProperty(false);
-        properties = new HashSet<>();
-        properties.add(new Property("Scaling", 1.0));
-        properties.add(new Property("Rotation", 0.0));
+        spatialTransformations = new HashMap<>();
+        spatialTransformations.put("Scaling", 1.0f);
+        spatialTransformations.put("Rotation", 0.0f);
         init();
 
         setBorder(new Border(new BorderStroke(
@@ -43,13 +46,16 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
         return word;
     }
 
-    public Property getProperty(String name) {
-        return properties.stream().filter(p -> p.getName().equals(name)).findFirst().orElse(null);
+    public float getSpatialTransformation(String name) {
+        return spatialTransformations.get(name);
     }
 
-    public void setProperty(Property property) {
-        if (properties.contains(property))
-        properties.add(property);
+    public void setSpatialTransformation(String name, float value) {
+        spatialTransformations.put(name, value);
+    }
+
+    public Map<String, Float> getSpatialTransformations() {
+        return spatialTransformations;
     }
 
     @Override
