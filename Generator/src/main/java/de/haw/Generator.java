@@ -2,7 +2,9 @@ package de.haw;
 
 import de.haw.gui.GeneratorController;
 import de.haw.gui.State;
+import de.haw.tree.Tree;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +12,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
@@ -22,6 +23,8 @@ import java.util.logging.Logger;
 public class Generator extends Application {
     private static final Logger LOGGER = Logger.getLogger(Generator.class.getName());
     public static Properties properties;
+
+    private State state;
 
     @Override
     public void start(Stage primaryStage) {
@@ -49,7 +52,7 @@ public class Generator extends Application {
         primaryStage.show();
 
         // Application state
-        State state = new State(scene);
+        state = new State(scene);
         mainController.setState(state);
     }
 
@@ -62,13 +65,13 @@ public class Generator extends Application {
             stream = new BufferedInputStream(new FileInputStream(Objects.requireNonNull(
                     getClass().getClassLoader().getResource(filename)).getFile()));
             properties.load(stream);
-        } catch (FileNotFoundException e) {
-            LOGGER.severe("Properties file ["+ filename + "] not found");
-            // TODO: Handle exception
         } catch (IOException e) {
-            LOGGER.severe("Unable to load properties from file");
-            // TODO: Handle exception
+            e.printStackTrace();
         }
+    }
+
+    public static void exit() {
+        Platform.exit();
     }
 
     /**

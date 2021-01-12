@@ -17,8 +17,8 @@ public class Anchor extends Circle implements Selectable {
     private final Turtle turtle;
     private final BooleanProperty selectedProperty;
     private final BooleanProperty usedProperty;
+    private final Paint white;
     private Paint color;
-    private Paint white;
 
     /**
      *

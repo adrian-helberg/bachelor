@@ -1,16 +1,14 @@
 package de.haw.gui.templates;
 
 import de.haw.gui.Selectable;
-import de.haw.gui.structure.Property;
+import de.haw.lsystem.Parameter;
+import de.haw.tree.Template;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
 /**
@@ -19,20 +17,20 @@ import java.util.logging.Logger;
 public class TemplatePane extends TurtleGraphic implements Selectable {
     private static final Logger LOGGER = Logger.getLogger(TemplatePane.class.getName());
     private final BooleanProperty selectedProperty;
-    private final String word;
-    private final Map<String, Float> spatialTransformations;
+    private final Template template;
+    private final Set<Parameter<?>> spatialTransformations;
 
     /**
      *
      */
-    public TemplatePane(int width, int height, String word) {
+    public TemplatePane(int width, int height, Template template) {
         super(width, height);
 
-        this.word = word;
+        this.template = template;
         selectedProperty = new SimpleBooleanProperty(false);
-        spatialTransformations = new HashMap<>();
-        spatialTransformations.put("Scaling", 1.0f);
-        spatialTransformations.put("Rotation", 0.0f);
+        spatialTransformations = new HashSet<>();
+        spatialTransformations.add(new Parameter<>("Scaling", 1.0f));
+        spatialTransformations.add(new Parameter<>("Rotation", 0.0f));
         init();
 
         setBorder(new Border(new BorderStroke(
@@ -42,19 +40,19 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
         super.parseWord(this, false);
     }
 
-    public String getWord() {
-        return word;
+    public Template getTemplate() {
+        return template;
     }
 
-    public float getSpatialTransformation(String name) {
-        return spatialTransformations.get(name);
+    public Parameter<?> getSpatialTransformation(String name) {
+        return spatialTransformations.stream().filter(t -> t.getName().equals(name)).findFirst().orElseGet(null);
     }
 
     public void setSpatialTransformation(String name, float value) {
-        spatialTransformations.put(name, value);
+        spatialTransformations.add(new Parameter<>(name, value));
     }
 
-    public Map<String, Float> getSpatialTransformations() {
+    public Set<Parameter<?>> getSpatialTransformations() {
         return spatialTransformations;
     }
 

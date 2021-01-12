@@ -12,7 +12,7 @@ public class Property {
     /**
      *
      */
-    public Property(String name, double value) {
+    public Property(String name, float value) {
         this.name = new SimpleStringProperty(name);
         this.value = new SimpleStringProperty(Double.toString(value));
     }

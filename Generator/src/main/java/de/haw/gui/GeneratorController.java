@@ -4,6 +4,9 @@ import de.haw.Generator;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Property;
 import de.haw.gui.templates.TemplatePane;
+import de.haw.lsystem.Parameter;
+import de.haw.tree.ParameterizedNode;
+import de.haw.tree.Template;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -38,7 +41,6 @@ public class GeneratorController {
     private State state;
     private BranchingStructurePane paneBranchingStructure;
     private VBox selectedTemplateParent;
-    private List<Property> properties;
 
     @FXML public TitledPane titledPane_Branching_Structure;
     @FXML public TilePane tilePane_Templates;
@@ -47,13 +49,9 @@ public class GeneratorController {
     @FXML public Button btn_Select_Template;
     @FXML public Button btn_Generate;
 
-    /**
-     *
-     */
     public GeneratorController() {}
 
     @FXML private void initialize() {
-        properties = new ArrayList<>();
         paneBranchingStructure = new BranchingStructurePane(300,300);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
     }
@@ -71,7 +69,7 @@ public class GeneratorController {
                 var pane = new TemplatePane(
                         Integer.parseInt(Generator.properties.getProperty("template_width")),
                         Integer.parseInt(Generator.properties.getProperty("template_height")),
-                        line
+                        new Template(line)
                 );
                 // Clicking
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
@@ -130,9 +128,7 @@ public class GeneratorController {
 
         // TODO: Example data; Remove
         ObservableList<Property> data = FXCollections.observableArrayList();
-        selectedTemplate.getSpatialTransformations().forEach((name, value) -> {
-            data.add(new Property(name, value));
-        });
+        selectedTemplate.getSpatialTransformations().forEach(t -> data.add(new Property(t.getName(), (float) t.getValue())));
 
         // Property table
         TableView<Property> tableView = initPropertyTable();
@@ -201,15 +197,20 @@ public class GeneratorController {
     }
 
     @FXML public void generate() {
-
+        System.out.println(state.getTree());
     }
 
     public void apply() {
+        var selectedTemplate = getSelectedTemplatePane();
         cancel();
-        paneBranchingStructure.parseWord(getSelectedTemplatePane(), false);
+        paneBranchingStructure.parseWord(selectedTemplate, false);
         state.getSelectedAnchor().use();
         state.selectFirst();
         paneBranchingStructure.updateTurte(state.getSelectedAnchor().getTurtle());
+
+        var node = new ParameterizedNode(selectedTemplate.getTemplate(), selectedTemplate.getSpatialTransformations());
+        var selectedNode = (ParameterizedNode) state.getTree().getSelectedNode();
+        selectedNode.addChild(node);
     }
 
     public void cancel() {
@@ -247,10 +248,7 @@ public class GeneratorController {
             textField.setMinWidth(this.getWidth() - this.getGraphicTextGap() * 2);
             textField.setOnAction((e) -> commitEdit(textField.getText()));
             textField.focusedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean old, Boolean val) -> {
-                if (!val) {
-                    System.out.println("Commiting " + textField.getText());
-                    commitEdit(textField.getText());
-                }
+                if (!val) commitEdit(textField.getText());
             });
         }
 

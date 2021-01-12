@@ -4,6 +4,10 @@ import de.haw.gui.State;
 import de.haw.gui.templates.TemplatePane;
 import de.haw.gui.templates.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;
+import de.haw.tree.Node;
+import de.haw.tree.ParameterizedNode;
+import de.haw.tree.Template;
+import de.haw.tree.Tree;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import mikera.vectorz.Vector;
@@ -36,6 +40,10 @@ public class BranchingStructurePane extends TurtleGraphic {
         var anchor = new Anchor(new Turtle(Vector.of(getWidth() / 2, getHeight())));
         anchor.select();
         addAnchor(anchor);
+        ParameterizedNode root = new ParameterizedNode(new Template(null));
+        var tree = new Tree(root);
+        tree.selectNode(root);
+        state.setTree(tree);
         initialized = true;
     }
 

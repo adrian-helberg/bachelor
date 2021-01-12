@@ -4,7 +4,6 @@ import de.haw.Generator;
 import de.haw.gui.State;
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
-import de.haw.gui.structure.Property;
 import de.haw.gui.turtle.Turtle;
 import de.haw.gui.turtle.TurtleCommand;
 import javafx.scene.Cursor;
@@ -106,7 +105,7 @@ public class TurtleGraphic extends Pane {
 
     // TODO: Override in BranchingStructurePane to split into properties-used and properties-not-used
     public void parseWord(TemplatePane templatePane, boolean isDraft) {
-        var current = applyProperties(templatePane);
+        var current = applyParameters(templatePane);
         final char push = '[', pop = ']', f = 'F', turnRight = '+', turnLeft = '-';
         if (state != null) {
             getChildren().removeAll(state.getCurrentDraft());
@@ -149,27 +148,23 @@ public class TurtleGraphic extends Pane {
         if (isDraft) turtle = previousTurtle;
     }
 
-    private String applyProperties(TemplatePane templatePane) {
-        var word = templatePane.getWord();
-        var rotation = templatePane.getSpatialTransformation("Rotation");
-        var scaling = templatePane.getSpatialTransformation("Scaling");
+    private String applyParameters(TemplatePane templatePane) {
+        var word = templatePane.getTemplate().getWord();
+        var rotation = (float) templatePane.getSpatialTransformation("Rotation").getValue();
+        var scaling = (float) templatePane.getSpatialTransformation("Scaling").getValue();
 
         // Rotation
         if (word.startsWith("+") || word.startsWith("-")) {
-            word.replaceFirst("[0-9]+", String.valueOf(rotation));
+            word = word.replaceFirst("[0-9]+", String.valueOf(rotation));
         } else {
-            word = (rotation < 0 ? "+" : "-") + "(" + rotation + ")" + word;
+            word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
         }
 
         // Scaling
         var fPattern = Pattern.compile("(F\\()([0-9]+)");
         var fMatcher = fPattern.matcher(word);
 
-        word = fMatcher.replaceAll(match -> {
-            System.out.println(match.group());
-            return "F(" + (Integer.parseInt(match.group(2)) * scaling);
-        });
-        System.out.println(word);
+        word = fMatcher.replaceAll(match -> "F(" + (Integer.parseInt(match.group(2)) * scaling));
 
         return word;
     }
