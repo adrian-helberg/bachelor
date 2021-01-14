@@ -2,11 +2,12 @@ package de.haw.gui;
 
 import de.haw.Generator;
 import de.haw.gui.structure.BranchingStructurePane;
+import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
-import de.haw.gui.templates.TemplatePane;
-import de.haw.lsystem.Parameter;
-import de.haw.tree.ParameterizedNode;
+import de.haw.gui.template.TemplatePane;
 import de.haw.tree.Template;
+import de.haw.tree.TemplateInstance;
+import de.haw.tree.TreeNode;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -22,13 +23,10 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.util.Callback;
-
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Logger;
@@ -66,11 +64,7 @@ public class GeneratorController {
             while (sc.hasNext()) {
                 line = sc.nextLine();
                 if (line.startsWith("%") || line.isEmpty()) continue;
-                var pane = new TemplatePane(
-                        Integer.parseInt(Generator.properties.getProperty("template_width")),
-                        Integer.parseInt(Generator.properties.getProperty("template_height")),
-                        new Template(line)
-                );
+                var pane = new TemplatePane( 60, 70, new Template(line));
                 // Clicking
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
                     tilePane_Templates.getChildren().stream().filter(
@@ -126,9 +120,10 @@ public class GeneratorController {
         if (selectedTemplate == null) return;
         selectedTemplateParent = new VBox();
 
-        // TODO: Example data; Remove
+        // Default data
         ObservableList<Property> data = FXCollections.observableArrayList();
-        selectedTemplate.getSpatialTransformations().forEach(t -> data.add(new Property(t.getName(), (float) t.getValue())));
+        data.add(new Property("Scaling", 1.0f));
+        data.add(new Property("Rotation", 0.0f));
 
         // Property table
         TableView<Property> tableView = initPropertyTable();
@@ -138,8 +133,13 @@ public class GeneratorController {
         initSelectedTemplateView(tableView);
         // Disable pane click events
         paneBranchingStructure.setClickable(false);
-        // Attach template to the branching structure as draft
-        paneBranchingStructure.parseWord(getSelectedTemplatePane(), true);
+
+        // Create template instance and attach it to the branching structure as draft
+        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate().getId());
+        state.setCurrentDraft(new Draft(templateInstance.getTemplateID()));
+
+        // Draw draft
+        paneBranchingStructure.parseWord(templateInstance, true);
 
         btn_Select_Template.setDisable(true);
         btn_Generate.setDisable(true);
@@ -185,9 +185,9 @@ public class GeneratorController {
                 (TableColumn.CellEditEvent<Property, String> t) -> {
                     t.getTableView().getItems()
                             .get(t.getTablePosition().getRow()).setValue(t.getNewValue());
-                    var selectedTemplate = getSelectedTemplatePane();
-                    selectedTemplate.setSpatialTransformation(t.getRowValue().getName(), Float.parseFloat(t.getRowValue().getValue()));
-                    paneBranchingStructure.parseWord(getSelectedTemplatePane(), true);
+                    var templateInstance = state.getCurrentDraft();
+                    templateInstance.setParameter(t.getRowValue().getName(), Float.parseFloat(t.getRowValue().getValue()));
+                    paneBranchingStructure.parseWord(templateInstance, true);
                 }
         );
 
@@ -197,20 +197,30 @@ public class GeneratorController {
     }
 
     @FXML public void generate() {
-        System.out.println(state.getTree());
+        for (var node : state.getTree()) {
+            System.out.print(node.getData().getTemplateID() + " -> ");
+        }
+        System.out.print("null");
     }
 
     public void apply() {
-        var selectedTemplate = getSelectedTemplatePane();
         cancel();
-        paneBranchingStructure.parseWord(selectedTemplate, false);
-        state.getSelectedAnchor().use();
+        Draft currentDraft = state.getCurrentDraft();
+        paneBranchingStructure.parseWord(currentDraft, false);
+        var anchor = state.getSelectedAnchor();
+        anchor.use();
         state.selectFirst();
-        paneBranchingStructure.updateTurte(state.getSelectedAnchor().getTurtle());
+        var nextAnchor = state.getSelectedAnchor();
+        paneBranchingStructure.updateTurtle(nextAnchor.getTurtle());
 
-        var node = new ParameterizedNode(selectedTemplate.getTemplate(), selectedTemplate.getSpatialTransformations());
-        var selectedNode = (ParameterizedNode) state.getTree().getSelectedNode();
-        selectedNode.addChild(node);
+        // Build tree
+        var tree = state.getTree();
+        if (tree == null) {
+            tree = new TreeNode<>(currentDraft);
+            state.setTree(tree);
+            return;
+        }
+        tree.addChild(currentDraft);
     }
 
     public void cancel() {
@@ -218,8 +228,7 @@ public class GeneratorController {
         btn_Generate.setDisable(false);
         scrollPane.setContent(hBox_Templates);
         paneBranchingStructure.setClickable(true);
-        paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft());
-        state.clearCurrentDraft();
+        paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft().getShapes());
     }
 
     public TemplatePane getSelectedTemplatePane() {

@@ -68,7 +68,7 @@ title __STRUCTURE's Class Diagram__\n
   de.haw.gui.structure.Anchor .up.|> de.haw.gui.Selectable
   de.haw.gui.structure.Anchor -up-|> javafx.scene.shape.Circle
   de.haw.gui.structure.Anchor o-- de.haw.gui.turtle.Turtle : turtle
-  de.haw.gui.structure.BranchingStructurePane -up-|> de.haw.gui.templates.TurtleGraphic
+  de.haw.gui.structure.BranchingStructurePane -up-|> de.haw.gui.template.TurtleGraphic
 
 
 right footer

@@ -1,11 +1,11 @@
-package de.haw.gui.templates;
+package de.haw.gui.template;
 
-import de.haw.Generator;
 import de.haw.gui.State;
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.turtle.Turtle;
 import de.haw.gui.turtle.TurtleCommand;
+import de.haw.tree.TemplateInstance;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -15,15 +15,14 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
- * Turtle graphic class for use of graphical representation of a logo-turtle
- * processed word
+ * Turtle graphic class for use of graphical representation of a logo-turtle processed word
  */
 public class TurtleGraphic extends Pane {
     private static final Logger LOGGER = Logger.getLogger(TemplatePane.class.getName());
     private Turtle turtle;
-    private final Set<Character> templateVariables;
     private final Map<String, TurtleCommand> symbolCommands;
     protected State state;
+    private final float scaling = 3.0f;
 
     public TurtleGraphic(int width, int height) {
         //noinspection IntegerDivisionInFloatingPointContext
@@ -32,11 +31,9 @@ public class TurtleGraphic extends Pane {
 
     public TurtleGraphic(int width, int height, Turtle turtle) {
         this.turtle = turtle;
-        templateVariables = new HashSet<>();
         symbolCommands = new HashMap<>();
 
         initializeCommands();
-        setVariables();
 
         setMinWidth(width);
         setWidth(width);
@@ -56,7 +53,7 @@ public class TurtleGraphic extends Pane {
     private void initializeCommands() {
         symbolCommands.put("F", (value, isDraft) -> {
             final var previousPosition = turtle.getPosition();
-            turtle.forwards(value * Float.parseFloat(Generator.properties.getProperty("scaling")));
+            turtle.forwards(value * scaling);
             var line = new Line(
                     previousPosition.get(0),
                     previousPosition.get(1),
@@ -65,7 +62,7 @@ public class TurtleGraphic extends Pane {
             );
             if (isDraft) {
                 line.getStrokeDashArray().addAll(2d);
-                state.addShape(line);
+                state.getCurrentDraft().addShape(line);
             }
             getChildren().add(line);
         });
@@ -79,11 +76,6 @@ public class TurtleGraphic extends Pane {
         symbolCommands.put("]", (value, isDraft) -> turtle.popState());
     }
 
-    private void setVariables() {
-        var vars = Generator.properties.getProperty("template_variables");
-        for (var v : vars.split(",")) templateVariables.add(v.charAt(0));
-    }
-
     protected void setTurtle(Turtle turtle) {
         this.turtle = turtle;
     }
@@ -91,7 +83,7 @@ public class TurtleGraphic extends Pane {
     protected void addAnchor(Anchor anchor) {
         anchor.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
             state.selectAnchor(anchor);
-            ((BranchingStructurePane)this).updateTurte(anchor.getTurtle());
+            ((BranchingStructurePane)this).updateTurtle(anchor.getTurtle());
         });
         anchor.addEventFilter(MouseEvent.MOUSE_ENTERED, event -> {
             state.getScene().setCursor(Cursor.HAND);
@@ -103,13 +95,15 @@ public class TurtleGraphic extends Pane {
         state.addAnchor(anchor);
     }
 
-    // TODO: Override in BranchingStructurePane to split into properties-used and properties-not-used
-    public void parseWord(TemplatePane templatePane, boolean isDraft) {
-        var current = applyParameters(templatePane);
+    public void parseWord(TemplateInstance templateInstance, boolean isDraft) {
+        var current = applyParameters(templateInstance);
         final char push = '[', pop = ']', f = 'F', turnRight = '+', turnLeft = '-';
         if (state != null) {
-            getChildren().removeAll(state.getCurrentDraft());
-            state.clearCurrentDraft();
+            var draft = state.getCurrentDraft();
+            if (draft != null) {
+                getChildren().removeAll(draft.getShapes());
+                state.clearCurrentDraft();
+            }
         }
         // Save current turtle for draft handling
         final var previousTurtle = turtle.copy();
@@ -140,7 +134,8 @@ public class TurtleGraphic extends Pane {
             } else {
                 // Variable
                 if (!isDraft && this instanceof BranchingStructurePane) {
-                    addAnchor(new Anchor(turtle.copy()));
+                    Anchor anchor = new Anchor(turtle.copy());
+                    addAnchor(anchor);
                 }
                 current = current.substring(1);
             }
@@ -148,10 +143,10 @@ public class TurtleGraphic extends Pane {
         if (isDraft) turtle = previousTurtle;
     }
 
-    private String applyParameters(TemplatePane templatePane) {
-        var word = templatePane.getTemplate().getWord();
-        var rotation = (float) templatePane.getSpatialTransformation("Rotation").getValue();
-        var scaling = (float) templatePane.getSpatialTransformation("Scaling").getValue();
+    private String applyParameters(TemplateInstance templateInstance) {
+        var word = Templates.getTemplateByID(templateInstance.getTemplateID()).getWord();
+        var rotation = (float) templateInstance.getParameterValue("Rotation");
+        var scaling = (float) templateInstance.getParameterValue("Scaling");
 
         // Rotation
         if (word.startsWith("+") || word.startsWith("-")) {

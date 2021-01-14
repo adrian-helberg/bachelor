@@ -22,7 +22,7 @@ public class StateTest {
     /**
      *
      */
-    @Test void testGenerator() {
+    @Test void testState() {
 //        var scene = new Scene(new Group());
 //        var s = new State(scene);
 //

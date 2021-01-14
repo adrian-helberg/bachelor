@@ -1,16 +1,14 @@
 package de.haw.gui;
 
 import de.haw.gui.structure.Anchor;
-import de.haw.tree.Tree;
+import de.haw.gui.structure.Draft;
+import de.haw.tree.TemplateInstance;
+import de.haw.tree.TreeNode;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Scene;
-import javafx.scene.shape.Shape;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Application state container
@@ -23,9 +21,9 @@ public class State {
     // Filtered anchors for usability
     private final FilteredList<Anchor> availableAnchors;
     // Temporarily attached structure for preview
-    private final List<Shape> currentDraft;
+    private Draft currentDraft;
     // Tree structure created from structured branching structures
-    private Tree tree;
+    private TreeNode<TemplateInstance> tree;
 
     /**
      * Create an application state containing the scene. Initializes lists
@@ -35,7 +33,6 @@ public class State {
         this.scene = scene;
         anchors = FXCollections.observableArrayList(anchor -> new Observable[] { anchor.usedProperty() });
         availableAnchors = new FilteredList<>(anchors, a -> !a.usedProperty().get());
-        currentDraft = new ArrayList<>();
     }
 
     // GETTERS
@@ -59,8 +56,8 @@ public class State {
      * Return a list of temporarily attached Shapes (draft)
      * @return List of JavaFX shapes
      */
-    public List<Shape> getCurrentDraft() {
-        return new ArrayList<>(currentDraft);
+    public Draft getCurrentDraft() {
+        return currentDraft;
     }
 
     /**
@@ -75,7 +72,7 @@ public class State {
      * Return the tree resulting from structuring template instances
      * @return Tree structure
      */
-    public Tree getTree() {
+    public TreeNode<TemplateInstance> getTree() {
         return tree;
     }
 
@@ -86,19 +83,15 @@ public class State {
      */
     public void addAnchor(Anchor anchor) { anchors.add(anchor); }
 
-    /**
-     * Adds a shape to the current draft
-     * @param shape JavaFX shape to be added
-     */
-    public void addShape(Shape shape) {
-        currentDraft.add(shape);
+    public void setCurrentDraft(Draft draft) {
+        this.currentDraft = draft;
     }
 
     /**
      * Sets the tree. Returns if the tree is already set.
      * @param tree Tree structure
      */
-    public void setTree(Tree tree) {
+    public void setTree(TreeNode<TemplateInstance> tree) {
         if (this.tree != null) return;
         this.tree = tree;
     }
@@ -108,7 +101,7 @@ public class State {
      * Removes all shapes from current draft
      */
     public void clearCurrentDraft() {
-        currentDraft.clear();
+        currentDraft.clearShapes();
     }
 
     /**

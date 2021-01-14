@@ -1,14 +1,13 @@
-package de.haw.gui.templates;
+package de.haw.gui.template;
 
 import de.haw.gui.Selectable;
-import de.haw.lsystem.Parameter;
 import de.haw.tree.Template;
+import de.haw.tree.TemplateInstance;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import java.util.HashSet;
-import java.util.Set;
+
 import java.util.logging.Logger;
 
 /**
@@ -18,7 +17,6 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
     private static final Logger LOGGER = Logger.getLogger(TemplatePane.class.getName());
     private final BooleanProperty selectedProperty;
     private final Template template;
-    private final Set<Parameter<?>> spatialTransformations;
 
     /**
      *
@@ -28,32 +26,17 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
 
         this.template = template;
         selectedProperty = new SimpleBooleanProperty(false);
-        spatialTransformations = new HashSet<>();
-        spatialTransformations.add(new Parameter<>("Scaling", 1.0f));
-        spatialTransformations.add(new Parameter<>("Rotation", 0.0f));
         init();
 
         setBorder(new Border(new BorderStroke(
                 Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)
         ));
 
-        super.parseWord(this, false);
+        super.parseWord(new TemplateInstance(getTemplate().getId()), false);
     }
 
     public Template getTemplate() {
         return template;
-    }
-
-    public Parameter<?> getSpatialTransformation(String name) {
-        return spatialTransformations.stream().filter(t -> t.getName().equals(name)).findFirst().orElseGet(null);
-    }
-
-    public void setSpatialTransformation(String name, float value) {
-        spatialTransformations.add(new Parameter<>(name, value));
-    }
-
-    public Set<Parameter<?>> getSpatialTransformations() {
-        return spatialTransformations;
     }
 
     @Override

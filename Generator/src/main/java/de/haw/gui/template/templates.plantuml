@@ -5,7 +5,7 @@ title __TEMPLATES's Class Diagram__\n
   namespace de.haw {
     namespace gui {
       namespace templates {
-        class de.haw.gui.templates.TemplatePane {
+        class de.haw.gui.template.TemplatePane {
             {static} - LOGGER : Logger
             - properties : Set<Property>
             - selectedProperty : BooleanProperty
@@ -27,7 +27,7 @@ title __TEMPLATES's Class Diagram__\n
   namespace de.haw {
     namespace gui {
       namespace templates {
-        class de.haw.gui.templates.TurtleGraphic {
+        class de.haw.gui.template.TurtleGraphic {
             {static} - LOGGER : Logger
             - symbolCommands : Map<String, TurtleCommand>
             - templateVariables : Set<Character>
@@ -46,11 +46,11 @@ title __TEMPLATES's Class Diagram__\n
   }
   
 
-  de.haw.gui.templates.TemplatePane .up.|> de.haw.gui.Selectable
-  de.haw.gui.templates.TemplatePane -up-|> de.haw.gui.templates.TurtleGraphic
-  de.haw.gui.templates.TurtleGraphic -up-|> javafx.scene.layout.Pane
-  de.haw.gui.templates.TurtleGraphic o-- de.haw.gui.State : state
-  de.haw.gui.templates.TurtleGraphic o-- de.haw.gui.turtle.Turtle : turtle
+  de.haw.gui.template.TemplatePane .up.|> de.haw.gui.Selectable
+  de.haw.gui.template.TemplatePane -up-|> de.haw.gui.template.TurtleGraphic
+  de.haw.gui.template.TurtleGraphic -up-|> javafx.scene.layout.Pane
+  de.haw.gui.template.TurtleGraphic o-- de.haw.gui.State : state
+  de.haw.gui.template.TurtleGraphic o-- de.haw.gui.turtle.Turtle : turtle
 
 
 right footer
