@@ -1,4 +1,4 @@
-package de.haw.gui;
+package de.haw.gui.structure;
 
 import de.haw.gui.structure.Property;
 import javafx.beans.property.SimpleStringProperty;

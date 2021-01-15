@@ -2,57 +2,98 @@ package de.haw.gui.turtle;
 
 import mikera.vectorz.Vector;
 import org.javatuples.Pair;
-
 import java.util.Objects;
 import java.util.Stack;
 
+/**
+ * Turtle as a logo-turtle for performing several actions like moving forwards or rotating in 2D
+ */
 public class Turtle {
+    // Current position of the logo-turtle
     private Vector position;
+    // View direction determined by angle
     private double angle;
+    // Turtle stack to store turtle stack
     private final Stack<Pair<Vector, Double>> stack;
 
+    /**
+     * Creates a turtle with given coordinates x and y (2D).
+     * Constructor cascade
+     * @param x X-coordinate
+     * @param y Y-coordinate
+     */
     public Turtle(double x, double y) {
-        position = Vector.of(x, y);
-        angle = 0;
-        stack = new Stack<>();
+        this(Vector.of(x, y));
     }
 
+    /**
+     * Creates a turtle with given coordinates vector
+     * @param position Position vector
+     */
     public Turtle(Vector position) {
         this.position = position;
         angle = 0;
         stack = new Stack<>();
     }
 
-    // Copy constructor, maybe not needed if turtle was immutable
-    public Turtle(Turtle turtle) {
+    /**
+     * Copy constructor
+     * @param turtle Turtle to be copied
+     */
+    private Turtle(Turtle turtle) {
         position = turtle.getPosition();
         angle = turtle.angle;
         stack = new Stack<>();
     }
 
+    // GETTERS
+    /**
+     * Returns a copy of the current position vector
+     * @return Position vector copy
+     */
     public Vector getPosition() {
         return position.copy().toVector();
     }
 
+    /**
+     * Returns the current viewing direction as a rotation value
+     * @return Rotation angle
+     */
     public double getAngle() {
         return angle;
     }
 
+    // METHODS
+    /**
+     * Performs turtle forward action with a given value for distance to be travelled
+     * @param distance Distance to be travelled
+     */
     public void forwards(float distance) {
         if (distance <= 0) throw new RuntimeException("Distance needs to be positive");
         position.sub(rotate(Vector.of(0, distance), angle));
     }
 
+    /**
+     * Perform turtle right rotate action with a given positive value for angle to be rotated
+     * @param angle Angle to be rotated
+     */
     public void turnRight(float angle) {
         if (angle < 0) throw new RuntimeException("Angle needs to be positive");
         this.angle += angle;
     }
 
+    /**
+     * Perform turtle left rotate action with a given positive value for angle to be rotated
+     * @param angle Angle to be rotated
+     */
     public void turnLeft(float angle) {
         if (angle < 0) throw new RuntimeException("Angle needs to be positive");
         this.angle -= angle;
     }
 
+    /**
+     * Pushes the current turtle state onto the stack
+     */
     public void pushState() {
         stack.push(Pair.with(
             (Vector) position.copy(),
@@ -60,17 +101,32 @@ public class Turtle {
         ));
     }
 
+    /**
+     * Pops a turtle state from the stack and updates the current one accordingly
+     */
     public void popState() {
         var state = stack.pop();
         position = (Vector) state.getValue(0);
         angle = (double) state.getValue(1);
     }
 
+    /**
+     * Return a vector rotated by a given angle
+     * @param v Vector to be rotated
+     * @param angle Angle to be rotated
+     * @return Rotated vector
+     */
     public Vector rotate(Vector v, double angle) {
         double degToRad = Math.PI / 180;
         return rotateRadians(v, angle * degToRad);
     }
 
+    /**
+     * Return a vector rotated by a given radian
+     * @param v Vector to be rotated
+     * @param radians Radian to be rotated
+     * @return Rotated vector
+     */
     private Vector rotateRadians(Vector v, double radians) {
         var ca = Math.cos(radians);
         var sa = Math.sin(radians);
@@ -80,6 +136,10 @@ public class Turtle {
         );
     }
 
+    /**
+     * Creates a copy of this turtle
+     * @return Turtle copy
+     */
     public Turtle copy() {
         return new Turtle(this);
     }

@@ -1,6 +1,5 @@
-package de.haw.template;
+package de.haw.gui.template;
 
-import de.haw.gui.template.TemplatePane;
 import de.haw.tree.Template;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
