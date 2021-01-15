@@ -1,8 +1,13 @@
 package de.haw.gui;
 
+import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
+import de.haw.gui.turtle.Turtle;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,10 +24,7 @@ public class BranchingStructurePaneTest {
     }
 
     @Test void testInit() {
-        var state = new State(new Scene(new Group()));
-        var bSP = new BranchingStructurePane(0,0);
-        bSP.init(state);
-
-        bSP.getState
+        // Since a whole JavaFX environment needs to be set up, this remains empty for now
+        // TODO
     }
 }

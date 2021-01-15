@@ -1,5 +1,7 @@
 package de.haw.tree;
 
+import de.haw.gui.template.Templates;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +15,7 @@ public class TemplateInstance {
         parametersMap = new HashMap<>();
         parametersMap.put("Scaling", 1.0f);
         parametersMap.put("Rotation", 0.0f);
+        Templates.addTemplateInstance(this);
     }
 
     // GETTERS

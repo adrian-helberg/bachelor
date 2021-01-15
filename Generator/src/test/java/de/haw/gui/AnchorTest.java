@@ -7,12 +7,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * Test object: Anchor : Circle
  */
 public class AnchorTest {
-    /**
-     *
-     */
     @Test void testAnchor() {
         Turtle turtle = new Turtle(0, 0);
         var anchor = new Anchor(turtle);
