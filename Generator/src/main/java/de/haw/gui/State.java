@@ -2,6 +2,7 @@ package de.haw.gui;
 
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.Draft;
+import de.haw.gui.template.Templates;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import javafx.beans.Observable;
@@ -9,6 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Scene;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Application state container
@@ -24,6 +28,8 @@ public class State {
     private Draft currentDraft;
     // Tree structure created from structured branching structures
     private TreeNode<TemplateInstance> tree;
+    // Anchor-tree node mapping for determining which anchor belongs to which tree node
+    private Map<Anchor, TreeNode<TemplateInstance>> anchorToTreeNode;
 
     /**
      * Create an application state containing the scene. Initializes lists
@@ -33,6 +39,7 @@ public class State {
         this.scene = scene;
         anchors = FXCollections.observableArrayList(anchor -> new Observable[] { anchor.usedProperty() });
         availableAnchors = new FilteredList<>(anchors, a -> !a.usedProperty().get());
+        anchorToTreeNode = new HashMap<>();
     }
 
     // GETTERS
@@ -76,6 +83,15 @@ public class State {
         return tree;
     }
 
+    /**
+     * Returns the corresponding tree node from a given anchor
+     * @param anchor Anchor the tree node is mapped to
+     * @return Tree node
+     */
+    public TreeNode<TemplateInstance> getTreeNodeFromAnchor(Anchor anchor) {
+        return anchorToTreeNode.get(anchor);
+    }
+
     // SETTERS
     /**
      * Adds an anchor to the application state
@@ -94,6 +110,15 @@ public class State {
     public void setTree(TreeNode<TemplateInstance> tree) {
         if (this.tree != null) return;
         this.tree = tree;
+    }
+
+    /**
+     * Adds an anchor-tree node mapping
+     * @param anchor Anchor to be mapped to a tree node
+     * @param treeNode Tree node that is mapped to the anchor
+     */
+    public void setAnchorToTreeNode(Anchor anchor, TreeNode<TemplateInstance> treeNode) {
+        anchorToTreeNode.put(anchor, treeNode);
     }
 
     // METHODS
@@ -128,6 +153,9 @@ public class State {
      */
     public void reset() {
         anchors.clear();
+        tree = null;
+        anchorToTreeNode.clear();
+        Templates.reset();
         clearCurrentDraft();
     }
 }

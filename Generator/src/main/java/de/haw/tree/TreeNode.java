@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TreeNode<T> implements Iterable<TreeNode<T>> {
 
-    private final T data;
+    private T data;
     protected final List<TreeNode<T>> children;
 
     public TreeNode(T data) {
@@ -32,10 +32,19 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
     }
 
     // SETTER
+    public void setData(T data) {
+        this.data = data;
+    }
+
     public TreeNode<T> addChild(T data) {
         TreeNode<T> c = new TreeNode<>(data);
         children.add(c);
         return c;
+    }
+
+    public TreeNode<T> addChild(TreeNode<T> node) {
+        children.add(node);
+        return node;
     }
 
     // METHODS

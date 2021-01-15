@@ -6,6 +6,7 @@ import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.turtle.Turtle;
 import de.haw.gui.turtle.TurtleCommand;
 import de.haw.tree.TemplateInstance;
+import de.haw.tree.TreeNode;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -180,7 +181,19 @@ public class TurtleGraphic extends Pane {
                     Anchor anchor = new Anchor(turtle.copy());
                     // Add an anchor for a variable
                     addAnchor(anchor);
+                    //// Build up tree
+                    // Create an empty node
+                    var emptyNode = new TreeNode<TemplateInstance>(null);
+                    // Fetch tree node from selected anchor
+                    var node = state.getTreeNodeFromAnchor(state.getSelectedAnchor());
+                    // Set template information to the tree node if empty
+                    if (node.isEmpty()) node.setData(templateInstance);
+                    // Add empty node as child
+                    node.addChild(emptyNode);
+                    // Update anchor-tree node mapping
+                    state.setAnchorToTreeNode(anchor, emptyNode);
                 }
+                // Progress further
                 current = current.substring(1);
             }
         }

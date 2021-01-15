@@ -1,6 +1,7 @@
 package de.haw.gui;
 
 import de.haw.Generator;
+import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
@@ -233,10 +234,19 @@ public class GeneratorController {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
+        var sb = new StringBuilder("Tree: ");
         for (var node : state.getTree()) {
-            System.out.print(node.getData().getTemplateID() + " -> ");
+            if (node.isEmpty()) {
+                sb.append("empty -> ");
+            } else {
+                sb.append(node.getData().getTemplateID())
+                .append(" ")
+                .append(node.getData().getParameters())
+                .append(" -> ");
+            }
         }
-        System.out.print("null");
+        sb.append("null");
+        System.out.println(sb.toString());
     }
 
     /**
@@ -249,24 +259,15 @@ public class GeneratorController {
         Draft currentDraft = state.getCurrentDraft();
         // Draw template instance
         paneBranchingStructure.parseWord(currentDraft, false);
+        // Get selected anchor from application state
+        Anchor selectedAnchor = state.getSelectedAnchor();
         // Use selected anchor
-        state.getSelectedAnchor().use();
+        state.setAnchorToTreeNode(selectedAnchor, new TreeNode<>(currentDraft));
+        selectedAnchor.use();
         // Select the next available anchor on the branching structure pane
         state.selectFirst();
         // Resets the branching structure turtle to the new selected anchor
         paneBranchingStructure.updateTurtle(state.getSelectedAnchor().getTurtle());
-        //// Build up tree
-        // Retrieve current tree represented as a single, iterable tree node
-        var tree = state.getTree();
-        if (tree == null) {
-            // Set up new tree
-            tree = new TreeNode<>(currentDraft);
-            // Update application state accordingly
-            state.setTree(tree);
-            return;
-        }
-        // Attach draft as new tree node
-        tree.addChild(currentDraft);
     }
 
     /**
