@@ -1,10 +1,9 @@
-package de.haw.gui.template;
+package de.haw.utils;
 
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Templates class for static usage of utils class for templates and template instances
@@ -28,15 +27,6 @@ public class Templates {
      */
     public static Template getTemplateByID(int id) {
         return templates.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
-    }
-
-    /**
-     * Return a list of all template instances matching a given template identifier
-     * @param id Template identifier
-     * @return List of template instances found
-     */
-    public static List<TemplateInstance> getTemplatesInstancesByTemplateID(int id) {
-        return instances.stream().filter(t -> t.getTemplateID() == id).collect(Collectors.toList());
     }
 
     // SETTERS

@@ -13,6 +13,10 @@ public class ProductionRule {
         rhs = new ArrayList<>();
     }
 
+    public ProductionRule(Module lhs, Module rhs) {
+        this(List.of(lhs), List.of(rhs));
+    }
+
     public ProductionRule(List<Module> lhs, List<Module> rhs) {
         this.lhs = lhs;
         this.rhs = rhs;

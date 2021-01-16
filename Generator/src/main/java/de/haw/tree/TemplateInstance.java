@@ -1,17 +1,17 @@
 package de.haw.tree;
 
-import de.haw.gui.template.Templates;
+import de.haw.utils.Templates;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class TemplateInstance {
-    private final int templateID;
+    private final Template template;
     // Since there is no adequate get() method on Set, Map is used instead
     private final Map<String, Number> parametersMap;
 
-    public TemplateInstance(int templateID) {
-        this.templateID = templateID;
+    public TemplateInstance(Template template) {
+        this.template = template;
         parametersMap = new HashMap<>();
         parametersMap.put("Scaling", 1.0f);
         parametersMap.put("Rotation", 0.0f);
@@ -19,8 +19,8 @@ public class TemplateInstance {
     }
 
     // GETTERS
-    public int getTemplateID() {
-        return templateID;
+    public Template getTemplate() {
+        return template;
     }
 
     public Map<String, Number> getParameters() {
@@ -39,6 +39,6 @@ public class TemplateInstance {
     // OVERRIDES
     @Override
     public String toString() {
-        return "TemplateInstance{" + templateID + ", " + parametersMap + "}";
+        return "TemplateInstance{" + template + ", " + parametersMap + "}";
     }
 }

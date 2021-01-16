@@ -1,6 +1,6 @@
 package de.haw.tree;
 
-import de.haw.gui.template.Templates;
+import de.haw.utils.Templates;
 
 public class Template {
     private final int id;

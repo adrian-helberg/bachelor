@@ -58,7 +58,16 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
     // OVERRIDES
     @Override
     public String toString() {
-        return "TreeNode{" + data + "}";
+        var sb = new StringBuilder("Tree: ");
+        for (var node : this) {
+            if (node.isEmpty()) {
+                sb.append("empty -> ");
+            } else {
+                sb.append(node.data).append(" -> ");
+            }
+        }
+        sb.append("null");
+        return sb.toString();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package de.haw.lsystem;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LSystem {
@@ -14,14 +15,38 @@ public class LSystem {
         productionRules = new ArrayList<>();
     }
 
+    // GETTERS
+
+    public List<Module> getAlphabet() {
+        return alphabet;
+    }
+
+    public List<Module> getAxiom() {
+        return axiom;
+    }
+
+    public List<ProductionRule> getProductionRules() {
+        return productionRules;
+    }
+
+    // SETTERS
     public void addModule(Module module) {
         alphabet.add(module);
+    }
+
+    public void addModule(Module... modules) {
+        alphabet.addAll(Arrays.asList(modules));
     }
 
     public void addProductionRule(ProductionRule rule) {
         productionRules.add(rule);
     }
 
+    public void setAxiom(Module... modules) {
+        axiom.addAll(Arrays.asList(modules));
+    }
+
+    // METHODS
     public void derive() {
 
     }

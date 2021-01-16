@@ -6,6 +6,8 @@ import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
 import de.haw.gui.template.TemplatePane;
+import de.haw.pipeline.InfererPipe;
+import de.haw.pipeline.Pipeline;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
@@ -160,9 +162,9 @@ public class GeneratorController {
         // Disable pane click events
         paneBranchingStructure.setClickable(false);
         // Create template instance and attach it to the branching structure as draft
-        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate().getId());
+        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate());
         // Update application state accordingly
-        state.setCurrentDraft(new Draft(templateInstance.getTemplateID()));
+        state.setCurrentDraft(new Draft(templateInstance.getTemplate()));
         // Draw draft
         paneBranchingStructure.parseWord(templateInstance, true);
         // Disable controls that should not be used in this state
@@ -234,19 +236,9 @@ public class GeneratorController {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
-        var sb = new StringBuilder("Tree: ");
-        for (var node : state.getTree()) {
-            if (node.isEmpty()) {
-                sb.append("empty -> ");
-            } else {
-                sb.append(node.getData().getTemplateID())
-                .append(" ")
-                .append(node.getData().getParameters())
-                .append(" -> ");
-            }
-        }
-        sb.append("null");
-        System.out.println(sb.toString());
+        // Execute pipeline
+        var result = new Pipeline<>(new InfererPipe()).execute(state.getTree());
+        System.out.println(result);
     }
 
     /**
@@ -281,7 +273,8 @@ public class GeneratorController {
         // Make the branching structure pane clickable again
         paneBranchingStructure.setClickable(true);
         // Removes draft from branching structure pane
-        paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft().getShapes());
+        var draft = state.getCurrentDraft();
+        if (draft != null) paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft().getShapes());
     }
 
     /**

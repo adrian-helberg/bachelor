@@ -2,7 +2,7 @@ package de.haw.gui;
 
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.Draft;
-import de.haw.gui.template.Templates;
+import de.haw.utils.Templates;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import javafx.beans.Observable;
@@ -126,7 +126,7 @@ public class State {
      * Removes all shapes from current draft
      */
     public void clearCurrentDraft() {
-        currentDraft.clearShapes();
+        if (currentDraft != null) currentDraft.clearShapes();
     }
 
     /**

@@ -35,7 +35,7 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
         setBorder(new Border(new BorderStroke(
                 Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)
         ));
-        super.parseWord(new TemplateInstance(getTemplate().getId()), false);
+        super.parseWord(new TemplateInstance(getTemplate()), false);
     }
 
     // GETTERS

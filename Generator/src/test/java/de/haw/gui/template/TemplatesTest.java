@@ -2,6 +2,7 @@ package de.haw.gui.template;
 
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
+import de.haw.utils.Templates;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,7 +28,7 @@ public class TemplatesTest {
         assertTrue(Templates.getTemplatesInstancesByTemplateID(100).isEmpty());
 
         var t = new Template("Test1");
-        var tI = new TemplateInstance(t.getId());
+        var tI = new TemplateInstance(t);
 
         assertEquals(1, Templates.getTemplatesInstancesByTemplateID(t.getId()).size());
         assertTrue(Templates.getTemplatesInstancesByTemplateID(t.getId()).contains(tI));
@@ -44,7 +45,7 @@ public class TemplatesTest {
         // Since Templates.addTemplateInstance is called in the TemplateInstance(...) constructor,
         // there is no explicit call needed
         var t = new Template("Test");
-        var tI = new TemplateInstance(t.getId());
+        var tI = new TemplateInstance(t);
 
         assertFalse(Templates.getTemplatesInstancesByTemplateID(t.getId()).isEmpty());
         assertTrue(Templates.getTemplatesInstancesByTemplateID(t.getId()).contains(tI));

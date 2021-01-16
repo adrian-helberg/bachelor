@@ -1,5 +1,6 @@
 package de.haw.gui.structure;
 
+import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import javafx.scene.shape.Shape;
 import java.util.ArrayList;
@@ -18,8 +19,8 @@ public class Draft extends TemplateInstance {
      * Creates a draft for a template by a given template id
      * @param templateID Template ID to map to
      */
-    public Draft(int templateID) {
-        super(templateID);
+    public Draft(Template template) {
+        super(template);
         shapes = new ArrayList<>();
     }
 

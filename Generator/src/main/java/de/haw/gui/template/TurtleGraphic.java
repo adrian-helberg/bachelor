@@ -7,6 +7,7 @@ import de.haw.gui.turtle.Turtle;
 import de.haw.gui.turtle.TurtleCommand;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Templates;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -208,7 +209,7 @@ public class TurtleGraphic extends Pane {
      */
     private String applyParameters(TemplateInstance templateInstance) {
         // Get corresponding template word
-        var word = Templates.getTemplateByID(templateInstance.getTemplateID()).getWord();
+        var word =templateInstance.getTemplate().getWord();
         // Fetch rotation property value
         var rotation = (float) templateInstance.getParameterValue("Rotation");
         // Fetch scaling property value
