@@ -1,7 +1,7 @@
 package de.haw.gui.structure;
 
 import de.haw.gui.State;
-import de.haw.gui.template.TurtleGraphic;
+import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;

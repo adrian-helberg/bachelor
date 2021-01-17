@@ -1,6 +1,7 @@
 package de.haw.gui.template;
 
 import de.haw.gui.Selectable;
+import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import javafx.beans.property.BooleanProperty;

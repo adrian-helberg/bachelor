@@ -43,7 +43,7 @@ public class Generator extends Application {
         primaryStage.show();
 
         // Application state
-        state = new State(scene);
+        state = new State(primaryStage);
         mainController.setState(state);
     }
 

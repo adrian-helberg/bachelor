@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ import java.util.Map;
  */
 public class State {
     // javaFX scene access
-    private final Scene scene;
+    private final Stage stage;
     // All anchors added to the branching structure pane
     private final ObservableList<Anchor> anchors;
     // Filtered anchors for usability
@@ -29,14 +30,14 @@ public class State {
     // Tree structure created from structured branching structures
     private TreeNode<TemplateInstance> tree;
     // Anchor-tree node mapping for determining which anchor belongs to which tree node
-    private Map<Anchor, TreeNode<TemplateInstance>> anchorToTreeNode;
+    private final Map<Anchor, TreeNode<TemplateInstance>> anchorToTreeNode;
 
     /**
      * Create an application state containing the scene. Initializes lists
-     * @param scene Main window scene
+     * @param stage Main window stage
      */
-    public State(Scene scene) {
-        this.scene = scene;
+    public State(Stage stage) {
+        this.stage = stage;
         anchors = FXCollections.observableArrayList(anchor -> new Observable[] { anchor.usedProperty() });
         availableAnchors = new FilteredList<>(anchors, a -> !a.usedProperty().get());
         anchorToTreeNode = new HashMap<>();
@@ -48,8 +49,14 @@ public class State {
      * @return JavaFX scene
      */
     public Scene getScene() {
-        return scene;
+        return stage.getScene();
     }
+
+    /**
+     * Returns the javaFX stage
+     * @return JavaFX stage
+     */
+    public Stage getStage() { return stage; }
 
     /**
      * Returns a list of all anchors that are usable (not used yet)

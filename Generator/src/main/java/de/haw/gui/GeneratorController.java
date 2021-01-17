@@ -6,6 +6,7 @@ import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
 import de.haw.gui.template.TemplatePane;
+import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.pipeline.InfererPipe;
 import de.haw.pipeline.Pipeline;
 import de.haw.tree.Template;
@@ -18,13 +19,17 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
 import java.io.File;
@@ -239,6 +244,23 @@ public class GeneratorController {
         // Execute pipeline
         var result = new Pipeline<>(new InfererPipe()).execute(state.getTree());
         System.out.println(result);
+
+        var derivation = result.derive();
+
+        var test = new TurtleGraphic(200,200);
+        test.parseWord(new TemplateInstance(new Template(derivation)), false);
+
+        System.out.println(derivation);
+
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(state.getStage());
+        var vBox = new VBox(20);
+        vBox.getChildren().add(test);
+        vBox.getChildren().add(new Label(derivation));
+        var dialogScene = new Scene(vBox, 200, 300);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 
     /**

@@ -1,7 +1,7 @@
 package de.haw.tree;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 public class TreeNode<T> implements Iterable<TreeNode<T>> {
@@ -11,7 +11,7 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
 
     public TreeNode(T data) {
         this.data = data;
-        children = new LinkedList<>();
+        children = new ArrayList<>();
     }
 
     // GETTER
@@ -42,9 +42,8 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
         return c;
     }
 
-    public TreeNode<T> addChild(TreeNode<T> node) {
+    public void addChild(TreeNode<T> node) {
         children.add(node);
-        return node;
     }
 
     // METHODS

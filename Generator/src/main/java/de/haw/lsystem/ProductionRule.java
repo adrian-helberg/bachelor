@@ -1,42 +1,35 @@
 package de.haw.lsystem;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ProductionRule {
-    private final List<Module> lhs;
-    private final List<Module> rhs;
+    private String lhs;
+    private String rhs;
 
-    public ProductionRule() {
-        lhs = new ArrayList<>();
-        rhs = new ArrayList<>();
-    }
-
-    public ProductionRule(Module lhs, Module rhs) {
-        this(List.of(lhs), List.of(rhs));
-    }
-
-    public ProductionRule(List<Module> lhs, List<Module> rhs) {
+    public ProductionRule(String lhs, String rhs) {
         this.lhs = lhs;
         this.rhs = rhs;
     }
 
-    public List<Module> getLhs() {
+    public String getLhs() {
         return lhs;
     }
 
-    public List<Module> getRhs() {
+    public String getRhs() {
         return rhs;
+    }
+
+    public void setRhs(String rhs) {
+        this.rhs = rhs;
     }
 
     @Override
     public String toString() {
-        var sb = new StringBuilder("ProductionRule{");
-        sb.append(lhs.stream().map(Object::toString).collect(Collectors.joining()));
-        sb.append(" -> ");
-        sb.append(rhs.stream().map(Object::toString).collect(Collectors.joining()));
-        sb.append("}");
-        return sb.toString();
+        return lhs + " -> " + rhs;
+    }
+
+    public void removeSymbol(String symbol) {
+        rhs = rhs.replace(symbol, "");
     }
 }

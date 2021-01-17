@@ -27,9 +27,7 @@ public class Module {
 
     @Override
     public String toString() {
-        return "Module{" +
-                "symbol='" + symbol + '\'' +
-                '}';
+        return symbol.isBlank() ? "_" : symbol;
     }
 
     @Override
