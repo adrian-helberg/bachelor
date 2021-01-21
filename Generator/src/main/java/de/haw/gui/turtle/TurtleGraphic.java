@@ -3,11 +3,8 @@ package de.haw.gui.turtle;
 import de.haw.gui.State;
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
-import de.haw.gui.turtle.Turtle;
-import de.haw.gui.turtle.TurtleCommand;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
-import de.haw.utils.Templates;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -184,7 +181,7 @@ public class TurtleGraphic extends Pane {
                     addAnchor(anchor);
                     //// Build up tree
                     // Create an empty node
-                    var emptyNode = new TreeNode<TemplateInstance>(null);
+                    var emptyNode = new TreeNode<TemplateInstance>();
                     // Fetch tree node from selected anchor
                     var node = state.getTreeNodeFromAnchor(state.getSelectedAnchor());
                     // Set template information to the tree node if empty

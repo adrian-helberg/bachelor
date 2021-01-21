@@ -17,29 +17,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DraftTest {
     @Test void testDraft() {
         var template = new Template("F(10)F(10)X");
-        var draft = new Draft(template.getId());
 
-        assertNotNull(draft);
-        assertNotNull(draft.getShapes());
-        assertTrue(draft.getShapes().isEmpty());
     }
 
     @Test void testAddShape() {
         var template = new Template("F(10)F(10)X");
-        var draft = new Draft(template.getId());
-        Rectangle shape = new Rectangle();
-        draft.addShape(shape);
-
-        assertTrue(draft.getShapes().contains(shape));
     }
 
     @Test void testClearShapes() {
         var template = new Template("F(10)F(10)X");
-        var draft = new Draft(template.getId());
-        Rectangle shape = new Rectangle();
-        draft.addShape(shape);
-        draft.clearShapes();
-
-        assertTrue(draft.getShapes().isEmpty());
     }
 }

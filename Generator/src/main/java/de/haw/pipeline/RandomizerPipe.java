@@ -1,10 +1,12 @@
 package de.haw.pipeline;
 
 import de.haw.lsystem.LSystem;
+import de.haw.pipeline.pipe.PipelineContext;
 
-public class RandomizerPipe implements Pipe<LSystem, LSystem> {
+public class RandomizerPipe implements Pipe<PipelineContext, PipelineContext> {
+
     @Override
-    public LSystem process(LSystem input) {
-        return null;
+    public PipelineContext process(PipelineContext input) {
+        return input;
     }
 }

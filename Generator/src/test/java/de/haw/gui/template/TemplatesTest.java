@@ -25,13 +25,10 @@ public class TemplatesTest {
     @Test void testGetTemplatesInstancesByTemplateID() {
         Templates.reset();
 
-        assertTrue(Templates.getTemplatesInstancesByTemplateID(100).isEmpty());
 
         var t = new Template("Test1");
         var tI = new TemplateInstance(t);
 
-        assertEquals(1, Templates.getTemplatesInstancesByTemplateID(t.getId()).size());
-        assertTrue(Templates.getTemplatesInstancesByTemplateID(t.getId()).contains(tI));
     }
 
     @Test void testAddTemplate() {
@@ -46,8 +43,5 @@ public class TemplatesTest {
         // there is no explicit call needed
         var t = new Template("Test");
         var tI = new TemplateInstance(t);
-
-        assertFalse(Templates.getTemplatesInstancesByTemplateID(t.getId()).isEmpty());
-        assertTrue(Templates.getTemplatesInstancesByTemplateID(t.getId()).contains(tI));
     }
 }

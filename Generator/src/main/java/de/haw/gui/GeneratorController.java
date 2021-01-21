@@ -7,8 +7,12 @@ import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
 import de.haw.gui.template.TemplatePane;
 import de.haw.gui.turtle.TurtleGraphic;
-import de.haw.pipeline.InfererPipe;
+import de.haw.pipeline.RandomizerPipe;
+import de.haw.pipeline.pipe.CompressorPipe;
+import de.haw.pipeline.pipe.GeneralizerPipe;
+import de.haw.pipeline.pipe.InfererPipe;
 import de.haw.pipeline.Pipeline;
+import de.haw.pipeline.pipe.PipelineContext;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
@@ -18,6 +22,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -241,24 +246,32 @@ public class GeneratorController {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
+        // Pipeline context
+        var ctx = new PipelineContext();
+        ctx.tree = state.getTree();
+        ctx.wL = 0.5f;
         // Execute pipeline
-        var result = new Pipeline<>(new InfererPipe()).execute(state.getTree());
-        System.out.println(result);
-
-        var derivation = result.derive();
-
-        var test = new TurtleGraphic(200,200);
-        test.parseWord(new TemplateInstance(new Template(derivation)), false);
-
+        var result = new Pipeline<>(new InfererPipe())
+                .pipe(new CompressorPipe())
+                .pipe(new GeneralizerPipe())
+                .pipe(new RandomizerPipe())
+                .execute(ctx);
+        System.out.println(result.lSystem);
+        var derivation = result.lSystem.derive();
         System.out.println(derivation);
+
+        var turtleGraphic = new TurtleGraphic(300,300);
+        turtleGraphic.parseWord(new TemplateInstance(new Template(derivation)), false);
 
         final Stage dialog = new Stage();
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(state.getStage());
-        var vBox = new VBox(20);
-        vBox.getChildren().add(test);
-        vBox.getChildren().add(new Label(derivation));
-        var dialogScene = new Scene(vBox, 200, 300);
+        var pane = new BorderPane();
+        pane.setCenter(turtleGraphic);
+        Label l = new Label(derivation);
+        l.setAlignment(Pos.CENTER);
+        pane.setBottom(l);
+        var dialogScene = new Scene(pane, 350, 350);
         dialog.setScene(dialogScene);
         dialog.show();
     }

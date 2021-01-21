@@ -1,8 +1,7 @@
 package de.haw.lsystem;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class LSystem {
@@ -37,35 +36,58 @@ public class LSystem {
         alphabet.addAll(Arrays.asList(symbols));
     }
 
-    public void addProductionRule(ProductionRule rule) {
-        productionRules.add(rule);
-    }
-
     public void setAxiom(String axiom) {
         this.axiom = axiom;
     }
 
+    public void addProductionRule(ProductionRule rule) {
+        productionRules.add(rule);
+    }
+
+    public String addModuleNotPresentInAlphabet() {
+        char[] alphabet = "ABCDEGHIJKLMNOPQRTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
+        for (var c : alphabet) {
+            var symbol = String.valueOf(c);
+            if (!getAlphabet().contains(symbol)) {
+                addModule(symbol);
+                return symbol;
+            }
+        }
+        throw new RuntimeException("Unable to find a symbol not present in the alphabet");
+    }
+
     // METHODS
     public String derive() {
-        return derive(productionRules.size());
+        var derivation = axiom;
+        var i = 0;
+        var pattern = Pattern.compile("[A-EG-Z]");
+        while (pattern.matcher(derivation).find()) {
+            derivation = deriveOneInstance(derivation);
+        }
+        return derivation;
+    }
+
+    public String derive(int instances) {
+        var derivation = axiom;
+        for (var i = 1; i <= instances; i++) {
+            derivation = deriveOneInstance(derivation);
+        }
+        return derivation;
     }
 
     /**
-     * Derives the axiom module by module for a given number of iterations
-     * @param iterations Number of derivations
+     * Derives the axiom module by module for one iteration
      */
-    public String derive(int iterations) {
-        for (int i = 0; i < iterations; i++) {
-            for (var axiomModule : axiom.toCharArray()) {
-                var foundProductionRule = productionRules.stream()
-                        .filter(rule -> rule.getLhs().contains(String.valueOf(axiomModule)))
-                        .findFirst()
-                        .orElse(null);
-                if (foundProductionRule == null) continue;
-                axiom = axiom.replace(String.valueOf(axiomModule), foundProductionRule.getRhs());
-            }
+    private String deriveOneInstance(String axiom) {
+        for (var axiomModule : axiom.toCharArray()) {
+            var foundProductionRule = productionRules.stream()
+                    .filter(rule -> rule.getLhs().contains(String.valueOf(axiomModule)))
+                    .findFirst()
+                    .orElse(null);
+            if (foundProductionRule == null) continue;
+            axiom = axiom.replace(String.valueOf(axiomModule), foundProductionRule.getRhs());
         }
-        return axiom.replaceAll("[A-EG-Z]", "");
+        return axiom;
     }
 
     @Override
@@ -92,6 +114,43 @@ public class LSystem {
         }
         // Clean alphabet
         alphabet.removeAll(toRemove);
+
+        return this;
+    }
+
+    public LSystem minimize() {
+        // Distinction of duplicated RHSs
+        var items = new HashSet<>();
+        // Map from lhs and corresponding rule duplicate
+        var duplicates = new HashMap<String, ProductionRule>();
+        var currentLhs = "";
+        var sortedRules = new ArrayList<>(productionRules);
+        sortedRules.sort((r1, r2) -> {
+            // First sort by RHS
+            var result = r1.getRhs().compareTo(r2.getRhs());
+            if (result == 0) {
+                // Then by LHS
+                return r1.getLhs().compareTo(r2.getLhs());
+            }
+            return result;
+        });
+        for (var rule : sortedRules) {
+            if (items.add(rule.getRhs())) {
+                currentLhs = rule.getLhs();
+            } else {
+                duplicates.put(currentLhs, rule);
+            }
+        }
+
+        duplicates.forEach((lhs, rule) -> {
+            // Remove duplicated rule from production rules
+            productionRules.remove(rule);
+            // Replace all applications of that rule
+            axiom = axiom.replaceAll(rule.getLhs(), lhs);
+            productionRules.forEach(p -> {
+                p.setRhs(p.getRhs().replaceAll(rule.getLhs(), lhs));
+            });
+        });
 
         return this;
     }

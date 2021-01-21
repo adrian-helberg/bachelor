@@ -26,7 +26,7 @@ public class ProductionRule {
 
     @Override
     public String toString() {
-        return lhs + " -> " + rhs;
+        return lhs + " -> " + (rhs.isBlank() ? "_" : rhs);
     }
 
     public void removeSymbol(String symbol) {

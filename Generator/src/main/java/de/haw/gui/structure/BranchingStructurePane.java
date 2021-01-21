@@ -47,7 +47,7 @@ public class BranchingStructurePane extends TurtleGraphic {
         // Initial anchor selection state
         anchor.select();
         // Initial tree set to application state
-        TreeNode<TemplateInstance> node = new TreeNode<>(null);
+        var node = new TreeNode<TemplateInstance>();
         state.setTree(node);
         state.setAnchorToTreeNode(anchor, node);
         // Add the anchor to the pane

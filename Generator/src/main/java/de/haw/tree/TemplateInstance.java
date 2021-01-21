@@ -4,6 +4,7 @@ import de.haw.utils.Templates;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class TemplateInstance {
     private final Template template;
@@ -39,6 +40,19 @@ public class TemplateInstance {
     // OVERRIDES
     @Override
     public String toString() {
-        return "TemplateInstance{" + template + ", " + parametersMap + "}";
+        return "TemplateInstance{" + template + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TemplateInstance that = (TemplateInstance) o;
+        return Objects.equals(template, that.template);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(template);
     }
 }

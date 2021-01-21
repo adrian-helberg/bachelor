@@ -1,17 +1,28 @@
 package de.haw.tree;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class TreeNode<T> implements Iterable<TreeNode<T>> {
 
     private T data;
-    protected final List<TreeNode<T>> children;
+    protected List<TreeNode<T>> children;
+
+    public TreeNode() {
+        this.data = null;
+        children = new ArrayList<>();
+    }
 
     public TreeNode(T data) {
         this.data = data;
         children = new ArrayList<>();
+    }
+
+    /**
+     * Copy constructor
+     */
+    public TreeNode(TreeNode<T> tree) {
+        data = tree.data;
+        children = tree.children;
     }
 
     // GETTER
@@ -42,6 +53,10 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
         return c;
     }
 
+    public void removeChildren() {
+        children.clear();
+    }
+
     public void addChild(TreeNode<T> node) {
         children.add(node);
     }
@@ -52,6 +67,10 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
             if (!node.isEmpty() && node.getData().equals(data)) return node;
         }
         return null;
+    }
+
+    public TreeNode<T> copy() {
+        return new TreeNode<>(this);
     }
 
     // OVERRIDES
@@ -72,5 +91,18 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
     @Override
     public Iterator<TreeNode<T>> iterator() {
         return new TreeNodeIterator<>(this);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TreeNode<?> treeNode = (TreeNode<?>) o;
+        return Objects.equals(data, treeNode.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
     }
 }
