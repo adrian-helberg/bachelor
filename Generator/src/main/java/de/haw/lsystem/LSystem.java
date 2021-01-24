@@ -14,6 +14,13 @@ public class LSystem {
         productionRules = new ArrayList<>();
     }
 
+    // Copy constructor
+    public LSystem(List<String> alphabet, String axiom, List<ProductionRule> productionRules) {
+        this.alphabet = alphabet;
+        this.axiom = axiom;
+        this.productionRules = productionRules;
+    }
+
     // GETTERS
     public List<String> getAlphabet() {
         return alphabet;
@@ -57,9 +64,12 @@ public class LSystem {
     }
 
     // METHODS
+    public LSystem copy() {
+        return new LSystem(alphabet, axiom, productionRules);
+    }
+
     public String derive() {
         var derivation = axiom;
-        var i = 0;
         var pattern = Pattern.compile("[A-EG-Z]");
         while (pattern.matcher(derivation).find()) {
             derivation = deriveOneInstance(derivation);

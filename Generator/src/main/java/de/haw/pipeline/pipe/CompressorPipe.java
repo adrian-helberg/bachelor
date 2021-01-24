@@ -37,18 +37,15 @@ public class CompressorPipe implements Pipe<PipelineContext, PipelineContext> {
             // Get extended string representation from (repetitive) sub tree
             var subTreeDerivation = new Inferer(subtree).infer().derive();
             // Data to be set in the tree to replace old node structure representing the subtree
-            var derivationInstance = new TemplateInstance(new Template(subTreeDerivation));
-
-            // subtree found in original tree
-            TreeNode<TemplateInstance> foundNode;
-            // Replace occurrences
+            var template = new Template(subTreeDerivation);
+            var derivationInstance = new TemplateInstance(template);
+            // Replace occurrences of sub tree
             for (var o : getOccurrences(subtree, tree)) {
                 o.setData(derivationInstance);
                 o.removeChildren();
             }
 
             L = new Inferer(tree).infer().minimize();
-
             if (Ci(L) >= Ci(LPlus)) {
                 break;
             }
@@ -57,9 +54,8 @@ public class CompressorPipe implements Pipe<PipelineContext, PipelineContext> {
             // L+ <- L
             LPlus = L;
         }
-
         // Update pipeline context
-        input.lSystem = L.clean();
+        input.lSystem = LPlus.clean();
         // Pass pipeline context to next pipe
         return input;
     }

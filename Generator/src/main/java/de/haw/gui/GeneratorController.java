@@ -42,11 +42,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 /**
  * Generator controller for corresponding FXML file to be called on application's FXMLLoader.load()
  */
 public class GeneratorController {
+    // Logging
+    Logger logger = Logger.getLogger(getClass().getName());
     // Application state
     private State state;
     // Branching structure view pane
@@ -73,6 +76,7 @@ public class GeneratorController {
     @FXML private void initialize() {
         paneBranchingStructure = new BranchingStructurePane(300,300);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
+        logger.info("Initialized Generator Controller");
     }
 
     /**
@@ -250,11 +254,11 @@ public class GeneratorController {
         var ctx = new PipelineContext();
         ctx.tree = state.getTree();
         ctx.wL = 0.5f;
+        ctx.w0 = 0.5f;
         // Execute pipeline
         var result = new Pipeline<>(new InfererPipe())
                 .pipe(new CompressorPipe())
                 .pipe(new GeneralizerPipe())
-                .pipe(new RandomizerPipe())
                 .execute(ctx);
         System.out.println(result.lSystem);
         var derivation = result.lSystem.derive();

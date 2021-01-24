@@ -9,4 +9,6 @@ public class PipelineContext {
     public TreeNode<TemplateInstance> tree;
     // Weighting parameter to control generated L-System production rule set size
     public float wL;
+    // Weight balancing between grammar length and grammar edit distance
+    public float w0;
 }

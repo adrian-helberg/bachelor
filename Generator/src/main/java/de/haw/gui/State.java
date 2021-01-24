@@ -165,4 +165,11 @@ public class State {
         Templates.reset();
         clearCurrentDraft();
     }
+
+    // OVERRIDES
+
+    @Override
+    public String toString() {
+        return "State{" + availableAnchors + ", " + currentDraft + ", " + tree + "}";
+    }
 }

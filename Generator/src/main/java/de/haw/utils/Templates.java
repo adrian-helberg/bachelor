@@ -52,7 +52,7 @@ public class Templates {
      * @return New identifier
      */
     public static int getNewTemplateID() {
-        return templates.size();
+        return templates.size() + 1;
     }
 
     /**

@@ -215,7 +215,7 @@ public class TurtleGraphic extends Pane {
         if (word.startsWith("+") || word.startsWith("-")) {
             word = word.replaceFirst("[0-9]+", String.valueOf(rotation));
         } else {
-            word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
+            if (rotation != 0) word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
         }
         // Apply scaling
         var fPattern = Pattern.compile("(F\\()([0-9]+)");
