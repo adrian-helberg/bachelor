@@ -16,6 +16,7 @@ import de.haw.pipeline.pipe.PipelineContext;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Templates;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -57,6 +58,7 @@ public class GeneratorController {
     // Stored template selection view parent
     private VBox selectedTemplateParent;
     // FXML elements bound to this controller
+    @FXML public SplitPane splitPane;
     @FXML public TitledPane titledPane_Branching_Structure;
     @FXML public TilePane tilePane_Templates;
     @FXML public ScrollPane scrollPane;
@@ -75,6 +77,8 @@ public class GeneratorController {
      */
     @FXML private void initialize() {
         paneBranchingStructure = new BranchingStructurePane(300,300);
+        titledPane_Branching_Structure.prefWidthProperty().bind(splitPane.widthProperty());
+        titledPane_Branching_Structure.prefHeightProperty().bind(splitPane.heightProperty());
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
         logger.info("Initialized Generator Controller");
     }
@@ -253,6 +257,21 @@ public class GeneratorController {
         // Pipeline context
         var ctx = new PipelineContext();
         ctx.tree = state.getTree();
+
+//        var root = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(4)));
+//        var n1 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(1)));
+//        var n2 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(6)));
+//        root.addChild(n1, n2);
+//        var n3 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(6)));
+//        n1.addChild(n3);
+//        var n4 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(3)));
+//        var n5 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(6)));
+//        n2.addChild(n4, n5);
+//        var n6 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(3)));
+//        var n7 = new TreeNode<>(new TemplateInstance(Templates.getTemplateByID(6)));
+//        n3.addChild(n6, n7);
+//        ctx.tree = root;
+
         ctx.wL = 0.5f;
         ctx.w0 = 0.5f;
         // Execute pipeline
@@ -261,23 +280,25 @@ public class GeneratorController {
                 .pipe(new GeneralizerPipe())
                 .execute(ctx);
         System.out.println(result.lSystem);
-        var derivation = result.lSystem.derive();
-        System.out.println(derivation);
 
-        var turtleGraphic = new TurtleGraphic(300,300);
-        turtleGraphic.parseWord(new TemplateInstance(new Template(derivation)), false);
+        for (int i = 0; i < 5; i++) {
+            var derivation = result.lSystem.derive(5);
 
-        final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.initOwner(state.getStage());
-        var pane = new BorderPane();
-        pane.setCenter(turtleGraphic);
-        Label l = new Label(derivation);
-        l.setAlignment(Pos.CENTER);
-        pane.setBottom(l);
-        var dialogScene = new Scene(pane, 350, 350);
-        dialog.setScene(dialogScene);
-        dialog.show();
+            var turtleGraphic = new TurtleGraphic(300,300);
+            turtleGraphic.parseWord(new TemplateInstance(new Template(derivation)), false);
+
+            final Stage dialog = new Stage();
+            dialog.initModality(Modality.NONE);
+            dialog.initOwner(state.getStage());
+            var pane = new BorderPane();
+            pane.setCenter(turtleGraphic);
+            Label l = new Label(derivation);
+            l.setAlignment(Pos.CENTER);
+            pane.setBottom(l);
+            var dialogScene = new Scene(pane, 350, 350);
+            dialog.setScene(dialogScene);
+            dialog.show();
+        }
     }
 
     /**

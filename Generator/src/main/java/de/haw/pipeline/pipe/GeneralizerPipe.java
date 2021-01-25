@@ -2,12 +2,8 @@ package de.haw.pipeline.pipe;
 
 import com.google.common.collect.Sets;
 import de.haw.lsystem.LSystem;
-import de.haw.lsystem.Module;
-import de.haw.lsystem.ProductionRule;
 import de.haw.pipeline.Pipe;
 import de.haw.utils.Modules;
-import org.javatuples.Pair;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.stream.Collectors;
@@ -23,31 +19,29 @@ public class GeneralizerPipe implements Pipe<PipelineContext, PipelineContext> {
         w0 = input.w0;
         // Generalized grammar L* = L+ (compact grammar)
         var LStar = input.lSystem.copy();
-        // Rule pair p*
-        var pStar = Pair.with(null, null);
         // C^old_g = Cg(L∗ + {p∗}, L∗)
         float Cg_old = 0;
         // cStar
         float cStar = 0;
         // Actual generalization
         do {
-
             //// Solving combination problem
-            // Exclude S
+            // Exclude S -> A
             var productionRulesWithoutS = new ArrayList<>(LStar.getProductionRules());
-            if (!productionRulesWithoutS.remove(new ProductionRule("S", "A")))
+            if (productionRulesWithoutS.remove(0) == null)
                 throw new RuntimeException("No rule S -> A found (to be removed)");
             // Generate all possible merging rule pairs P ∈ L*
             @SuppressWarnings("UnstableApiUsage")
             var combinations = Sets.combinations(new HashSet<>(productionRulesWithoutS), 2);
             var minimalCosts = Float.MAX_VALUE;
+            LSystem minimalLSystem = null;
             // Find a pair p_i with the minimal Cg(L* + {p_i}, L*)
             for (var c : combinations) {
-                var LStarMerged = LStar.merge(c);
+                 var LStarMerged = LStar.merge(c);
                 float costs = Cg(LStarMerged, LStar);
                 if (costs < minimalCosts) {
                     minimalCosts = costs;
-                    LStar = LStarMerged;
+                    minimalLSystem = LStarMerged;
                 }
             }
 
@@ -55,6 +49,7 @@ public class GeneralizerPipe implements Pipe<PipelineContext, PipelineContext> {
 
             cStar = minimalCosts - Cg_old;
             Cg_old = minimalCosts;
+            LStar = minimalLSystem;
         } while (cStar <= 0);
 
         // Update pipeline context
@@ -98,14 +93,20 @@ public class GeneralizerPipe implements Pipe<PipelineContext, PipelineContext> {
         while (!rules.isEmpty()) {
             var operation1 = rules.get(0);
             // Find corresponding rules
-            var operation2 = rules.stream()
-                    .filter(r -> r.getLhs().equals(operation1.getLhs()))
-                    .findFirst().orElse(null);
+            var otherOperations = rules.stream()
+                    .filter(r -> !r.equals(operation1) && r.getLhs().equals(operation1.getLhs()))
+                    .collect(Collectors.toList());
 
             rules.remove(operation1);
-            if (operation2 != null && rules.remove(operation2)) {
-                // Ds(M*_A,M*_B)
-                editDistance += Ds(operation1.getRhs(), operation2.getRhs());
+
+            if (!otherOperations.isEmpty()) {
+                var iterator = otherOperations.iterator();
+                do {
+                    // Ds(M*_A,M*_B)
+                    var operation = iterator.next();
+                    editDistance += Ds(operation1.getRhs(), operation.getRhs());
+                    rules.remove(operation);
+                } while (iterator.hasNext());
             }
         }
 
@@ -113,6 +114,6 @@ public class GeneralizerPipe implements Pipe<PipelineContext, PipelineContext> {
     }
 
     private float Ds(String M_A, String M_B) {
-        return Modules.editDistanceRecursive(M_A, M_B, M_A.length(), M_B.length());
+        return Modules.editDistanceOptimized(M_A, M_B);
     }
 }

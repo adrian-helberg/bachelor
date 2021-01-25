@@ -7,16 +7,15 @@ import java.util.stream.Collectors;
 public class ProductionRule {
     private String lhs;
     private String rhs;
-    private final float probability;
 
     public ProductionRule(String lhs, String rhs) {
-        this(lhs, rhs, 1f);
-    }
-
-    public ProductionRule(String lhs, String rhs, float probability) {
         this.lhs = lhs;
         this.rhs = rhs;
-        this.probability = probability;
+    }
+
+    // Copy constructor
+    public ProductionRule(ProductionRule rule) {
+        this(rule.getLhs(), rule.getRhs());
     }
 
     public String getLhs() {
@@ -37,7 +36,7 @@ public class ProductionRule {
 
     @Override
     public String toString() {
-        return lhs + " -> " + (rhs.isBlank() ? "_" : rhs) + (probability > 0 ? " (" + probability + ")" : "");
+        return lhs + " -> " + (rhs.isBlank() ? "_" : rhs);
     }
 
     @Override
@@ -45,13 +44,12 @@ public class ProductionRule {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductionRule that = (ProductionRule) o;
-        return Float.compare(that.probability, probability) == 0 &&
-                Objects.equals(lhs, that.lhs) &&
+        return Objects.equals(lhs, that.lhs) &&
                 Objects.equals(rhs, that.rhs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lhs, rhs, probability);
+        return Objects.hash(lhs, rhs);
     }
 }

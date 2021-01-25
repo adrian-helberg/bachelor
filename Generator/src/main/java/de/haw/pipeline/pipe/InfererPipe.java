@@ -9,7 +9,6 @@ public class InfererPipe implements Pipe<PipelineContext, PipelineContext> {
         var inferer = new Inferer(input.tree);
         // Update pipeline context
         input.lSystem = inferer.infer();
-
         // Pass pipeline context to next pipe
         return input;
     }

@@ -39,7 +39,7 @@ public class Generator extends Application {
         primaryStage.setScene(scene);
         // General window properties
         primaryStage.setTitle("Generator");
-        primaryStage.setResizable(false);
+//        primaryStage.setResizable(false);
         // Application icon
         Image icon = new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("icon.png")));
         primaryStage.getIcons().add(icon);
@@ -49,6 +49,7 @@ public class Generator extends Application {
         state = new State(primaryStage);
         logger.info("Created application state " + state);
         mainController.setState(state);
+        mainController.loadTemplates();
     }
 
     /**

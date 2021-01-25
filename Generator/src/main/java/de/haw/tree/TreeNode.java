@@ -61,6 +61,10 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
         children.add(node);
     }
 
+    public void addChild(TreeNode<T>... nodes) {
+        children.addAll(Arrays.asList(nodes));
+    }
+
     // METHODS
     public TreeNode<T> findTreeNode(T data) {
         for (var node : this) {

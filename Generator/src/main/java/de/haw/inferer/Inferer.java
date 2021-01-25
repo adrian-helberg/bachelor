@@ -37,9 +37,9 @@ public class Inferer {
 
     public LSystem infer() {
         var done = false;
-        while (beta != null && !done) {
+        while (!done) {
             // delta = word of beta
-            var delta = beta.isEmpty() ? "" : beta.getData().getTemplate().getWord();
+            var delta = (beta == null || beta.isEmpty()) ? "" : beta.getData().getTemplate().getWord();
             // For all variables in delta
             var variableMatches = Pattern.compile("[A-EG-Z]")
                     .matcher(delta)
