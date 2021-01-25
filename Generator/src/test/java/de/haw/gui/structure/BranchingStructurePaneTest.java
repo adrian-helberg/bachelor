@@ -25,6 +25,5 @@ public class BranchingStructurePaneTest {
 
     @Test void testInit() {
         // Since a whole JavaFX environment needs to be set up, this remains empty for now
-        // TODO
     }
 }

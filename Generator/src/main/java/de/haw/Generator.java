@@ -11,11 +11,13 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /**
  * Generator class containing program entry point as JavaFX Application
  */
 public class Generator extends Application {
+    private Logger logger = Logger.getLogger(getClass().getName());
     private State state;
 
     @Override
@@ -28,6 +30,7 @@ public class Generator extends Application {
                     getClass().getClassLoader().getResource("Generator.fxml")
             ));
             mainWindow = loader.load();
+            logger.info("Loaded main window FXML file");
             mainController = loader.getController();
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,12 +46,9 @@ public class Generator extends Application {
         primaryStage.show();
 
         // Application state
-        state = new State(scene);
+        state = new State(primaryStage);
+        logger.info("Created application state " + state);
         mainController.setState(state);
-    }
-
-    public static void exit() {
-        Platform.exit();
     }
 
     /**

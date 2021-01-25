@@ -1,8 +1,10 @@
 package de.haw.gui.structure;
 
 import de.haw.gui.State;
-import de.haw.gui.template.TurtleGraphic;
+import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;
+import de.haw.tree.TemplateInstance;
+import de.haw.tree.TreeNode;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import mikera.vectorz.Vector;
@@ -42,9 +44,13 @@ public class BranchingStructurePane extends TurtleGraphic {
         super.init(state);
         // Initial anchor
         var anchor = new Anchor(new Turtle(Vector.of(getWidth() / 2, getHeight())));
-        // Initial achor selection state
+        // Initial anchor selection state
         anchor.select();
-        // Add the anchor to application state
+        // Initial tree set to application state
+        var node = new TreeNode<TemplateInstance>();
+        state.setTree(node);
+        state.setAnchorToTreeNode(anchor, node);
+        // Add the anchor to the pane
         super.addAnchor(anchor);
         // Finished initialization
         initialized = true;

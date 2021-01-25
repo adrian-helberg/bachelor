@@ -1,10 +1,18 @@
 package de.haw.gui;
 
 import de.haw.Generator;
+import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
 import de.haw.gui.template.TemplatePane;
+import de.haw.gui.turtle.TurtleGraphic;
+import de.haw.pipeline.RandomizerPipe;
+import de.haw.pipeline.pipe.CompressorPipe;
+import de.haw.pipeline.pipe.GeneralizerPipe;
+import de.haw.pipeline.pipe.InfererPipe;
+import de.haw.pipeline.Pipeline;
+import de.haw.pipeline.pipe.PipelineContext;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
@@ -14,14 +22,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Cursor;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
 import java.io.File;
@@ -29,11 +42,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 /**
  * Generator controller for corresponding FXML file to be called on application's FXMLLoader.load()
  */
 public class GeneratorController {
+    // Logging
+    Logger logger = Logger.getLogger(getClass().getName());
     // Application state
     private State state;
     // Branching structure view pane
@@ -60,6 +76,7 @@ public class GeneratorController {
     @FXML private void initialize() {
         paneBranchingStructure = new BranchingStructurePane(300,300);
         titledPane_Branching_Structure.setContent(paneBranchingStructure);
+        logger.info("Initialized Generator Controller");
     }
 
     /**
@@ -159,9 +176,9 @@ public class GeneratorController {
         // Disable pane click events
         paneBranchingStructure.setClickable(false);
         // Create template instance and attach it to the branching structure as draft
-        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate().getId());
+        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate());
         // Update application state accordingly
-        state.setCurrentDraft(new Draft(templateInstance.getTemplateID()));
+        state.setCurrentDraft(new Draft(templateInstance.getTemplate()));
         // Draw draft
         paneBranchingStructure.parseWord(templateInstance, true);
         // Disable controls that should not be used in this state
@@ -233,10 +250,34 @@ public class GeneratorController {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
-        for (var node : state.getTree()) {
-            System.out.print(node.getData().getTemplateID() + " -> ");
-        }
-        System.out.print("null");
+        // Pipeline context
+        var ctx = new PipelineContext();
+        ctx.tree = state.getTree();
+        ctx.wL = 0.5f;
+        ctx.w0 = 0.5f;
+        // Execute pipeline
+        var result = new Pipeline<>(new InfererPipe())
+                .pipe(new CompressorPipe())
+                .pipe(new GeneralizerPipe())
+                .execute(ctx);
+        System.out.println(result.lSystem);
+        var derivation = result.lSystem.derive();
+        System.out.println(derivation);
+
+        var turtleGraphic = new TurtleGraphic(300,300);
+        turtleGraphic.parseWord(new TemplateInstance(new Template(derivation)), false);
+
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.APPLICATION_MODAL);
+        dialog.initOwner(state.getStage());
+        var pane = new BorderPane();
+        pane.setCenter(turtleGraphic);
+        Label l = new Label(derivation);
+        l.setAlignment(Pos.CENTER);
+        pane.setBottom(l);
+        var dialogScene = new Scene(pane, 350, 350);
+        dialog.setScene(dialogScene);
+        dialog.show();
     }
 
     /**
@@ -249,24 +290,15 @@ public class GeneratorController {
         Draft currentDraft = state.getCurrentDraft();
         // Draw template instance
         paneBranchingStructure.parseWord(currentDraft, false);
+        // Get selected anchor from application state
+        Anchor selectedAnchor = state.getSelectedAnchor();
         // Use selected anchor
-        state.getSelectedAnchor().use();
+        state.setAnchorToTreeNode(selectedAnchor, new TreeNode<>(currentDraft));
+        selectedAnchor.use();
         // Select the next available anchor on the branching structure pane
         state.selectFirst();
         // Resets the branching structure turtle to the new selected anchor
         paneBranchingStructure.updateTurtle(state.getSelectedAnchor().getTurtle());
-        //// Build up tree
-        // Retrieve current tree represented as a single, iterable tree node
-        var tree = state.getTree();
-        if (tree == null) {
-            // Set up new tree
-            tree = new TreeNode<>(currentDraft);
-            // Update application state accordingly
-            state.setTree(tree);
-            return;
-        }
-        // Attach draft as new tree node
-        tree.addChild(currentDraft);
     }
 
     /**
@@ -280,7 +312,8 @@ public class GeneratorController {
         // Make the branching structure pane clickable again
         paneBranchingStructure.setClickable(true);
         // Removes draft from branching structure pane
-        paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft().getShapes());
+        var draft = state.getCurrentDraft();
+        if (draft != null) paneBranchingStructure.getChildren().removeAll(state.getCurrentDraft().getShapes());
     }
 
     /**

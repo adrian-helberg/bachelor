@@ -2,6 +2,7 @@ package de.haw.gui;
 
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.Draft;
+import de.haw.utils.Templates;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import javafx.beans.Observable;
@@ -9,13 +10,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Application state container
  */
 public class State {
     // javaFX scene access
-    private final Scene scene;
+    private final Stage stage;
     // All anchors added to the branching structure pane
     private final ObservableList<Anchor> anchors;
     // Filtered anchors for usability
@@ -24,15 +29,18 @@ public class State {
     private Draft currentDraft;
     // Tree structure created from structured branching structures
     private TreeNode<TemplateInstance> tree;
+    // Anchor-tree node mapping for determining which anchor belongs to which tree node
+    private final Map<Anchor, TreeNode<TemplateInstance>> anchorToTreeNode;
 
     /**
      * Create an application state containing the scene. Initializes lists
-     * @param scene Main window scene
+     * @param stage Main window stage
      */
-    public State(Scene scene) {
-        this.scene = scene;
+    public State(Stage stage) {
+        this.stage = stage;
         anchors = FXCollections.observableArrayList(anchor -> new Observable[] { anchor.usedProperty() });
         availableAnchors = new FilteredList<>(anchors, a -> !a.usedProperty().get());
+        anchorToTreeNode = new HashMap<>();
     }
 
     // GETTERS
@@ -41,8 +49,14 @@ public class State {
      * @return JavaFX scene
      */
     public Scene getScene() {
-        return scene;
+        return stage.getScene();
     }
+
+    /**
+     * Returns the javaFX stage
+     * @return JavaFX stage
+     */
+    public Stage getStage() { return stage; }
 
     /**
      * Returns a list of all anchors that are usable (not used yet)
@@ -76,6 +90,15 @@ public class State {
         return tree;
     }
 
+    /**
+     * Returns the corresponding tree node from a given anchor
+     * @param anchor Anchor the tree node is mapped to
+     * @return Tree node
+     */
+    public TreeNode<TemplateInstance> getTreeNodeFromAnchor(Anchor anchor) {
+        return anchorToTreeNode.get(anchor);
+    }
+
     // SETTERS
     /**
      * Adds an anchor to the application state
@@ -96,12 +119,21 @@ public class State {
         this.tree = tree;
     }
 
+    /**
+     * Adds an anchor-tree node mapping
+     * @param anchor Anchor to be mapped to a tree node
+     * @param treeNode Tree node that is mapped to the anchor
+     */
+    public void setAnchorToTreeNode(Anchor anchor, TreeNode<TemplateInstance> treeNode) {
+        anchorToTreeNode.put(anchor, treeNode);
+    }
+
     // METHODS
     /**
      * Removes all shapes from current draft
      */
     public void clearCurrentDraft() {
-        currentDraft.clearShapes();
+        if (currentDraft != null) currentDraft.clearShapes();
     }
 
     /**
@@ -128,6 +160,16 @@ public class State {
      */
     public void reset() {
         anchors.clear();
+        tree = null;
+        anchorToTreeNode.clear();
+        Templates.reset();
         clearCurrentDraft();
+    }
+
+    // OVERRIDES
+
+    @Override
+    public String toString() {
+        return "State{" + availableAnchors + ", " + currentDraft + ", " + tree + "}";
     }
 }

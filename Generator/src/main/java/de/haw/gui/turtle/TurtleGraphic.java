@@ -1,11 +1,10 @@
-package de.haw.gui.template;
+package de.haw.gui.turtle;
 
 import de.haw.gui.State;
 import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
-import de.haw.gui.turtle.Turtle;
-import de.haw.gui.turtle.TurtleCommand;
 import de.haw.tree.TemplateInstance;
+import de.haw.tree.TreeNode;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -180,7 +179,19 @@ public class TurtleGraphic extends Pane {
                     Anchor anchor = new Anchor(turtle.copy());
                     // Add an anchor for a variable
                     addAnchor(anchor);
+                    //// Build up tree
+                    // Create an empty node
+                    var emptyNode = new TreeNode<TemplateInstance>();
+                    // Fetch tree node from selected anchor
+                    var node = state.getTreeNodeFromAnchor(state.getSelectedAnchor());
+                    // Set template information to the tree node if empty
+                    if (node.isEmpty()) node.setData(templateInstance);
+                    // Add empty node as child
+                    node.addChild(emptyNode);
+                    // Update anchor-tree node mapping
+                    state.setAnchorToTreeNode(anchor, emptyNode);
                 }
+                // Progress further
                 current = current.substring(1);
             }
         }
@@ -195,7 +206,7 @@ public class TurtleGraphic extends Pane {
      */
     private String applyParameters(TemplateInstance templateInstance) {
         // Get corresponding template word
-        var word = Templates.getTemplateByID(templateInstance.getTemplateID()).getWord();
+        var word =templateInstance.getTemplate().getWord();
         // Fetch rotation property value
         var rotation = (float) templateInstance.getParameterValue("Rotation");
         // Fetch scaling property value
@@ -204,7 +215,7 @@ public class TurtleGraphic extends Pane {
         if (word.startsWith("+") || word.startsWith("-")) {
             word = word.replaceFirst("[0-9]+", String.valueOf(rotation));
         } else {
-            word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
+            if (rotation != 0) word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
         }
         // Apply scaling
         var fPattern = Pattern.compile("(F\\()([0-9]+)");

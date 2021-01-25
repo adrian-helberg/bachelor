@@ -1,6 +1,8 @@
 package de.haw.tree;
 
-import de.haw.gui.template.Templates;
+import de.haw.utils.Templates;
+
+import java.util.Objects;
 
 public class Template {
     private final int id;
@@ -25,5 +27,18 @@ public class Template {
     @Override
     public String toString() {
         return "Template{" + id + ", " + word + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Template template = (Template) o;
+        return id == template.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
