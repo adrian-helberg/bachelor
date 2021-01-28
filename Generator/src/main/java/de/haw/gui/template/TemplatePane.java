@@ -7,9 +7,12 @@ import de.haw.tree.TemplateInstance;
 import de.haw.utils.RomanNumber;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ListChangeListener;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Shape;
 
 /**
  * Template pane as a container that can be selected by the user. It hold selection property that
@@ -35,11 +38,13 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
         this.template = template;
         selectedProperty = new SimpleBooleanProperty(false);
         init();
+
+        super.parseWord(new TemplateInstance(getTemplate()), false);
+        getChildren().add(new Label(" " + RomanNumber.toRoman(template.getId())));
+
         setBorder(new Border(new BorderStroke(
                 Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)
         ));
-        super.parseWord(new TemplateInstance(getTemplate()), false);
-        getChildren().add(new Label(" " + RomanNumber.toRoman(template.getId())));
     }
 
     // GETTERS

@@ -84,7 +84,8 @@ public class LSystem {
         for (var i = 1; i <= instances; i++) {
             derivation = deriveOneInstance(derivation);
         }
-        return derivation;
+        // Prevent empty derivation
+        return derivation.isEmpty() ? derive(instances) : derivation;
     }
 
     /**
@@ -184,7 +185,6 @@ public class LSystem {
         // Add merged production rule; e.g. A -> x, B -> y => AB -> x, AB -> y
         final var firstLHS = first.getLhs();
         final var secondLHS = second.getLhs();
-//        final var mergedLHSs = firstLHS + secondLHS;
         var mergedLHSs = lSystemMerged.addModuleNotPresentInAlphabet();
         lSystemMerged.addProductionRule(new ProductionRule(mergedLHSs, first.getRhs()));
         lSystemMerged.addProductionRule(new ProductionRule(mergedLHSs, second.getRhs()));

@@ -111,11 +111,10 @@ public class State {
     }
 
     /**
-     * Sets the tree. Returns if the tree is already set.
+     * Sets the tree
      * @param tree Tree structure
      */
     public void setTree(TreeNode<TemplateInstance> tree) {
-        if (this.tree != null) return;
         this.tree = tree;
     }
 

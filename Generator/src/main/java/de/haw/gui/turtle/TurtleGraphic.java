@@ -5,18 +5,32 @@ import de.haw.gui.structure.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Logging;
+import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.scene.Cursor;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
+import javafx.scene.transform.Scale;
+
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
  * Turtle graphic class for use of graphical representation of a logo-turtle processed word.
  * It extends JavaFX Pane, so it can hold JavaFX shapes as graphical representation
  */
-public class TurtleGraphic extends Pane {
+public class TurtleGraphic extends Pane implements Logging {
+    private final Logger LOGGER = getLogger();
     // Logo-turtle
     private Turtle turtle;
     // Mapping from symbols to turtle commands
@@ -49,7 +63,7 @@ public class TurtleGraphic extends Pane {
         symbolCommands = new HashMap<>();
         // Mapping initialization
         initializeCommands();
-        // Pane initialization
+
         setMinWidth(width);
         setWidth(width);
         setMaxWidth(width);
@@ -95,30 +109,6 @@ public class TurtleGraphic extends Pane {
         symbolCommands.put("[", (value, isDraft) -> turtle.pushState());
 
         symbolCommands.put("]", (value, isDraft) -> turtle.popState());
-
-   /*     symbolCommands.put("F", (isDraft) -> {
-            final var previousPosition = turtle.getPosition();
-            turtle.forwards(10 * scaling);
-            var line = new Line(
-                    previousPosition.get(0),
-                    previousPosition.get(1),
-                    turtle.getPosition().get(0),
-                    turtle.getPosition().get(1)
-            );
-            if (isDraft) {
-                line.getStrokeDashArray().addAll(2d);
-                state.getCurrentDraft().addShape(line);
-            }
-            getChildren().add(line);
-        });
-
-        symbolCommands.put("+", (isDraft) -> turtle.turnRight(45));
-
-        symbolCommands.put("-", (isDraft) -> turtle.turnLeft(45));
-
-        symbolCommands.put("[", (isDraft) -> turtle.pushState());
-
-        symbolCommands.put("]", (isDraft) -> turtle.popState());*/
     }
 
     /**
@@ -158,8 +148,12 @@ public class TurtleGraphic extends Pane {
      * @param isDraft Determine whether current shaped has to be removable or not
      */
     public void parseWord(TemplateInstance templateInstance, boolean isDraft) {
+        if (!isDraft && this instanceof BranchingStructurePane) {
+            LOGGER.info("Add template instance");
+            LOGGER.info(templateInstance.toString());
+        }
         // Change the string to be processed by applying template instance parameters to it
-        var current = applyParameters(templateInstance);
+        var current = templateInstance.getWord();//applyParameters(templateInstance);
         // Commands for different case processing
         final char push = '[', pop = ']', f = 'F', turnRight = '+', turnLeft = '-';
         // If state is null, the template instance was created by a template without further parameter changes (default)
@@ -179,11 +173,9 @@ public class TurtleGraphic extends Pane {
             char firstChar = current.charAt(0);
             if (firstChar == push) {
                 symbolCommands.get(String.valueOf(push)).invoke(null, isDraft);
-//                symbolCommands.get(String.valueOf(push)).invoke(isDraft);
                 current = current.substring(1);
             } else if (firstChar == pop) {
                 symbolCommands.get(String.valueOf(pop)).invoke(null, isDraft);
-//                symbolCommands.get(String.valueOf(pop)).invoke(isDraft);
                 current = current.substring(1);
             } else if (firstChar == f || firstChar == turnRight || firstChar == turnLeft ) {
                 var argumentEndIndex = current.indexOf(")") + 1;
@@ -191,17 +183,14 @@ public class TurtleGraphic extends Pane {
                 var argument = current.substring(0, argumentEndIndex);
                 // Symbol, e.g. F
                 var symbol = argument.substring(0, 1);
-//                var symbol = current.substring(0, 1);
                 // Command properties, e.g. 1
                 var value = argument.substring(argument.indexOf("(") + 1, argument.indexOf(")"));
                 // Get corresponding command for the symbol and execute it
                 if (!symbolCommands.containsKey(symbol))
                     throw new RuntimeException("'" + symbol + "'-Symbol not present in command map");
                 symbolCommands.get(symbol).invoke(Float.valueOf(value), isDraft);
-//                symbolCommands.get(symbol).invoke(isDraft);
                 // Remove processed substring from word
                 current = current.substring(argumentEndIndex);
-//                current = current.substring(1);
             } else {
                 // Variable or unknown symbol that is handled like a variable
                 if (!isDraft && this instanceof BranchingStructurePane) {
@@ -224,6 +213,7 @@ public class TurtleGraphic extends Pane {
                 current = current.substring(1);
             }
         }
+
         // Resets the logo-turtle if the shapes are added as draft
         if (isDraft) turtle = previousTurtle;
     }
@@ -235,7 +225,7 @@ public class TurtleGraphic extends Pane {
      */
     private String applyParameters(TemplateInstance templateInstance) {
         // Get corresponding template word
-        var word =templateInstance.getTemplate().getWord();
+        var word = templateInstance.getTemplate().getWord();
         // Fetch rotation property value
         var rotation = (float) templateInstance.getParameterValue("Rotation");
         // Fetch scaling property value

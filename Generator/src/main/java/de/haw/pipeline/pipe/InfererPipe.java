@@ -1,14 +1,18 @@
 package de.haw.pipeline.pipe;
 
-import de.haw.inferer.Inferer;
+import de.haw.module.Inferer;
 import de.haw.pipeline.Pipe;
+import de.haw.utils.Logging;
 
-public class InfererPipe implements Pipe<PipelineContext, PipelineContext> {
+public class InfererPipe implements Pipe<PipelineContext, PipelineContext>, Logging {
     @Override
     public PipelineContext process(PipelineContext input) {
-        var inferer = new Inferer(input.tree);
+        var logger = getLogger();
+        logger.info("Infer L-System from tree");
+        logger.info(input.tree.toString());
         // Update pipeline context
-        input.lSystem = inferer.infer();
+        input.lSystem = new Inferer(input.tree).infer();
+        logger.info(input.lSystem.toString());
         // Pass pipeline context to next pipe
         return input;
     }
