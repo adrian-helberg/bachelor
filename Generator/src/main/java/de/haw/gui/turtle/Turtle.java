@@ -1,5 +1,6 @@
 package de.haw.gui.turtle;
 
+import de.haw.utils.Vectors;
 import mikera.vectorz.Vector;
 import org.javatuples.Pair;
 import java.util.Objects;
@@ -70,7 +71,7 @@ public class Turtle {
      */
     public void forwards(float distance) {
         if (distance <= 0) throw new RuntimeException("Distance needs to be positive");
-        position.sub(rotate(Vector.of(0, distance), angle));
+        position.sub(Vectors.rotate(Vector.of(0, distance), angle));
     }
 
     /**
@@ -108,32 +109,6 @@ public class Turtle {
         var state = stack.pop();
         position = (Vector) state.getValue(0);
         angle = (double) state.getValue(1);
-    }
-
-    /**
-     * Return a vector rotated by a given angle
-     * @param v Vector to be rotated
-     * @param angle Angle to be rotated
-     * @return Rotated vector
-     */
-    public Vector rotate(Vector v, double angle) {
-        double degToRad = Math.PI / 180;
-        return rotateRadians(v, angle * degToRad);
-    }
-
-    /**
-     * Return a vector rotated by a given radian
-     * @param v Vector to be rotated
-     * @param radians Radian to be rotated
-     * @return Rotated vector
-     */
-    private Vector rotateRadians(Vector v, double radians) {
-        var ca = Math.cos(radians);
-        var sa = Math.sin(radians);
-        return Vector.of(
-                ca * v.get(0) - sa * v.get(1),
-                sa * v.get(0) + ca * v.get(1)
-        );
     }
 
     /**

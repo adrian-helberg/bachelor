@@ -39,7 +39,7 @@ public class TemplatePane extends TurtleGraphic implements Selectable {
         selectedProperty = new SimpleBooleanProperty(false);
         init();
 
-        super.parseWord(new TemplateInstance(getTemplate()), false);
+        super.parseWord(new TemplateInstance(template), false);
         getChildren().add(new Label(" " + RomanNumber.toRoman(template.getId())));
 
         setBorder(new Border(new BorderStroke(

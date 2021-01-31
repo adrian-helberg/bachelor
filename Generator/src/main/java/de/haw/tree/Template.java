@@ -26,7 +26,7 @@ public class Template {
     // OVERRIDES
     @Override
     public String toString() {
-        return "Template{" + id + ", " + word + "}";
+        return "Template{" + id + ", " + word.replaceAll("[A-EG-Z]", "") + "}";
     }
 
     @Override

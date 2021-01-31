@@ -1,33 +1,29 @@
 package de.haw.tree;
 
+import de.haw.module.Estimator;
 import de.haw.utils.Templates;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 public class TemplateInstance {
-    //
+    // Populated word
     private String word;
-    //
     private final Template template;
     // Since there is no adequate get() method on Set, Map is used instead
-    private final Map<String, Number> parametersMap;
+    private Map<String, Number> parametersMap;
+
+    public TemplateInstance(Template template) {
+        this.template = template;
+        init();
+        word = Templates.populate(template.getWord(), parametersMap);
+    }
 
     public TemplateInstance(String word) {
         this.word = word;
         template = null;
-        parametersMap = null;
-    }
-
-    public TemplateInstance(Template template) {
-        this.template = template;
-        parametersMap = new HashMap<>();
-        parametersMap.put("Scaling", 1.0f);
-        parametersMap.put("Rotation", 0.0f);
-        populate();
-        Templates.addTemplateInstance(this);
+        init();
     }
 
     // GETTERS
@@ -50,55 +46,34 @@ public class TemplateInstance {
     // SETTERS
     public void setParameter(String name, Number number) {
         parametersMap.put(name, number);
+        word = Templates.populate(template.getWord(), parametersMap);
     }
 
     // METHODS
-    public void populate() {
-        var templateWord = template.getWord();
-        // Fetch rotation property value
-        var rotation = (float) parametersMap.get("Rotation");
-        // Fetch scaling property value
-        var scaling = (float) parametersMap.get("Scaling");
-        // Apply rotation
-        if (templateWord.startsWith("+") || templateWord.startsWith("-")) {
-            // Cut off first + or -
-            templateWord = templateWord.substring(1);
-            // Add +(rotation) or -(rotation) accordingly
-            templateWord = (rotation >= 0
-                    ? "+(" + (45 + rotation)
-                    : "-(" + (-45 + rotation)) +
-                ")" + templateWord;
-        } else {
-            if (rotation != 0) templateWord = (rotation > 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + templateWord;
-        }
-
-        // Apply scaling
-        templateWord = templateWord.replaceAll("F", "F(" + (10 * scaling) + ")");
-        // Apply branching angle, but dont override rotation
-        var head = templateWord.substring(0, 1);
-        var tail = templateWord.substring(1);
-        tail = tail.replaceAll("\\+", "+(" + 45 + ")");
-        tail = tail.replaceAll("-", "-(" + 45 + ")");
-        templateWord = head + tail;
-        word = templateWord;
+    private void init() {
+        parametersMap = new HashMap<>();
+        parametersMap.put("Scaling", 1.0f);
+        parametersMap.put("Rotation", 0.0f);
+        parametersMap.put("Branching angle", 45.0f);
     }
 
     // OVERRIDES
     @Override
     public String toString() {
-        return "TemplateInstance{" + word + ", " + template + "}";
+        return "TemplateInstance{" + word + ", " + template + ", " + parametersMap + "}";
     }
 
+    // It is important to treat template instances as templates for the compression framework
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TemplateInstance that = (TemplateInstance) o;
-        return Objects.equals(word, that.word) && Objects.equals(template, that.template);
+        return Objects.equals(template, that.template);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(word, template);
+        return Objects.hash(template);
     }
 }

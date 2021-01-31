@@ -1,4 +1,4 @@
-package de.haw.gui.structure;
+package de.haw.gui.shape;
 
 import de.haw.gui.Selectable;
 import de.haw.gui.turtle.Turtle;

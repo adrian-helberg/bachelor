@@ -1,19 +1,6 @@
 package de.haw.gui;
 
-import de.haw.gui.structure.Anchor;
-import de.haw.gui.turtle.Turtle;
-import javafx.collections.FXCollections;
-import javafx.collections.transformation.FilteredList;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test object: Application state container

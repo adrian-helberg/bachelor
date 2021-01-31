@@ -1,6 +1,9 @@
 package de.haw.lsystem;
 
+import de.haw.module.Estimator;
+import de.haw.tree.Template;
 import de.haw.utils.RegularExpressions;
+import de.haw.utils.Templates;
 
 import java.util.*;
 import java.util.regex.Pattern;
@@ -10,22 +13,22 @@ public class LSystem {
     private final List<String> alphabet;
     private String axiom;
     private final List<ProductionRule> productionRules;
-    Random randomizer;
+    private final Random randomizer;
 
     public LSystem() {
-        this(new ArrayList<>(), "", new ArrayList<>());
+        this(new ArrayList<>(), "", new ArrayList<>(), new Random());
     }
 
-    public LSystem(List<String> alphabet, String axiom, List<ProductionRule> productionRules) {
+    public LSystem(List<String> alphabet, String axiom, List<ProductionRule> productionRules, Random random) {
         this.alphabet = alphabet;
         this.axiom = axiom;
         this.productionRules = productionRules;
-        randomizer = new Random();
+        randomizer = random;
     }
 
     // Copy constructor
     public LSystem(LSystem lSystem) {
-        this(lSystem.getAlphabet(), lSystem.getAxiom(), lSystem.getProductionRules());
+        this(lSystem.getAlphabet(), lSystem.getAxiom(), lSystem.getProductionRules(), lSystem.randomizer);
     }
 
     // GETTERS
@@ -74,7 +77,7 @@ public class LSystem {
         var derivation = axiom;
         var pattern = Pattern.compile("[A-EG-Z]");
         while (pattern.matcher(derivation).find()) {
-            derivation = deriveOneInstance(derivation);
+            derivation = derive(derivation);
         }
         return derivation;
     }
@@ -82,7 +85,8 @@ public class LSystem {
     public String derive(int instances) {
         var derivation = axiom;
         for (var i = 1; i <= instances; i++) {
-            derivation = deriveOneInstance(derivation);
+            derivation = derive(derivation);
+            if (derivation.isEmpty()) break;
         }
         // Prevent empty derivation
         return derivation.isEmpty() ? derive(instances) : derivation;
@@ -91,17 +95,89 @@ public class LSystem {
     /**
      * Derives the axiom module by module for one iteration
      */
-    private String deriveOneInstance(String axiom) {
-        for (var axiomModule : axiom.toCharArray()) {
+    private String derive(String axiom) {
+        int i = 0;
+        while (i < axiom.length()) {
+            var symbol = axiom.charAt(i);
+            if (symbol == 'F' || symbol == '+' || symbol == '-' || symbol == '[' || symbol == ']') {
+                i++;
+                continue;
+            }
+
             var foundProductionRules = productionRules.stream()
-                    .filter(rule -> rule.getLhs().contains(String.valueOf(axiomModule)))
+                    .filter(rule -> rule.getLhs().contains(String.valueOf(symbol)))
                     .collect(Collectors.toList());
-            if (foundProductionRules.isEmpty()) continue;
-            var ruleCount = foundProductionRules.size();
-            var randomRule = foundProductionRules.get(randomizer.nextInt(foundProductionRules.size()));
-            axiom = axiom.replace(String.valueOf(axiomModule), randomRule.getRhs());
+
+            int rulesCount = foundProductionRules.size();
+            ProductionRule rule;
+            if (rulesCount > 1) {
+                int randomIndex = randomizer.nextInt(rulesCount);
+                rule = foundProductionRules.get(randomIndex);
+            } else {
+                rule = foundProductionRules.get(0);
+            }
+
+            var ruleRHS = rule.getRhs();
+            axiom = axiom.substring(0, i) + ruleRHS + axiom.substring(i + 1);
+            i += ruleRHS.length();
         }
         return axiom;
+    }
+
+    public String deriveAndPopulate(int instances, Estimator estimator) {
+        var derivation = axiom;
+        for (var i = 0; i < instances; i++) {
+            derivation = deriveAndPopulate(derivation, estimator);
+            if (derivation.isEmpty()) break;
+        }
+        // Prevent empty derivation
+        return derivation.isEmpty() ? deriveAndPopulate(instances, estimator) : derivation;
+    }
+
+    private String deriveAndPopulate(String axiom, Estimator estimator) {
+        var derivation = axiom;
+        int i = 0;
+        while (i < derivation.length()) {
+            var symbol = derivation.charAt(i);
+            if (!String.valueOf(symbol).matches("[A-EG-Z]")) {
+                i++;
+                continue;
+            }
+
+            var foundProductionRules = productionRules.stream()
+                    .filter(rule -> rule.getLhs().contains(String.valueOf(symbol)))
+                    .collect(Collectors.toList());
+
+            // TODO: apply distributed parameters here?
+
+            int rulesCount = foundProductionRules.size();
+            ProductionRule rule;
+            if (rulesCount > 1) {
+                int randomIndex = randomizer.nextInt(rulesCount);
+                rule = foundProductionRules.get(randomIndex);
+            } else {
+                rule = foundProductionRules.get(0);
+            }
+
+            var ruleRHS = rule.getRhs();
+
+            var parametersMap = new HashMap<String, Number>();
+            Template templateByWord = Templates.getTemplateByWord(ruleRHS);
+            if (templateByWord != null) {
+                parametersMap.put("Scaling", estimator.estimateParameterForTemplate("Scaling", templateByWord.getId()));
+                parametersMap.put("Rotation", estimator.estimateParameterForTemplate("Rotation", templateByWord.getId()));
+                parametersMap.put("Branching angle", estimator.estimateParameterForTemplate("Branching angle", templateByWord.getId()));
+                ruleRHS = Templates.populate(ruleRHS, parametersMap);
+            }
+
+            derivation = derivation.substring(0, i) + ruleRHS + derivation.substring(i + 1);
+            i += ruleRHS.length();
+        }
+        return derivation;
+    }
+
+    private String replace(String word, int index, String replacement) {
+        return word.substring(0, index) + replacement + word.substring(index + 1);
     }
 
     public LSystem clean() {
@@ -167,7 +243,7 @@ public class LSystem {
     public LSystem copy() {
         var rules = new ArrayList<ProductionRule>();
         productionRules.forEach(r -> rules.add(new ProductionRule(r)));
-        return new LSystem(new ArrayList<>(alphabet), axiom, rules);
+        return new LSystem(new ArrayList<>(alphabet), axiom, rules, randomizer);
     }
 
     public LSystem merge(Set<ProductionRule> rulePair) {
@@ -179,9 +255,9 @@ public class LSystem {
         final var second = iterator.next();
         // Remove both production rules to be merged
         lSystemMerged.alphabet.remove(first.getLhs());
-        lSystemMerged.productionRules.remove(first);
+        lSystemMerged.productionRules.removeIf(first::equals);
         lSystemMerged.alphabet.remove(second.getLhs());
-        lSystemMerged.productionRules.remove(second);
+        lSystemMerged.productionRules.removeIf(second::equals);
         // Add merged production rule; e.g. A -> x, B -> y => AB -> x, AB -> y
         final var firstLHS = first.getLhs();
         final var secondLHS = second.getLhs();

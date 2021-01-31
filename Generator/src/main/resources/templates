@@ -1,8 +1,8 @@
 FX
 F-FX
 F+FX
-F[+FX]-FY
+F[-FX]+FY
 F[-FX]FY
-F[+FX]FY
-F[+FX][-FY]FZ
+F[FX]+FY
+F[-FX][FY]+FZ
 F[+FX]F[-FY]FZ

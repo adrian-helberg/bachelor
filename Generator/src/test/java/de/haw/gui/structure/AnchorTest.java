@@ -1,6 +1,6 @@
 package de.haw.gui.structure;
 
-import de.haw.gui.structure.Anchor;
+import de.haw.gui.shape.Anchor;
 import de.haw.gui.turtle.Turtle;
 import org.junit.jupiter.api.Test;
 

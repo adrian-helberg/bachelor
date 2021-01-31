@@ -1,18 +1,14 @@
 package de.haw.gui;
 
 import de.haw.Generator;
-import de.haw.gui.structure.Anchor;
+import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
 import de.haw.gui.structure.Property;
 import de.haw.gui.template.TemplatePane;
 import de.haw.gui.turtle.TurtleGraphic;
-import de.haw.pipeline.RandomizerPipe;
-import de.haw.pipeline.pipe.CompressorPipe;
-import de.haw.pipeline.pipe.GeneralizerPipe;
-import de.haw.pipeline.pipe.InfererPipe;
+import de.haw.pipeline.pipe.*;
 import de.haw.pipeline.Pipeline;
-import de.haw.pipeline.pipe.PipelineContext;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
@@ -21,26 +17,21 @@ import de.haw.utils.Templates;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Line;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -56,14 +47,13 @@ import java.util.logging.Logger;
  * Generator controller for corresponding FXML file to be called on application's FXMLLoader.load()
  */
 public class GeneratorController implements Logging {
-    private final Logger LOGGER = getLogger();
+    private final Logger logger = getLogger();
     // Application state
     private State state;
     // Branching structure view pane
     private BranchingStructurePane paneBranchingStructure;
     // Stored template selection view parent
     private VBox selectedTemplateParent;
-
     // FXML elements bound to this controller
     @FXML public SplitPane splitPane;
     @FXML public TitledPane titledPane_Branching_Structure;
@@ -73,8 +63,11 @@ public class GeneratorController implements Logging {
     @FXML public HBox hBox_Templates;
     @FXML public Button btn_Select_Template;
     @FXML public Button btn_Generate;
-    @FXML public Menu menu_iterations;
-    @FXML public Menu menu_generations;
+    // Options
+    @FXML public TextField iterations;
+    @FXML public TextField generations;
+    @FXML public TextField rules;
+    @FXML public TextField merges;
 
     /**
      * public constructor without any parameters required by JavaFX framework
@@ -86,7 +79,7 @@ public class GeneratorController implements Logging {
      * Initializes a new branching structure pane and sets it to the view parent
      */
     @FXML private void initialize() {
-        LOGGER.info("Initialize Generator Controller");
+        logger.info("Initialize Generator Controller");
         paneBranchingStructure = new BranchingStructurePane(300,300);
         // Bind branching structure pane size to its parent size
         titledPane_Branching_Structure.prefWidthProperty().bind(splitPane.widthProperty());
@@ -99,14 +92,27 @@ public class GeneratorController implements Logging {
         titledPane_Templates.prefHeightProperty().bind(hBox_Templates.heightProperty());
         // Prevent right side to resize; Let only left side resize
         SplitPane.setResizableWithParent(scrollPane, false);
+        makeTextFieldNumerous(iterations, false);
+        makeTextFieldNumerous(generations, false);
+        makeTextFieldNumerous(rules, true);
+        makeTextFieldNumerous(merges, true);
+    }
 
+    private void makeTextFieldNumerous(TextField textField, boolean floating) {
+        textField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (floating) {
+                if (!newValue.matches("[+-]?((\\d+\\.?\\d*)|(\\.\\d+))")) Platform.runLater(() -> textField.setText("0"));
+            } else {
+                if (!newValue.matches("\\d*")) Platform.runLater(() -> textField.setText("0"));
+            }
+        });
     }
 
     /**
      * Loads templates from templates file (resource folder)
      */
     @FXML public void loadTemplates() {
-        LOGGER.info("Load templates");
+        logger.info("Load templates");
         tilePane_Templates.getChildren().clear();
 
         try {
@@ -121,7 +127,7 @@ public class GeneratorController implements Logging {
                 if (line.startsWith("%") || line.isEmpty()) continue;
                 // Create a template out of the read line
                 var pane = new TemplatePane( 100, 100, new Template(line));
-                LOGGER.info(pane.getTemplate().toString());
+                logger.info(pane.getTemplate().toString());
                 // Register mouse clicking event
                 pane.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
                     tilePane_Templates.getChildren().stream().filter(
@@ -186,16 +192,17 @@ public class GeneratorController implements Logging {
      * Selects a template by switching the templates-view with a selected-template-view
      */
     @FXML public void selectTemplate() {
-        var selectedTemplate = getSelectedTemplatePane();
-        if (selectedTemplate == null) return;
+        var selectedTemplatePane = getSelectedTemplatePane();
+        if (selectedTemplatePane == null) return;
         // Reset the selected template view parent
         selectedTemplateParent = new VBox();
         // Bind selected template view size to its parent size
         selectedTemplateParent.prefHeightProperty().bind(scrollPane.heightProperty());
+        // Create template instance and attach it to the branching structure as draft
+        var templateInstance = new TemplateInstance(selectedTemplatePane.getTemplate());
         // Create default data
         ObservableList<Property> data = FXCollections.observableArrayList();
-        data.add(new Property("Scaling", 1.0f));
-        data.add(new Property("Rotation", 0.0f));
+        templateInstance.getParameters().forEach((name, value) -> data.add(new Property(name, (Float) value)));
         // Property table
         TableView<Property> tableView = initPropertyTable();
         tableView.setItems(data);
@@ -203,8 +210,6 @@ public class GeneratorController implements Logging {
         initSelectedTemplateView(tableView);
         // Disable pane click events
         paneBranchingStructure.setClickable(false);
-        // Create template instance and attach it to the branching structure as draft
-        var templateInstance = new TemplateInstance(selectedTemplate.getTemplate());
         // Update application state accordingly
         state.setCurrentDraft(new Draft(templateInstance.getTemplate()));
         // Draw draft
@@ -217,7 +222,9 @@ public class GeneratorController implements Logging {
     }
 
     private void initSelectedTemplateView(TableView<Property> tableView) {
-        var titledPaneSelectedTemplate = new TitledPane("Selected Template", new VBox(tableView));
+        VBox box = new VBox(tableView);
+        tableView.prefHeightProperty().bind(box.heightProperty());
+        var titledPaneSelectedTemplate = new TitledPane("Selected Template", box);
         titledPaneSelectedTemplate.setCollapsible(false);
         titledPaneSelectedTemplate.setExpanded(true);
         titledPaneSelectedTemplate.prefHeightProperty().bind(selectedTemplateParent.heightProperty());
@@ -242,20 +249,21 @@ public class GeneratorController implements Logging {
     private TableView<Property> initPropertyTable() {
         var tableView = new TableView<Property>();
         tableView.setEditable(true);
-        tableView.setMinWidth(300);
-        tableView.setMaxHeight(260);
+        var tableWidth = 270;
+        tableView.setMaxWidth(tableWidth);
         // Cell factory
         Callback<TableColumn<Property, String>, TableCell<Property, String>> cellFactory =
                 (TableColumn<Property, String> param) -> new PropertyCell();
-        // Column name
+
+        var columnSize = tableWidth / 2 - 1;
         var nameColumn = new TableColumn<Property, String>("Property");
-        nameColumn.setMinWidth(150);
-        nameColumn.setMaxWidth(150);
+        nameColumn.setMinWidth(columnSize);
+        nameColumn.setMaxWidth(columnSize);
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         // Column value
         var valueColumn = new TableColumn<Property, String>("Value");
-        valueColumn.setMinWidth(150);
-        valueColumn.setMaxWidth(150);
+        valueColumn.setMinWidth(columnSize);
+        valueColumn.setMaxWidth(columnSize);
         valueColumn.setCellValueFactory(cellData -> cellData.getValue().valueProperty());
         valueColumn.setCellFactory(cellFactory);
         // Register a function to be called on cell change
@@ -282,54 +290,43 @@ public class GeneratorController implements Logging {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
+        var numberOfIterations = Float.parseFloat(iterations.getText());
+        var numberOfGenerations = Float.parseFloat(generations.getText());
         // Pipeline context
         var ctx = new PipelineContext();
         ctx.tree = state.getTree();
+        ctx.randomizer = state.getRandomizer();
 
         if (ctx.tree.isEmpty()) return;
 
-        ctx.wL = 0.5f;
-        ctx.w0 = 0.5f;
+        ctx.wL = Float.parseFloat(rules.getText());
+        ctx.w0 = Float.parseFloat(merges.getText());
         // Execute pipeline
         var result = new Pipeline<>(new InfererPipe())
                 .pipe(new CompressorPipe())
                 .pipe(new GeneralizerPipe())
+                .pipe(new EstimatorPipe())
                 .execute(ctx);
 
-        // Number of generations
-        var selectedGenerations = menu_generations.getItems().stream()
-                .map(i -> (RadioMenuItem)i)
-                .filter(RadioMenuItem::isSelected)
-                .findFirst()
-                .orElse(null);
-        var generations = selectedGenerations != null ? Float.parseFloat(selectedGenerations.getText()) : 0;
-        // Number of iterations per generation
-        var selectedIterations = menu_iterations.getItems().stream()
-                .map(i -> (RadioMenuItem)i)
-                .filter(RadioMenuItem::isSelected)
-                .findFirst()
-                .orElse(null);
-        var iterations = selectedIterations != null ? Integer.parseInt(selectedIterations.getText()) + 1 : 1;
-        for (int i = 0; i < generations; i++) {
-            var derivation = result.lSystem.derive(iterations);
+        for (int i = 0; i < numberOfGenerations; i++) {
+            Platform.runLater(() -> {
+                var derivation = result.lSystem.deriveAndPopulate((int) numberOfIterations, ctx.estimator);
 
-            var turtleGraphic = new TurtleGraphic(300,300);
-            turtleGraphic.parseWord(new TemplateInstance(new Template(derivation)), false);
+                var turtleGraphic = new TurtleGraphic(300,300);
+                TemplateInstance templateInstance = new TemplateInstance(derivation);
+                turtleGraphic.parseWord(templateInstance, false);
 
-            final Stage dialog = new Stage();
-            dialog.initModality(Modality.NONE);
-            dialog.initOwner(state.getStage());
-            var pane = new BorderPane();
-            pane.setCenter(turtleGraphic);
-            var labelBox = new HBox();
-            var word = new Label(derivation);
-            var gen = new Label("#" + (i + 1));
-            var iter = new Label(iterations + " iterations");
-            labelBox.getChildren().addAll(gen, new Separator(Orientation.VERTICAL), iter, new Separator(Orientation.VERTICAL), word);
-            pane.setBottom(labelBox);
-            var dialogScene = new Scene(pane, 400, 400);
-            dialog.setScene(dialogScene);
-            dialog.show();
+                final Stage dialog = new Stage();
+                dialog.initModality(Modality.NONE);
+                dialog.initOwner(state.getStage());
+                var pane = new BorderPane();
+                pane.setCenter(turtleGraphic);
+                var word = new Label(templateInstance.getWord());
+                pane.setBottom(word);
+                var dialogScene = new Scene(pane, 600, 600);
+                dialog.setScene(dialogScene);
+                dialog.show();
+            });
         }
     }
 

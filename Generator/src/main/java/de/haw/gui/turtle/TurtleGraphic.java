@@ -1,25 +1,19 @@
 package de.haw.gui.turtle;
 
 import de.haw.gui.State;
-import de.haw.gui.structure.Anchor;
+import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Logging;
+import de.haw.utils.Vectors;
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ListChangeListener;
 import javafx.scene.Cursor;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.transform.Scale;
+import mikera.vectorz.Vector;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -89,6 +83,7 @@ public class TurtleGraphic extends Pane implements Logging {
         symbolCommands.put("F", (value, isDraft) -> {
             final var previousPosition = turtle.getPosition();
             turtle.forwards(value * scaling);
+
             var line = new Line(
                     previousPosition.get(0),
                     previousPosition.get(1),
@@ -99,7 +94,40 @@ public class TurtleGraphic extends Pane implements Logging {
                 line.getStrokeDashArray().addAll(2d);
                 state.getCurrentDraft().addShape(line);
             }
+
             getChildren().add(line);
+
+            /*
+            getChildren().stream().filter(c -> c instanceof Line).map(l -> (Line)l).forEach(l -> {
+                // A: new line, B: old line
+                var Ax = line.getBoundsInParent().getCenterX();
+                var Ay = line.getBoundsInParent().getCenterY();
+                var Bx = l.getBoundsInParent().getCenterX();
+                var By = l.getBoundsInParent().getCenterY();
+
+                var cA = Vector.of(Ax, Ay);
+                var cB = Vector.of(Bx, By);
+
+                var headingA = Vector.of(line.getEndX() - line.getStartX(), line.getEndY() - line.getStartY()).toNormal();
+                var headingB = Vector.of(l.getEndX() - l.getStartX(), l.getEndY() - l.getStartY()).toNormal();
+
+                var heightA = line.getBoundsInParent().getHeight();
+                var heightB = l.getBoundsInParent().getHeight();
+
+                var cAcB = Vector.of(cB.get(0) - cA.get(0), cB.get(1) - cA.get(1));
+
+                // Distance cAcB to direction vector of A
+                var distanceCaCbHeadingA = Vectors.distanceBetweenTwoVectors(cAcB, headingA);
+                // Distance cAcB to direction vector of A
+                var distanceCaCbHeadingB = Vectors.distanceBetweenTwoVectors(cAcB, headingB);
+
+                var Ds = (distanceCaCbHeadingB + distanceCaCbHeadingA - (heightA + heightB)) / 0.5 * (heightA - heightB);
+
+                System.out.println(l + " to " + line + ": " + Ds);
+            });
+            */
+
+
         });
 
         symbolCommands.put("+", (value, isDraft) -> turtle.turnRight(value));
@@ -153,7 +181,7 @@ public class TurtleGraphic extends Pane implements Logging {
             LOGGER.info(templateInstance.toString());
         }
         // Change the string to be processed by applying template instance parameters to it
-        var current = templateInstance.getWord();//applyParameters(templateInstance);
+        var current = templateInstance.getWord();
         // Commands for different case processing
         final char push = '[', pop = ']', f = 'F', turnRight = '+', turnLeft = '-';
         // If state is null, the template instance was created by a template without further parameter changes (default)

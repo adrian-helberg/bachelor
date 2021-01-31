@@ -4,6 +4,7 @@ import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Templates class for static usage of utils class for templates and template instances
@@ -11,12 +12,9 @@ import java.util.List;
 public class Templates {
     // Created templates
     private final static List<Template> templates;
-    // Created template instances
-    private final static List<TemplateInstance> instances;
 
     static {
         templates = new ArrayList<>();
-        instances = new ArrayList<>();
     }
 
     // GETTERS
@@ -29,6 +27,15 @@ public class Templates {
         return templates.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
     }
 
+    public static Template getTemplateByWord(String word) {
+        return templates.stream().filter(t -> {
+            // Do not take variables into account
+            var w1 = t.getWord().replaceAll("[A-EG-Z]", "");
+            var w2 = word.replaceAll("[A-EG-Z]", "");
+            return w1.equals(w2);
+        }).findFirst().orElse(null);
+    }
+
     // SETTERS
     /**
      * Adds a given template to the templates list. Used in Template(...)-constructor
@@ -36,14 +43,6 @@ public class Templates {
      */
     public static void addTemplate(Template template) {
         templates.add(template);
-    }
-
-    /**
-     * Adds a given template instance to the template instances list. Used in TemplateInstance(...)-constructor
-     * @param templateInstance Template instance to be added
-     */
-    public static void addTemplateInstance(TemplateInstance templateInstance) {
-        instances.add(templateInstance);
     }
 
     // METHODS
@@ -60,6 +59,35 @@ public class Templates {
      */
     public static void reset() {
         templates.clear();
-        instances.clear();
+    }
+
+    public static String populate(String word, Map<String, Number> parametersMap) {
+        // Fetch rotation property value
+        var rotation = (float) parametersMap.get("Rotation");
+        // Fetch scaling property value
+        var scaling = (float) parametersMap.get("Scaling");
+        // Fetch branching angle property value
+        var branchingAngle = (float) parametersMap.get("Branching angle");
+        // Apply rotation
+        if (word.startsWith("+") || word.startsWith("-")) {
+            // Cut off first + or -
+            word = word.substring(1);
+            // Add +(rotation) or -(rotation) accordingly
+            word = (rotation >= 0
+                    ? "+(" + (45 + rotation)
+                    : "-(" + (-45 + rotation)) +
+                    ")" + word;
+        } else {
+            if (rotation != 0) word = (rotation > 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
+        }
+        // Apply scaling
+        word = word.replaceAll("F", "F(" + (10 * scaling) + ")");
+        // Apply branching angle, but dont override rotation
+        var head = word.substring(0, 1);
+        var tail = word.substring(1);
+        tail = tail.replaceAll("\\+", "+(" + branchingAngle + ")");
+        tail = tail.replaceAll("-", "-(" + branchingAngle + ")");
+        word = head + tail;
+        return word;
     }
 }

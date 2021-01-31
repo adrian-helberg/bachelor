@@ -39,7 +39,7 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
     }
 
     public boolean isLeaf() {
-        return children.isEmpty();
+        return children.isEmpty() || children.stream().noneMatch(c -> c.data != null);
     }
 
     // SETTER

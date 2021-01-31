@@ -14,14 +14,12 @@ import java.util.stream.Collectors;
  * Inferer to infer a L-System out of a tree-like data structure
  */
 public class Inferer {
-    private TreeNode<TemplateInstance> tree;
     private final Iterator<TreeNode<TemplateInstance>> iterator;
     private TreeNode<TemplateInstance> beta;
     private String gamma;
     private LSystem lSystem;
 
     public Inferer(TreeNode<TemplateInstance> tree) {
-        this.tree = tree;
         iterator = tree.iterator();
         //// Initializing
         lSystem = new LSystem();
@@ -42,7 +40,7 @@ public class Inferer {
         var done = false;
         while (!done) {
             // delta = word of beta
-            var delta = (beta == null || beta.isEmpty()) ? "" : beta.getData().getWord();
+            var delta = (beta == null || beta.isEmpty()) ? "" : beta.getData().getTemplate().getWord();
             // For all variables in delta
             var variableMatches = Pattern.compile("[A-EG-Z]")
                     .matcher(delta)

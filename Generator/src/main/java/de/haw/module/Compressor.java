@@ -5,12 +5,9 @@ import de.haw.lsystem.ProductionRule;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
-import de.haw.utils.Logging;
 import de.haw.utils.Trees;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -33,11 +30,11 @@ public class Compressor {
     public LSystem compress() {
         // T' <- T
         var subtree = FindMaximumSubTree(tree);
-        while (subtree != null) {
+        while (subtree != null && !subtree.isEmpty()) {
             // Get extended string representation from (repetitive) sub tree
             var subTreeDerivation = new Inferer(subtree).infer().derive();
             // Data to be set in the tree to replace old node structure representing the subtree
-            var derivationInstance = new TemplateInstance(subTreeDerivation);
+            var derivationInstance = new TemplateInstance(new Template(subTreeDerivation));
             // Replace occurrences of sub tree
             for (var o : getOccurrences(subtree, tree)) {
                 o.setData(derivationInstance);
@@ -64,7 +61,9 @@ public class Compressor {
             var l = localIterator.next();
             while (l != globalNode) l = localIterator.next();
             for (var localNode = localIterator.next(); localIterator.hasNext(); localNode = localIterator.next()) {
-                if (Trees.compare(globalNode, localNode)) return globalNode;
+                if (!globalNode.isLeaf()) {
+                    if (Trees.compare(globalNode, localNode)) return globalNode;
+                }
             }
         }
         return null;

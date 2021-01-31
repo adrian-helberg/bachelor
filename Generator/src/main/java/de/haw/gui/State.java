@@ -1,6 +1,6 @@
 package de.haw.gui;
 
-import de.haw.gui.structure.Anchor;
+import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.Draft;
 import de.haw.utils.Templates;
 import de.haw.tree.TemplateInstance;
@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Application state container
@@ -31,6 +32,8 @@ public class State {
     private TreeNode<TemplateInstance> tree;
     // Anchor-tree node mapping for determining which anchor belongs to which tree node
     private final Map<Anchor, TreeNode<TemplateInstance>> anchorToTreeNode;
+    // Random instance throughout the program
+    private final Random randomizer;
 
     /**
      * Create an application state containing the scene. Initializes lists
@@ -41,6 +44,7 @@ public class State {
         anchors = FXCollections.observableArrayList(anchor -> new Observable[] { anchor.usedProperty() });
         availableAnchors = new FilteredList<>(anchors, a -> !a.usedProperty().get());
         anchorToTreeNode = new HashMap<>();
+        randomizer = new Random();
     }
 
     // GETTERS
@@ -97,6 +101,10 @@ public class State {
      */
     public TreeNode<TemplateInstance> getTreeNodeFromAnchor(Anchor anchor) {
         return anchorToTreeNode.get(anchor);
+    }
+
+    public Random getRandomizer() {
+        return randomizer;
     }
 
     // SETTERS
