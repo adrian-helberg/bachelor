@@ -148,8 +148,6 @@ public class LSystem {
                     .filter(rule -> rule.getLhs().contains(String.valueOf(symbol)))
                     .collect(Collectors.toList());
 
-            // TODO: apply distributed parameters here?
-
             int rulesCount = foundProductionRules.size();
             ProductionRule rule;
             if (rulesCount > 1) {
@@ -164,9 +162,9 @@ public class LSystem {
             var parametersMap = new HashMap<String, Number>();
             Template templateByWord = Templates.getTemplateByWord(ruleRHS);
             if (templateByWord != null) {
-                parametersMap.put("Scaling", estimator.estimateParameterForTemplate("Scaling", templateByWord.getId()));
-                parametersMap.put("Rotation", estimator.estimateParameterForTemplate("Rotation", templateByWord.getId()));
-                parametersMap.put("Branching angle", estimator.estimateParameterForTemplate("Branching angle", templateByWord.getId()));
+                parametersMap.put("Scaling", estimator.estimateParameterValueForTemplate("Scaling", templateByWord.getId()));
+                parametersMap.put("Rotation", estimator.estimateParameterValueForTemplate("Rotation", templateByWord.getId()));
+                parametersMap.put("Branching angle", estimator.estimateParameterValueForTemplate("Branching angle", templateByWord.getId()));
                 ruleRHS = Templates.populate(ruleRHS, parametersMap);
             }
 

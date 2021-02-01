@@ -11,7 +11,7 @@ public class CompressorPipe implements Pipe<PipelineContext, PipelineContext>, L
     public PipelineContext process(PipelineContext input) {
         if (logger == null) logger = getLogger();
         logger.info("Compress L-System");
-        input.lSystem = new Compressor(input.tree, input.lSystem, input.wL).compress();
+        input.lSystem = new Compressor(input.tree, input.lSystem, input.wL, input.randomizer).compress();
         logger.info(input.lSystem.toString());
         return input;
     }

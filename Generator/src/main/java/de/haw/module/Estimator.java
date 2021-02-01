@@ -10,16 +10,18 @@ public class Estimator {
     private final Map<String, Map<Integer, List<Float>>> parameters;
     private final Random randomizer;
 
-    public Estimator(TreeNode<TemplateInstance> tree, Random randomizer) {
+    public Estimator(Random randomizer) {
         /// Initialization
         parameters = new HashMap<>();
         this.randomizer = randomizer;
-        var iterator = tree.iterator();
-        var node = iterator.next();
+    }
+
+    public void estimateParameters(TreeNode<TemplateInstance> tree) {
         // Determine different parameters
-        node.getData().getParameters().forEach((key, value) -> parameters.put(key, new HashMap<>()));
+        tree.getData().getParameters().forEach((key, value) -> parameters.putIfAbsent(key, new HashMap<>()));
         // Iterate tree and extract parameters
-        for (; iterator.hasNext(); node = iterator.next()) {
+        for (var iterator = tree.iterator(); iterator.hasNext();) {
+            var node = iterator.next();
             if (node == null || node.isEmpty()) continue;
             var templateID = node.getData().getTemplate().getId();
             for (var p : node.getData().getParameters().entrySet()) {
@@ -36,9 +38,14 @@ public class Estimator {
         }
     }
 
-    public Float estimateParameterForTemplate(String parameter, int templateID) {
+    public float estimateParameterValueForTemplate(String parameter, int templateID) {
         var entries = parameters.get(parameter).get(templateID);
         return entries.get(randomizer.nextInt(entries.size()));
+    }
+
+    public float averageParameterValueForTemplate(String parameter, int templateID) {
+        var entries = parameters.get(parameter).get(templateID);
+        return (float) entries.stream().mapToDouble(v -> v).average().orElse(0);
     }
 
     @Override

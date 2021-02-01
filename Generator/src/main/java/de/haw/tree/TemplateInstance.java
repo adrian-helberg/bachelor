@@ -49,6 +49,10 @@ public class TemplateInstance {
         word = Templates.populate(template.getWord(), parametersMap);
     }
 
+    public void setParameters(HashMap<String, Number> parametersMap) {
+        this.parametersMap = parametersMap;
+    }
+
     // METHODS
     private void init() {
         parametersMap = new HashMap<>();

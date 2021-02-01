@@ -11,8 +11,11 @@ public class EstimatorPipe implements Pipe<PipelineContext, PipelineContext>, Lo
     public PipelineContext process(PipelineContext input) {
         if (logger == null) logger = getLogger();
         logger.info("Estimate parameters from tree");
-        input.estimator = new Estimator(input.tree, input.randomizer);
-        logger.info(input.estimator.toString());
+        logger.info(input.tree.toString());
+        var e = new Estimator(input.randomizer);
+        e.estimateParameters(input.tree);
+        logger.info(e.toString());
+        input.estimator = e;
         return input;
     }
 }
