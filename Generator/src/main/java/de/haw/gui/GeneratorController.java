@@ -12,6 +12,7 @@ import de.haw.pipeline.Pipeline;
 import de.haw.tree.Template;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Dots;
 import de.haw.utils.Logging;
 import de.haw.utils.Templates;
 import javafx.application.Platform;
@@ -290,11 +291,15 @@ public class GeneratorController implements Logging {
      * Generates the tree structure. TODO
      */
     @FXML public void generate() {
+
+        var tree = state.getTree();
+        Dots.treeToDot("user_structure", tree);
+
         var numberOfIterations = Float.parseFloat(iterations.getText());
         var numberOfGenerations = Float.parseFloat(generations.getText());
         // Pipeline context
         var ctx = new PipelineContext();
-        ctx.tree = state.getTree();
+        ctx.tree = tree;
         ctx.randomizer = state.getRandomizer();
 
         if (ctx.tree.isEmpty()) return;

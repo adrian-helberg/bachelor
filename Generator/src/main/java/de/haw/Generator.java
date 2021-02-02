@@ -18,7 +18,6 @@ import java.util.logging.Logger;
  */
 public class Generator extends Application implements Logging {
     private final Logger LOGGER = getLogger();
-    private State state;
 
     @Override
     public void start(Stage primaryStage) {
@@ -47,7 +46,7 @@ public class Generator extends Application implements Logging {
         primaryStage.show();
         // Application state
         LOGGER.info("Create application state");
-        state = new State(primaryStage);
+        State state = new State(primaryStage);
         mainController.init(state);
         // TODO: Remove
         mainController.loadTemplates();
