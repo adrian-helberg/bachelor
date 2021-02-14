@@ -1,0 +1,227 @@
+% @author Arian Helberg
+
+\chapter{Grundlagen}
+
+Die Modellierung mithilfe von Grafiksoftware ist eine vergleichbar händische, langwierige Erstellung von
+Objekten.
+Hierbei hat der Designer (= Modellierer) die volle Kontrolle über die Strukturen des Objektes.\\
+Bei der prozeduralen Modellierung werden spezifische Strukturen eines zu erstellenden physikalischen Objektes
+generalisiert und meist über eine Grammatik und globale Parameter abgebildet.
+Während bei der klassischen Modellierung die menschliche Intuition und bei der prozeduralen Modellierung eine
+parametrisierte Grammatik vorausgesetzt wird, arbeitet IPM mit bestehenden Modellen und extrahiert ("`lernt"')
+die Strukturen des Objektes, die automatisch in eine formale Grammatik überführt werden können.
+Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem.
+\\~\\
+Aktuelle Ansätze sind:
+\begin{itemize}
+    \item Segmentierung von geometrischen Objekten in Ähnlichkeitsgruppen, um Muster (\textit{engl. Patterns}) zu
+    erkennen
+    \item Kontrollierte Generierung durch Finden optimaler Prameter und Regeln
+\end{itemize}
+
+\section{Grundbegriffe}
+
+\begin{itemize}
+    \item \textbf{Modellierung}: Um einen physikalischen Körper in ein digitales Objekt zu überführen, wird mithilfe
+    von Abstraktion (oder Modellierung) ein mathematisches Modell erstellt, das diesen Körper formal beschreibt.
+    3D Grafiksoftware, wie Blender~\cite{blender}, wird genutzt um geometrische Körper zu modellieren, texturieren
+    und zu animieren.
+    \item \textbf{Prozedurale Modellierung}: \textit{"`It encompasses a wide variety of generative techniques that
+    can (semi-−)automatically produce a specific type of content based on a set of input
+    parameters."'} \\
+    "`Prozedurale Modellierung beschreibt generative Techniken, die \\(semi-)automatisch spezifische, digitale
+    Inhalte anhand von deskriptiven Parametern erzeugen"' (\textit{Übersetzt durch den Autor})
+    \item \textbf{Inverse prozedurale Modellierung (IPM)}:\textit{Aliaga et al.}
+    spricht bei der inversen prozeduralen Modellierung von dem Finden einer prozeduralen Repräsentation von
+    Strukturen bestehender Modelle.
+\end{itemize}
+
+\section{Grundlegende Arbeiten}
+
+Grundlagen
+\begin{itemize}
+    \item prozedurale Modellierung~\cite{smelik_2014}
+    \item inverse prozedurale Modellierung~\cite{aliaga_2016}
+    \item L-Systeme~\cite{lindemayer_1968}
+    \item parametrisiert L-Systeme~\cite{prusinkiewicz_1993}
+    \item Logo-Turtle~\cite{prusinkiewicz_1986}
+    \item inverse Generierung von L-Systemem~\cite{higuera_2010}
+\end{itemize}
+
+"`Not much work addresses inverse procedural modeling of branching structures"'\\~\\
+
+Modellieren von
+\begin{itemize}
+    \item Bäumen und Landschaften~\cite{deussen_2010}
+    \item Fassaden~\cite{alhalawani_2013}
+    \item Gebäuden~\cite{mueller_2006}
+    \item Städten~\cite{parish_2001}
+\end{itemize}
+
+\subsection{Softwaretechnik}
+
+Eine Fallstudie der Universität Karlsruhe~\cite{muller_2001} untersucht den Einsatz der Softwaretechnik Extreme
+Programming(XP) im Kontext der Erstellung von Abschlussarbeiten im Universitätsumfeld.
+Hierzu werden folgende Schlüsselpraktiken untersucht:
+\begin{itemize}
+    \item XP als Softwaretechnik zur schrittweisen Annäherung an die Anforderungen eines Systems
+    \item Änderung der Anforderungen an das Systems
+    \item Funktionalitäten (\textbf{Features}) werden als Tätigkeiten des Benutzers (\textbf{User Stories}) definiert
+    \item Zuerst werden Komponententests (Modultests) geschrieben und anschließend die Features (Test-driven Design)
+    \item Keine seperaten Testing-Phasen
+    \item Keine formalen Reviews oder Inspektionen
+    \item Regelmäßige Integration von Änderungen
+    \item Gemeinsame Implementierung (Pair Programming) in Zweiergruppen
+\end{itemize}
+Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
+einer Bachelorarbeit bietet.
+Zum einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
+anderen können Arbeitspakete durch Releases abgebildet werden.
+
+\subsubsection{L-Systeme}
+
+Lindenmayer~\cite{lindemayer_1968} führt eine mathematische Beschreibung zum Wachstum fadenförmiger Organismen ein.
+Sie zeigt, wie sich der Status von Zellen infolge ein oder mehrerer Einflüsse verhält.
+L-Systeme sind Ersetzungssysteme, die zur formalen Beschreibung von Zellteilung eingeführt werden, und atomare Teile
+mithilfe von Produktionsregeln ersetzen.
+Weiter werden Symbole zur formalen Beschreibung von Verzweigungen, die von Filamenten abgehen, genutzt.
+Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} eingeführt.
+Sie ersetzen parallel Buchstaben eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
+L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
+\\~\\
+\underline{Formalismen}\\~\\
+Ein L-System ist ein Tupel und hat folgende Form:
+\begin{center}
+    $\mathcal{L}=\langle M,\omega,R \rangle$, mit
+\end{center}
+\begin{itemize}
+    \item $M$ als Alphabet, das alle Symbole enthält, die in der Grammatik vorkommen können,
+    \item $\omega$ als Axiom oder "`Startwort"' und
+    \item $R$ als Menge aller Produktionsregeln, die für $\mathcal{L}$ gelten
+\end{itemize}
+\\~\\
+Das Alphabet eines parametrischen Systems enthält Module (Symbole mit Parametern) anstatt Symbole:
+\begin{center}
+    $M=\{A(P),B(P),\dots\}$ mit
+\end{center}
+\begin{itemize}
+    \item $P=p_1,p_2\dots$ als Modulparameter
+\end{itemize}
+Zeichen des Alphabets, die Ziel einer Produktionsregel sind, heißen Variablen.
+Alle anderen Zeichen aus $M$ sind die Konstanten.
+\\~\\
+Das Axiom $\omega$ ist eine nicht-leere Sequenz an Modulen aus $M^+$ mit
+\begin{itemize}
+    \item $M^+$ als Menge aller möglichen Zeichenketten aus Modulen aus $M$
+\end{itemize}
+\\~\\
+Produktionsregeln sind geordnete Paare aus Wörtern über dem Alphabet, die bestimmte Ersetzungsregeln umsetzen.
+Hierbei werden Symbole aus einem Wort, die einer rechten Seite (\textit{engl. right hand side (RHS)}) einer
+Produktionsregel entsprechen, durch die linke Seite des Paares (\textit{engl. left hand side (LHS)}) ersetzt.
+Sie sind folgendermaßen aufgabaut:
+\begin{center}
+    $A(P)\rightarrow x,x\in M^*$
+\end{center}
+$M^*$ ist die Menge aller möglichen Zeichenketten von M inklusive der leeren Zeichenkette $\varepsilon$.
+Ist die RHS jeder Produktionsregel ein einzelnes Symbol und gibt es zu jeder Variablen eine Regel, spricht man
+von einem kontextfreien, andernfalls von einem kontextsensitiven L-System.
+
+\subsubsection{Logo-Turtle-Algorithmus}
+
+Der Logo-Turtle-Algorithmus~\cite{prusinkiewicz_1986} beschreibt ein Vorgehen zur graphischen Beschreibung von L-Systemen, bei dem
+jeder Buchstabe in einem Wort einer bestimmten Zeichenoperation zugewiesen wird.
+So kann aus einem L-System ein grafisches Muster generiert werden, das mit einer Abfolge von Zeichenbefehlen an
+eine "`Schildkröte"' gezeichnet wird.
+Das Triplett $(x,y,\theta)$ definiert den Status (\textbf{State}) der Schildkröte.
+Dieser setzt sich aus der aktuellen Position $\left(\begin{smallmatrix} x \\ y \end{smallmatrix}\right)$ und dem
+aktuellen Rotationswinkel $\theta$, der die Blickrichtung bestimmt, zusammen.\\~\\
+Der Algorithmus kann als Komprimierung eines geometrischen Musters gesehen werden.
+Folgende Symbole mit zugehörigen Steuerungsbefehlen und Statusveränderung sind definiert:
+\begin{center}
+    \begin{tabular}{lll}
+        % ROW 1
+        \textbf{Symbol} & \textbf{Steuerung} & \textbf{Statusveränderung} \\
+        \hline \\
+        % ROW 2
+        $F(d)$ &
+        \begin{minipage}{0.6\textwidth}
+            Gehe vom derzeitigen Punkt $p_1$ $d$ Einheiten in die Blickrichtung zu dem Punkt $p_2$.
+            Zeichne ein Liniensegment zwischen $p_1$ und $p_2$
+        \end{minipage} &
+        \begin{minipage}{0.4\textwidth}
+            ja, neue Position $p_2$
+        \end{minipage} \\
+        \\ \hline \\
+        % ROW 3
+        $+(\alpha)$ &
+        \begin{minipage}{0.6\textwidth}
+            Setzt neuen Rotationswinkel $\theta=\theta+\alpha$
+        \end{minipage} &
+        \begin{minipage}{0.4\textwidth}
+            ja, neuer Rotationswinkel $\theta$
+        \end{minipage} \\
+        \\ \hline \\
+        % ROW 4
+        $-(\alpha)$ &
+        \begin{minipage}{0.6\textwidth}
+            Setzt neuen Rotationswinkel $\theta=\theta-\alpha$
+        \end{minipage} &
+        \begin{minipage}{0.4\textwidth}
+            ja, neuer Rotationswinkel $\theta$
+        \end{minipage} \\
+        \\ \hline \\
+        % ROW 5
+        $[$ &
+        \begin{minipage}{0.6\textwidth}
+            Lege den aktuellen State auf einen Stack
+        \end{minipage} &
+        \begin{minipage}{0.4\textwidth}
+            nein
+        \end{minipage} \\
+        \\ \hline \\
+        % ROW 6
+        $]$ &
+        \begin{minipage}{0.6\textwidth}
+            Hole den State vom Stack und überschreibe den aktuellen mit diesem
+        \end{minipage} &
+        \begin{minipage}{0.4\textwidth}
+            nein
+        \end{minipage}
+    \end{tabular}
+\end{center}
+\newpage
+Alles zwischen den Symbolen $[$ und $]$ wird als Verzweigung interpretiert.
+\begin{center}
+    Bsp. $FF[FF]F$ mit Verzweigung $[FF]$
+\end{center}
+
+\section{Verwandte Arbeiten}
+
+Bei \textit{Inverse Procedural Modeling of Branching Structures by Inferring L-Systems}\cite{guo_2020} geht es um ein
+Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen Lernens (\textit{Deep
+Learning}) anhand beliebiger Grafiken.
+Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarchische Topologie (Baumstruktur)
+aufgebaut, aus der ein L-System inferiert und mit einem \textbf{Greedy} Algorithmus optimiert wird.
+Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
+erstellt werden können.\\
+Aus dieser Quelle werden folgende Konzepte genutzt:
+\begin{itemize}
+    \item Nutzer einer Baumstruktur zur Organisation von genutzten atomaren Verzweigungsstrukturen
+    (\textbf{Templates}) mit Knoten für Templates und Kanten für geometrische Transformationen
+    \item Untersuchen der Baumstruktur auf Wiederholungen
+    \item Parametrisierte L-Systeme (L-System mit \textbf{Modulen}) zur Abbildung von Transformationsparametern
+    \item Kostenfunktion zur Bewertung eines L-Systems
+\end{itemize}
+
+Inverse prozedurale Modellierung anhand von Hausfassaden~\cite{martinovic_2013}, 2D-Anordnungen
+~\cite{ellis_2018,stava_2010}, biologischen Bäumen~\cite{stava_2014} und urbanen Strukturen~\cite{nishida_2016}
+\\~\\
+Polynomiale Algorithmen zum Inferrieren von L-Systemen~\cite{mcquillan_2018}
+\\~\\
+Framework zum Inferrieren von L-Systemen aus Vektordaten~\cite{stava_2010}
+\\~\\
+Generalisieren einen Regelsets aus einem Inputset mit Markov Chain Monte Carlo~\cite{talton_2012, talton_2011}
+\\~\\
+Lernen von Regeln zum Layout für Gebäude~\cite{martinovic_2013}
+\\~\\
+Inverse prozedurale Modellierung von Fassaden~\cite{xiao_2008}

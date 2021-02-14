@@ -1,0 +1,83 @@
+% @author Arian Helberg
+
+\chapter{Implementierung}
+
+\section{Pakete?}
+
+Die Implementierung des Programms setzt sich aus folgenden Teilschritten zusammen:
+\begin{itemize}
+    \item Erstellung der \textit{GUI} (Paket gui, tree) mit
+    \begin{itemize}
+        \item UI-Elementen
+        \item Render-Canvas
+        \item Dateianbindung der Templates
+        \item Erstellung der repräsentativen Baumstruktur\\ (\textit{treeGenerator}, Paket tree)
+    \end{itemize}
+    \item Implementierung der Subsysteme als Pipes
+    \begin{itemize}
+        \item \textit{Inferer} (Paket grammar): Ableiten eines kompakten L-Systems aus einer Baumstruktur
+        \item \textit{Generalizer} (Paket grammar): Generieren eines generalisierten L-Systems anhand eines
+        "`kleinen"' L-Systems
+        \item \textit{Randomizer} (Paket grammar): Erzeugung von L-Systemen, die der erstellen
+        Verzweigungsstruktur "`ähnlich"' sind
+    \end{itemize}
+    \item Komponenten- und Systemtests
+\end{itemize}
+\begin{center}
+    \begin{tabular}{l|l}
+        \textbf{Subsystem} & \textbf{Umsetzung} \\
+        \hline \\
+        GUI &
+        \begin{minipage}[t]{0.8\textwidth}
+            JavaFX als Framework zur Erstellung von grafischen und interaktiven Inhalten.
+            Erstellung der Baumstruktur über dynamisches Erzeugen von Konten während der Strukturierung der
+            Verzweigungsstruktur
+        \end{minipage} \\
+        \\ \hline \\
+        Inferer &
+        \begin{minipage}[t]{0.8\textwidth}
+            Algorithmus zum Iterieren maximaler Sub-Bäume und deren Reduzierung mittels Ersetzung durch Symbole
+            und der zugehörigen Produktionsregel, bis eine Kostengrenze, die durch eine Kostenfunktion abgebildet
+            werden kann, erreicht ist
+        \end{minipage} \\
+        \\ \hline \\
+        Generalizer &
+        \begin{minipage}[t]{0.8\textwidth}
+            Algorithmus zum Erweitern eines L-Systems um nicht-deterministischer Regeln und Erkennen rekursiver
+            Strukturen
+        \end{minipage} \\
+        \\ \hline \\
+        Randomizer &
+        \begin{minipage}[t]{0.8\textwidth}
+            ddd sfevdhbnreaydtydbfsdxc
+        \end{minipage} \\
+        \\ \hline
+    \end{tabular}
+\end{center}
+
+\section{Entscheidungen}
+\underline{Mutable or Immutable Objects?}\\~\\
+\underline{Risiken}\\~\\
+\underline{Qualitätsmerkmale}\\~\\
+\underline{Alternativen}\\~\\
+\underline{Aufwand der Implementierung}
+
+\section{Technologien}
+
+\begin{itemize}
+    \item Programmiersprache: Java Version 11 mit
+    \begin{itemize}
+        \item JavaFX Version 15 (openjfx)
+    \end{itemize}
+    \item Build-Management-Tool: Gradle\cite{gradle} Version 6.7
+    \item Versionskontrolle: Github Repository\cite{github} via Git\cite{git}
+    \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
+    \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
+    \item User Story Map: Trello Board\cite{trello}
+\end{itemize}
+
+\section{Hardware}
+
+\begin{itemize}
+    \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
+\end{itemize}
