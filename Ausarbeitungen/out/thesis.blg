@@ -10,44 +10,50 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: literature.bib
-You've used 10 entries,
+Warning--empty pages in aliaga_2016
+Warning--empty booktitle in martinovic_2013
+Warning--empty booktitle in mcquillan_2018
+Warning--empty booktitle in parish_2001
+Warning--empty booktitle in prusinkiewicz_1993
+You've used 29 entries,
             3552 wiz_defined-function locations,
-            859 strings with 7608 characters,
-and the built_in function-call counts, 5404 in all, are:
-= -- 667
-> -- 55
-< -- 102
-+ -- 133
-- -- 41
-* -- 497
-:= -- 886
-add.period$ -- 11
-call.type$ -- 10
-change.case$ -- 53
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 162
-empty$ -- 429
-format.name$ -- 69
-if$ -- 1112
+            980 strings with 10943 characters,
+and the built_in function-call counts, 23252 in all, are:
+= -- 2883
+> -- 347
+< -- 655
++ -- 845
+- -- 261
+* -- 2245
+:= -- 3945
+add.period$ -- 31
+call.type$ -- 29
+change.case$ -- 183
+chr.to.int$ -- 29
+cite$ -- 34
+duplicate$ -- 564
+empty$ -- 1505
+format.name$ -- 458
+if$ -- 4472
 int.to.chr$ -- 0
 int.to.str$ -- 1
-missing$ -- 9
-newline$ -- 68
-num.names$ -- 18
-pop$ -- 73
+missing$ -- 52
+newline$ -- 187
+num.names$ -- 94
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 176
 quote$ -- 0
-skip$ -- 193
+skip$ -- 948
 stack$ -- 0
-substring$ -- 437
-swap$ -- 29
-text.length$ -- 13
+substring$ -- 1986
+swap$ -- 153
+text.length$ -- 85
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 0
-while$ -- 50
+type$ -- 299
+warning$ -- 5
+while$ -- 226
 width$ -- 0
-write$ -- 108
+write$ -- 315
+(There were 5 warnings)

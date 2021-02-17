@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  14 FEB 2021 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  17 FEB 2021 10:26
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1752,21 +1752,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--27
 
 
 ]
-
-Package natbib Warning: Citation `aliaga_2016' on page 2 undefined on input lin
-e 57.
-
-
-Package natbib Warning: Citation `prusinkiewicz_1990' on page 2 undefined on in
-put line 60.
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
+Underfull \hbox (badness 10000) in paragraph at lines 32--55
 
  []
 
-[3]
-Overfull \hbox (24.46364pt too wide) in paragraph at lines 133--137
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--55
+
+ []
+
+[2] [3]
+Overfull \hbox (24.46364pt too wide) in paragraph at lines 90--94
 \T1/cmr/bx/n/10.95 Kos-ten-funk-ti-on[][][][][] \T1/cmr/m/n/10.95 zu-sam-men-ge
 -fasst (\T1/cmr/m/it/10.95 engl. Mer-ge\T1/cmr/m/n/10.95 ), um die-se mit nicht
 -deterministischen
@@ -1775,21 +1771,20 @@ Overfull \hbox (24.46364pt too wide) in paragraph at lines 133--137
 <../images/System.PNG, id=224, 689.57625pt x 444.15938pt>
 File: ../images/System.PNG Graphic file (type png)
 <use ../images/System.PNG>
-Package pdftex.def Info: ../images/System.PNG  used on input line 149.
+Package pdftex.def Info: ../images/System.PNG  used on input line 106.
 (pdftex.def)             Requested size: 398.33858pt x 256.57568pt.
-[4]) (chapters/grundlagen.tex [5 <../images/System.PNG>]
+) (chapters/grundlagen.tex [4 <../images/System.PNG>] [5]
 chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 5--16
 
  []
 
+[6
 
-Package natbib Warning: Citation `blender' on page 6 undefined on input line 27
-.
+]
 
-
-chapters/grundlagen.tex:31: Package inputenc Error: Unicode character − (U+22
+chapters/grundlagen.tex:40: Package inputenc Error: Unicode character − (U+22
 12)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1797,255 +1792,149 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.31     parameters."'}
+l.40     parameters."'}
                         \\
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[6
 
-]
-
-Package natbib Warning: Citation `smelik_2014' on page 7 undefined on input lin
-e 43.
-
-
-Package natbib Warning: Citation `aliaga_2016' on page 7 undefined on input lin
-e 44.
-
-
-Package natbib Warning: Citation `lindemayer_1968' on page 7 undefined on input
- line 45.
-
-
-Package natbib Warning: Citation `prusinkiewicz_1993' on page 7 undefined on in
-put line 46.
-
-
-Package natbib Warning: Citation `prusinkiewicz_1986' on page 7 undefined on in
-put line 47.
-
-
-Package natbib Warning: Citation `higuera_2010' on page 7 undefined on input li
-ne 48.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
-
-
-Package natbib Warning: Citation `deussen_2010' on page 7 undefined on input li
-ne 55.
-
-
-Package natbib Warning: Citation `alhalawani_2013' on page 7 undefined on input
- line 56.
-
-
-Package natbib Warning: Citation `mueller_2006' on page 7 undefined on input li
-ne 57.
-
-
-Package natbib Warning: Citation `parish_2001' on page 7 undefined on input lin
-e 58.
-
-
-Package natbib Warning: Citation `muller_2001' on page 7 undefined on input lin
-e 63.
 
 [7]
-
-Package natbib Warning: Citation `lindemayer_1968' on page 8 undefined on input
- line 83.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--94
+Underfull \hbox (badness 10000) in paragraph at lines 92--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--94
+Underfull \hbox (badness 10000) in paragraph at lines 92--103
 
  []
 
 [8]
 
-chapters/grundlagen.tex:102: LaTeX Error: There's no line here to end.
+chapters/grundlagen.tex:111: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 \\~
+l.111 \\~
          \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--114
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
 
  []
 
 
-chapters/grundlagen.tex:117: LaTeX Error: There's no line here to end.
+chapters/grundlagen.tex:126: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.117 \\~
+l.126 \\~
          \\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [9]
-
-Package natbib Warning: Citation `prusinkiewicz_1986' on page 10 undefined on i
-nput line 131.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--149
 
  []
 
 
-Overfull \hbox (76.65587pt too wide) in paragraph at lines 141--191
+Overfull \hbox (76.65587pt too wide) in paragraph at lines 150--200
  [] 
  []
 
-[10] [11]
-
-Package natbib Warning: Citation `guo_2020' on page 12 undefined on input line 
-200.
-
-
-Package natbib Warning: Citation `martinovic_2013' on page 12 undefined on inpu
-t line 216.
-
-
-Package natbib Warning: Citation `ellis_2018' on page 12 undefined on input lin
-e 217.
-
-
-Package natbib Warning: Citation `stava_2010' on page 12 undefined on input lin
-e 217.
-
-
-Package natbib Warning: Citation `stava_2014' on page 12 undefined on input lin
-e 217.
-
-
-Package natbib Warning: Citation `nishida_2016' on page 12 undefined on input l
-ine 217.
-
-
-Package natbib Warning: Citation `mcquillan_2018' on page 12 undefined on input
- line 219.
-
-
-Package natbib Warning: Citation `stava_2010' on page 12 undefined on input lin
-e 221.
-
-
-Package natbib Warning: Citation `talton_2012' on page 12 undefined on input li
-ne 223.
-
-
-Package natbib Warning: Citation `talton_2011' on page 12 undefined on input li
-ne 223.
-
-
-Package natbib Warning: Citation `martinovic_2013' on page 12 undefined on inpu
-t line 225.
-
-
-Package natbib Warning: Citation `xiao_2008' on page 12 undefined on input line
- 227.
-
-) (chapters/konzepte.tex
-Underfull \hbox (badness 10000) in paragraph at lines 216--2
+[10] [11]) (chapters/konzepte.tex
+Underfull \hbox (badness 10000) in paragraph at lines 225--2
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--2
+Underfull \hbox (badness 10000) in paragraph at lines 225--2
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--2
+Underfull \hbox (badness 10000) in paragraph at lines 225--2
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--2
+Underfull \hbox (badness 10000) in paragraph at lines 225--2
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 216--2
+Underfull \hbox (badness 10000) in paragraph at lines 225--2
 
  []
 
-[12] [13]
+[12]
 chapter 3.
-[14
+[13
 
 ]
-<../images/Fachlicher_Kontext.PNG, id=286, 253.69781pt x 359.84438pt>
+<../images/Fachlicher_Kontext.PNG, id=333, 253.69781pt x 359.84438pt>
 File: ../images/Fachlicher_Kontext.PNG Graphic file (type png)
 <use ../images/Fachlicher_Kontext.PNG>
 Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 3
 8.
 (pdftex.def)             Requested size: 176.407pt x 250.22014pt.
-<../images/Technischer_Kontext.PNG, id=287, 564.60938pt x 230.36063pt>
+<../images/Technischer_Kontext.PNG, id=334, 564.60938pt x 230.36063pt>
 File: ../images/Technischer_Kontext.PNG Graphic file (type png)
 <use ../images/Technischer_Kontext.PNG>
 Package pdftex.def Info: ../images/Technischer_Kontext.PNG  used on input line 
 43.
 (pdftex.def)             Requested size: 284.52756pt x 116.08688pt.
- [15 <../images/Fachlicher_Kontext.PNG>] [16 <../images/Technischer_Kontext.PNG
+ [14 <../images/Fachlicher_Kontext.PNG>] [15 <../images/Technischer_Kontext.PNG
 >]
 Overfull \hbox (19.08966pt too wide) in paragraph at lines 52--88
  [] 
  []
 
-<../images/Bausteinsicht_Ebene_1.PNG, id=299, 827.34094pt x 490.83376pt>
+<../images/Bausteinsicht_Ebene_1.PNG, id=346, 827.34094pt x 490.83376pt>
 File: ../images/Bausteinsicht_Ebene_1.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_1.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_1.PNG  used on input lin
 e 94.
 (pdftex.def)             Requested size: 341.43306pt x 202.5613pt.
-[17]
-<../images/Bausteinsicht_Ebene_2.PNG, id=304, 429.85594pt x 341.02406pt>
+[16]
+<../images/Bausteinsicht_Ebene_2.PNG, id=351, 429.85594pt x 341.02406pt>
 File: ../images/Bausteinsicht_Ebene_2.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_2.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_2.PNG  used on input lin
 e 100.
 (pdftex.def)             Requested size: 256.0748pt x 203.159pt.
-<../images/Laufzeitsicht.PNG, id=305, 713.66624pt x 463.7325pt>
+<../images/Laufzeitsicht.PNG, id=352, 713.66624pt x 463.7325pt>
 File: ../images/Laufzeitsicht.PNG Graphic file (type png)
 <use ../images/Laufzeitsicht.PNG>
 Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 107.
 (pdftex.def)             Requested size: 398.33858pt x 258.83223pt.
- [18 <../images/Bausteinsicht_Ebene_1.PNG> <../images/Bausteinsicht_Ebene_2.PNG
+ [17 <../images/Bausteinsicht_Ebene_1.PNG> <../images/Bausteinsicht_Ebene_2.PNG
 >]
-<../images/Verteilungssicht.PNG, id=312, 585.68813pt x 308.65312pt>
+<../images/Verteilungssicht.PNG, id=359, 585.68813pt x 308.65312pt>
 File: ../images/Verteilungssicht.PNG Graphic file (type png)
 <use ../images/Verteilungssicht.PNG>
 Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 114
 .
 (pdftex.def)             Requested size: 284.52756pt x 149.9509pt.
- [19 <../images/Laufzeitsicht.PNG> <../images/Verteilungssicht.PNG>]
-[20]
+ [18 <../images/Laufzeitsicht.PNG> <../images/Verteilungssicht.PNG>]
+[19]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 164.
 
@@ -2072,7 +1961,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--177
 
  []
 
-[21]
+[20]
 chapters/konzepte.tex:197: Undefined control sequence.
 l.197 \blfootnote
                  {* nach Breitensuche, beginnend bei Wurzelknoten S}
@@ -2082,7 +1971,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[22]
+[21]
 chapters/konzepte.tex:221: Undefined control sequence.
 l.221 \blfootnote
                  {* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mat...
@@ -2110,7 +1999,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[23]
+[22]
 chapters/konzepte.tex:263: Undefined control sequence.
 l.263 \blfootnote
                  {* $\mathcal{P}$ als Menge aller möglichen Regelpaaren aus...
@@ -2120,14 +2009,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (chapters/implementierung.tex [24]
+) (chapters/implementierung.tex [23]
 chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 46--48
 []\T1/cmr/m/n/10.95 Algorithmus zum Er-wei-tern ei-nes L-Systems um nicht-
  []
 
-[25
+[24
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--64
@@ -2149,19 +2038,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--64
 
  []
 
-[26]) (chapters/evaluierung.tex [27]
+[25]) (chapters/evaluierung.tex [26]
 chapter 5.
-) (chapters/ausblick.tex [28
+) (chapters/ausblick.tex [27
 
 ]
 chapter 6.
-) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [29
+) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [28
 
 ]
 chapter without number
-[30
+[29
 
-]) (appendix/example_appendix.tex [31]
+]
+Underfull \hbox (badness 1038) in paragraph at lines 114--120
+[]\T1/cmr/m/sc/10.95 M�ller\T1/cmr/m/n/10.95 , Pas-cal ; \T1/cmr/m/sc/10.95 Won
+-ka\T1/cmr/m/n/10.95 , Pe-ter ; \T1/cmr/m/sc/10.95 Haeg-ler\T1/cmr/m/n/10.95 , 
+Si-mon ; \T1/cmr/m/sc/10.95 Ul-mer\T1/cmr/m/n/10.95 , An-dre-as ;
+ []
+
+[30]) (appendix/example_appendix.tex [31]
 chapter A.
 ) [32
 
@@ -2172,9 +2068,6 @@ chapter A.
 ] [35
 
 ])
-
-Package natbib Warning: There were undefined citations.
-
 (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2183,17 +2076,14 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36973 strings out of 479618
- 749020 string characters out of 2865027
- 1502444 words of memory out of 3000000
- 53132 multiletter control sequences out of 15000+200000
+ 37049 strings out of 479618
+ 750463 string characters out of 2865027
+ 1503736 words of memory out of 3000000
+ 53189 multiletter control sequences out of 15000+200000
  442193 words of font info for 103 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  117i,21n,116p,10636b,2322s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2235,10 +2125,10 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adria/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (45 pages, 6724
-11 bytes).
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (45 pages, 6953
+92 bytes).
 PDF statistics:
- 1465 PDF objects out of 1728 (max. 8388607)
- 196 named destinations out of 1000 (max. 500000)
+ 1549 PDF objects out of 1728 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
  461 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -29,89 +29,48 @@ inferiert werden kann, das dann zur Generierung von ähnlichen Strukturen genutz
 
 \section{Problemstellung}
 
-Mit der Digitalisierung der Welt steigt auch der Bedarf an digitalen Inhalten.\\
-(Das umfasst Gaming, Unterhaltungsindustrie, Visualisierung, Interaktive Anwendungen)\\
-Um eine erhöhte Quantität dieser Inhalte liefern zu können, werden Methodiken und Algorithmen gesucht, die die Erstellung
+Mit der Digitalisierung der Welt steigt auch der Bedarf an digitalen Inhalten.
+Zu den größten Feldern gehören Gaming- und Unterhaltungsindustrie, Datenvisualisierung und interaktive Anwendungen.
+Um eine erhöhte Quantität dieser Inhalte liefern zu können, werden Methodiken und Algorithmen gesucht, die eine Erstellung
 vereinfachen.
-Während Methodiken zur Kodifizierung bestimmter Strukturen diese für die prozedurale Modellierung nutzbar machen,
-findet das Ableiten von Regeln Anwendung in der inversen prozeduralen Modellierung.\\
-Weiter steigt mit dem digitalen und naturwissenschaftlichen Fortschritt die Anwendung immer komplexerer (organisiert)
-Strukturen aus der Natur (Bsp).\\
-(Im Gaming-Bereich zB. gab es bisher unorganisierte Modelle aus Dreiecken. Mit besserer Graphik ist die Organisierung der
-Modelle immer wichtigen, um diese effizient und automatisiert modellieren zu können; Wichtig ist auch die Wiederverwendbarkeit
-der Modelle)\\
-Deshalb werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
-herausarbeiten, um diese für die (inverse) prozedurale Modellierung zur Verfügung zu stellen.
+Während Methodiken zur Kodifizierung bestimmter Strukturen in den Bereich der prozeduralen Modellierung fällt,
+findet das Ableiten von Regeln Anwendung in der inversen prozeduralen Modellierung.
+Weiter steigt mit dem digitalen und naturwissenschaftlichen Fortschritt die Anwendung immer komplexerer Strukturen, die
+ein Herausarbeiten der schwer zu kontrollierenden, prozeduralen Regeln immer schwieriger machen.
 \\~\\
-
+Ein Beispiel hierzu aus der Gaming-Industrie ist die frühere Verwendung unorganisierter Modelle.
+Unorganisierte Modelle sind nur bedingt Wiederverwendtbar, da nur die vorliegende Modellierung verwendet werden kann.
+Es besteht eine hohe Speicherkomplexität bei geringer Laufzeitkomplexität.
+Für kleinste Veränderungen am Modell ist eine erneute Modellierung nötig, die wiederum Speicher benötigt, um sie
+persistent speichern zu können.
+Heutzutage werden die Objekte nach bestimmten Kriterien organisiert, um eine austomatisierte Modellierung durch Algorithmen
+zu ermöglichen, um so aus einer Grundstruktur weitere Modelle zu erzeugen.
+Speicher- und Laufzeitkomplexität nähern sich an.
+Deshalb werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
+von Strukturen herausarbeiten ("`Reverse Engineering"'), um diese für die (inverse) prozedurale Modellierung zur
+Verfügung zu stellen.
 \\~\\
 Diese Arbeit soll zeigen, wie sich durch die Erstellen eines Systems zur Generierung von ähnlichen Strukture aus einer
 Basistruktur aktuelle Ansätze aus der Forschung in einem Programm umsetzen lassen.
 
-
-
-
-
-Beschreibung eines Forschungsproblems, das ich mit der Bachelorarbeit lösen möchte.
-
-\begin{itemize}
-    \item Das Problem ist die Erstellung eines Systems zur Erzeugung von ähnlichen Strukturen aus einer Basisstruktur
-    \item Der Sprung der prozeduralen Modellierung zur inversen prozeduralen Modellierung, also die Vereinfachung von schwierigen,
-    schwer zu kontrollierenden prozeduralen Regeln zu einem "`Reverse Engineering"'-Ansatz (Automatisierung)
-\end{itemize}
-
-Wo besteht das Problem?
-
-\begin{itemize}
-    \item (Inverse) prozeduralle Modellierung ist ein schwieriges Problem der Informatik $\rightarrow$ Quellen sichen und
-    begründen warum das so schwierig ist (\cite{aliaga_2016})
-    \item Prozedurale Regeln sind schwer zu verstehen und kontrollieren $\rightarrow$ Zugang, Klarheit schaffen, wie man an
-    solche Fragestellungen herangeht
-    \item Schwierigkeit den Expansionsprozess zielgerichtet zu kontrollieren~\cite{prusinkiewicz_1990}
-\end{itemize}
-
-Wie wichtig ist es, dass ich meine Forschung durchführe?
-
-\begin{itemize}
-    \item Kodifizierbar machen von Strukturen der realen Welt $\rightarrow$ Künstliche Intelligenz,  Wiederverwendbarkeit,
-    Umsetzten gewisser Erwartungen eines Users an eine digitale Struktur
-    \item Kompression von Strukturen $\rightarrow$ Speicherkomplexität in Laufzeitkomplexität umwandeln.
-    Effiziente Balance schaffen
-    \item Da prozedurale Modellierung eines der mächtigsten Mittel ist, um automatisch digitale Inhalte zu Erstellen und die
-    digitale Welt immer wichtiger wird, ist die Forschung in diesem Bereich sehr wichtig
-    \item
-\end{itemize}
-
-Wie gut lassen sich Ansätze aus der aktuellen Forschung in einem Programm umsetzen?
-\begin{itemize}
-    \item Man braucht verschiedenen Algorithmen mit verschiedenen Metriken, um eine Struktur "`auslesen"' zu können, besser sind
-    neuronale Netze $\rightarrow$ Quellen
-\end{itemize}
-
-Gibt es allgemeingültige Algotihmen?
-
-\begin{itemize}
-    \item Eigene Algorithmen checken, Alternativen nachschauen, sind die verwendeten Algorithmen zu sehr auf mein Problem
-    zugeschnitten?
-\end{itemize}
-
-Gibt es Widersprüche in aktueller Forschung?
-
-\begin{itemize}
-    \item Nochmal einige Quellen lesen. Ich denke, es gibt keine direkten Widersprüche, aber viele verschiedene Ansätze
-    $\rightarrow$ Quellen
-\end{itemize}
-
-Verbindung zum Titel der Bachelorarbeit schaffen.
-
-\begin{itemize}
-    \item Zeigen, wie ich die Synthese anhand des Programms umsetzen will
-\end{itemize}
+\newpage
 
 \section{Ziele}
-Gewichtungsparameter durchtesten, um zu schauen, wie sich das auf die Ergebnisse auswirkt.\\
-Ergebnis des Systems mit validem Input mit Ergebnissen aus nicht validem Input vergleichen, um zu schauen, wie wichtig
-die Validiität des Inputs ist.\\
+
+Die Erstellung eines Systems zur Synthese von ähnlichen Struktures aus einer Basisstruktur soll zentrale Aufgabe dieser
+Arbeit sein.
+Aus der Fragestellung leiten sich folgende Teilziele ab:
+
+\begin{itemize}
+    \item Die Erstellung eines Programms zur Umsetzung des erstellten Systems
+    \item Anwenden von Algorithmen und Ansätzen der aktuellen Forschung
+    \item Testen von Metriken und deren Auswirkung auf das Ergebnis
+    \item Erstellung eigener Methodiken und Algorithmen zur Effizienten Lösung der Problemstellung
+    \item Schaffen eines Teilsystems zum Extrahieren von Eigenschaften und Regeln einer Basisstruktur
+\end{itemize}
+
+Die Erstellung und Integration eines neuronalen Netzes, das laut aktueller Forschung gute Ergebnisse beim Lernen von
+Regeln aus einer Eingabestruktur liefert, kann in dieser Arbeiten aus Praktikabilitätsgründen nicht behandelt werden.
 
 \section{Methodik}
 
