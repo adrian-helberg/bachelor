@@ -73,33 +73,50 @@ Die Erstellung und Integration eines neuronalen Netzes, das laut aktueller Forsc
 Regeln aus einer Eingabestruktur liefert, kann in dieser Arbeiten aus Praktikabilitätsgründen nicht behandelt werden.
 
 \section{Methodik}
+Der Benutzer des Systems legt atomare Strukturen in Form von Zeichenketten an, die vom Programm eingelesen werden und
+als Templates zur Verfügung gestellt werden.
+Die Templates sind beliebig und können eine einfach Linie oder eine komplexe Verzweiung darstellen.
+Werden diese Strukturen auf der graphischen Oberfläche platziert und mit diversen Transformationen verändert, spricht man
+von Instanzen oder Template-Instanzen.
 
-\textit{Abbildung 1 zeigt, wie das o.g. System aufgebaut ist}:
-\begin{itemize}
-    \item[I.] \underline{Strukturieren}: Der Benutzer nutzt die grafische Benutzerschnittstelle, um aus
-    einzelnen, atomaren Strukturen (\textbf{Templates}) eine zusammenhängende Struktur zu erstellen.
-    Neben der Position der Templates können auch Parameter wie Rotation angepasst
-    werden.
-    \item[II.] \underline{Visualisieren}: Das Ergebnis der Strukturierung ist jederzeit sichtbar.
-    Einfache Liniensegmente können mit einem \textbf{Turtle-Algorithmus} gezeichnet werden.
-    \item[III.] \underline{Datengenerierung}: Das Ergebnis der Strukturierung wird in einer Baumstruktur
-    organisiert, in der jeder Knoten einem bestimmten Template entspricht und die zugehörigen Kanten die
-    geometrischen Transformationen relativ zum Elternknoten beschreibt.
-    \item[IV.] \underline{Inferieren}: Aus der Baumstruktur kann eine formale Grammatik in Form eines kleinen
-    L-Systems abgeleitet werden, indem identische topologische Strukturen (Unterbäume) gefunden werden können.
-    \item[V.] \underline{Optimieren}: Hier werden ähnliche Produktionsregeln des L-Systems mithilfe einer
-    \textbf{Kostenfunktion}\footnote[1]{Die Kostenfunktion setzt sich sowohl aus der Länge der Grammatik, als
-    auch der Distanz von der alten zur neuen, generalisierten Grammatik nach dem Merge zusammen} zusammengefasst
-    (\textit{engl. Merge}), um diese mit nicht-deterministischen Regeln und Rekursion zu generalisieren.
-    \item[VI.] \underline{Randomisieren}: Jedes Symbol der Grammatik nimmt eine Liste an Parametern entgegen, die
-    in diesem Schritt nach bestimmten Kriterien pseudo-randomisiert werden, um Variationen zu erstellen und
-    anschließend zu visualisieren.
-\end{itemize}
+\subsection*{Strukturieren}
+Der Benutzer nutzt die grafische Benutzerschnittstelle, um aus einzelnen Templates eine zusammenhängende Basisstruktur zu
+erstellen.
+Neben der Position der Instanzen werden Transformationensparameter, wie Rotation oder Skalierung, angepasst.
+
+\subsection*{Visualisieren}
+Der aktuelle Stand der Strukturierung ist jederzeit sichtbar.
+Liniensegmente und Bindungselemente werden in einem graphischen Element visualisiert und für eine Interaktion zur Verfügung
+gestellt.
+
+\subsection*{Datenaufbereitung}
+Das Ergebnis der Strukturierung wird in einer Baumstruktur
+organisiert, in der jeder Knoten einer bestimmten Template-Instanz entspricht und die zugehörigen Kanten die
+geometrischen Transformationen relativ zum Elternknoten beschreibt.
+
+\subsection*{Inferieren}
+Aus der Baumstruktur kann eine formale Grammatik in Form eines L-Systems abgeleitet werden.
+Diese Grammatik beschreibt lediglich die erstellte Basisstruktur und beinhaltet keine Transformationsparameter, da hier
+nur auf die Topologie des Baumes und nicht auf geometrische Unterschiede der Instanzen eingegangen wird.
+
+\subsection*{Komprimieren}
+Um sich wiederholende Produktionregeln zu verhindern und so sowohl das Alphabet, also auch die Produktionsregelmenge
+zu kompromieren, wird die Baumstrukturen nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
+Instanzen vereinfacht.
+Hierbei gilt die Baumstruktur selbst nicht als Unterbaum.
+
+\subsection*{Generalisieren}
+Ähnliche Produktionsregeln des L-Systems werden mithilfe einer Kostenfunktion zusammengefasst, um dises mit
+nicht-deterministischen Regeln und Rekursion zu generalisieren.
+
+\subsection*{Randomisieren}
+Jedes Symbol der Grammatik nimmt eine Liste an Parametern entgegen, die nach bestimmten Kriterien pseudo-randomisiert
+werden, um Variationen von Template-Instanzen zu erstellen.
+Das Ausführen des L-Systems kann nun Ähnlichkeitsstrukturen für die Basisstruktur erzeugen.
 
 \section{Aufbau}
 
-Im Folgenden wird auf die Methodik zum Ableiten eines L-Systems eingegangen und Konzepte und eigene Lösungsansätze
-präsentiert.
+Die Methodik zum Umsetzen des beschriebenen Systems wird wie folgt umgesetzt.
 
 \begin{figure}[H]
     \centering
@@ -107,6 +124,9 @@ präsentiert.
     \caption[Systemarchitektur]{Architektur des Systems mit einigen Datenstrukturen}
 \end{figure}
 
-\subsubsection{System}
-Ziel des Systems ist die Erstellung von Ähnlichkeitsabbildern einer Struktur, die über eine grafische
-Benutzeroberfläche erstellt wird.
+Die Darstellung zeigt eine grobe Übersicht der Anwendungsfälle innerhalb des Systems.
+Der Benutzer strukturiert vom System importierte Templates zu einer Basisstruktur mitteln grafischer Bedienelemente.
+Die Template-Instanzen werden hierbei in einer Baumtopologie organisiert.
+Anschließend wird ein L-System aus der Baumstruktur generiert und komprimiert.
+Bevor randomisierte, geometrische Parameter auf das kompakte L-System angewendet werden, wird dieses generalisiert.
+Zuletzt wird das Axiom des abgeleiteten L-Systems durch die Ausführung erweitert und sichtbar gemacht.
