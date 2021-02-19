@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{31}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -31,6 +31,19 @@
 \newblock \url{https://arc42.de/template/}. --
 \newblock Pragmatisches Muster für die Erstellung, Dokumentation und
   Kommunikation von Software- und Systemarchitekturen
+
+\bibitem[Benes u.\,a.(2011)Benes, Stava, Mech und Miller]{benes_2011}
+\dinatlabel{Benes u.\,a. 2011} \textsc{Benes}, Bedrich~; \textsc{Stava},
+  Ondrej~; \textsc{Mech}, Radomir~; \textsc{Miller}, Gavin:
+\newblock Guided Procedural Modeling.
+\newblock In: \emph{Computer Graphics Forum}
+\newblock 30 (2011), 05, S.~325--334
+
+\bibitem[{Chomsky}(1956)]{chomsky_1956}
+\dinatlabel{{Chomsky} 1956} \textsc{{Chomsky}}, N.:
+\newblock Three models for the description of language.
+\newblock In: \emph{IRE Transactions on Information Theory}
+\newblock 2 (1956), Nr.~3, S.~113--124
 
 \bibitem[Deussen und Lintermann(2010)]{deussen_2010}
 \dinatlabel{Deussen und Lintermann 2010} \textsc{Deussen}, Oliver~;
