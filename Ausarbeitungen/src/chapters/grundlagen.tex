@@ -37,27 +37,38 @@ Computergrafik und aktueller Gegenstand der Forschung.
 
 \section{Grundlegende Arbeiten}
 
-Grundlagen
-\begin{itemize}
-    \item prozedurale Modellierung~\cite{smelik_2014}
-    \item inverse prozedurale Modellierung~\cite{aliaga_2016}
-    \item L-Systeme~\cite{lindemayer_1968}
-    \item parametrisiert L-Systeme~\cite{prusinkiewicz_1993}
-    \item Logo-Turtle~\cite{prusinkiewicz_1986}
-    \item inverse Generierung von L-Systemem~\cite{higuera_2010}
-\end{itemize}
+\citeauthor{smelik_2014} untersucht prozedurale Methoden, um diverse Strukturen, wie Vegetation, Straßen u.v.m zu erzeugen.
+Es wird ein Überblick aktueller, vielversprechender Studien gegeben und deren Anwendung in sowohl technischen Bereichen,
+als auch in nicht-technischen, kreativen Bereichen, diskutiert.~\cite{smelik_2014} gilt als guter Einstiegspunkt in die
+Bereiche der prozeduralen Modellierung.
+Einen aktuellen Stand der Forschung der inversen prozeduralen Modellierung liefert~\cite{aliaga_2016}.~\citeauthor{aliaga_2016}
+zeigt, dass IPM-Anätze in entsprechende Kernprobleme der Informatik aufgeteilt und meist getrennt voneinander durch
+verschiedene Methodiken und Algorithmen "`gelöst"' werden.
+Weiter wird ein Einblick in die Kategorisierung und Bewertung einiger Ergbenisse von IPM-Systemem gegeben.
+Die Buchrezension~\cite{daelemans_2010} geht auf die Arbeit~\cite{higuera_2010} ein und weist darauf hin, dass
+~\citeauthor{higuera_2010} einen wesentlichen Unterschied zwischen der Induktion einer Grammatik, also das Finden einer
+Grammatik, welche ein Datum am genauesten beschreibt, und der Grammatikinferrierung, also das Finden einer Zielgrammatik,
+welche eine bestimmte Zeichenfolge abdeckt, sieht.
+\citeauthor{higuera_2010} ordnet die inverse Generierung von L-Systemem zum Problem der Grammatikinferrenz, welches er
+als gut erforschtes Gebiet beschreibt.
+Verzweigungsstrukturen im Kontext der inversen prozeduralen Modellierung tauchen in wissenschaftlichen Studien wenig auf.
+~\cite{guo_2020} adressiert diese in seiner Arbeit~\cite{guo_2020} und liefert einige Ansätze hierzu.\\~\\
 
-"`Not much work addresses inverse procedural modeling of branching structures"'\\~\\
+Im Folgenden wird eine Übersicht zu einigen Arbeiten zur Modellierung von bestimmten Strukturen gegeben.
+\begin{center}
+    \begin{tabular}{lll}
+        Subjekt & Bereich & Arbeit\\
+        \hline
+        Bäume und Landschaften & todo & ~\cite{deussen_2010} \\
+        Fassaden & todo & ~\cite{alhalawani_2013} \\
+        Gebäude & todo & ~\cite{mueller_2006} \\
+        Städte & todo & ~\cite{parish_2001} \\
+        Möbel & todo & ~\cite{merrell_2011} \\
+        Inneneinrichtung & todo & ~\cite{zhang_2019} \\
+    \end{tabular}
+\end{center}
 
-Modellieren von
-\begin{itemize}
-    \item Bäumen und Landschaften~\cite{deussen_2010}
-    \item Fassaden~\cite{alhalawani_2013}
-    \item Gebäuden~\cite{mueller_2006}
-    \item Städten~\cite{parish_2001}
-\end{itemize}
 \subsection*{L-Systeme}
-
 \citeauthor{lindemayer_1968} führt eine mathematische Beschreibung zum Wachstum fadenförmiger Organismen ein.
 Sie zeigt, wie sich der Status von Zellen infolge ein oder mehrerer Einflüsse verhält~\cite{lindemayer_1968}.
 Weiter führt er Ersetzungssysteme ein, die atomare Teile mithilfe von Produktionsregeln ersetzen.
@@ -65,9 +76,7 @@ Diese L-Systeme nutzt er zur formalen Beschreibung von Zellteilung.
 Später werden Symbole zur formalen Beschreibung von Verzweigungen, die von Filamenten abgehen, eingeführt~\cite{prusinkiewicz_1990}.
 Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} eingeführt~\cite{chomsky_1956}.
 Sie ersetzen parallel Symbole eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
-L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
-
-\subsubsection*{Formalismen}
+L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.\\~\\
 L-Systeme sind Grammatiken mit folgender Form:
 \begin{center}
     $\mathcal{L}=\langle M,\omega,R \rangle$, mit
@@ -186,27 +195,21 @@ Lernens (Deep Learning) anhand beliebiger Grafiken ein~\cite{guo_2020}.
 Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarchische Topologie (Baumstruktur)
 aufgebaut, aus der ein L-System inferiert und mit einem Greedy Algorithmus optimiert wird.
 Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
-erstellt werden können.\\
-Sowohl das Nutzen einer Baumstruktur zur Organisation von atomaren Verzweigungsstrukturen, als auch verschiedene
-Kostenfunktionen sind von
-Aus dieser Quelle werden folgende Konzepte genutzt:
-\begin{itemize}
-    \item Nutzer einer Baumstruktur zur Organisation von genutzten atomaren Verzweigungsstrukturen
-    (\textbf{Templates}) mit Knoten für Templates und Kanten für geometrische Transformationen
-    \item Untersuchen der Baumstruktur auf Wiederholungen
-    \item Parametrisierte L-Systeme (L-System mit \textbf{Modulen}) zur Abbildung von Transformationsparametern
-    \item Kostenfunktion zur Bewertung eines L-Systems
-\end{itemize}
+erstellt werden können.
+Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
+~\cite{talton_2012} führt ein System zur Generierung von geometrischen Modellen und Websites ein, das eine organisierte
+Struktur von bezeichneten Teilmodellen entgegennimmt und über einen Prozess der MCMC-Optimierung eine Bayes-optimale
+Grammatik erstellt, um neue Modelle zu generieren.
+Auch das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
+Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren ~\cite{martinovic_2013}.
+Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Verteilung von zweidimensionalen Clustern
+wird in den Arbeit von ~\citeauthor{stava_2010} gegeben
 
-Inverse prozedurale Modellierung anhand von Hausfassaden~\cite{martinovic_2013}, 2D-Anordnungen
-~\cite{ellis_2018,stava_2010}, biologischen Bäumen~\cite{stava_2014} und urbanen Strukturen~\cite{nishida_2016}
-\\~\\
+2D-Anordnungen
+biologischen Bäumen~\cite{stava_2014}
+urbanen Strukturen~\cite{nishida_2016}
 Polynomiale Algorithmen zum Inferrieren von L-Systemen~\cite{mcquillan_2018}
-\\~\\
 Framework zum Inferrieren von L-Systemen aus Vektordaten~\cite{stava_2010}
-\\~\\
 Generalisieren einen Regelsets aus einem Inputset mit Markov Chain Monte Carlo~\cite{talton_2012, talton_2011}
-\\~\\
 Lernen von Regeln zum Layout für Gebäude~\cite{martinovic_2013}
-\\~\\
 Inverse prozedurale Modellierung von Fassaden~\cite{xiao_2008}

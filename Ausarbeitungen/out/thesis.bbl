@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{33}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -44,6 +44,13 @@
 \newblock Three models for the description of language.
 \newblock In: \emph{IRE Transactions on Information Theory}
 \newblock 2 (1956), Nr.~3, S.~113--124
+
+\bibitem[Daelemans(2010)]{daelemans_2010}
+\dinatlabel{Daelemans 2010} \textsc{Daelemans}, Walter:
+\newblock Colin de la Higuera: Grammatical inference: learning automata and
+  grammars: Cambridge University Press, 2010, iv + 417 pages.
+\newblock In: \emph{Machine Translation}
+\newblock 24 (2010), 12, S.~291--293
 
 \bibitem[Deussen und Lintermann(2010)]{deussen_2010}
 \dinatlabel{Deussen und Lintermann 2010} \textsc{Deussen}, Oliver~;
@@ -122,6 +129,17 @@
 \newblock S.~117--130, 01 2018. --
 \newblock ISBN 978-3-319-92434-2
 
+\bibitem[Merrell u.\,a.(2011)Merrell, Schkufza, Li, Agrawala und
+  Koltun]{merrell_2011}
+\dinatlabel{Merrell u.\,a. 2011} \textsc{Merrell}, Paul~; \textsc{Schkufza},
+  Eric~; \textsc{Li}, Zeyang~; \textsc{Agrawala}, Maneesh~; \textsc{Koltun},
+  Vladlen:
+\newblock \emph{Interactive Furniture Layout Using Interior Design Guidelines}.
+\newblock In: \emph{ACM SIGGRAPH 2011 Papers}.
+\newblock New York, NY, USA~: Association for Computing Machinery, 2011. --
+\newblock URL \url{https://doi.org/10.1145/1964921.1964982}. --
+\newblock ISBN 9781450309431
+
 \bibitem[Müller u.\,a.(2006)Müller, Wonka, Haegler, Ulmer und
   Van~Gool]{mueller_2006}
 \dinatlabel{Müller u.\,a. 2006} \textsc{Müller}, Pascal~; \textsc{Wonka},
@@ -167,12 +185,6 @@
 \newblock \emph{The Algorithmic Beauty of Plants}.
 \newblock Berlin, Heidelberg~: Springer-Verlag, 1990. --
 \newblock ISBN 0387972978
-
-\bibitem[Prusinkiewicz u.\,a.(1993)Prusinkiewicz, Hammel und
-  Mjolsness]{prusinkiewicz_1993}
-\dinatlabel{Prusinkiewicz u.\,a. 1993} \textsc{Prusinkiewicz}, Przemyslaw~;
-  \textsc{Hammel}, Mark~; \textsc{Mjolsness}, Eric:
-\newblock Animation of plant development, 09 1993, S.~351--360
 
 \bibitem[Smelik u.\,a.(2014)Smelik, Tutenel, Bidarra und Benes]{smelik_2014}
 \dinatlabel{Smelik u.\,a. 2014} \textsc{Smelik}, Ruben~M.~; \textsc{Tutenel},
@@ -241,5 +253,12 @@
 \newblock Image-based Façade Modeling.
 \newblock In: \emph{ACM Transactions on Graphics}
 \newblock 27 (2008), 12, S.~161
+
+\bibitem[Zhang u.\,a.(2019)Zhang, Zhang, Liang und Hall]{zhang_2019}
+\dinatlabel{Zhang u.\,a. 2019} \textsc{Zhang}, Song-Hai~; \textsc{Zhang},
+  Shao-Kui~; \textsc{Liang}, Yuan~; \textsc{Hall}, Peter:
+\newblock A Survey of 3D Indoor Scene Synthesis.
+\newblock In: \emph{Journal of Computer Science and Technology}
+\newblock 34 (2019), 05, S.~594--608
 
 \end{thebibliography}
