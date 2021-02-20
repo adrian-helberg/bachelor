@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  19 FEB 2021 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  20 FEB 2021 12:59
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1803,18 +1803,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--56
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 79--88
+Underfull \hbox (badness 10000) in paragraph at lines 72--81
 
  []
 
-[9] [10]
-Underfull \hbox (badness 1297) in paragraph at lines 140--142
+[9]
+Underfull \hbox (badness 1297) in paragraph at lines 133--135
 []\T1/cmr/m/n/10.95 Gehe vom der-zei-ti-gen Punkt $\OML/cmm/m/it/10.95 p[]$ $d$
  \T1/cmr/m/n/10.95 Ein-hei-ten in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
@@ -1834,149 +1839,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--163
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-
- []
-
-
-Overfull \hbox (12.2505pt too wide) in paragraph at lines 133--173
+Overfull \hbox (12.2505pt too wide) in paragraph at lines 126--166
  [] 
  []
 
-[11]) (chapters/konzepte.tex
-Underfull \hbox (badness 10000) in paragraph at lines 207--2
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 193--209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--2
+Underfull \hbox (badness 10000) in paragraph at lines 193--209
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--2
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--2
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--2
-
- []
-
-[12] [13]
+) (chapters/konzepte.tex [12] [13]
 chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
 [14
 
-]
-<../images/Fachlicher_Kontext.PNG, id=359, 253.69781pt x 359.84438pt>
+] [15] [16]
+<../images/Fachlicher_Kontext.PNG, id=375, 253.69781pt x 359.84438pt>
 File: ../images/Fachlicher_Kontext.PNG Graphic file (type png)
 <use ../images/Fachlicher_Kontext.PNG>
-Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 3
-8.
+Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 8
+0.
 (pdftex.def)             Requested size: 176.407pt x 250.22014pt.
-<../images/Technischer_Kontext.PNG, id=360, 564.60938pt x 230.36063pt>
+<../images/Technischer_Kontext.PNG, id=376, 564.60938pt x 230.36063pt>
 File: ../images/Technischer_Kontext.PNG Graphic file (type png)
 <use ../images/Technischer_Kontext.PNG>
 Package pdftex.def Info: ../images/Technischer_Kontext.PNG  used on input line 
-43.
+85.
 (pdftex.def)             Requested size: 284.52756pt x 116.08688pt.
- [15 <../images/Fachlicher_Kontext.PNG>] [16 <../images/Technischer_Kontext.PNG
->]
-Overfull \hbox (19.08966pt too wide) in paragraph at lines 52--88
+ [17 <../images/Fachlicher_Kontext.PNG> <../images/Technischer_Kontext.PNG>]
+Overfull \hbox (19.08966pt too wide) in paragraph at lines 94--130
  [] 
  []
 
-<../images/Bausteinsicht_Ebene_1.PNG, id=372, 827.34094pt x 490.83376pt>
+<../images/Bausteinsicht_Ebene_1.PNG, id=383, 827.34094pt x 490.83376pt>
 File: ../images/Bausteinsicht_Ebene_1.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_1.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_1.PNG  used on input lin
-e 94.
+e 136.
 (pdftex.def)             Requested size: 341.43306pt x 202.5613pt.
-[17]
-<../images/Bausteinsicht_Ebene_2.PNG, id=377, 429.85594pt x 341.02406pt>
+[18]
+<../images/Bausteinsicht_Ebene_2.PNG, id=388, 429.85594pt x 341.02406pt>
 File: ../images/Bausteinsicht_Ebene_2.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_2.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_2.PNG  used on input lin
-e 100.
+e 142.
 (pdftex.def)             Requested size: 256.0748pt x 203.159pt.
-<../images/Laufzeitsicht.PNG, id=378, 713.66624pt x 463.7325pt>
+<../images/Laufzeitsicht.PNG, id=389, 713.66624pt x 463.7325pt>
 File: ../images/Laufzeitsicht.PNG Graphic file (type png)
 <use ../images/Laufzeitsicht.PNG>
-Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 107.
+Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 149.
 (pdftex.def)             Requested size: 398.33858pt x 258.83223pt.
- [18 <../images/Bausteinsicht_Ebene_1.PNG> <../images/Bausteinsicht_Ebene_2.PNG
+ [19 <../images/Bausteinsicht_Ebene_1.PNG> <../images/Bausteinsicht_Ebene_2.PNG
 >]
-<../images/Verteilungssicht.PNG, id=385, 585.68813pt x 308.65312pt>
+<../images/Verteilungssicht.PNG, id=396, 585.68813pt x 308.65312pt>
 File: ../images/Verteilungssicht.PNG Graphic file (type png)
 <use ../images/Verteilungssicht.PNG>
-Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 114
+Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 156
 .
 (pdftex.def)             Requested size: 284.52756pt x 149.9509pt.
- [19 <../images/Laufzeitsicht.PNG> <../images/Verteilungssicht.PNG>]
-[20]
+ [20 <../images/Laufzeitsicht.PNG> <../images/Verteilungssicht.PNG>]
+[21]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 164.
+nput line 206.
 
 
-chapters/konzepte.tex:173: LaTeX Error: There's no line here to end.
+chapters/konzepte.tex:215: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.173 \\~
+l.215 \\~
          \\~\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--177
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--177
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
 
  []
-
-[21]
-chapters/konzepte.tex:197: Undefined control sequence.
-l.197 \blfootnote
-                 {* nach Breitensuche, beginnend bei Wurzelknoten S}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 [22]
-chapters/konzepte.tex:221: Undefined control sequence.
-l.221 \blfootnote
-                 {* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mat...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-chapters/konzepte.tex:222: Undefined control sequence.
-l.222 \blfootnote
-                 {** $T$ als Baumstruktur des L-Systems}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-chapters/konzepte.tex:230: Undefined control sequence.
-l.230 \blfootnote
-                 {*** $N(\cdot)$ als Zählfunktion für die Anzahl Wiederhol...
+chapters/konzepte.tex:239: Undefined control sequence.
+l.239 \blfootnote
+                 {* nach Breitensuche, beginnend bei Wurzelknoten S}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1986,6 +1947,34 @@ and I'll forget about whatever was undefined.
 [23]
 chapters/konzepte.tex:263: Undefined control sequence.
 l.263 \blfootnote
+                 {* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mat...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/konzepte.tex:264: Undefined control sequence.
+l.264 \blfootnote
+                 {** $T$ als Baumstruktur des L-Systems}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+chapters/konzepte.tex:272: Undefined control sequence.
+l.272 \blfootnote
+                 {*** $N(\cdot)$ als Zählfunktion für die Anzahl Wiederhol...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[24]
+chapters/konzepte.tex:305: Undefined control sequence.
+l.305 \blfootnote
                  {* $\mathcal{P}$ als Menge aller möglichen Regelpaaren aus...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1993,14 +1982,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (chapters/implementierung.tex [24]
+) (chapters/implementierung.tex [25]
 chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 46--48
 []\T1/cmr/m/n/10.95 Algorithmus zum Er-wei-tern ei-nes L-Systems um nicht-
  []
 
-[25
+[26
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--64
@@ -2022,34 +2011,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--64
 
  []
 
-[26]) (chapters/evaluierung.tex [27]
+[27]) (chapters/evaluierung.tex [28]
 chapter 5.
-) (chapters/ausblick.tex [28
+) (chapters/ausblick.tex [29
 
 ]
 chapter 6.
-) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [29
+) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [30
 
 ]
 chapter without number
-[30
+[31
 
 ]
-Underfull \hbox (badness 1038) in paragraph at lines 145--151
+Underfull \hbox (badness 1038) in paragraph at lines 138--144
 []\T1/cmr/m/sc/10.95 M�ller\T1/cmr/m/n/10.95 , Pas-cal ; \T1/cmr/m/sc/10.95 Won
 -ka\T1/cmr/m/n/10.95 , Pe-ter ; \T1/cmr/m/sc/10.95 Haeg-ler\T1/cmr/m/n/10.95 , 
 Si-mon ; \T1/cmr/m/sc/10.95 Ul-mer\T1/cmr/m/n/10.95 , An-dre-as ;
  []
 
-[31] [32]) (appendix/example_appendix.tex [33]
+[32] [33]) (appendix/example_appendix.tex [34]
 chapter A.
-) [34
+) [35
 
-] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [35])
-(../style/statement_i.tex [36
+] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [36])
+(../style/statement_i.tex [37
 
 
-] [37
+] [38
 
 ])
 (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
@@ -2064,10 +2053,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37059 strings out of 479618
- 750729 string characters out of 2865027
- 1504322 words of memory out of 3000000
- 53194 multiletter control sequences out of 15000+200000
+ 37064 strings out of 479618
+ 750755 string characters out of 2865027
+ 1504249 words of memory out of 3000000
+ 53191 multiletter control sequences out of 15000+200000
  440175 words of font info for 95 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  117i,21n,116p,10636b,2322s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2109,10 +2098,10 @@ s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adria/App
 Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (47 pages, 7516
-37 bytes).
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (48 pages, 7552
+88 bytes).
 PDF statistics:
- 1590 PDF objects out of 1728 (max. 8388607)
- 226 named destinations out of 1000 (max. 500000)
+ 1598 PDF objects out of 1728 (max. 8388607)
+ 234 named destinations out of 1000 (max. 500000)
  453 words of extra memory for PDF output out of 10000 (max. 10000000)
 

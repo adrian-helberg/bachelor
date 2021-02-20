@@ -73,7 +73,7 @@ Die Erstellung und Integration eines neuronalen Netzes, das laut aktueller Forsc
 Regeln aus einer Eingabestruktur liefert, kann in dieser Arbeiten aus Praktikabilitätsgründen nicht behandelt werden.
 
 \section{Methodik}
-Der Benutzer des Systems legt atomare Strukturen in Form von Zeichenketten an, die vom Programm eingelesen werden und
+Der Benutzer des Systems legt atomare Strukturen in Form von Zeichenketten an, die vom Programm eingelesen und
 als Templates zur Verfügung gestellt werden.
 Die Templates sind beliebig und können eine einfach Linie oder eine komplexe Verzweiung darstellen.
 Werden diese Strukturen auf der graphischen Oberfläche platziert und mit diversen Transformationen verändert, spricht man
@@ -91,7 +91,7 @@ gestellt.
 
 \subsection*{Datenaufbereitung}
 Das Ergebnis der Strukturierung wird in einer Baumstruktur
-organisiert, in der jeder Knoten einer bestimmten Template-Instanz entspricht und die zugehörigen Kanten die
+organisiert, in der jeder Knoten einer bestimmten Template-Instanz entspricht und die eingehenden Kanten die
 geometrischen Transformationen relativ zum Elternknoten beschreibt.
 
 \subsection*{Inferieren}
@@ -100,7 +100,7 @@ Diese Grammatik beschreibt lediglich die erstellte Basisstruktur und beinhaltet 
 nur auf die Topologie des Baumes und nicht auf geometrische Unterschiede der Instanzen eingegangen wird.
 
 \subsection*{Komprimieren}
-Um sich wiederholende Produktionregeln zu verhindern und so sowohl das Alphabet, also auch die Produktionsregelmenge
+Um sich wiederholende Produktionregeln zu vermeiden und so sowohl das Alphabet, als auch die Produktionsregelmenge
 zu kompromieren, wird die Baumstrukturen nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
 Instanzen vereinfacht.
 Hierbei gilt die Baumstruktur selbst nicht als Unterbaum.
@@ -125,7 +125,7 @@ Die Methodik zum Umsetzen des beschriebenen Systems wird wie folgt umgesetzt.
 \end{figure}
 
 Die Darstellung zeigt eine grobe Übersicht der Anwendungsfälle innerhalb des Systems.
-Der Benutzer strukturiert vom System importierte Templates zu einer Basisstruktur mitteln grafischer Bedienelemente.
+Der Benutzer strukturiert vom System importierte Templates zu einer Basisstruktur mittels grafischer Bedienelemente.
 Die Template-Instanzen werden hierbei in einer Baumtopologie organisiert.
 Anschließend wird ein L-System aus der Baumstruktur generiert und komprimiert.
 Bevor randomisierte, geometrische Parameter auf das kompakte L-System angewendet werden, wird dieses generalisiert.

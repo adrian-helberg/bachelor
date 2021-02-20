@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{32}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -61,13 +61,6 @@
 \newblock Springer Publishing Company, Incorporated, 2010. --
 \newblock ISBN 3642073638
 
-\bibitem[Ellis u.\,a.(2018)Ellis, Ritchie, Solar-Lezama und
-  Tenenbaum]{ellis_2018}
-\dinatlabel{Ellis u.\,a. 2018} \textsc{Ellis}, Kevin~; \textsc{Ritchie},
-  Daniel~; \textsc{Solar-Lezama}, Armando~; \textsc{Tenenbaum}, Joshua~B.:
-\newblock \emph{Learning to Infer Graphics Programs from Hand-Drawn Images}.
-\newblock 2018
-
 \bibitem[Git()]{git}
 \dinatlabel{Git } \emph{Git - the stupid content tracker}.
 \newblock \url{https://git-scm.com/}. --
@@ -95,8 +88,8 @@
 \newblock URL \url{https://doi.org/10.1145/3394105}. --
 \newblock ISSN 0730-0301
 
-\bibitem[de~la Higuera(2010)]{higuera_2010}
-\dinatlabel{de~la Higuera 2010} \textsc{Higuera}, Colin de~la:
+\bibitem[De~la Higuera(2010)]{higuera_2010}
+\dinatlabel{De~la Higuera 2010} \textsc{Higuera}, Colin De~la:
 \newblock \emph{Grammatical Inference: Learning Automata and Grammars}.
 \newblock USA~: Cambridge University Press, 2010. --
 \newblock ISBN 0521763169

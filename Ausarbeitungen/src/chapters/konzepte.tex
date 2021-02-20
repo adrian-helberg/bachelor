@@ -1,18 +1,62 @@
 % @author Arian Helberg
 
 \chapter{Konzepte}
-\ldots
+Mit der Erstellung eines Programms zur Synthetisierung von Ähnlichkeitsabbildungen einer vom Benutzer
+erstellten Verzweigungsstruktur soll die Praktibilität aktueller Forschungsansätze untersucht werden.
+\\~\\
+Folgende Kernkonzepte werden erläutert und umgesetzt:
+\begin{itemize}
+    \item Visualisierung und prozessorientiertes Erstellen von Basisstrukturen,
+    \item Organisation in einer prozessoptimierten, baumähnlichen Topologie,
+    \item L-System-Repräsentationen,
+    \item Algorithmen zur Inferierung, Komprimierung, Generalisierung und
+    \item Verarbeitung von Transformationsparametern
+\end{itemize}
 
 \section{Probleme \& Lösungsansätze}
-\ldots
+
+\subsection*{Visualisierung}
+Um eine geführte Erstellung der Basisstruktur zu ermöglichen, muss diese während der Erstellung sichtbar gemacht werden.
+Hierzu werden die Templates in Form von Zeichenketten angelegt und mittels Turtle-Grafik visualisiert.
+Eine Turtle-Grafik beschreibt die Interpretation einer Zeichenkette als Bild durch Ausführen eines Logo-Turtle-Algorithmus.
+Weiter wird auch zur Evaluation von Ergebnissen eine Visualisierung benötigt.
+Da die Verzweigungsstrukturen in L-System-Repräsentation vorliegen, wird hierzu eine Interpretationsfunktion benötigt,
+die diese Ersetzungssysteme in Bildform darstellen.
+Ein L-System wird durch Ausführung in eine erweiterte Zeichenkette überführt und als Turtle-Grafik beschrieben
+~\cite{prusinkiewicz_1986}.
+
+\subsection*{Basisstruktur}
+Der Benutzer nutzt grafische Bendienelemente, um eingelesene Templates auszuwählen, Transformationsparameter anzupassen
+und um anschließend die Instanzen der Basisstruktur hinzuzufügen.
+
+\subsection*{Baumstruktur}
+Um Grundstrukturen mittels verschiedener Algorithmen untersuchen zu können, werden die einzelnen Template-Instanzen in
+einer baumähnlichen Struktur organisiert.
+Transformationsparameter einer Instanz beschreiben die räumlichen Veränderung gegenüber des zugrundeliegenden Templates
+und haben daher keine Aussagekraft in Bezug auf die Strukturtopologie der Basisstruktur.
+Diese Arbeit fokussiert sich auf topologische Eigenschaften von Verzweigungsstrukturen (z.B. Rekursionen).
+Darum bilden die einzelnen Template-Instanzen die Knoten der Baumtopologie, während die Kanten die räumlichen Transformationen
+darstellen.
+So wird eine datenstrukturelle Trennung zwischen Topologie und räumlichen Transformationen geschaffen.
+Diese baumähnliche Struktur ist ispiriert durch~\cite{guo_2020}, Kapitel 4.2 \textit{Grammar inference}
+
+\subsection*{Inferieren}
+Das Smalles Grammar Problem, also das Finden der kleinsten, kontextfreien Grammatik, welche eine bestimmte Zeichenkette
+generiert, ist ein offenes Problem der Informatik mit einem Annäherungsverhältnis von weniger als $\frac{8569}{8568}$
+(NP-hard).
+Primär wird in der Forschung nach Algorithmen gesucht, die ein akzeptables Ergebnis liefern.
+
+
+\subsection*{Komprimieren}
+\subsection*{Generalisieren}
+\subsection*{Transformationen}
+\subsection*{Generieren}
 
 \section{Softwarearchitektur}
 
 Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
 \subsection{Einführung und Ziele}
-Ziel ist die Erstellung eines Programms zur Synthetisierung von Ähnlichkeitsabbildungen einer vom Benutzer
-erstellten Verzweigungsstruktur mittels Inferieren und Optimieren von L-Systemen.
 Die wesentlichen Features des Programms sind:
 \begin{itemize}
     \item Erstellung einer Verzweigungsstruktur über eine grafische Benutzeroberfläche (\textbf{GUI})

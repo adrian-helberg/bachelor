@@ -17,7 +17,7 @@ Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\ci
 \subsection*{Modellierung}
 Um einen physikalischen Körper in ein digitales Objekt zu überführen, wird mithilfe von Abstraktion (Modellierung)
 ein mathematisches Modell erstellt, das diesen Körper formal beschreibt.
-3D Grafiksoftware, wie Blender~\cite{blender}, wird genutzt um geometrische Körper zu modellieren, texturieren
+3D Grafiksoftware, wie bspw. Blender~\cite{blender}, wird genutzt um geometrische Körper zu modellieren, texturieren
 und zu animieren.
 \subsection*{Prozedurale Modellierung}
 \begin{quote}
@@ -27,7 +27,7 @@ und zu animieren.
 \end{quote}
 Prozedurale Modellierung beschreibt generative Techniken, die \\(semi-)automatisch spezifische, digitale
 Inhalte anhand von deskriptiven Parametern erzeugen (\textit{Übersetzt durch den Autor}).
-\citeauthor{smelik_2014} beschreibt einen Prozess, der durch das Nutzen globaler Parameter und descriptiven Regeln
+\citeauthor{smelik_2014} beschreibt einen Prozess, welcher durch das Nutzen globaler Parameter und descriptiven Regeln
 Modelle erzeugt.
 \subsection*{Inverse prozedurale Modellierung}
 \citeauthor{aliaga_2016} spricht bei der inversen prozeduralen Modellierung von dem Finden einer prozeduralen Repräsentation
@@ -38,12 +38,12 @@ Computergrafik und aktueller Gegenstand der Forschung.
 \section{Grundlegende Arbeiten}
 
 \citeauthor{smelik_2014} untersucht prozedurale Methoden, um diverse Strukturen, wie Vegetation, Straßen u.v.m zu erzeugen.
-Es wird ein Überblick aktueller, vielversprechender Studien gegeben und deren Anwendung in sowohl technischen Bereichen,
-als auch in nicht-technischen, kreativen Bereichen, diskutiert.~\cite{smelik_2014} gilt als guter Einstiegspunkt in die
-Bereiche der prozeduralen Modellierung.
-Einen aktuellen Stand der Forschung der inversen prozeduralen Modellierung liefert~\cite{aliaga_2016}.~\citeauthor{aliaga_2016}
+Es wird ein Überblick aktueller, vielversprechender Studien gegeben, deren Anwendung sowohl in technischen Bereichen,
+als auch nicht-technischen, kreativen Bereichen, diskutiert wird.~\cite{smelik_2014} gilt als grundlegender Einstiegspunkt
+in die Bereiche der prozeduralen Modellierung.
+Einen aktuellen Stand der Forschung der inversen prozeduralen Modellierung liefert~\cite{aliaga_2016}.~\Citeauthor{aliaga_2016}
 zeigt, dass IPM-Anätze in entsprechende Kernprobleme der Informatik aufgeteilt und meist getrennt voneinander durch
-verschiedene Methodiken und Algorithmen "`gelöst"' werden.
+verschiedene Methodiken und Algorithmen bearbeitet werden.
 Weiter wird ein Einblick in die Kategorisierung und Bewertung einiger Ergbenisse von IPM-Systemem gegeben.
 Die Buchrezension~\cite{daelemans_2010} geht auf die Arbeit~\cite{higuera_2010} ein und weist darauf hin, dass
 ~\citeauthor{higuera_2010} einen wesentlichen Unterschied zwischen der Induktion einer Grammatik, also das Finden einer
@@ -94,7 +94,7 @@ Das Alphabet eines parametrisierten Systems enthält Module (Symbole mit Paramet
     \end{itemize}
 \end{center}
 Zeichen des Alphabets, die Ziel einer Produktionsregel sind, heißen Variablen.
-Alle anderen Zeichen aus $M$ sind die Konstanten.
+Alle anderen Zeichen aus $M$ sind Konstanten.
 Das Axiom $\omega$ ist eine nicht-leere Sequenz an Modulen aus $M^+$ mit
 \begin{itemize}
     \item $M^+$ als Menge aller möglichen Zeichenketten aus Modulen aus $M$
@@ -113,11 +113,11 @@ Ist die RHS jeder Produktionsregel ein einzelnes Symbol und gibt es zu jeder Var
 von einem kontextfreien, andernfalls von einem kontextsensitiven L-System.
 
 \subsection*{Logo-Turtle-Algorithmus}
-Der Logo-Turtle-Algorithmus~\cite{prusinkiewicz_1986} beschreibt ein Vorgehen zur graphischen Beschreibung von L-Systemen, bei dem
-jeder Buchstabe in einem Wort einer bestimmten Zeichenoperation zugewiesen wird.
+Der Logo-Turtle-Algorithmus~\cite{prusinkiewicz_1986} setzt ein Vorgehen zur graphischen Beschreibung von L-Systemen, bei dem
+jeder Buchstabe in einem Wort einer bestimmten Zeichenoperation zugewiesen wird, um.
 So kann aus einem L-System ein grafisches Muster generiert werden, das mit einer Abfolge von Zeichenbefehlen an
 eine "`Schildkröte"' gezeichnet wird.
-Das Triplett $(x,y,\theta)$ definiert den Status (\textbf{State}) der Schildkröte.
+Das Triplett $(x,y,\theta)$ definiert den Status (State) der Schildkröte.
 Dieser setzt sich aus der aktuellen Position $\left(\begin{smallmatrix} x \\ y \end{smallmatrix}\right)$ und dem
 aktuellen Rotationswinkel $\theta$, der die Blickrichtung bestimmt, zusammen.\\
 Der Algorithmus kann als Komprimierung eines geometrischen Musters gesehen werden.
@@ -185,8 +185,8 @@ Hierzu werden folgende Schlüsselpraktiken untersucht:
 \end{itemize}
 Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
 einer Bachelorarbeit bietet.
-Zum einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
-anderen können Arbeitspakete durch Releases abgebildet werden.
+Zum Einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
+Anderen können Arbeitspakete durch Releases abgebildet werden.
 
 \section{Verwandte Arbeiten}
 
@@ -195,18 +195,18 @@ Lernens (Deep Learning) anhand beliebiger Grafiken ein~\cite{guo_2020}.
 Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarchische Topologie (Baumstruktur)
 aufgebaut, aus der ein L-System inferiert und mit einem Greedy Algorithmus optimiert wird.
 Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
-erstellt werden können.
+erstellt werden können.\\
 Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
-~\cite{talton_2012} führt ein System zur Generierung von geometrischen Modellen und Websites ein, das eine organisierte
+~\cite{talton_2012} führt ein System zur Generierung geometrischer Modelle und Websites ein, das eine organisierte
 Struktur von bezeichneten Teilmodellen entgegennimmt und über einen Prozess der MCMC-Optimierung eine Bayes-optimale
-Grammatik erstellt, um neue Modelle zu generieren.
-Auch das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
+Grammatik erstellt, um neue Modelle zu generieren.\\
+Auch ~\cite{stava_2014} etabliert einen MCMC-Ansatz zum Finden prozeduraler Repräsentationen für biologische Bäume.
+Hier wird zunächst über eine Laplace-Glättung ein Grundgerüst gefunden, das dann in einer Baumtopologie organisiert wird.\\
+Das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
 Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren ~\cite{martinovic_2013}.
 Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Verteilung von zweidimensionalen Clustern
-wird in den Arbeit von ~\citeauthor{stava_2010} gegeben
+wird in den Arbeit von ~\citeauthor{stava_2010} gegeben\\~\\
 
-2D-Anordnungen
-biologischen Bäumen~\cite{stava_2014}
 urbanen Strukturen~\cite{nishida_2016}
 Polynomiale Algorithmen zum Inferrieren von L-Systemen~\cite{mcquillan_2018}
 Framework zum Inferrieren von L-Systemen aus Vektordaten~\cite{stava_2010}
