@@ -142,12 +142,29 @@ Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umges
 \end{center}
 
 \subsection*{Bausteinsicht}
+Der Benutzer interagiert über das User Interface mit dem Subsystem GUI, das sich mit der Visualisierung, dem Aufbau der
+Eingabestruktur und dem Anglegen einer internen Baumtopologie beschäftigt.
+Die Pipeline zum Erzeugen der Ausgabestrukturen beginnt mit dem Inferrieren eines L-Systems aus der benutzerdefinierten
+Struktur und gibt das erzeuge Ersetzungssystem an die folgenden Komponenten weiter.
+Hierbei gilt der Pipeline-Kontext, welcher innerhalb der Pipeline an den jeweils nächsten Schritt weitergegeben und
+dort aktualisiert wird, als Eingabe der Pipeline.
+Hat die Estimator-Komponente eine Verteilung über vom Benutzer angelegte Transformationsparameter angelegt, gilt
+der Kontext als Ausgabe der Pipeline.
+
 \underline{Ebene 1}
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{../images/Bausteinsicht_Ebene_1.PNG}
     \caption{Subsysteme mit fachlichen Abhängigkeiten}
 \end{figure}
+
+Betrachtet man die GUI-Komponente genauer, setzt sich diese aus vier Subsystemen zusammen.
+Das Application-Modul beschreibt den Einstigspunkt für ein JavaFX-Programm.
+Die grafische Benutzerschnittstelle wird über ein XML-basiertes FXML-Dateischema (Scene graph) mit zugeförigem FXML-Controller (Model)
+aufgebaut.
+Der Controller stellt die Logik für eine JavaFX-Oberfläche zur Verfügung.
+Neben der Erstellung der Basisstruktur, wird die Baumstruktur in einer seperaten Komponente umgesetzt.
+
 \underline{Ebene 2}
 \begin{figure}[H]
     \centering
@@ -155,24 +172,32 @@ Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umges
     \caption{Subsystem GUI}
 \end{figure}
 
-\subsection{Laufzeitsicht}
+\subsection*{Laufzeitsicht}
+Aus der nachfolgenden Abbildung geht hervor, wie sich der Informationsfluss zwischen den einzelnen Subsystemen verhält.
+Wird der Systemprozess einmal durchlaufen, besteht die Möglichkeit die Ausführung des generalisierten L-Systems mit
+erneuter Vergabe der Transformationsparameter aus der Häufigkeitsverteilung der Estimator-Komponente zu starten.
+Der Ablauf des Systems setzt sich wie folgt zusammen:
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=14cm]{../images/Laufzeitsicht.PNG}
     \caption{Laufzeitsicht}
 \end{figure}
 
-\subsection{Verteilungsicht}
+\subsection*{Verteilungsicht}
+Die Ausführung des Programms wird durch ein einfaches Startskript zur Verfügung gestellt.
+Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf einer Windows-Maschine dar.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{../images/Verteilungssicht.PNG}
     \caption{Infrastruktur Windows-PC}
 \end{figure}
 
-\subsection{Konzepte}
+\subsection*{Weitere Konzepte}
 
 \subsubsection{Testbarkeit}
-Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmögliche zu testende Einheit definiert
+Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmöglich zu testende Einheit definiert
 und durch Komponententests geprüft.
 Der Name eines Tests setzt sich aus dem Präfix als Name der zu testenden Klasse oder Releases und dem Suffix
 "`Test"'
@@ -191,7 +216,7 @@ Anhand dieser Systemtests wird geprüft, ob Gesamtspezifikationen umgesetzt word
 Zum Schluss der Implementierung wird ein Akzeptanztest durchgeführt.
 
 \subsubsection{Validierung}
-Der Benutzer des Systems nutzt ein grafische Schnittstelle.
+Der Benutzer des Systems nutzt eine grafische Schnittstelle.
 Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
 Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
 protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
@@ -216,12 +241,12 @@ TODO: Klassendiagramm aus IntelliJ generieren
 \subsubsection{Workflows \& Algorithmen}
 Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgender Arbeitsablauf umgesetzt:
 \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
-    Erster Anker ist vorselektiert
-    Wiederhole, bis Struktur fertiggestellt ist:
+Erster Anker ist vorselektiert
+Wiederhole, bis Struktur fertiggestellt ist:
     Selektiere ein Template aus der Liste
-    Setzt Parameter
+    Setzte Parameter
     Bestätige Auswahl und Parameter
-    Zeichne ausgewähltes Template mit Parameternd
+    Zeichne ausgewähltes Template mit Parametern
     Wähle nächsten Anker aus
 \end{algorithm}
 \\~\\~\\
