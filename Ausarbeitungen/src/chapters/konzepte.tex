@@ -28,6 +28,7 @@ Ein L-System wird durch Ausführung in eine erweiterte Zeichenkette überführt 
 \subsection*{Basisstruktur}
 Der Benutzer nutzt grafische Bendienelemente, um eingelesene Templates auszuwählen, Transformationsparameter anzupassen
 und um anschließend die Instanzen der Basisstruktur hinzuzufügen.
+Im Folgenden wird diese Basisstruktur u.a. Grundstruktur und Eingabestruktur genannt.
 
 \subsection*{Baumstruktur}
 Um Grundstrukturen mittels verschiedener Algorithmen untersuchen zu können, werden die einzelnen Template-Instanzen in
@@ -41,42 +42,55 @@ So wird eine datenstrukturelle Trennung zwischen Topologie und räumlichen Trans
 Diese baumähnliche Struktur ist ispiriert durch~\cite{guo_2020}, Kapitel 4.2 \textit{Grammar inference}
 
 \subsection*{Inferieren}
-Das Smalles Grammar Problem, also das Finden der kleinsten, kontextfreien Grammatik, welche eine bestimmte Zeichenkette
+Das Smallest Grammar Problem, also das Finden der kleinsten, kontextfreien Grammatik, welche eine bestimmte Zeichenkette
 generiert, ist ein offenes Problem der Informatik mit einem Annäherungsverhältnis von weniger als $\frac{8569}{8568}$
 (NP-hard).
 Primär wird in der Forschung nach Algorithmen gesucht, die ein akzeptables Ergebnis liefern.
-
+In dieser Arbeit wird ein Algorithmus präsentiert, der die Knoten der Baumstruktur in einzelne Symbole umwandelt, mit
+Produktionregeln verknüpft und diese dem resultierenden L-System hinzufügt.
+Dieses L-System repräsentiert lediglich die Eingabestruktur.
 
 \subsection*{Komprimieren}
+Um ein kompaktes, gewichtetes L-System zu erzeugen, werden sich wiederholende Unterrbäume gesucht und ersetzt.
+Eine Gewichtung wird angewendet, um das zu erzeugende L-System mit kleiner Regelmenge oder mit
+großer Regelmenge auszustatten.
+Eine Kostenfunktion stellt hierbei die Anzahl Symbole aller RHS der Produktionsregeln mit der Menge an Anwendungen der
+LHS gegenüber.
+
 \subsection*{Generalisieren}
+Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden ähnliche
+Regeln miteinander verbunden (Merge) und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische Regeln hinzuzufügen.
+Eine weitere Kostenfunktion bewertet den Merge zweier Produktionregeln und wendet eine Gewichtung über die Länge der Grammatik
+zur Änderungsdistanz der alten (ohne Merge) zur neuen Grammatik um.
+
 \subsection*{Transformationen}
-\subsection*{Generieren}
+Die vom Benutzer vergeben Werte der Transformationsparameter werden während der Erstellung der Eingabestruktur in
+einer Häufigkietsverteilung organisiert und bei Ausführung des generalisierten L-Systems angewendet.
+So werden Transformationen nach ihrer statistischen Häufigkeit angewendet.
 
 \section{Softwarearchitektur}
 
 Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
-\subsection{Einführung und Ziele}
-Die wesentlichen Features des Programms sind:
+\subsection*{Qualitätsziele}
+Um die wesentlichen Features des Systems in einem Programm umzusetzen, werden folgende Qualitätsziele definiert,
+priorisiert (absteigend) und umgesetzt:
 \begin{itemize}
-    \item Erstellung einer Verzweigungsstruktur über eine grafische Benutzeroberfläche (\textbf{GUI})
-    \item Einbindung atomarer Strukturen über externe Dateien
-    \item Synthetisierung von ähnlichen Verzweigungsstrukturen anhand der erstellten Struktur
-    \item Anzeigen von Verzweigungsstrukturen
-\end{itemize}
-Priorisierte (absteigend) Qualitätsziele, die bei der Erstellung des Systems umgesetzt werden sollten:
-\begin{itemize}
-    \item \textbf{Funktionalität} durch Umsetzung aller Teilsysteme
+    \item \textbf{Funktionalität} durch Umsetzen aller Teilsysteme in Vollständigkeit, Korrektheit, Angemessenheit
     \item \textbf{Interoperabilität} durch Nutzen einer allgemeinen Repräsentation von L-Systemen, damit diese
     auch in anderen Programmen oder Algorithmen verwendet werden kann
-    \item \textbf{Erweiterbarkeit} durch offene Entwurfsmuster (Design Pattern)
-    \item \textbf{Modular}e Implementierung für effiziente Wartung und Erweiterung
+    \item \textbf{Erweiterbarkeit} durch offene Entwurfsmuster (Design Patterns)
+    \item \textbf{Modularität} durch Implementierung für effiziente Wartung und Erweiterung
     \item \textbf{Effizienz} durch effiziente Programmierung
     \item \textbf{Attraktivität} durch intuitive Benutzung (Benutzerfreundlichkeit)
     \item \textbf{Plattformunabhängigkeit} durch Verwenden des Java-Frameworks
 \end{itemize}
 
-\subsection{Kontextabgrenzung}
+\subsection*{Kontextabgrenzung}
+Die Systemgrenzen werden zum Einen durch die Interaktion mit dem Benutzer, zum Anderen durch die Interaktion mit
+dem Dateisystem des Host-Systems und dem Zugreifen und Lesen der Template-Dateien definiert.
+Hierbei wird die Erstellung der Basisstruktur als nicht-technische Interaktion und das Einlesen der Dateien als
+technische Interaktion gesehen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=6.2cm]{../images/Fachlicher_Kontext.PNG}
@@ -85,26 +99,22 @@ Priorisierte (absteigend) Qualitätsziele, die bei der Erstellung des Systems um
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{../images/Technischer_Kontext.PNG}
-    \caption{Technische Interaktion zwischen System und Systemumgebung}
+    \caption{Interaktion zwischen System und Systemumgebung}
 \end{figure}
 
 \newpage
 
-\subsection{Lösungsstrategie}
-Gewählte Architekturansätze zur Erreichung der Qualitätsziele:
+\subsection*{Lösungsstrategie}
+Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umgesetzt:
 \begin{center}
     \begin{tabular}{l|l}
         \textbf{Qualitätsziel} & \textbf{Architekturansatz} \\
         \hline \\
         Funktionalität &
         \begin{minipage}[t]{0.8\textwidth}
-            \begin{itemize}
-                \item Grafische Benutzerschnittstelle: \textit{GUI}
-                \item Generieren der Baumstruktur: \textit{TreeGenerator}
-                \item Ableiten von L-Systemen aus Baumstrukturen: \textit{Inferer}
-                \item Generalisieren von L-Systemen: \textit{Generalizer}
-                \item Randomisieren von L-System Parametern: \textit{Randomizer}
-            \end{itemize}
+            Grafische Benutzerschnittstelle\\
+            Generieren der Baumstruktur\\
+            Verarbeiten von L-Systemen
         \end{minipage} \\
         \\ \hline \\
         Interoperabilität &
@@ -115,15 +125,15 @@ Gewählte Architekturansätze zur Erreichung der Qualitätsziele:
         \\ \hline \\
         Erweiterbarkeit &
         \begin{minipage}[t]{0.8\textwidth}
-            Das Nutzen des \textbf{Pipeline Design Pattern}s soll das Erweitern des Systems durch
-            Hinzufügen weiterer Teilschritte (\textbf{Pipes}) erleichtern.
+            Das Nutzen des Pipeline Design Patterns soll das Erweitern des Systems durch
+            Hinzufügen weiterer Teilschritte (Pipes) erleichtern.
             Trennung der grafischen Oberfläche und der Logik durch Aufbauen des Szenengraphen über ein
             XML-Dateiformat
         \end{minipage} \\
         \\ \hline \\
         Modularität &
         \begin{minipage}[t]{0.8\textwidth}
-            Sowohl eine sinnvolle Aufteilung von Funktionalitäten auf Dateien und Pakete (\textbf{Package}s), als
+            Sowohl eine sinnvolle Aufteilung von Funktionalitäten auf Dateien und Software-Pakete, als
             auch effiziente Datenkapselung und geschlossene Informationskontexte sorgen für Modularität des
             Programms
         \end{minipage} \\
@@ -131,7 +141,7 @@ Gewählte Architekturansätze zur Erreichung der Qualitätsziele:
     \end{tabular}
 \end{center}
 
-\subsection{Bausteinsicht}
+\subsection*{Bausteinsicht}
 \underline{Ebene 1}
 \begin{figure}[H]
     \centering
@@ -242,9 +252,7 @@ Für $\mathcal{L}=\langle M,\omega,R \rangle$:
 
 \newpage
 
-Um ein kompakteres, gewichtetes L-System zu erzeugen, werden sich wiederholende Unterrbäume gesucht und ersetzt.
-Die Gewichtung wird angewendet, um das erzeugte L-System in ein System mit kleiner Regelmenge ($w_l=1$) oder mit
-großer Regelmenge ($w_l=0$) umzuwandeln:
+
 \begin{algorithm}[caption={Erstellen eines kompakten L-Systems mit Gewichtung $w_l$}, label={alg3}]
 Initialisierung:
 $\mathcal{L}^+ \leftarrow L_s$*
@@ -265,8 +273,6 @@ Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n$
 \blfootnote{* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mathcal{L}=\langle M,\omega,R \rangle$}
 \blfootnote{** $T$ als Baumstruktur des L-Systems}
 
-Die Kostenfunktion stellt die Anzahl Symbole aller \textit{RHS} der Produktionsregeln mit der Menge an
-Anwendungen der \textit{LHS} gegenüber:
 \begin{algorithm}[caption={Kostenfunktion $C_i$ mit Gewichtung $w_l$}, label={alg4}]
 $C_i(\mathcal{L})= \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} w_l * |M^*| + (1 - w_l) * N(A(P)\rightarrow
 M^*)$***
