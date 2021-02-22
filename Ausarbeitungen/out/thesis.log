@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  21 FEB 2021 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  22 FEB 2021 10:23
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1762,7 +1762,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--55
  []
 
 [2] [3] [4]
-<../images/System.PNG, id=218, 1090.82532pt x 703.12688pt>
+<../images/System.PNG, id=220, 1090.82532pt x 703.12688pt>
 File: ../images/System.PNG Graphic file (type png)
 <use ../images/System.PNG>
 Package pdftex.def Info: ../images/System.PNG  used on input line 123.
@@ -1863,13 +1863,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 [14
 
 ] [15] [16]
-<../images/Fachlicher_Kontext.PNG, id=361, 235.63031pt x 333.49594pt>
+<../images/Fachlicher_Kontext.PNG, id=363, 235.63031pt x 333.49594pt>
 File: ../images/Fachlicher_Kontext.PNG Graphic file (type png)
 <use ../images/Fachlicher_Kontext.PNG>
 Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 9
 6.
 (pdftex.def)             Requested size: 176.407pt x 249.6786pt.
-<../images/Technischer_Kontext.PNG, id=362, 564.60938pt x 230.36063pt>
+<../images/Technischer_Kontext.PNG, id=364, 564.60938pt x 230.36063pt>
 File: ../images/Technischer_Kontext.PNG Graphic file (type png)
 <use ../images/Technischer_Kontext.PNG>
 Package pdftex.def Info: ../images/Technischer_Kontext.PNG  used on input line 
@@ -1882,26 +1882,26 @@ Overfull \hbox (19.08966pt too wide) in paragraph at lines 110--142
  []
 
 [19]
-<../images/Bausteinsicht_Ebene_1.PNG, id=380, 892.83563pt x 618.05907pt>
+<../images/Bausteinsicht_Ebene_1.PNG, id=382, 892.83563pt x 618.05907pt>
 File: ../images/Bausteinsicht_Ebene_1.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_1.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_1.PNG  used on input lin
 e 157.
 (pdftex.def)             Requested size: 341.43306pt x 236.35495pt.
-<../images/Bausteinsicht_Ebene_2.PNG, id=381, 671.50874pt x 529.98pt>
+<../images/Bausteinsicht_Ebene_2.PNG, id=383, 671.50874pt x 529.98pt>
 File: ../images/Bausteinsicht_Ebene_2.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_2.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_2.PNG  used on input lin
 e 171.
 (pdftex.def)             Requested size: 256.0748pt x 202.09804pt.
  [20 <../images/Bausteinsicht_Ebene_1.PNG>]
-<../images/Laufzeitsicht.PNG, id=387, 1350.54562pt x 723.45282pt>
+<../images/Laufzeitsicht.PNG, id=389, 1350.54562pt x 723.45282pt>
 File: ../images/Laufzeitsicht.PNG Graphic file (type png)
 <use ../images/Laufzeitsicht.PNG>
 Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 183.
 (pdftex.def)             Requested size: 398.33858pt x 213.37257pt.
  [21 <../images/Bausteinsicht_Ebene_2.PNG>]
-<../images/Verteilungssicht.PNG, id=395, 758.08218pt x 398.99063pt>
+<../images/Verteilungssicht.PNG, id=397, 758.08218pt x 398.99063pt>
 File: ../images/Verteilungssicht.PNG Graphic file (type png)
 <use ../images/Verteilungssicht.PNG>
 Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 193
@@ -1911,70 +1911,18 @@ Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 193
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 243.
 
-
-chapters/konzepte.tex:252: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.252 \\~
-         \\~\\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--256
+Underfull \hbox (badness 10000) in paragraph at lines 253--256
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--256
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 304--308
 
  []
 
-[24]
-chapters/konzepte.tex:276: Undefined control sequence.
-l.276 \blfootnote
-                 {* nach Breitensuche, beginnend bei Wurzelknoten S}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[25]
-chapters/konzepte.tex:298: Undefined control sequence.
-l.298 \blfootnote
-                 {* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mat...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-chapters/konzepte.tex:299: Undefined control sequence.
-l.299 \blfootnote
-                 {** $T$ als Baumstruktur des L-Systems}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-chapters/konzepte.tex:305: Undefined control sequence.
-l.305 \blfootnote
-                 {*** $N(\cdot)$ als Zählfunktion für die Anzahl Wiederhol...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[26]
-chapters/konzepte.tex:338: Undefined control sequence.
-l.338 \blfootnote
+[26] [27]
+chapters/konzepte.tex:393: Undefined control sequence.
+l.393 \blfootnote
                  {* $\mathcal{P}$ als Menge aller möglichen Regelpaaren aus...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1982,14 +1930,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (chapters/implementierung.tex [27]
+) (chapters/implementierung.tex [28]
 chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 46--48
 []\T1/cmr/m/n/10.95 Algorithmus zum Er-wei-tern ei-nes L-Systems um nicht-
  []
 
-[28
+[29
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 59--64
@@ -2011,17 +1959,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--64
 
  []
 
-[29]) (chapters/evaluierung.tex [30]
+[30]) (chapters/evaluierung.tex [31]
 chapter 5.
-) (chapters/ausblick.tex [31
+) (chapters/ausblick.tex [32
 
 ]
 chapter 6.
-) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [32
+) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [33
 
 ]
 chapter without number
-[33
+[34
 
 ]
 Underfull \hbox (badness 1038) in paragraph at lines 138--144
@@ -2030,15 +1978,15 @@ Underfull \hbox (badness 1038) in paragraph at lines 138--144
 Si-mon ; \T1/cmr/m/sc/10.95 Ul-mer\T1/cmr/m/n/10.95 , An-dre-as ;
  []
 
-[34] [35]) (appendix/example_appendix.tex [36]
+[35] [36]) (appendix/example_appendix.tex [37]
 chapter A.
-) [37
+) [38
 
-] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [38])
-(../style/statement_i.tex [39
+] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [39])
+(../style/statement_i.tex [40
 
 
-] [40
+] [41
 
 ])
 (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
@@ -2053,55 +2001,56 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37053 strings out of 479618
- 750519 string characters out of 2865027
- 1509147 words of memory out of 3000000
- 53179 multiletter control sequences out of 15000+200000
- 440175 words of font info for 95 fonts, out of 3000000 for 9000
+ 37045 strings out of 479618
+ 750420 string characters out of 2865027
+ 1500926 words of memory out of 3000000
+ 53172 multiletter control sequences out of 15000+200000
+ 439838 words of font info for 94 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 117i,21n,116p,10636b,2348s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 117i,21n,116p,10636b,2319s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
 0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecsx1200.pk>{C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/bas
 e/8r.enc} <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
 00\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
 c/dpi600\ecbi0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\tcrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfou
-r/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk
-/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fo
-nts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiK
-TeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\adria\AppData\Loc
-al\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppDa
-ta\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\adria
-\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users
-\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:
-\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.p
-k> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+ppen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk
+/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fo
+nts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\adria\AppData\Local\MiK
+TeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\adria\AppDa
+ta\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria
+\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users
+\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:
+\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.p
+k> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
 1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx2986.pk> <C:\Users\adria\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk><C:/Users/adria/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/adria/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adr
-ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/U
-sers/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/adria/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adria/App
-Data/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (50 pages, 8073
-80 bytes).
+0\ecti1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx2986.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm1000.pk><C:/Users/adria/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/adria/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/a
+dria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:
+/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr5.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/adria/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ad
+ria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/
+adria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (51 pages, 8273
+89 bytes).
 PDF statistics:
- 1572 PDF objects out of 1728 (max. 8388607)
+ 1577 PDF objects out of 1728 (max. 8388607)
  235 named destinations out of 1000 (max. 500000)
  397 words of extra memory for PDF output out of 10000 (max. 10000000)
 

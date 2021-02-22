@@ -241,98 +241,153 @@ TODO: Klassendiagramm aus IntelliJ generieren
 \subsubsection{Workflows \& Algorithmen}
 Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgender Arbeitsablauf umgesetzt:
 \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
-Erster Anker ist vorselektiert
-Wiederhole, bis Struktur fertiggestellt ist:
-    Selektiere ein Template aus der Liste
-    Setzte Parameter
-    Bestätige Auswahl und Parameter
-    Zeichne ausgewähltes Template mit Parametern
-    Wähle nächsten Anker aus
+    Erster Anker ist vorselektiert
+    Wiederhole, bis Struktur fertiggestellt ist:
+        Selektiere ein Template aus der Liste
+        Setzte Parameter
+        Bestätige Auswahl und Parameter
+        Zeichne ausgewähltes Template mit Parametern
+        Wähle nächsten Anker aus
 \end{algorithm}
-\\~\\~\\
-Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden:
-\\~\\
-Für $\mathcal{L}=\langle M,\omega,R \rangle$:
+
+Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden.
+Hierzu wird ein neuer Algorithm präsentiert:\\~\\
+Zunächst werden L-System-Komponenten initialisiert (Zeile 2-6) für $\mathcal{L}=\langle M,\omega,R \rangle$:
+\begin{itemize}
+    \item Das Alphabet wird mit den Sybolen F und S initialisiert, da F als Repräsentation einer grundlegenden
+    Zeichenoperation und S als Axiom in jeder Anwendung des Algorithmus vorkommt
+    \item Die erste Produktionsregel $\alpha$ umfasst die Abbildung des Axioms auf einen neues Symbol, das nicht im Alphabet
+    vorkommt. Das Alphabet wird stets um ein Symbol lexikografischer Ordnung ergänzt
+    \begin{itemize}
+        \item Bsp.: $\{A,B,C\}$ wird ein neues, unbekanntes Symbol hinzugefügt $\rightarrow \{A,B,C,D\}$
+    \end{itemize}
+    \item Die Variable $\beta$ hält zu untersuchende Knoten der Baumtopologie, welche nach Breitensuche iteriert werden.
+    Die erste Iteration startet bei Wurzelknoten S.
+    \item Als letzten Schritt der Initialisierung wird dem Alphabet ein neues Symbol hinzugefügt, das durch die Variable
+    $\gamma$ gehalten wird.
+\end{itemize}
+Die Schleife des Algorithmus beschäftigt sich mit der Iterierung des Baumes und dem Erstellen neuer Symbole und
+Produktionsregeln für das resultierende L-Systems (Zeile 8-17):
+\begin{itemize}
+    \item Die in den Knoten des Baumes gehaltenen Template-Instanzen entprechen einer Zeichenkette, die durch eine
+    Turtle-Grafik interpretiert, einem vom Benutzer transformierten Tempalte entspricht. Diese Zeichenkette wird in
+    $\delta$ gespeichert
+    \item In Zeile 9-12 wird die genannte Zeichenkette auf Verzweiungsvariablen ($A-Z$; $F$ ausgeschlossen) untersucht.
+    Diese werden durch ein neues Symbol, das dem Alphabet hinzugefügt wird, ersetzt. Anschließend wird eine Produktionregel,
+    die auf die veränderte Zeichenkette abbilded, der Produktionsregelmenge hinzugefügt.
+    \item Zeile 13 prüft, ob es Symbol im Alphabet gibt, das nicht als Ziel einer Produktionregel in der Produktionsregelmenge
+    definiert ist. Ist dies der Fall, wird dieses als Ziel der nächsten Produktion gesetzt. Andernfalls schließt der
+    Algorithmus ab
+    \item Schleifen-Attribut ist hier das Setzen des nächsten Knotens am Ende der Schleife (Zeile 17)
+\end{itemize}
+
 \begin{algorithm}[caption={Inferieren eines L-Systems aus einer Baumstruktur}, label={alg2}]
     Initialisierung:
-    $M=\{F,S\}$
-    $\omega=S$
-    $R \gets \{\alpha$: $S \rightarrow A\}$
-    $\beta=$ nächster Knoten*
-    $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$
-
+        $M=\{F,S\}$
+        $\omega=S$
+        $R \gets \{\alpha$: $S \rightarrow A\}$
+        $\beta=$ nächster Knoten
+        $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$
     Schleife:
-    $\delta=$ Wort von $\beta$
-    $\forall \{X,Y,Z\} \in \delta:$
-    Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$
-    $M \gets \zeta$
-    $R \gets \{\gamma\rightarrow\delta\}$
-    Wenn es ein Symbol $\eta$ in $M\setminus\{F,S\}$ gibt mit $\{\eta \rightarrow bel.\} \notin R$:
-    $\gamma=\eta$
-    Sonst:
-    Breche Schleife ab
-    $\beta=$ nächster Knoten*
+        $\delta=$ Wort von $\beta$
+        $\forall \{A,B,\dots,Z\} \setminus F \in \delta:$
+        Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$
+        $M \gets \zeta$
+        $R \gets \{\gamma\rightarrow\delta\}$
+        Wenn es ein Symbol $\eta$ in $M\setminus\{F,S\}$ gibt mit $\{\eta \rightarrow bel.\} \notin R$:
+            $\gamma=\eta$
+        Sonst:
+            Breche Schleife ab
+        $\beta=$ nächster Knoten
 \end{algorithm}
-\blfootnote{* nach Breitensuche, beginnend bei Wurzelknoten S}
 
-\newpage
-
+\citeauthor{guo_2020} führt einen Algorithmus zum Inferrieren einer Grammatik aus einer Baumstruktur ein~\cite{guo_2020}.
+Zum Einen wird ein L-System aufgebaut, zum Andern die Baumtopologie durch Finden maximaler Subbäume reduziert.
+Die Reduktion wird im folgenden Algorithmus adaptiert:\\~\\
+Initialisierung (Zeile 2-5):
+\begin{itemize}
+    \item Das L-System, welches der Eingabe des Algorithmus entspricht, wird ausgeführt und
+    die resultierende Zeichenkette wird in $\mathcal{L^+}$ gespeichert
+    \item Ein Gewichtungsparameter $w_l$ wird eingeführt, der eine Kostenfunktion (Zeile 11) nach Anzahl an Symbolen
+    der RHS von Produktionsregeln und Anzahl deren Anwendung gewichten soll.
+    \item Anschließend wird ein maximaler Subbaum durch geschachtelte Iteration des Baumes $T$ gesucht und als $T'$ gesetzt
+    \item Es werden ausschließlich maximale Unterbäume behandelt, die mindestens zwei mal im Baum vorkommen
+\end{itemize}
+Die Schleife (Zeile 7-13) stellt die Reduzierung dar:
+\begin{itemize}
+    \item Zunächst werden alle Vorkommen des maximalen Unterbaumes durch ein neues Symbol ersetzt
+    \item Aus diesem Subbaum wird ein L-System inferriert, das wiederum in eine erweiterte Zeichenkette ausgeführt wird
+    \item Die Zeichenkette wird als LHS einer neuen Produktionsregel gesetzt, die auf das neue Symbel abzielt
+    \item Das alte L-System kann nun mit dem veränderten L-System mittels Kostenfunktion verglichen werden (Zeile 9):
+    Liegen die Kosten des veränderten L-Systems unter den Kosten des Alten, wird die Reduktion beendet.
+    Andernfalls gilt der Subbaum nun als Eingabebaum und das veränderte Ersetzungssystem als Eingabe-L-System
+\end{itemize}
 
 \begin{algorithm}[caption={Erstellen eines kompakten L-Systems mit Gewichtung $w_l$}, label={alg3}]
-Initialisierung:
-$\mathcal{L}^+ \leftarrow L_s$*
-$\mathcal{L}=\emptyset$
-Setze Gewichtungsparameter $w_l \in [0,1]$
-Finde maximalen Unterbaum $T'$ aus $T$** mit Wiederholungen $n$
-
-Reduzierung:
-if n > 1
-Ersetze alle Vorkommen von $T'$ mit dem selben Symbol $\gamma \in \{A,B,\dots,Z\}$
-$R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$
-if $C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$
-break
-$T \leftarrow T'$
-$\mathcal{L}^+ \leftarrow \mathcal{L}$
-Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n$
+    Initialisierung:
+        $\mathcal{L}^+ \leftarrow L_s$
+        $\mathcal{L}=\emptyset$
+        Setze Gewichtungsparameter $w_l \in [0,1]$
+        Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
+    Schleife (Reduzierung):
+        Ersetze alle Vorkommen von $T'$ mit dem selben Symbol $\gamma \in \{A,B,\dots,Z\}$
+        $R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$
+        Wenn $C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$
+            Breche Schleife ab
+        $T \leftarrow T'$
+        $\mathcal{L}^+ \leftarrow \mathcal{L}$
+        Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
 \end{algorithm}
-\blfootnote{* $L_s$ als Zeichenkette des Ausgeführten L-Systems $\mathcal{L}=\langle M,\omega,R \rangle$}
-\blfootnote{** $T$ als Baumstruktur des L-Systems}
 
 \begin{algorithm}[caption={Kostenfunktion $C_i$ mit Gewichtung $w_l$}, label={alg4}]
-$C_i(\mathcal{L})= \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} w_l * |M^*| + (1 - w_l) * N(A(P)\rightarrow
-M^*)$***
+    $C_i(\mathcal{L})= \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} w_l * |M^*| + (1 - w_l) * N(A(P)\rightarrow M^*)$
 \end{algorithm}
-\blfootnote{*** $N(\cdot)$ als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} einer Regel in einem
-ausgeführten L-System}
-
+mit $N(\cdot)$ als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} einer Regel in einem
+ausgeführten L-System.
 Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden
 nun ähnliche Regeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische
 Regeln hinzuzufügen.
+Sowohl die Längenfunktionen und Kostenfunktionen, als auch der Grundalgorithmus sind aus ~\cite{guo_2020} entnommen
+und bauen sich wie folgt auf:
 
-\begin{algorithm}[caption={Längenfunktion $L$ für Grammatiken}, label={alg5}]
-$L(\mathcal{L}) = |M| + \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} |M^*|$
+\begin{itemize}
+    \item Die Längenfunktion $L$, die auf eine Grammatik angewendet wird, summiert die Anzahl Symbole des Alphabets mit
+    der Anzahl an RHS der Produktionsregeln und misst somit die Gesamtheit aller Symbole, die das L-System abbilden soll
+    (Länge der Grammatik)
+    \item Der Abstand zweier Zeichenketten kann mit der \textit{String Edit Distance} ermittelt werden. Diese wird über
+    die Funktion $D_s$ abgebildet. Hierbei wird die Anzahl an Operationen summiert, die für die Überführung einer Zeichenkette
+    in eine Andere nötig sind (Zeichenkettenaustausch, -einschub und -löschung)
+    \item Mit $D_s$ kann nun auch der Abstand zweier Grammatiken zueinander bestimmt werden. Diese Funktion wird mit
+    $D_g$ abgebildet
+    \item Die Kostenfunktion $C_g$ nutzt die Länge und Distanz von Grammatiken, um Kosten einer Überführung einer Grammatik
+    in eine andere messen zu können
+\end{itemize}
+
+\begin{algorithm}[caption={Längenfunktion $L$ für Grammatiken}]
+    $L(\mathcal{L}) = |M| + \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} |M^*|$
 \end{algorithm}
 
-\begin{algorithm}[caption={Kostenfunktion $C_g$ mit Gewichtung $w_0$}, label={alg6}]
-$C_g(\mathcal{L}^*, \mathcal{L}^+) = w_0 * (L(\mathcal{L}^*) - L(\mathcal{L}^+)) + (1 - w_0) + D_g
-(\mathcal{L}^+, \mathcal{L}^*)$
+\begin{algorithm}[caption={Grammar Edit Distance}]
+    $D_g(\mathcal{L}^+, \mathcal{L}^*)= \sum\limits_{(A(P) \rightarrow M^*_A , B(P) \rightarrow M^*_B) \in M(\mathcal{L^+} \rightarrow \mathcal{L^*})} D_s(M^*_A, M^*_B)$
 \end{algorithm}
 
-\begin{algorithm}[caption={Generalisieren eines L-Systems mit Gewichtung $w_0$}, label={alg7}]
-Initialisierung:
-Regelpaar $p* = \emptyset$
-$\mathcal{L}^* = \mathcal{L}^+$
-$C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+\begin{algorithm}[caption={Kostenfunktion $C_g$ mit Gewichtung $w_0$}]
+    $C_g(\mathcal{L}^*, \mathcal{L}^+) = w_0 * (L(\mathcal{L}^*) - L(\mathcal{L}^+)) + (1 - w_0) + D_g(\mathcal{L}^+, \mathcal{L}^*)$
+\end{algorithm}
 
-Schleife:
-do
-Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*), \forall p_i \in
-\mathcal{P}$*
-if $C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$
-break
-$c^* = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) - C_g^{old}$
-$C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
-$\mathcal{L}^* = \mathcal{L}^* + \{p^*\}$
-while $c^* \leq 0$
+\begin{algorithm}[caption={Generalisieren eines L-Systems mit Gewichtung $w_0$}]
+    Initialisierung:
+        Regelpaar $p* = \emptyset$
+        $\mathcal{L}^* = \mathcal{L}^+$
+        $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+    Schleife:
+        Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*), \forall p_i \in \mathcal{P}$
+        Wenn $C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$
+            Breche Schleife ab
+        $c^* = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) - C_g^{old}$
+        $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+        $\mathcal{L}^* = \mathcal{L}^* + \{p^*\}$
+        Wenn $c^* > 0$
+            Breche Schleife ab
 \end{algorithm}
 \blfootnote{* $\mathcal{P}$ als Menge aller möglichen Regelpaaren aus $\mathcal{L}^*$}

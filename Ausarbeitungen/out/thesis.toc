@@ -21,18 +21,18 @@
 \contentsline {subsubsection}{\nonumberline Fehlerbehandlung}{24}{subsubsection*.48}%
 \contentsline {subsubsection}{\nonumberline Datenstrukturen}{24}{subsubsection*.50}%
 \contentsline {subsubsection}{\nonumberline Workflows \& Algorithmen}{24}{subsubsection*.52}%
-\contentsline {chapter}{\numberline {4}Implementierung}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pakete?}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Entscheidungen}{29}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Technologien}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Hardware}{30}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Evaluierung}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Testumgebung}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Beobachtungen \& Ergebnisse}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Diskussion und Bewertung}{31}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Ausblick}{32}{chapter.6}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{33}{chapter*.53}%
-\contentsline {chapter}{\numberline {A}Anhang}{37}{appendix.A}%
-\contentsline {chapter}{Glossar}{39}{section*.54}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{40}{chapter*.55}%
+\contentsline {chapter}{\numberline {4}Implementierung}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pakete?}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Entscheidungen}{30}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Technologien}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Hardware}{31}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Evaluierung}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Testumgebung}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Beobachtungen \& Ergebnisse}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Diskussion und Bewertung}{32}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Ausblick}{33}{chapter.6}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.53}%
+\contentsline {chapter}{\numberline {A}Anhang}{38}{appendix.A}%
+\contentsline {chapter}{Glossar}{40}{section*.54}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{41}{chapter*.55}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
