@@ -70,6 +70,7 @@ So werden Transformationen nach ihrer statistischen Häufigkeit angewendet.
 
 \section{Softwarearchitektur}
 
+\subsection{Grundkonzepte}
 Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
 \subsection*{Qualitätsziele}
@@ -194,7 +195,7 @@ Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf
     \caption{Infrastruktur Windows-PC}
 \end{figure}
 
-\subsection*{Weitere Konzepte}
+\subsection{Weitere Konzepte}
 
 \subsubsection{Testbarkeit}
 Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmöglich zu testende Einheit definiert
@@ -235,10 +236,12 @@ Erwartete Exceptions werden jeweils mit eigenen Klassen abgebildet, die von eine
 Exception-Hierarchie abgeleitet sind.
 Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
 
-\subsubsection{Datenstrukturen}
+\subsection{Datenstrukturen}
 TODO: Klassendiagramm aus IntelliJ generieren
 
-\subsubsection{Workflows \& Algorithmen}
+\subsection{Workflows \& Algorithmen}
+
+\subsubsection*{Verzweigungsstruktur erstellen}
 Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgender Arbeitsablauf umgesetzt:
 \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
     Erster Anker ist vorselektiert
@@ -250,6 +253,7 @@ Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgend
         Wähle nächsten Anker aus
 \end{algorithm}
 
+\subsubsection*{L-System inferrieren}
 Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden.
 Hierzu wird ein neuer Algorithm präsentiert:\\~\\
 Zunächst werden L-System-Komponenten initialisiert (Zeile 2-6) für $\mathcal{L}=\langle M,\omega,R \rangle$:
@@ -301,6 +305,7 @@ Produktionsregeln für das resultierende L-Systems (Zeile 8-17):
         $\beta=$ nächster Knoten
 \end{algorithm}
 
+\subsubsection*{L-System komprimieren}
 \citeauthor{guo_2020} führt einen Algorithmus zum Inferrieren einer Grammatik aus einer Baumstruktur ein~\cite{guo_2020}.
 Zum Einen wird ein L-System aufgebaut, zum Andern die Baumtopologie durch Finden maximaler Subbäume reduziert.
 Die Reduktion wird im folgenden Algorithmus adaptiert:\\~\\
@@ -344,6 +349,8 @@ Die Schleife (Zeile 7-13) stellt die Reduzierung dar:
 \end{algorithm}
 mit $N(\cdot)$ als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} einer Regel in einem
 ausgeführten L-System.
+
+\subsubsection*{L-System generalisieren}
 Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden
 nun ähnliche Regeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische
 Regeln hinzuzufügen.
@@ -375,9 +382,27 @@ und bauen sich wie folgt auf:
     $C_g(\mathcal{L}^*, \mathcal{L}^+) = w_0 * (L(\mathcal{L}^*) - L(\mathcal{L}^+)) + (1 - w_0) + D_g(\mathcal{L}^+, \mathcal{L}^*)$
 \end{algorithm}
 
+Algorithmus zum Generalisieren eines L-Systems:\\~\\
+Initialisierung (Zeile 2-4):
+\begin{itemize}
+    \item Das zu untersuchendes Tuple bestehend aus zwei Produktionsregeln (Regelpaar) und wird in der Variable $p^*$ gehalten
+    \item L-Systeme, die sich infolge eines Merges geändert haben, werden in $L^+$ und Eingabe-L-systeme in $L^*$ gespeichert
+    \item Die Kostenfunktion $C_g$ berechnet die Kosten, um $L^*$ in $L^+$ zu überführen. Diese Überführungskosten werden
+    in der Variable $C^{old}_g$ zur Verfügung gestellt
+\end{itemize}
+Generalisierung (Zeile 6-13):
+\begin{itemize}
+    \item P ist die Menge aller möglichen Regelpaare aus $L^*$
+    \item Das Regelpaar, das beim Merge die geringsten Kosten für die Überführung in die neue Grammatik aufweist, wird in
+    $p^*$ gehalten
+    \item Sind diese Kosten positiv, wird die Generalisierung abgebrochen
+    \item Andernfalls werden die Variablen $c^*$ als Delta-Kosten, $C^{old}_g$ und $L^*$ entsprechen gesetzt
+    \item Sollte die Differenz der Überführungskosten positiv sein, wird die Generalisierung abgebrochen
+\end{itemize}
+
 \begin{algorithm}[caption={Generalisieren eines L-Systems mit Gewichtung $w_0$}]
     Initialisierung:
-        Regelpaar $p* = \emptyset$
+        Regelpaar $p^* = \emptyset$
         $\mathcal{L}^* = \mathcal{L}^+$
         $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
     Schleife:

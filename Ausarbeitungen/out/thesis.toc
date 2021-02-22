@@ -16,23 +16,24 @@
 \contentsline {chapter}{\numberline {3}Konzepte}{14}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Probleme \& Lösungsansätze}{14}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Softwarearchitektur}{16}{section.3.2}%
-\contentsline {subsubsection}{\nonumberline Testbarkeit}{23}{subsubsection*.44}%
-\contentsline {subsubsection}{\nonumberline Validierung}{23}{subsubsection*.46}%
-\contentsline {subsubsection}{\nonumberline Fehlerbehandlung}{24}{subsubsection*.48}%
-\contentsline {subsubsection}{\nonumberline Datenstrukturen}{24}{subsubsection*.50}%
-\contentsline {subsubsection}{\nonumberline Workflows \& Algorithmen}{24}{subsubsection*.52}%
-\contentsline {chapter}{\numberline {4}Implementierung}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Pakete?}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Entscheidungen}{30}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Technologien}{30}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Hardware}{31}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Evaluierung}{32}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Testumgebung}{32}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Beobachtungen \& Ergebnisse}{32}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Diskussion und Bewertung}{32}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Ausblick}{33}{chapter.6}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{34}{chapter*.53}%
-\contentsline {chapter}{\numberline {A}Anhang}{38}{appendix.A}%
-\contentsline {chapter}{Glossar}{40}{section*.54}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{41}{chapter*.55}%
+\contentsline {subsection}{\numberline {3.2.1}Weitere Konzepte}{23}{subsection.3.2.1}%
+\contentsline {subsubsection}{\nonumberline Testbarkeit}{23}{subsubsection*.43}%
+\contentsline {subsubsection}{\nonumberline Validierung}{23}{subsubsection*.45}%
+\contentsline {subsubsection}{\nonumberline Fehlerbehandlung}{24}{subsubsection*.47}%
+\contentsline {subsection}{\numberline {3.2.2}Datenstrukturen}{24}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Workflows \& Algorithmen}{24}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Implementierung}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pakete?}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Entscheidungen}{31}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Technologien}{31}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Hardware}{32}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Evaluierung}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Testumgebung}{33}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Beobachtungen \& Ergebnisse}{33}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Diskussion und Bewertung}{33}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Ausblick}{34}{chapter.6}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{35}{chapter*.52}%
+\contentsline {chapter}{\numberline {A}Anhang}{39}{appendix.A}%
+\contentsline {chapter}{Glossar}{41}{section*.53}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{42}{chapter*.54}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
