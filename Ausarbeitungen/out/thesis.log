@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  22 FEB 2021 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  23 FEB 2021 08:25
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1344,155 +1344,159 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/bbding\bbding.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
 \c@nalg=\count386
 \glswrite=\write4
 \glo@main@file=\write5
 \openout5 = `thesis.glo'.
 
-Package glossaries Info: Writing glossary file thesis.glo on input line 56.
+Package glossaries Info: Writing glossary file thesis.glo on input line 57.
 \glo@acronym@file=\write6
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 56.
+Package glossaries Info: Writing glossary file thesis.acn on input line 57.
 \glo@symbols@file=\write7
 \openout7 = `thesis.slo'.
 
-Package glossaries Info: Writing glossary file thesis.slo on input line 56.
+Package glossaries Info: Writing glossary file thesis.slo on input line 57.
+
 (thesisglossaries.tex) (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 59
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 60
 .
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/scsl' undefined
-(Font)              using `T1/pcr/m/sc' instead on input line 59.
+(Font)              using `T1/pcr/m/sc' instead on input line 60.
 
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 60.
 
 LaTeX Font Warning: Font shape `T1/pcr/b/scsl' undefined
-(Font)              using `T1/pcr/b/sc' instead on input line 59.
+(Font)              using `T1/pcr/b/sc' instead on input line 60.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 60.
 LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 60.
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 60.
 LaTeX Font Info:    Font shape `T1/pcr/bx/sl' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 60.
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/scsl' undefined
-(Font)              using `T1/pcr/bx/sc' instead on input line 59.
+(Font)              using `T1/pcr/bx/sc' instead on input line 60.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/sc' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 59.
+(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 60.
 
 LaTeX Font Warning: Font shape `T1/pcr/sbx/sc' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 59.
+(Font)              using `T1/pcr/sb/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 59.
+(Font)              using `T1/pcr/m/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/it' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 59.
+(Font)              using `T1/pcr/sb/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sl' undefined
-(Font)              using `T1/pcr/sb/it' instead on input line 59.
+(Font)              using `T1/pcr/sb/it' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/scit' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 59.
+(Font)              using `T1/pcr/sb/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sc' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 59.
+(Font)              using `T1/pcr/sb/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sbc/sc' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 59.
+(Font)              using `T1/pcr/c/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 59.
+(Font)              using `T1/pcr/m/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/it' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 59.
+(Font)              using `T1/pcr/c/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sl' undefined
-(Font)              using `T1/pcr/c/it' instead on input line 59.
+(Font)              using `T1/pcr/c/it' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/scit' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 59.
+(Font)              using `T1/pcr/c/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sc' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 59.
+(Font)              using `T1/pcr/c/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/lc/sc' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 59.
+(Font)              using `T1/pcr/l/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 59.
+(Font)              using `T1/pcr/m/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/it' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 59.
+(Font)              using `T1/pcr/l/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sl' undefined
-(Font)              using `T1/pcr/l/it' instead on input line 59.
+(Font)              using `T1/pcr/l/it' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/scit' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 59.
+(Font)              using `T1/pcr/l/sc' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sc' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 59.
+(Font)              using `T1/pcr/l/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/ui' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 59.
+(Font)              using `T1/pcr/m/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/ui' undefined
-(Font)              using `T1/pcr/bx/n' instead on input line 59.
+(Font)              using `T1/pcr/bx/n' instead on input line 60.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/In' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 59.
+(Font)              using `T1/pcr/m/n' instead on input line 60.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx-abbrevi
@@ -1570,7 +1574,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 59.
+Package hyperref Info: Link coloring ON on input line 60.
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1583,9 +1587,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count393
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
  (D:/git\bachelor\Ausarbeitungen\out\thesis.out)
 (D:/git\bachelor\Ausarbeitungen\out\thesis.out)
 \@outlinefile=\write8
@@ -1598,7 +1602,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 59.
+(scrreprt)           before \begin{document} on input line 60.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1615,13 +1619,13 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \c@lstlisting=\count395
-LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 60.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 60.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1713,7 +1717,7 @@ Class scrreprt Warning: \float@listhead detected!
 (scrreprt)              Loading of package `scrhack' may help to
 (scrreprt)              avoid this warning, if you are using a
 (scrreprt)              a package that still implements the
-(scrreprt)              deprecated \float@listhead interface on input line 96.
+(scrreprt)              deprecated \float@listhead interface on input line 97.
 
 [9
 
@@ -1762,7 +1766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--55
  []
 
 [2] [3] [4]
-<../images/System.PNG, id=226, 1090.82532pt x 703.12688pt>
+<../images/System.PNG, id=234, 1090.82532pt x 703.12688pt>
 File: ../images/System.PNG Graphic file (type png)
 <use ../images/System.PNG>
 Package pdftex.def Info: ../images/System.PNG  used on input line 123.
@@ -1863,104 +1867,99 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 [14
 
 ] [15] [16]
-<../images/Fachlicher_Kontext.PNG, id=369, 235.63031pt x 333.49594pt>
+<../images/Fachlicher_Kontext.PNG, id=378, 235.63031pt x 333.49594pt>
 File: ../images/Fachlicher_Kontext.PNG Graphic file (type png)
 <use ../images/Fachlicher_Kontext.PNG>
 Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 9
-6.
+7.
 (pdftex.def)             Requested size: 176.407pt x 249.6786pt.
-<../images/Technischer_Kontext.PNG, id=370, 564.60938pt x 230.36063pt>
+<../images/Technischer_Kontext.PNG, id=379, 564.60938pt x 230.36063pt>
 File: ../images/Technischer_Kontext.PNG Graphic file (type png)
 <use ../images/Technischer_Kontext.PNG>
 Package pdftex.def Info: ../images/Technischer_Kontext.PNG  used on input line 
-101.
+102.
 (pdftex.def)             Requested size: 284.52756pt x 116.08688pt.
  [17 <../images/Fachlicher_Kontext.PNG>] [18 <../images/Technischer_Kontext.PNG
 >]
-Overfull \hbox (19.08966pt too wide) in paragraph at lines 110--142
+Overfull \hbox (19.08966pt too wide) in paragraph at lines 111--143
  [] 
  []
 
 [19]
-<../images/Bausteinsicht_Ebene_1.PNG, id=388, 892.83563pt x 618.05907pt>
+<../images/Bausteinsicht_Ebene_1.PNG, id=397, 892.83563pt x 618.05907pt>
 File: ../images/Bausteinsicht_Ebene_1.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_1.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_1.PNG  used on input lin
-e 157.
+e 158.
 (pdftex.def)             Requested size: 341.43306pt x 236.35495pt.
-<../images/Bausteinsicht_Ebene_2.PNG, id=389, 671.50874pt x 529.98pt>
+<../images/Bausteinsicht_Ebene_2.PNG, id=398, 671.50874pt x 529.98pt>
 File: ../images/Bausteinsicht_Ebene_2.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_2.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_2.PNG  used on input lin
-e 171.
+e 172.
 (pdftex.def)             Requested size: 256.0748pt x 202.09804pt.
  [20 <../images/Bausteinsicht_Ebene_1.PNG>]
-<../images/Laufzeitsicht.PNG, id=395, 1350.54562pt x 723.45282pt>
+<../images/Laufzeitsicht.PNG, id=404, 1350.54562pt x 723.45282pt>
 File: ../images/Laufzeitsicht.PNG Graphic file (type png)
 <use ../images/Laufzeitsicht.PNG>
-Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 183.
+Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 184.
 (pdftex.def)             Requested size: 398.33858pt x 213.37257pt.
  [21 <../images/Bausteinsicht_Ebene_2.PNG>]
-<../images/Verteilungssicht.PNG, id=403, 758.08218pt x 398.99063pt>
+<../images/Verteilungssicht.PNG, id=412, 758.08218pt x 398.99063pt>
 File: ../images/Verteilungssicht.PNG Graphic file (type png)
 <use ../images/Verteilungssicht.PNG>
-Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 193
+Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 194
 .
 (pdftex.def)             Requested size: 284.52756pt x 149.74896pt.
  [22 <../images/Laufzeitsicht.PNG> <../images/Verteilungssicht.PNG>] [23]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 245.
+nput line 246.
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--259
+Underfull \hbox (badness 10000) in paragraph at lines 257--260
 
  []
 
 [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 308--312
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
 
  []
 
 [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 385--387
 
  []
 
-[28]
-chapters/konzepte.tex:417: Undefined control sequence.
-l.417 \blfootnote
-                 {* $\mathcal{P}$ als Menge aller möglichen Regelpaaren aus...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) (chapters/implementierung.tex [29]
+[28]) (chapters/implementierung.tex [29]
 chapter 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
-[]\T1/cmr/m/n/10.95 Algorithmus zum Er-wei-tern ei-nes L-Systems um nicht-
- []
-
+LaTeX Font Info:    Trying to load font information for U+ding on input line 20
+.
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/bbding\uding.fd
+File: Uding.fd 1996/02/01 v1.0 BBding font definitions
+)
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 59--64
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+[]\T1/cmr/m/n/10.95 Algorithmus zum Er-wei-tern ei-nes L-Systems um nicht-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--64
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--64
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--64
+Underfull \hbox (badness 10000) in paragraph at lines 61--66
 
  []
 
@@ -2002,69 +2001,62 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37060 strings out of 479618
- 750744 string characters out of 2865027
- 1500987 words of memory out of 3000000
- 53182 multiletter control sequences out of 15000+200000
- 439838 words of font info for 94 fonts, out of 3000000 for 9000
+ 37212 strings out of 479618
+ 753051 string characters out of 2865027
+ 1502243 words of memory out of 3000000
+ 53324 multiletter control sequences out of 15000+200000
+ 439983 words of font info for 95 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  117i,20n,116p,10636b,1244s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{chapter*.50} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.48} has been referenced but does not exist
-, replaced by a fixed one
-
- <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti09
-00.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecsx1200.pk>{C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/
-8r.enc} <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
-\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecbi0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
-en/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\font
-s/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\adria\AppData\Local\MiKTe
-X\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\AppData\Local
-\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\adria\AppData
-\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Users\adria\A
-ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <C:\Users\a
-dria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\U
-sers\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk>
- <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx10
-95.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecti1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
-pi600\ecrm1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
-n/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/j
-knappen/ec/dpi600\ecbx2986.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/lj
-four/jknappen/ec/dpi600\ecrm1000.pk><C:/Users/adria/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/adria/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/adria/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/adr
-ia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/U
-sers/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr5.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/adria/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adri
-a/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/ad
-ria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (52 pages, 8321
-00 bytes).
+ <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
+0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecsx1200.pk>{C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/bas
+e/8r.enc} <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi6
+00\eccc1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbd
+ing/dpi657\bbding10.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
+nappen/ec/dpi600\ecbi0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljf
+our/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/
+pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\adria\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\adria\AppData\Local\M
+iKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\adria\AppData\L
+ocal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\adria\App
+Data\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\adr
+ia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1095.pk> <C:\Use
+rs\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1095.pk> <
+C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074
+.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ec
+rm1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
+600\ecbx1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecti1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\ecrm1200.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/p
+k/ljfour/jknappen/ec/dpi600\ecbx2986.pk> <C:\Users\adria\AppData\Local\MiKTeX\f
+onts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk><C:/Users/adria/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/adria/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/a
+dria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:
+/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6
+.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmr5.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/adria/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/adria/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ad
+ria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C
+:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb
+>
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (52 pages, 8376
+78 bytes).
 PDF statistics:
- 1599 PDF objects out of 1728 (max. 8388607)
- 240 named destinations out of 1000 (max. 500000)
- 421 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1631 PDF objects out of 1728 (max. 8388607)
+ 242 named destinations out of 1000 (max. 500000)
+ 453 words of extra memory for PDF output out of 10000 (max. 10000000)
 

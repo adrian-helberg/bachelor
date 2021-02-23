@@ -2,26 +2,28 @@
 
 \chapter{Implementierung}
 
-\section{Pakete}
+Zur Umsetzung der vorgestellten Konzepte wird im Folgenden auf Softwarepakete, Technologien, Datenspeicherung,
+Benutzerinteraktion und Arbeitsablauf der erstellten Software eingegangen.
+Darüber hinaus wird ein Überblick über genutzte Hardware und einige Implementierungsentscheidungen gegeben.
+Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht eingegangen.
 
-Die Implementierung des Programms setzt sich aus folgenden Teilschritten zusammen:
+\section{Projektstruktur}
+Um das Programm modular zu halten, werden die Softwarekomponenten in Pakete organisiert:
+
+
+\section{Technologien}
+\section{Fremdsysteme}
+\section{User Interface}
+
+Die Implementierung des Programms setzt sich aus folgenden Softwarepaketen zusammen:
 \begin{itemize}
-    \item Erstellung der \textit{GUI} (Paket gui, tree) mit
-    \begin{itemize}
-        \item UI-Elementen
-        \item Render-Canvas
-        \item Dateianbindung der Templates
-        \item Erstellung der repräsentativen Baumstruktur\\ (\textit{treeGenerator}, Paket tree)
-    \end{itemize}
-    \item Implementierung der Subsysteme als Pipes
-    \begin{itemize}
-        \item \textit{Inferer} (Paket grammar): Ableiten eines kompakten L-Systems aus einer Baumstruktur
-        \item \textit{Generalizer} (Paket grammar): Generieren eines generalisierten L-Systems anhand eines
-        "`kleinen"' L-Systems
-        \item \textit{Randomizer} (Paket grammar): Erzeugung von L-Systemen, die der erstellen
-        Verzweigungsstruktur "`ähnlich"' sind
-    \end{itemize}
-    \item Komponenten- und Systemtests
+    \item[\SquareShadowTopLeft] \textit{de.haw}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.gui}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.lsystem}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.module}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.pipeline}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.tree}:
+    \item[\SquareShadowTopLeft] \textit{de.haw.utils}:
 \end{itemize}
 \begin{center}
     \begin{tabular}{l|l}
