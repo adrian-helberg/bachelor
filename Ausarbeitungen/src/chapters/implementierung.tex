@@ -8,78 +8,131 @@ Darüber hinaus wird ein Überblick über genutzte Hardware und einige Implement
 Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht eingegangen.
 
 \section{Projektstruktur}
-Um das Programm modular zu halten, werden die Softwarekomponenten in Pakete organisiert:
+Das Softwareprojekt ist nach der Gradle-Source-Code-Konvention organisiert.
+Das gesamte Programm befindet sich im Ordner Generator, der obligatorische Gradle-Dateien und den
+Source-Ordner enthält.
+Sowohl die Quelldateien, also auch die Testdateien sind der Paketstruktur \textbf{de.haw} untergeordnet.
+Die folgende Tabelle gibt einen Überblick über grundlegende Pakete und deren Funktion.
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[color=black!60!white]
+        \FTdir(\FTroot,root,Generator){
+            ++(0,-0.2em)
+            \FTdir(root,src,src){
+                ++(0,-0.2em)
+                \FTdir(src,main,main){
+                    ++(0,-0.2em)
+                    \FTdir(main,java,java) {
+                        ++(0,-0.2em)
+                        \FTdir(java,de,de) {
+                            ++(0,-0.2em)
+                            \FTdir(de,haw,haw) {
+                                ++(0,-0.5em)
+                                \FTdir(haw,gui,gui) {
+                                    ++(0,-0.5em)
+                                    \FTdir(gui,shape,shape) {}
+                                    ++(0,-0.5em)
+                                    \FTdir(gui,structure,structure) {}
+                                    ++(0,-0.5em)
+                                    \FTdir(gui,template,template) {}
+                                    ++(0,-0.5em)
+                                    \FTdir(gui,turtle,turtle) {}
+                                }
+                                ++(0,-0.5em)
+                                \FTdir(haw,lsystem,lsystem) {}
+                                ++(0,-0.5em)
+                                \FTdir(haw,pipeline,pipeline) {
+                                    ++(0,-0.5em)
+                                    \FTdir(pipeline,pipe,pipe) {}
+                                }
+                                ++(0,-0.5em)
+                                \FTdir(haw,tool,tool) {}
+                                ++(0,-0.5em)
+                                \FTdir(haw,tree,tree) {}
+                                ++(0,-0.5em)
+                                \FTdir(haw,tree,utils) {}
+                            }
+                        }
+                    }
+                }
+
+                \FTdir(src,test,test) {
+                    \FTdir(test,java,java) {
+                        \FTdir(java,de,de)
+                    }
+                }
+            }
+        };
+    \end{tikzpicture}
+    \caption{Softwareprojekt Dateistruktur}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{l|l}
+        \textbf{Paket} &  \textbf{Funktion} \\ \hline
+        \textit{gui} & Visualisierung des Programms \\ \hline
+        \textit{lsystem} & L-System-Repräsentation \\ \hline
+        \textit{pipeline} & Umsetzung des Pipeline-Design-Patterns \\ \hline
+        \textit{tool} & Methodiken und Algorithmen \\ \hline
+        \textit{tree} & Komponenten der Baumstruktur \\ \hline
+        \textit{utils} & Hilfskomponenten
+    \end{tabular}
+    \caption{Softwarepakete mit zugehörigen Funktionen}
+\end{figure}
 
 \section{Technologien}
-\section{Fremdsysteme}
-\section{User Interface}
-
-Die Implementierung des Programms setzt sich aus folgenden Softwarepaketen zusammen:
+Zur Umsetzung des Softwarepojektes wird eine Java-Anwendung für die Java-Laufzeitumgebung entwickelt.
+Sie liegt in der Distribution \textbf{Amazon Corretto} in der Version 11.0.3\_7 vor.
+Grafische Oberflächen werden mit der JavaFX-Spezifikation von Oracle in der Version 11.0.2 umgesetzt.
+Zur Automatisierung von Abhängigkeits- und Buildmanagement wird Gradle (Version 6.7) verwendet.
+Eine Testumgebung, eine Vektorbibliothek, eine Tupelrepräsentation und eine Erweiterung zur mathematischen
+Standartbibliothek werden über Abhängigkeiten vom Gradle-Framework im Build-Prozess geladen und zur Verfügung
+gestellt.\\
+Um den test-driven Implementierungsansatz umzusetzen wird JUnit 5 Jupiter als Testumgebung genutzt.
+Sie setzt sich aus einem Programmierschema und einem Erweiterungsmodell zusammen.
+Das Jupiter-Projekt liefert zudem die Laufzeitumgebung für Softwaretests.
+Googles Guava liefert eine Bibliothek mit mathematischen Funktionen.
+Sie wird benötigt, um eine praktikable Lösung zu Mengenmanipulation nutzen zu können (Bsp. Erstellen
+von Kombinationspaaren einer Menge).
+Ausschließlich JavaFX wird außerhalb des Projektes installiert und als Modul im Start-Skript des Programmes
+hinzugefügt.
+\\~\\
+Weitere Systeme zur Erstellung des Softwareprojektes sind:
 \begin{itemize}
-    \item[\SquareShadowTopLeft] \textit{de.haw}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.gui}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.lsystem}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.module}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.pipeline}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.tree}:
-    \item[\SquareShadowTopLeft] \textit{de.haw.utils}:
+    \item Versionierung via Git,
+    \item Dot zur Visualisierung von Graphen und
+    \item PlantUML zur Generierung von UML-Diagrammen
 \end{itemize}
-\begin{center}
-    \begin{tabular}{l|l}
-        \textbf{Subsystem} & \textbf{Umsetzung} \\
-        \hline \\
-        GUI &
-        \begin{minipage}[t]{0.8\textwidth}
-            JavaFX als Framework zur Erstellung von grafischen und interaktiven Inhalten.
-            Erstellung der Baumstruktur über dynamisches Erzeugen von Konten während der Strukturierung der
-            Verzweigungsstruktur
-        \end{minipage} \\
-        \\ \hline \\
-        Inferer &
-        \begin{minipage}[t]{0.8\textwidth}
-            Algorithmus zum Iterieren maximaler Sub-Bäume und deren Reduzierung mittels Ersetzung durch Symbole
-            und der zugehörigen Produktionsregel, bis eine Kostengrenze, die durch eine Kostenfunktion abgebildet
-            werden kann, erreicht ist
-        \end{minipage} \\
-        \\ \hline \\
-        Generalizer &
-        \begin{minipage}[t]{0.8\textwidth}
-            Algorithmus zum Erweitern eines L-Systems um nicht-deterministischer Regeln und Erkennen rekursiver
-            Strukturen
-        \end{minipage} \\
-        \\ \hline \\
-        Randomizer &
-        \begin{minipage}[t]{0.8\textwidth}
-            ddd sfevdhbnreaydtydbfsdxc
-        \end{minipage} \\
-        \\ \hline
-    \end{tabular}
-\end{center}
+
+\newpage%TODO: Remove
+
+\section{Konzeptumsetzung}
+
+Das Skript \texttt{Generator.bat}, das zum Starten der Anwendung innerhalb eines Windows-Betriebssystems genutzt werden kann,
+fügt dem Programm alle externen Module hinzu, die während der Laufzeit genutzt werden, und führt die angegebene jar-Datei aus:
+\begin{csource}
+    java --module-path <<Pfad zum JavaFX lib-Ordner>> --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-0.1.jar
+    pause
+\end{csource}
+
+
+Beim Start der Anwendung findet der Benutzer die grafische Oberfläche folgendermaßen vor:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{../images/UI_numbers.png}
+    \caption{Programm nach Ausführung des Start-Skripts}
+\end{figure}
+Der Menüeintrag \textbf{1} beitet Funktionen zum Laden der vom Benutzer definierten Templates
+
+\subsection*{Visualisierung und Baumstruktur}
 
 \section{Entscheidungen}
-\underline{Mutable or Immutable Objects?}\\~\\
-\underline{Risiken}\\~\\
-\underline{Qualitätsmerkmale}\\~\\
-\underline{Alternativen}\\~\\
-\underline{Aufwand der Implementierung}
 
-\section{Technologien}
-
-\begin{itemize}
-    \item Programmiersprache: Java Version 11 mit
-    \begin{itemize}
-        \item JavaFX Version 15 (openjfx)
-    \end{itemize}
-    \item Build-Management-Tool: Gradle\cite{gradle} Version 6.7
-    \item Versionskontrolle: Github Repository\cite{github} via Git\cite{git}
-    \item IDE: JetBrains IntelliJ IDEA\cite{idea} 2020.2.2 (Ultimate Edition)
-    \item Betriebssystem: Microsoft Windows 10 Pro 64 Bit
-    \item User Story Map: Trello Board\cite{trello}
-\end{itemize}
-
-\section{Hardware}
-
-\begin{itemize}
-    \item Prozessor: Intel Core i5-3570K CPU @ 3.40GHz
-\end{itemize}
+\subsection*{Änderbarkeit}
+\subsection*{Risiken}
+\subsection*{Qualitätsmerkmale}
+\subsection*{Alternativen}
+\subsection*{Aufwand der Implementierung}
