@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 /**
  * Tree node iterator for iterating nodes of a tree
- * @param <T> Payload type of the tree nodes
+ * @param <T> Payload of the tree nodes
  */
 public class TreeNodeIterator<T> implements Iterator<TreeNode<T>>{
     // Tree node queue to process next() function

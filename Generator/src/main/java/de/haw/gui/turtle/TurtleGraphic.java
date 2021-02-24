@@ -10,10 +10,8 @@ import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Line;
-
 import java.util.*;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 
 /**
  * Turtle graphic class for use of graphical representation of a logo-turtle processed word.
@@ -135,7 +133,7 @@ public class TurtleGraphic extends Pane implements Logging {
     }
 
     /**
-     * Parses a given word and parameters from a template instance as draft or undone adding of shapes
+     * Parses a given word and parameters from a template instance
      * @param templateInstance Template instance to be processed
      * @param isDraft Determine whether current shaped has to be removable or not
      */

@@ -29,7 +29,7 @@
                <items>
                      <CustomMenuItem hideOnClick="false" mnemonicParsing="false" text="Number of iterations">
                          <content>
-                             <TextField fx:id="iterations" text="5" />
+                             <TextField fx:id="iterations" text="8" />
                          </content>
                      </CustomMenuItem>
                </items>
