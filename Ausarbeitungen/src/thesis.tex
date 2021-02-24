@@ -25,7 +25,7 @@
 % Directories structure
 \usepackage{fontawesome}
 \usepackage{tikz}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \def\FTdir(#1,#2,#3){%
   \FTfile(#1,{{\color{black!40!white}\faFolderOpen}\hspace{0.2em}#3})
   (tmp.west)++(0.8em,-0.4em)node(#2){}
@@ -52,10 +52,11 @@
   showstringspaces=false,
   breaklines=true,
   postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space},
-  linewidth=12.5cm,
+  linewidth=15cm,
   escapeinside={(*@}{@*)},#1}}
 {}
-%%%
+% Custom colors
+\definecolor{comment}{HTML}{18873AFF}
 
 \newcounter{nalg}[chapter] % defines algorithm counter for chapter-level
 \renewcommand{\thenalg}{\thechapter \arabic{nalg}} %defines appearance of the algorithm counter

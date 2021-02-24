@@ -107,27 +107,167 @@ Weitere Systeme zur Erstellung des Softwareprojektes sind:
     \item PlantUML zur Generierung von UML-Diagrammen
 \end{itemize}
 
-\newpage%TODO: Remove
-
 \section{Konzeptumsetzung}
 
 Das Skript \texttt{Generator.bat}, das zum Starten der Anwendung innerhalb eines Windows-Betriebssystems genutzt werden kann,
 fügt dem Programm alle externen Module hinzu, die während der Laufzeit genutzt werden, und führt die angegebene jar-Datei aus:
-\begin{csource}
-    java --module-path <<Pfad zum JavaFX lib-Ordner>> --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-0.1.jar
-    pause
-\end{csource}
+\begin{figure}[H]
+    \centering
+    \begin{csource}
+        java --module-path .\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-0.1.jar
+        pause
+    \end{csource}
+    \caption{Startskript Generator.bat}
+\end{figure}
 
-
-Beim Start der Anwendung findet der Benutzer die grafische Oberfläche folgendermaßen vor:
+Beim Start der Anwendung findet der Benutzer die grafische Oberfläche vor.
 \begin{figure}[H]
     \centering
     \includegraphics[width=14cm]{../images/UI_numbers.png}
     \caption{Programm nach Ausführung des Start-Skripts}
 \end{figure}
-Der Menüeintrag \textbf{1} beitet Funktionen zum Laden der vom Benutzer definierten Templates
+Der Menüeintrag \textbf{1} bietet Funktionen zum Öffnen des Dateipfades und zum Laden der angelegten Templates-Datei.
+\textbf{2} dient zur Konfiguration der Umgebungsparameter für die Anzahl Iterationen der Ausführung
+und die Anzahl an Ähnlichkeitsstrukturen, die aus dem resultierenden L-System abgeleitet werden können.
+Die Gewichtungsparameter der vorgestellten Algorithmen können ebenfalls hier eingestellt werden.
+Die Hilfe (\textbf{3}) gibt Informationen zum Projektkontext und zur Benutzung der Anwendung.
+Die Strukturen \textbf{4} und \textbf{5} gliedern das Programm in die Ansicht der Verzweiungsstruktur (\textbf{6}), die vom Benutzer
+angelegt wird, die Übersicht zur Auswahl eines Templates (\textbf{7}) und eine Sicht zur Setzung von Transformationsparametern (\textbf{7}).
+Der Kreis \textbf{8} stellt einen Anker dar, an welchen eine Template-Instanz angehängt werden kann.
+Sowohl über einen Doppelklick, also auch über einen Button (\textbf{9}) kann ein Template aus der Tempalte-Liste (\textbf{7})
+ausgewählt werden.
+Ist die Verzweigungsstruktur vom Benutzer fertiggestellt, kann die Synthese zur Erstellung der Ähnlichkeitsabbildungen
+mit \textbf{10} erfolgen.
+\textbf{11} schließt die Anwendung.
 
-\subsection*{Visualisierung und Baumstruktur}
+\subsection*{Visualisierung}
+
+Die grafische Oberfläche liegt als MVC-Pattern in Form des Application State (Model), der XML-basierten FXML-Datei (View)
+und dem JavaFX-Controller vor.
+Der Arbeitsablauf zur Erstellung der Verzweigungsstruktur kann Schritt für Schritt umgesetzt werden, nachdem die Templates
+geladen wurden.
+Dies wird an folgendem Beispiel deutlich gemacht.
+Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application ratio} und
+\textbf{Merge application ratio} werden auf die Werte \textbf{8}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
+(Standarteinstellung).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=7cm]{../images/UI_templates.png}
+    \includegraphics[width=7cm]{../images/UI_parameters.png}
+    \caption{Erster Anker ist vorselektiert \& gesetzte Parameter}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{../images/UI_template.png}
+    \caption{Auswahl des ersten Templates}
+\end{figure}
+
+Nachdem ein Template ausgewählt wurde, können die Transformationsparameter gesetzt (Doppelklick) werden und die Auswahl
+rückgängig gemacht (\textbf{1}) oder bestätigt (\textbf{2}) werden.
+\textbf{3} zeigt einen Entwurf der Tempalte-Instanz, die mit den aktuellen Transformationsparametern angepasst wurde.
+Mit der Bestätigung wird die Template-Instanz endgültig der Basisstruktur hinzugefügt und der Benutzer gelangt wieder
+in die Übersich der zur Verfügung stehenden Templates.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{../images/UI_applied.png}
+    \caption{Der Verzweigungsstruktur hinzugefügte Template-Instanz}
+\end{figure}
+
+Dieser Vorgang wiederholt sich, bis der Benutzer die Struktur fertiggestellt hat.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=13cm]{../images/UI_finished.png}
+    \caption{Vom Benutzer fertiggestellte Verzweigungsstruktur}
+\end{figure}
+
+Über den \textbf{Generate}-Button kann nun die Synthese gestartet werden.
+Es ergeben sich 5 (\textbf{Number of generations}) Ähnlichkeitsstrukturen
+
+\begin{figure}[H]
+    \includegraphics[width=6cm]{../images/example_1.png}
+    \includegraphics[width=6cm]{../images/example_2.png}
+    \includegraphics[width=6cm]{../images/example_3.png}
+    \includegraphics[width=6cm]{../images/example_4.png}
+    \includegraphics[width=6cm]{../images/example_5.png}
+    \caption{Generierte Verzweigungsstrukturen}
+\end{figure}
+
+\subsection*{Baumtopologie}
+Um eine interne Baumtopologie aufzubauen wird die Klasse \texttt{TreeNode} verwendet, um eine iterierbare Baumstruktur
+aufzubauen:
+\begin{lstlisting}[
+    basicstyle=\footnotesize,
+    commentstyle=\color{comment},
+    keywordstyle=\color{orange},
+    language=Java,
+    numberstyle=\color{gray}
+]
+/**
+ * Iterable tree node structure containing a payload and children
+ * as tree nodes.
+ * Every node represents a whole tree
+ * @param <T> Tree node content
+ */
+public class TreeNode<T> implements Iterable<TreeNode<T>> {
+    // Payload
+    private T data;
+    // Children
+    protected List<TreeNode<T>> children;
+    ...
+    @Override
+    public Iterator<TreeNode<T>> iterator() {
+        return new TreeNodeIterator<>(this);
+    }
+    ...
+}
+\end{lstlisting}
+
+\texttt{TreeNode} implementiert die \texttt{Iterable}-Schnittstelle, was ein Überladen der \texttt{iterator}-Funktion möglich
+macht.
+Sie stellt einen Iterator des Baumes zur Verfügung.
+Dieser Iterator (\texttt{TreeNodeIterator}) implementiert die \texttt{Iterator}-Schnittstelle und definiert so die Funktionen
+\texttt{hasNext} und \texttt{next}.
+\begin{lstlisting}[
+    basicstyle=\footnotesize,
+    commentstyle=\color{comment},
+    keywordstyle=\color{orange},
+    language=Java,
+    numberstyle=\color{gray}
+]
+/**
+ * Tree node iterator for iterating nodes of a tree
+ * @param <T> Payload of the tree nodes
+ */
+public class TreeNodeIterator<T> implements Iterator<TreeNode<T>>{
+    ...
+    @Override
+    public boolean hasNext() {
+        return !queue.isEmpty();
+    }
+
+    @Override
+    public TreeNode<T> next() {
+        if (queue.isEmpty()) return null;
+        var node = queue.pop();
+        queue.addAll(node.getChildren());
+        return node;
+    }
+}
+\end{lstlisting}
+Die Funktion \texttt{next} zeigt, wie eine Iteration des Baumes als Breitensuch e implementiert ist.
+Diese wird beim Inferrieren eines L-Systems aus der Baumstruktur benötigt.
+Das folgende Beispiel zeigt eine erstellte Baumstruktur (links) und deren erstellte Baumtopologie (rechts).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{../images/graph_tree.png}
+    \includegraphics[width=5cm]{../images/tree_graph.png}
+    \caption{Verzweigungsstruktur \& zugehörige Baumstruktur}
+\end{figure}
+
+\subsection*{Prozesspipeline}
+
+
 
 \section{Entscheidungen}
 
