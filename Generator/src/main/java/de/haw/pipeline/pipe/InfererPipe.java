@@ -1,6 +1,6 @@
 package de.haw.pipeline.pipe;
 
-import de.haw.module.Inferer;
+import de.haw.tool.Inferer;
 import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 

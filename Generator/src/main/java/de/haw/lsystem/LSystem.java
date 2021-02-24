@@ -1,6 +1,6 @@
 package de.haw.lsystem;
 
-import de.haw.module.Estimator;
+import de.haw.tool.Estimator;
 import de.haw.tree.Template;
 import de.haw.utils.RegularExpressions;
 import de.haw.utils.Templates;

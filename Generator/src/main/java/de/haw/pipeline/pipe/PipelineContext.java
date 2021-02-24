@@ -1,7 +1,7 @@
 package de.haw.pipeline.pipe;
 
 import de.haw.lsystem.LSystem;
-import de.haw.module.Estimator;
+import de.haw.tool.Estimator;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 

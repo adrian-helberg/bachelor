@@ -1,6 +1,6 @@
 package de.haw.gui.structure;
 
-import de.haw.gui.State;
+import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;

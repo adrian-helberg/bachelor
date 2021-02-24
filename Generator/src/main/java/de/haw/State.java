@@ -1,4 +1,4 @@
-package de.haw.gui;
+package de.haw;
 
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.Draft;

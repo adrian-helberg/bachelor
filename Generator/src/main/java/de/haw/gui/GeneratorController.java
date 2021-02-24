@@ -1,6 +1,7 @@
 package de.haw.gui;
 
 import de.haw.Generator;
+import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.gui.structure.Draft;
@@ -14,14 +15,12 @@ import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Dots;
 import de.haw.utils.Logging;
-import de.haw.utils.Templates;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
@@ -37,11 +36,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.net.URL;
 import java.util.Objects;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 /**
@@ -64,7 +61,6 @@ public class GeneratorController implements Logging {
     @FXML public HBox hBox_Templates;
     @FXML public Button btn_Select_Template;
     @FXML public Button btn_Generate;
-    // Options
     @FXML public TextField iterations;
     @FXML public TextField generations;
     @FXML public TextField rules;
@@ -99,6 +95,11 @@ public class GeneratorController implements Logging {
         makeTextFieldNumerous(merges, true);
     }
 
+    /**
+     * Extend a text field to "accept" only numerous input
+     * @param textField Text field to be extended
+     * @param floating True if floating point numbers shall be accepted, false for non-floating
+     */
     private void makeTextFieldNumerous(TextField textField, boolean floating) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
             if (floating) {
@@ -116,14 +117,17 @@ public class GeneratorController implements Logging {
         logger.info("Load templates");
         tilePane_Templates.getChildren().clear();
 
+        var is = GeneratorController.class.getClassLoader().getResourceAsStream("templates.txt");
+
+        if (is == null) {
+            is = getClass().getResourceAsStream("/templates");
+        }
+
         try {
-            // Resource folder templates file path
-            var filePath = Generator.class.getClassLoader().getResource("templates");
-            var sc = new Scanner(new File(Objects.requireNonNull(filePath).getPath()));
+            var reader = new BufferedReader(new InputStreamReader(is));
             // Current file line
-            String line;
-            while (sc.hasNext()) {
-                line = sc.nextLine();
+            String line = reader.readLine();
+            while (line != null) {
                 // File comments start with a %-sign
                 if (line.startsWith("%") || line.isEmpty()) continue;
                 // Create a template out of the read line
@@ -151,8 +155,10 @@ public class GeneratorController implements Logging {
                 });
                 // Add template to the corresponding view tile pane
                 tilePane_Templates.getChildren().add(pane);
+
+                line = reader.readLine();
             }
-        } catch (NullPointerException | FileNotFoundException e) {
+        } catch (NullPointerException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -161,13 +167,20 @@ public class GeneratorController implements Logging {
      * Opens an explorer window where the templates file is located at
      */
     @FXML public void openFileLocation() {
+        var filePath = GeneratorController.class.getClassLoader().getResource("templates.txt");
+
+        if (filePath == null) {
+            filePath = getClass().getResource("/templates");
+        }
+
         try {
-            var filePath = Generator.class.getClassLoader().getResource("templates");
             var file = new File(Objects.requireNonNull(filePath).getPath());
             Desktop.getDesktop().open(file.getParentFile());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
     /**
@@ -222,6 +235,10 @@ public class GeneratorController implements Logging {
         scrollPane.setContent(selectedTemplateParent);
     }
 
+    /**
+     * Set up view that is called after selecting a template
+     * @param tableView View to be set up
+     */
     private void initSelectedTemplateView(TableView<Property> tableView) {
         VBox box = new VBox(tableView);
         tableView.prefHeightProperty().bind(box.heightProperty());
@@ -288,7 +305,7 @@ public class GeneratorController implements Logging {
     }
 
     /**
-     * Generates the tree structure. TODO
+     * Generates the tree structure
      */
     @FXML public void generate() {
 

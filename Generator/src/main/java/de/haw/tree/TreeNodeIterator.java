@@ -4,8 +4,13 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Iterator;
 
+/**
+ * Tree node iterator for iterating nodes of a tree
+ * @param <T> Payload type of the tree nodes
+ */
 public class TreeNodeIterator<T> implements Iterator<TreeNode<T>>{
-    private Deque<TreeNode<T>> queue;
+    // Tree node queue to process next() function
+    private final Deque<TreeNode<T>> queue;
 
     public TreeNodeIterator(TreeNode<T> root) {
         if (root == null) throw new IllegalArgumentException("Root cannot be null");

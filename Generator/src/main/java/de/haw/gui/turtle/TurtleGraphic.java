@@ -1,19 +1,15 @@
 package de.haw.gui.turtle;
 
-import de.haw.gui.State;
+import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Logging;
-import de.haw.utils.Vectors;
-import javafx.application.Platform;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import mikera.vectorz.Vector;
 
 import java.util.*;
 import java.util.logging.Logger;
@@ -96,38 +92,6 @@ public class TurtleGraphic extends Pane implements Logging {
             }
 
             getChildren().add(line);
-
-            /*
-            getChildren().stream().filter(c -> c instanceof Line).map(l -> (Line)l).forEach(l -> {
-                // A: new line, B: old line
-                var Ax = line.getBoundsInParent().getCenterX();
-                var Ay = line.getBoundsInParent().getCenterY();
-                var Bx = l.getBoundsInParent().getCenterX();
-                var By = l.getBoundsInParent().getCenterY();
-
-                var cA = Vector.of(Ax, Ay);
-                var cB = Vector.of(Bx, By);
-
-                var headingA = Vector.of(line.getEndX() - line.getStartX(), line.getEndY() - line.getStartY()).toNormal();
-                var headingB = Vector.of(l.getEndX() - l.getStartX(), l.getEndY() - l.getStartY()).toNormal();
-
-                var heightA = line.getBoundsInParent().getHeight();
-                var heightB = l.getBoundsInParent().getHeight();
-
-                var cAcB = Vector.of(cB.get(0) - cA.get(0), cB.get(1) - cA.get(1));
-
-                // Distance cAcB to direction vector of A
-                var distanceCaCbHeadingA = Vectors.distanceBetweenTwoVectors(cAcB, headingA);
-                // Distance cAcB to direction vector of A
-                var distanceCaCbHeadingB = Vectors.distanceBetweenTwoVectors(cAcB, headingB);
-
-                var Ds = (distanceCaCbHeadingB + distanceCaCbHeadingA - (heightA + heightB)) / 0.5 * (heightA - heightB);
-
-                System.out.println(l + " to " + line + ": " + Ds);
-            });
-            */
-
-
         });
 
         symbolCommands.put("+", (value, isDraft) -> turtle.turnRight(value));
@@ -244,31 +208,6 @@ public class TurtleGraphic extends Pane implements Logging {
 
         // Resets the logo-turtle if the shapes are added as draft
         if (isDraft) turtle = previousTurtle;
-    }
-
-    /**
-     * Applies template instance parameters to a template word by using regular expressions
-     * @param templateInstance Template instance to apply parameters from
-     * @return Modified word
-     */
-    private String applyParameters(TemplateInstance templateInstance) {
-        // Get corresponding template word
-        var word = templateInstance.getTemplate().getWord();
-        // Fetch rotation property value
-        var rotation = (float) templateInstance.getParameterValue("Rotation");
-        // Fetch scaling property value
-        var scaling = (float) templateInstance.getParameterValue("Scaling");
-        // Apply rotation
-        if (word.startsWith("+") || word.startsWith("-")) {
-            word = word.replaceFirst("[0-9]+", String.valueOf(rotation));
-        } else {
-            if (rotation != 0) word = (rotation >= 0 ? "+" : "-") + "(" + Math.abs(rotation) + ")" + word;
-        }
-        // Apply scaling
-        var fPattern = Pattern.compile("(F\\()([0-9]+)");
-        var fMatcher = fPattern.matcher(word);
-        word = fMatcher.replaceAll(match -> "F(" + (Integer.parseInt(match.group(2)) * scaling));
-        return word;
     }
 
     @Override

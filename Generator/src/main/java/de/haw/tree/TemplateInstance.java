@@ -1,12 +1,13 @@
 package de.haw.tree;
 
-import de.haw.module.Estimator;
 import de.haw.utils.Templates;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Representation of a template istance
+ */
 public class TemplateInstance {
     // Populated word
     private String word;
@@ -39,18 +40,10 @@ public class TemplateInstance {
         return parametersMap;
     }
 
-    public Number getParameterValue(String name) {
-        return parametersMap.get(name);
-    }
-
     // SETTERS
     public void setParameter(String name, Number number) {
         parametersMap.put(name, number);
         word = Templates.populate(template.getWord(), parametersMap);
-    }
-
-    public void setParameters(HashMap<String, Number> parametersMap) {
-        this.parametersMap = parametersMap;
     }
 
     // METHODS

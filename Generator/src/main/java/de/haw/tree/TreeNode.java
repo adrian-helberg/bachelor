@@ -2,9 +2,15 @@ package de.haw.tree;
 
 import java.util.*;
 
+/**
+ * Iterable tree node structure containing a payload and children as tree nodes.
+ * Every node represents a whole tree
+ * @param <T> Tree node content
+ */
 public class TreeNode<T> implements Iterable<TreeNode<T>> {
-
+    // Payload
     private T data;
+    // Child nodes
     protected List<TreeNode<T>> children;
 
     public TreeNode() {
@@ -26,53 +32,68 @@ public class TreeNode<T> implements Iterable<TreeNode<T>> {
     }
 
     // GETTER
+    /**
+     * Returns the payload
+     * @return Payload
+     */
     public T getData() {
         return data;
     }
 
+    /**
+     * Return a list of children attached to this node
+     * @return List of children
+     */
     public List<TreeNode<T>> getChildren() {
         return children;
     }
 
+    /**
+     * Checks whether the node is empty.
+     * A node is empty when its payload is not set
+     * @return True if empty, false otherwise
+     */
     public boolean isEmpty() {
         return data == null;
     }
 
+    /**
+     * Return whether this node has no children and is so leaf on the tree
+     * @return True of empty and no children are attached, false otherwise
+     */
     public boolean isLeaf() {
         return children.isEmpty() || children.stream().noneMatch(c -> c.data != null);
     }
 
     // SETTER
+    /**
+     * Sets the payload
+     * @param data Payload
+     */
     public void setData(T data) {
         this.data = data;
     }
 
-    public TreeNode<T> addChild(T data) {
-        TreeNode<T> c = new TreeNode<>(data);
-        children.add(c);
-        return c;
-    }
-
+    /**
+     * Detaches all children from this node
+     */
     public void removeChildren() {
         children.clear();
     }
 
+    /**
+     * Attaches a node as child for this node
+     * @param node Child node
+     */
     public void addChild(TreeNode<T> node) {
         children.add(node);
     }
 
-    public void addChild(TreeNode<T>... nodes) {
-        children.addAll(Arrays.asList(nodes));
-    }
-
     // METHODS
-    public TreeNode<T> findTreeNode(T data) {
-        for (var node : this) {
-            if (!node.isEmpty() && node.getData().equals(data)) return node;
-        }
-        return null;
-    }
-
+    /**
+     * Calls the copy constructor and returns the resulting node
+     * @return Copy of this node
+     */
     public TreeNode<T> copy() {
         return new TreeNode<>(this);
     }

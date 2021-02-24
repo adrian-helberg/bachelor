@@ -1,12 +1,11 @@
-package de.haw.module;
+package de.haw.tool;
 
 import de.haw.lsystem.LSystem;
 import de.haw.lsystem.ProductionRule;
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
-import de.haw.utils.Logging;
+
 import java.util.Iterator;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -17,7 +16,7 @@ public class Inferer {
     private final Iterator<TreeNode<TemplateInstance>> iterator;
     private TreeNode<TemplateInstance> beta;
     private String gamma;
-    private LSystem lSystem;
+    private final LSystem lSystem;
 
     public Inferer(TreeNode<TemplateInstance> tree) {
         iterator = tree.iterator();

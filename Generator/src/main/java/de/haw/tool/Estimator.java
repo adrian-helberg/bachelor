@@ -1,8 +1,7 @@
-package de.haw.module;
+package de.haw.tool;
 
 import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
-
 import java.util.*;
 
 public class Estimator {
@@ -20,8 +19,7 @@ public class Estimator {
         // Determine different parameters
         tree.getData().getParameters().forEach((key, value) -> parameters.putIfAbsent(key, new HashMap<>()));
         // Iterate tree and extract parameters
-        for (var iterator = tree.iterator(); iterator.hasNext();) {
-            var node = iterator.next();
+        for (var node : tree) {
             if (node == null || node.isEmpty()) continue;
             var templateID = node.getData().getTemplate().getId();
             for (var p : node.getData().getParameters().entrySet()) {

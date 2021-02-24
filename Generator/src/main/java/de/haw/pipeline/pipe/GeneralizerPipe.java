@@ -1,6 +1,6 @@
 package de.haw.pipeline.pipe;
 
-import de.haw.module.Generalizer;
+import de.haw.tool.Generalizer;
 import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 

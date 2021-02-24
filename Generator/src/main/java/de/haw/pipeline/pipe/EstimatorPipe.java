@@ -1,6 +1,6 @@
 package de.haw.pipeline.pipe;
 
-import de.haw.module.Estimator;
+import de.haw.tool.Estimator;
 import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 import java.util.logging.Logger;

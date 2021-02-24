@@ -1,18 +1,15 @@
-package de.haw.module;
+package de.haw.tool;
 
 import com.google.common.collect.Sets;
 import de.haw.lsystem.LSystem;
-import de.haw.utils.Logging;
 import de.haw.utils.Modules;
-
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class Generalizer {
     private LSystem LStar;
-    private float w0;
+    private final float w0;
     private float Cg_old;
     private float cStar;
 

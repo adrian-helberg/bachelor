@@ -1,4 +1,4 @@
-package de.haw.gui;
+package de.haw.utils;
 
 public interface Selectable {
     boolean isSelected();

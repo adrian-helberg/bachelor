@@ -1,6 +1,6 @@
 package de.haw.gui.shape;
 
-import de.haw.gui.Selectable;
+import de.haw.utils.Selectable;
 import de.haw.gui.turtle.Turtle;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -113,7 +113,6 @@ public class Anchor extends Circle implements Selectable {
         if (!usedProperty.get()) {
             selectedProperty.setValue(true);
         }
-
     }
 
     /**
