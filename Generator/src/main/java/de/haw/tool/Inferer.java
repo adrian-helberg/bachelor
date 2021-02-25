@@ -35,6 +35,10 @@ public class Inferer {
         gamma = lSystem.addModuleNotPresentInAlphabet();
     }
 
+    /**
+     * Return a L-System inferred from the given tree structure
+     * @return Inferred L-System
+     */
     public LSystem infer() {
         var done = false;
         while (!done) {
@@ -68,7 +72,6 @@ public class Inferer {
                         .orElse(null);
 
                 if (lhs == null) {
-                    // gamma = eta
                     gamma = eta;
                     break;
                 }

@@ -55,11 +55,12 @@ public class Modules {
     }
 
     /**
+     * Calculate and return the edit distance between two strings
      * Time complexity: O(m*n)
      * Space complexity: O(m)
-     * @param str1
-     * @param str2
-     * @return
+     * @param str1 String A
+     * @param str2 String B
+     * @return Edit distance between A and B
      */
     public static int editDistanceOptimized(String str1, String str2) {
         int len1 = str1.length();

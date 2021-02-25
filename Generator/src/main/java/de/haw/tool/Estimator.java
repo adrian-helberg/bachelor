@@ -4,6 +4,9 @@ import de.haw.tree.TemplateInstance;
 import de.haw.tree.TreeNode;
 import java.util.*;
 
+/**
+ * Estimator class to create a distribution of different transformation parameters
+ */
 public class Estimator {
     // Template id -> parameters mapping
     private final Map<String, Map<Integer, List<Float>>> parameters;
@@ -15,6 +18,10 @@ public class Estimator {
         this.randomizer = randomizer;
     }
 
+    /**
+     * Create transformation parameter distribution of a given tree
+     * @param tree Tree the parameters are distributed from
+     */
     public void estimateParameters(TreeNode<TemplateInstance> tree) {
         // Determine different parameters
         tree.getData().getParameters().forEach((key, value) -> parameters.putIfAbsent(key, new HashMap<>()));
@@ -36,11 +43,23 @@ public class Estimator {
         }
     }
 
+    /**
+     * Estimate and return a parameter for a given template by name
+     * @param parameter Parameter name
+     * @param templateID Corresponding template
+     * @return Estimated parameter value
+     */
     public float estimateParameterValueForTemplate(String parameter, int templateID) {
         var entries = parameters.get(parameter).get(templateID);
         return entries.get(randomizer.nextInt(entries.size()));
     }
 
+    /**
+     * Calculate and return the average value for a parameter for a given template
+     * @param parameter Parameter name
+     * @param templateID Corresponding template
+     * @return Averaged parameter value
+     */
     public float averageParameterValueForTemplate(String parameter, int templateID) {
         var entries = parameters.get(parameter).get(templateID);
         return (float) entries.stream().mapToDouble(v -> v).average().orElse(0);

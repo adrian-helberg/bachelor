@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
+/**
+ * Generalizer class to add non-deterministic rules
+ * to a L-System
+ */
 public class Generalizer {
     private LSystem LStar;
     private final float w0;
@@ -25,15 +29,17 @@ public class Generalizer {
         cStar = 0;
     }
 
+    /**
+     * Generalize a L-System by adding non-deterministic rules
+     * @return Generalized L-System
+     */
     public LSystem generalize() {
         do {
-            //// Solving combination problem
-            // Exclude S -> A
+            // Exclude S -> A from set combinations
             var productionRulesWithoutS = new ArrayList<>(LStar.getProductionRules());
             if (productionRulesWithoutS.remove(0) == null)
                 throw new RuntimeException("No rule S -> A found (to be removed)");
             // Generate all possible merging rule pairs P ∈ L*
-            @SuppressWarnings("UnstableApiUsage")
             var combinations = Sets.combinations(new HashSet<>(productionRulesWithoutS), 2);
             var minimalCosts = Float.MAX_VALUE;
             LSystem minimalLSystem = null;
@@ -46,9 +52,7 @@ public class Generalizer {
                     minimalLSystem = LStarMerged;
                 }
             }
-
             if (minimalCosts >= 0) break;
-
             cStar = minimalCosts - Cg_old;
             Cg_old = minimalCosts;
             LStar = minimalLSystem;
@@ -65,6 +69,11 @@ public class Generalizer {
         return w0 * (L(lStar) - L(lPlus)) + (1 - w0) * Dg(lStar);
     }
 
+    /**
+     * Measure and return the length of a L-System
+     * @param lSystem L-System to be measured
+     * @return L-System length
+     */
     private int L(LSystem lSystem) {
         // Set size of the alphabet M
         var M_size = lSystem.getAlphabet().size();
@@ -112,6 +121,12 @@ public class Generalizer {
         return editDistance;
     }
 
+    /**
+     * Calculate and return the edit distance between two strings
+     * @param M_A String A
+     * @param M_B String B
+     * @return Edit distance between A and B
+     */
     private float Ds(String M_A, String M_B) {
         return Modules.editDistanceOptimized(M_A, M_B);
     }
