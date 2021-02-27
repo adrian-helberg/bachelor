@@ -5,6 +5,7 @@ import de.haw.lsystem.ProductionRule;
 import de.haw.gui.template.Template;
 import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Dots;
 import de.haw.utils.Trees;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,9 @@ public class Compressor {
                 o.setData(derivationInstance);
                 o.removeChildren();
             }
+
+            Dots.treeToDot("compressed_structure", tree);
+
             L = new Inferer(tree).infer().minimize();
             if (Ci(L) >= Ci(LPlus)) {
                 break;

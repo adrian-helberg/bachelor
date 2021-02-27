@@ -15,6 +15,7 @@ import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Dots;
 import de.haw.utils.Logging;
+import de.haw.utils.Templates;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -38,7 +39,10 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
 import java.io.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Objects;
+import java.util.Random;
 import java.util.logging.Logger;
 
 /**
@@ -52,6 +56,8 @@ public class GeneratorController implements Logging {
     private BranchingStructurePane paneBranchingStructure;
     // Stored template selection view parent
     private VBox selectedTemplateParent;
+    // Randomize instance
+    Random randomizer;
     // FXML elements bound to this controller
     @FXML public SplitPane splitPane;
     @FXML public TitledPane titledPane_Branching_Structure;
@@ -93,6 +99,8 @@ public class GeneratorController implements Logging {
         makeTextFieldNumerous(generations, false);
         makeTextFieldNumerous(rules, true);
         makeTextFieldNumerous(merges, true);
+        // Initialize random instance
+        randomizer = new Random();
     }
 
     /**
@@ -308,8 +316,122 @@ public class GeneratorController implements Logging {
      * Generates the tree structure
      */
     @FXML public void generate() {
-
         var tree = state.getTree();
+
+        if (tree.isEmpty()) {
+            // 0
+            var t1 = new TemplateInstance(Templates.getTemplateByID(7));
+            var n1 = new TreeNode<>(t1);
+            // 1
+            var t2 = new TemplateInstance(Templates.getTemplateByID(3));
+            t2.setParameter("Rotation", 20f);
+            var n2 = new TreeNode<>(t2);
+            n1.addChild(n2);
+            var t3 = new TemplateInstance(Templates.getTemplateByID(6));
+            t3.setParameter("Rotation", 20f);
+            t3.setParameter("Branching angle", 20f);
+            var n3 = new TreeNode<>(t3);
+            n1.addChild(n3);
+            var t4 = new TemplateInstance(Templates.getTemplateByID(6));
+            t4.setParameter("Rotation", -20f);
+            var n4 = new TreeNode<>(t4);
+            n1.addChild(n4);
+            // 2
+            var t5 = new TemplateInstance(Templates.getTemplateByID(4));
+            t5.setParameter("Rotation", -20f);
+            t5.setParameter("Branching angle", 30f);
+            var n5 = new TreeNode<>(t5);
+            n2.addChild(n5);
+            var n6 = new TreeNode<TemplateInstance>();
+            n3.addChild(n6);
+            var t7 = new TemplateInstance(Templates.getTemplateByID(2));
+            var n7 = new TreeNode<>(t7);
+            n3.addChild(n7);
+            var t8 = new TemplateInstance(Templates.getTemplateByID(8));
+            t8.setParameter("Rotation", -10f);
+            t8.setParameter("Branching angle", 30f);
+            var n8 = new TreeNode<>(t8);
+            n4.addChild(n8);
+            var t9 = new TemplateInstance(Templates.getTemplateByID(6));
+            t9.setParameter("Rotation", -30f);
+            var n9 = new TreeNode<>(t9);
+            n4.addChild(n9);
+            // 3
+            var n10 = new TreeNode<TemplateInstance>();
+            n5.addChild(n10);
+            var t11 = new TemplateInstance(Templates.getTemplateByID(4));
+            var n11 = new TreeNode<>(t11);
+            n5.addChild(n11);
+            var n12 = new TreeNode<TemplateInstance>();
+            n7.addChild(n12);
+            var n13 = new TreeNode<TemplateInstance>();
+            n8.addChild(n13);
+            var n14 = new TreeNode<TemplateInstance>();
+            n8.addChild(n14);
+            var t15 = new TemplateInstance(Templates.getTemplateByID(4));
+            t15.setParameter("Branching angle", 30f);
+            var n15 = new TreeNode<>(t15);
+            n8.addChild(n15);
+            var t16 = new TemplateInstance(Templates.getTemplateByID(4));
+            t16.setParameter("Rotation", -20f);
+            t16.setParameter("Branching angle", 30f);
+            var n16 = new TreeNode<>(t16);
+            n9.addChild(n16);
+            var n17 = new TreeNode<TemplateInstance>();
+            n9.addChild(n17);
+            // 4
+            var t18 = new TemplateInstance(Templates.getTemplateByID(3));
+            t18.setParameter("Rotation", -20f);
+            t18.setParameter("Branching angle", 60f);
+            var n18 = new TreeNode<>(t18);
+            n11.addChild(n18);
+            var n19 = new TreeNode<TemplateInstance>();
+            n11.addChild(n19);
+            var t20 = new TemplateInstance(Templates.getTemplateByID(3));
+            t20.setParameter("Scaling", 2f);
+            var n20 = new TreeNode<>(t20);
+            n15.addChild(n20);
+            var n21 = new TreeNode<TemplateInstance>();
+            n15.addChild(n21);
+            var t22 = new TemplateInstance(Templates.getTemplateByID(3));
+            var n22 = new TreeNode<>(t22);
+            n16.addChild(n22);
+            var n23 = new TreeNode<TemplateInstance>();
+            n16.addChild(n23);
+            // 5
+            var t24 = new TemplateInstance(Templates.getTemplateByID(8));
+            t24.setParameter("Scaling", .4f);
+            var n24 = new TreeNode<>(t24);
+            n18.addChild(n24);
+            var t25 = new TemplateInstance(Templates.getTemplateByID(8));
+            var n25 = new TreeNode<>(t25);
+            n20.addChild(n25);
+            var t26 = new TemplateInstance(Templates.getTemplateByID(8));
+            t26.setParameter("Scaling", .6f);
+            var n26 = new TreeNode<>(t26);
+            n22.addChild(n26);
+            // 6
+            var n27 = new TreeNode<TemplateInstance>();
+            n24.addChild(n27);
+            var n28 = new TreeNode<TemplateInstance>();
+            n24.addChild(n28);
+            var n29 = new TreeNode<TemplateInstance>();
+            n24.addChild(n29);
+            var n30 = new TreeNode<TemplateInstance>();
+            n25.addChild(n30);
+            var n31 = new TreeNode<TemplateInstance>();
+            n25.addChild(n31);
+            var n32 = new TreeNode<TemplateInstance>();
+            n25.addChild(n32);
+            var n33 = new TreeNode<TemplateInstance>();
+            n26.addChild(n33);
+            var n34 = new TreeNode<TemplateInstance>();
+            n26.addChild(n34);
+            var n35 = new TreeNode<TemplateInstance>();
+            n26.addChild(n35);
+
+            tree = n1;
+        }
         Dots.treeToDot("user_structure", tree);
 
         var numberOfIterations = Float.parseFloat(iterations.getText());
@@ -318,8 +440,6 @@ public class GeneratorController implements Logging {
         var ctx = new PipelineContext();
         ctx.tree = tree;
         ctx.randomizer = state.getRandomizer();
-
-        if (ctx.tree.isEmpty()) return;
 
         ctx.wL = Float.parseFloat(rules.getText());
         ctx.w0 = Float.parseFloat(merges.getText());
@@ -341,6 +461,7 @@ public class GeneratorController implements Logging {
                 showPopup("Generierte Verzweigungsstruktur", turtleGraphic, templateInstance.getWord(), 600, 600);
             });
         }
+        //Templates.reset();
     }
 
     public static void showPopup(String title, TurtleGraphic turtleGraphic, String description, int posX, int posY) {

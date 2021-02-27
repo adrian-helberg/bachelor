@@ -3,6 +3,7 @@ package de.haw;
 import de.haw.gui.GeneratorController;
 import de.haw.utils.Logging;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -40,11 +41,14 @@ public class Generator extends Application implements Logging {
         primaryStage.getIcons().add(icon);
         primaryStage.setMinWidth(620);
         primaryStage.setMinHeight(440);
+        primaryStage.setOnCloseRequest((e) -> Platform.exit());
         primaryStage.show();
         // Application state
         LOGGER.info("Create application state");
         State state = new State(primaryStage);
         mainController.init(state);
+        // TODO: Remove
+        mainController.loadTemplates();
     }
 
     /**

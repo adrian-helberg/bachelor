@@ -1,0 +1,37 @@
+digraph {
+omega [label="ω"]
+0 [label="F[-FX][FY]+FZ"]
+1 [label="F+FX"]
+2 [label="F[FX]+FY"]
+3 [label="F[FX]+FY"]
+4 [label="F[-FX]+FY"]
+5 [label="ε"]
+6 [label="F-FX"]
+7 [label="F[+FX]F[-FY]FZ"]
+8 [label="F[FX]+FY"]
+9 [label="ε"]
+10 [label="F[-FF+FF[+F]F[-F]F]+F"]
+11 [label="ε"]
+12 [label="ε"]
+13 [label="ε"]
+14 [label="F[-FF+FF[+F]F[-F]F]+F"]
+15 [label="F[-FF+FF[+F]F[-F]F]+F"]
+16 [label="ε"]
+omega -> 0
+0 -> 1
+0 -> 2
+0 -> 3
+1 -> 4
+2 -> 5
+2 -> 6
+3 -> 7
+3 -> 8
+4 -> 9
+4 -> 10
+6 -> 11
+7 -> 12
+7 -> 13
+7 -> 14
+8 -> 15
+8 -> 16
+}

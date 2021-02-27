@@ -51,7 +51,7 @@ public class Estimator {
      */
     public float estimateParameterValueForTemplate(String parameter, int templateID) {
         var entries = parameters.get(parameter).get(templateID);
-        return entries.get(randomizer.nextInt(entries.size()));
+        return entries.get(entries.size() > 1 ? randomizer.nextInt(entries.size()) : 0);
     }
 
     /**

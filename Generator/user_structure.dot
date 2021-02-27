@@ -1,9 +1,73 @@
 digraph {
 omega [label="ω"]
-0 [label="F[-FX]+FY"]
-1 [label="F-FF"]
-2 [label="F-FF"]
+0 [label="F[-FX][FY]+FZ"]
+1 [label="F+FX"]
+2 [label="F[FX]+FY"]
+3 [label="F[FX]+FY"]
+4 [label="F[-FX]+FY"]
+5 [label="ε"]
+6 [label="F-FX"]
+7 [label="F[+FX]F[-FY]FZ"]
+8 [label="F[FX]+FY"]
+9 [label="ε"]
+10 [label="F[-FX]+FY"]
+11 [label="ε"]
+12 [label="ε"]
+13 [label="ε"]
+14 [label="F[-FX]+FY"]
+15 [label="F[-FX]+FY"]
+16 [label="ε"]
+17 [label="F+FX"]
+18 [label="ε"]
+19 [label="F+FX"]
+20 [label="ε"]
+21 [label="F+FX"]
+22 [label="ε"]
+23 [label="F[+FX]F[-FY]FZ"]
+24 [label="F[+FX]F[-FY]FZ"]
+25 [label="F[+FX]F[-FY]FZ"]
+26 [label="ε"]
+27 [label="ε"]
+28 [label="ε"]
+29 [label="ε"]
+30 [label="ε"]
+31 [label="ε"]
+32 [label="ε"]
+33 [label="ε"]
+34 [label="ε"]
 omega -> 0
 0 -> 1
 0 -> 2
+0 -> 3
+1 -> 4
+2 -> 5
+2 -> 6
+3 -> 7
+3 -> 8
+4 -> 9
+4 -> 10
+6 -> 11
+7 -> 12
+7 -> 13
+7 -> 14
+8 -> 15
+8 -> 16
+10 -> 17
+10 -> 18
+14 -> 19
+14 -> 20
+15 -> 21
+15 -> 22
+17 -> 23
+19 -> 24
+21 -> 25
+23 -> 26
+23 -> 27
+23 -> 28
+24 -> 29
+24 -> 30
+24 -> 31
+25 -> 32
+25 -> 33
+25 -> 34
 }

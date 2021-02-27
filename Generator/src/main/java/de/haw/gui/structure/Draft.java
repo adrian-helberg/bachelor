@@ -17,7 +17,7 @@ public class Draft extends TemplateInstance {
 
     /**
      * Creates a draft for a template by a given template id
-     * @param templateID Template ID to map to
+     * @param template Template to map to
      */
     public Draft(Template template) {
         super(template);

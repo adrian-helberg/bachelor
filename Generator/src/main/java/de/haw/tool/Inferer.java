@@ -88,17 +88,6 @@ public class Inferer {
             }
             beta = iterator.next();
         }
-        // Show evaluation popup
-        var turtleGraphic = new TurtleGraphic(300,300);
-
-        var p = new HashMap<String, Number>();
-        p.put("Scaling", 1.0f);
-        p.put("Rotation", 0.0f);
-        p.put("Branching angle", 45.0f);
-
-        TemplateInstance templateInstance = new TemplateInstance(Templates.populate(lSystem.derive(), p));
-        turtleGraphic.parseWord(templateInstance, false);
-        showPopup("Inferriertes L-System", turtleGraphic, lSystem.copy().clean().toString(), 10, 10);
 
         return lSystem;
     }
