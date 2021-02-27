@@ -1,35 +1,9 @@
 digraph {
 omega [label="ω"]
-0 [label="F[-FX][FY]+FZ"]
-1 [label="F[FX]+FY"]
-2 [label="F[-FX]+FY"]
-3 [label="F[FX]+FY"]
-4 [label="F[-FF]+FF[-F]F"]
-5 [label="ε"]
-6 [label="ε"]
-7 [label="F[-FX]+FY"]
-8 [label="ε"]
-9 [label="F[-FF]+FF[-F]F"]
-10 [label="FX"]
-11 [label="F[-FX]FY"]
-12 [label="F+FX"]
-13 [label="ε"]
-14 [label="ε"]
-15 [label="ε"]
+0 [label="F[-FX]+FY"]
+1 [label="F-FF"]
+2 [label="F-FF"]
 omega -> 0
 0 -> 1
 0 -> 2
-0 -> 3
-1 -> 4
-1 -> 5
-2 -> 6
-2 -> 7
-3 -> 8
-3 -> 9
-7 -> 10
-7 -> 11
-10 -> 12
-11 -> 13
-11 -> 14
-12 -> 15
 }

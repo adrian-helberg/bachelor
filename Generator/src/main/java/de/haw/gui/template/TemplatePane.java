@@ -2,8 +2,6 @@ package de.haw.gui.template;
 
 import de.haw.utils.Selectable;
 import de.haw.gui.turtle.TurtleGraphic;
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
 import de.haw.utils.RomanNumber;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;

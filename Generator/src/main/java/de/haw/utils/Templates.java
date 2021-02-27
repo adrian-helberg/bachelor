@@ -1,7 +1,7 @@
 package de.haw.utils;
 
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.Template;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

@@ -3,7 +3,7 @@ package de.haw.gui.turtle;
 import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Logging;
 import javafx.scene.Cursor;

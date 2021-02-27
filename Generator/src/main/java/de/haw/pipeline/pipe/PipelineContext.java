@@ -2,7 +2,7 @@ package de.haw.pipeline.pipe;
 
 import de.haw.lsystem.LSystem;
 import de.haw.tool.Estimator;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 
 import java.util.Random;

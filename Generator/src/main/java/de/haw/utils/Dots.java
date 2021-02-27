@@ -1,6 +1,6 @@
 package de.haw.utils;
 
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import java.io.File;
 import java.io.FileOutputStream;

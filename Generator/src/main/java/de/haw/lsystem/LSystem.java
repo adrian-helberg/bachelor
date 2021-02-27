@@ -1,7 +1,7 @@
 package de.haw.lsystem;
 
 import de.haw.tool.Estimator;
-import de.haw.tree.Template;
+import de.haw.gui.template.Template;
 import de.haw.utils.RegularExpressions;
 import de.haw.utils.Templates;
 
@@ -172,10 +172,6 @@ public class LSystem {
             i += ruleRHS.length();
         }
         return derivation;
-    }
-
-    private String replace(String word, int index, String replacement) {
-        return word.substring(0, index) + replacement + word.substring(index + 1);
     }
 
     public LSystem clean() {

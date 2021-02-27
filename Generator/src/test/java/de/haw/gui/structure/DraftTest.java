@@ -1,15 +1,7 @@
 package de.haw.gui.structure;
 
-import de.haw.gui.structure.Draft;
-import de.haw.tree.Template;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
+import de.haw.gui.template.Template;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test object: Draft : TemplateInstance

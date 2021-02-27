@@ -4,7 +4,7 @@ import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.gui.turtle.Turtle;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;

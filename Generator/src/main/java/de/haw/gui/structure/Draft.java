@@ -1,7 +1,7 @@
 package de.haw.gui.structure;
 
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.Template;
+import de.haw.gui.template.TemplateInstance;
 import javafx.scene.shape.Shape;
 import java.util.ArrayList;
 import java.util.List;

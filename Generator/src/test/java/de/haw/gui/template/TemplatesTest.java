@@ -1,7 +1,5 @@
 package de.haw.gui.template;
 
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
 import de.haw.utils.Templates;
 import org.junit.jupiter.api.Test;
 

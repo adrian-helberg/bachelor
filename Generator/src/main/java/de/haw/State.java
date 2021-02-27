@@ -3,7 +3,7 @@ package de.haw;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.Draft;
 import de.haw.utils.Templates;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;

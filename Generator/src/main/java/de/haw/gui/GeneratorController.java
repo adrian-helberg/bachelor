@@ -10,8 +10,8 @@ import de.haw.gui.template.TemplatePane;
 import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.pipeline.pipe.*;
 import de.haw.pipeline.Pipeline;
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.Template;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Dots;
 import de.haw.utils.Logging;
@@ -29,6 +29,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -37,7 +38,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
 import java.io.*;
-import java.net.URL;
 import java.util.Objects;
 import java.util.logging.Logger;
 
@@ -338,18 +338,24 @@ public class GeneratorController implements Logging {
                 TemplateInstance templateInstance = new TemplateInstance(derivation);
                 turtleGraphic.parseWord(templateInstance, false);
 
-                final Stage dialog = new Stage();
-                dialog.initModality(Modality.NONE);
-                dialog.initOwner(state.getStage());
-                var pane = new BorderPane();
-                pane.setCenter(turtleGraphic);
-                var word = new Label(templateInstance.getWord());
-                pane.setBottom(word);
-                var dialogScene = new Scene(pane, 600, 600);
-                dialog.setScene(dialogScene);
-                dialog.show();
+                showPopup("Generierte Verzweigungsstruktur", turtleGraphic, templateInstance.getWord(), 600, 600);
             });
         }
+    }
+
+    public static void showPopup(String title, TurtleGraphic turtleGraphic, String description, int posX, int posY) {
+        final Stage dialog = new Stage();
+        dialog.initModality(Modality.NONE);
+        var pane = new BorderPane();
+        pane.setCenter(turtleGraphic);
+        var word = new Label(description);
+        pane.setBottom(word);
+        var dialogScene = new Scene(pane, 600, 600);
+        dialog.setScene(dialogScene);
+        dialog.setTitle(title);
+        dialog.setX(posX);
+        dialog.setY(posY);
+        dialog.show();
     }
 
     /**

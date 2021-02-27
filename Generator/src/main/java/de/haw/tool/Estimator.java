@@ -1,6 +1,6 @@
 package de.haw.tool;
 
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import java.util.*;
 
@@ -62,7 +62,7 @@ public class Estimator {
      */
     public float averageParameterValueForTemplate(String parameter, int templateID) {
         var entries = parameters.get(parameter).get(templateID);
-        return (float) entries.stream().mapToDouble(v -> v).average().orElse(0);
+        return (float) entries.stream().mapToDouble(v -> v).average().orElse(1);
     }
 
     @Override

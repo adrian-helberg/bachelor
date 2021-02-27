@@ -1,4 +1,4 @@
-package de.haw.tree;
+package de.haw.gui.template;
 
 import de.haw.utils.Templates;
 

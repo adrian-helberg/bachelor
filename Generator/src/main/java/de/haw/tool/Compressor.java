@@ -2,8 +2,8 @@ package de.haw.tool;
 
 import de.haw.lsystem.LSystem;
 import de.haw.lsystem.ProductionRule;
-import de.haw.tree.Template;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.Template;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
 import de.haw.utils.Trees;
 import java.util.ArrayList;
@@ -58,8 +58,8 @@ public class Compressor {
             for (var o : occurrences) {
                 var derivationInstance = new TemplateInstance(template);
 
-                int scalingSum = 0, rotationSum = 0, branchingAngleSum = 0;
-                int counter = 0;
+                float scalingSum = 0, rotationSum = 0, branchingAngleSum = 0;
+                float counter = 0;
                 for (var node : o) {
                     if (node.isEmpty()) continue;
                     counter++;
@@ -68,9 +68,9 @@ public class Compressor {
                     branchingAngleSum += estimator.averageParameterValueForTemplate("Branching angle", node.getData().getTemplate().getId());
                 }
 
-                derivationInstance.setParameter("Scaling", (float) (scalingSum / counter));
-                derivationInstance.setParameter("Rotation", (float) (rotationSum / counter));
-                derivationInstance.setParameter("Branching angle", (float) (branchingAngleSum / counter));
+                derivationInstance.setParameter("Scaling", (scalingSum / counter));
+                derivationInstance.setParameter("Rotation", (rotationSum / counter));
+                derivationInstance.setParameter("Branching angle", (branchingAngleSum / counter));
 
                 o.setData(derivationInstance);
                 o.removeChildren();

@@ -1,13 +1,20 @@
 package de.haw.tool;
 
+import de.haw.gui.GeneratorController;
+import de.haw.gui.template.Template;
+import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.lsystem.LSystem;
 import de.haw.lsystem.ProductionRule;
-import de.haw.tree.TemplateInstance;
+import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
+import de.haw.utils.Templates;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import static de.haw.gui.GeneratorController.showPopup;
 
 /**
  * Inferer to infer a L-System out of a tree-like data structure
@@ -81,6 +88,18 @@ public class Inferer {
             }
             beta = iterator.next();
         }
+        // Show evaluation popup
+        var turtleGraphic = new TurtleGraphic(300,300);
+
+        var p = new HashMap<String, Number>();
+        p.put("Scaling", 1.0f);
+        p.put("Rotation", 0.0f);
+        p.put("Branching angle", 45.0f);
+
+        TemplateInstance templateInstance = new TemplateInstance(Templates.populate(lSystem.derive(), p));
+        turtleGraphic.parseWord(templateInstance, false);
+        showPopup("Inferriertes L-System", turtleGraphic, lSystem.copy().clean().toString(), 10, 10);
+
         return lSystem;
     }
 }

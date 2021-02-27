@@ -1,8 +1,6 @@
 package de.haw.gui.template;
 
-import de.haw.tree.Template;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test object: TemplatePane : TurtleGraphic : Pane
