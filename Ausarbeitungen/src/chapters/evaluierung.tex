@@ -6,12 +6,13 @@ und in einem Softwareprojekt umgesetzt.
 Im Folgendem werden Teilaspekte an einem fortlaufenden Beispiel evaluiert und bewertet.
 Diese Aspekte umfassen
 \begin{itemize}
-    \item das Nutzen von Templates,
-    \item die Erstellung und Visualisierung von Verzweigungsstrukturen,
-    \item Aufbau einer Baumstruktur,
-    \item Extrahierung von Regeln und Mustern,
-    \item die Praktikabilität der Algorithmen und
-    \item die Umsetzung in einem Programm
+    \item das Nutzen von Templates
+    \item die Erstellung und Visualisierung von Verzweigungsstrukturen
+    \item Aufbau einer Baumstruktur
+    \item Extrahierung von Regeln und Mustern
+    \item Komprimierung von L-Systemen
+    \item Erweitern von L-Systemen
+    \item Auswirkung der Gewichtungsparameter
 \end{itemize}
 
 \subsection*{Templates}
@@ -20,7 +21,7 @@ Die Nutzung von Templates als Terminale einer Grammatik findet Anwendung in viel
 Mit der Verwendung einer allgemeinen Repräsentation mithilfe von \textit{turtle}-Befehlen, wird eine
 Wiederverwendbarkeit der genutzten Templates sichergestellt.
 Die in dieser Arbeit erstellte Software nutzt ein minimalistisches System zum Einlesen der Templates aus
-einer textbasierten Datei, währen die Forschung zur inversen prozeduralen Modellierung den Einsatz von
+einer textbasierten Datei, während die Forschung zur inversen prozeduralen Modellierung den Einsatz von
 neuronalen Netzen als vielversprechende Methode Strukturen zu erkennen und Regeln abzuleiten, zeigt.\\
 Während neuronale Netze eine Eingabestruktur analysieren und in einer baumähnlichen Struktur organisieren,
 knüpft diese Arbeit hier an und nutzt stattdessen aus Praktikabilitätsgründen eine benutzergeführte Anordnung
@@ -42,23 +43,22 @@ F[+FX]F[-FY]FZ
 \end{figure}
 \textit{F}, \textit{-}, \textit{+}, \textit{[} und \textit{]} sind dem Turtle-Algorithmus bekannte
 Befehlssymbole.
-Alle anderen (z.B. \textit{X, Y, Z}) stellen Verzweigungsvariablen dar, um anzuzeigen, an welcher Stelle
+Alle anderen Symbole (z.B. \textit{X, Y, Z}) stellen Verzweigungsvariablen dar, um anzuzeigen, an welcher Stelle
 der Templatestruktur eine neue Verzweigung abgehen kann.
 
 \subsection*{Erstellung und Visualisierung}
 Durch die Ausführung bestimmter \textit{turtle}-Befehle der template-basierten Struktur, wird diese visualisiert.
 Darum bietet es sich an, einfache grafische Elemente zu nutzen, um Verzweigungsstrukturen sichtbar zu machen
 (z.B. Canvas).
-Das Programm nutzt interaktive Elemente (JavaFX Pane) gegenüber staatischen Elementen, um die Strukturen zu zeichnen,
-da der Prozess der Erstellung benutzergeführt ist.
-So können Elemente genutzt werden, mit denen der Benutzer kommunizieren kann (z.B. klickbare Kreise, farbige
-Linien).
-So ist es möglich sinierte Verzweigungsstrukturen in einem simplen Arbeitsablauf zu ertstellen.\\~\\
-\underline{Beispiel}: Aus dem Erstellen der Verzweigungsstruktur ergibt sich:
+Das Programm nutzt stattdessen interaktive Elemente innerhalb eines JavaFX Pane gegenüber staatischen Elementen, um
+die Strukturen zu zeichnen, da der Prozess der Erstellung benutzergeführt und damit interagierbar sein muss.
+So können Elemente genutzt werden, mit denen der Benutzer kommunizieren kann (z.B. klickbare Kreise).
+Es ist nun möglich Verzweigungsstrukturen in einem simplen Arbeitsablauf zu ertstellen.\\~\\
+\underline{Beispiel}: Aus der Erstellung der Verzweigungsstruktur ergibt sich:
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{../images/evaluierung_inferrieren.png}
-    \caption{Grafische Benutzeroberfläche nach der Erstellung der Basisstruktur}
+    \caption{Grafische Benutzeroberfläche nach der Erstellung einer Basisstruktur}
 \end{figure}
 
 \subsection*{Aufbau einer Baumstruktur}
@@ -66,15 +66,15 @@ Baumähnliche Strukturen eignen sich gut, um Tansformationsparameter und topolog
 datenstrukturell zu trennen.
 Ansätze zur ganzheitlichen Betrachtung von Eingabestrukturen, also das Einbinden der Transformationen,
 und zur Trennung von Transformation und Topologie sind Gegenstand der Forschung.
-Das von \citeauthor{benes_2011} vorgestellte System beispielsweise nutz den ganzheitlichen Ansatz, um sog.
+Das von \citeauthor{benes_2011} vorgestellte System nutz beispielsweise einen ganzheitlichen Ansatz, um sog.
 \textit{Guides} zu erstellen, welche Teilsysteme der Eingabestruktur beschreiben.
 Hier unterscheiden sich Strukturen, die zwar identische Verzweigungen aufweisen, sich aber in Ausprägungen
-von Transformationsparametern (z.B. der Winkel von Verzweigungen) unterscheiden.
+von Transformationsparametern (z.B. der Winkel von Verzweigungen) voneinander entfernen.
 Auch in der Arbeit~\cite{stava_2010} von \citeauthor{stava_2010} zeigt sich eine Organisation von
 "`Clustern"' mit Transformationen, die in eine Signifikanzbewertung einfließen.\\
 Auf der anderen Seite zeigen \citeauthor{nishida_2016} und \citeauthor{guo_2020},
 dass zum Einen eine seperate Untersuchung der Transformationen mithilfe eines zweiten,
-auf seine Aktivität zugeschnittenes, neuronales Netz~\cite{nishida_2016}, zum Anderen dass die meisten
+auf seine Aktivität zugeschnittenes, neuronales Netz~\cite{nishida_2016}, zum Anderen, dass die meisten
 räumlichen Transformationen die Erkennung mittels neuronalem Netz nicht signifikant beeinflussen,
 sinnvoll ist.\\~\\
 Diese Arbeit legt der Fokus auf die datenstrukturelle Trennung von Transformationen und topologischer
@@ -92,19 +92,72 @@ die die eingehenden Kanten jedes Knotens darstellen, sind hier nicht visualisier
 Die in~\ref{alg2} vorgestellte Methodik zum Inferrieren eines L-Systems aus einer Baumstruktur
 stellt einen Algorithmus vor, der auf die spezielle Baumstruktur zugeschnitten ist.
 Die L-Systeme entsprechen lediglich der Eingabestruktur und beinhalten keine Transformationen.\\~\\
-\underline{Beispiel}: Ersetzungssysteme werden über einen JavaFX Dialog visualisiert:
+\underline{Beispiel}: Ausgeführte Ersetzungssysteme werden über einen JavaFX Dialog visualisiert:
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{../images/evaluierung_inferrieren_lsystem.png}
-    \caption{Resultierenden L-System}
+    \caption{Inferriertes L-System}
 \end{figure}
-Die Zeichenkettenrepräsentation des L-Systems lautet:
+Die Zeichenkettenrepräsentation des L-Systems ($\mathcal{L}=\{M,\omega,R\}$) lautet:
 \begin{csource}
 LSystem{
-    [F, S, A, B, C, D, E, G, H, I, J, K, L, M, N, O, P, Q, R],
+    [F, S, A, B, C, D, E, G, H, I, J, K, L, M, N, O, P, Q, R, T, U, V, W, X, Y, Z, a, b, c, d, e, f, g, h, i, j, k],
     S,
-    [S -> A, A -> F[-FB][FC]+FD, B -> F+FE, C -> F[FG]+FH, D -> F[FI]+FJ, E -> F[-FK]+FL, G -> _, H -> F-FM, I -> F[+FN]F[-FO]FP, J -> F[FQ]+FR, K -> _, L -> F[-FF+FF[+F]F[-F]F]+F, M -> _, N -> _, O -> _, P -> F[-FF+FF[+F]F[-F]F]+F, Q -> F[-FF+FF[+F]F[-F]F]+F, R -> _]
+    [S -> A, A -> F[-FB][FC]+FD, B -> F+FE, C -> F[FG]+FH, D -> F[FI]+FJ, E -> F[-FK]+FL, G -> _, H -> F-FM, I -> F[+FN]F[-FO]FP, J -> F[FQ]+FR, K -> _, L -> F[-FT]+FU, M -> _, N -> _, O -> _, P -> F[-FV]+FW, Q -> F[-FX]+FY, R -> _, T -> F+FZ, U -> _, V -> F+Fa, W -> _, X -> F+Fb, Y -> _, Z -> F[+Fc]F[-Fd]Fe, a -> F[+Ff]F[-Fg]Fh, b -> F[+Fi]F[-Fj]Fk, c -> _, d -> _, e -> _, f -> _, g -> _, h -> _, i -> _, j -> _, k -> _]
 }
 \end{csource}
 
 Das inferrierte L-System zeigt, dass die Eingabestruktur richtig in eine Grammatik überführt wurde.
+Dabei steht der Unterstrich (\_) für das leere Wort $\varepsilon$ und damit für die leeren Knoten
+der aufgebauten Baumstruktur.
+
+\subsection*{Komprimieren des L-Systems}
+Die Zeichenkettenrepräsentation des inferrierten L-Systems zeigt einige Redundanzen auf.
+Zum Beispiel bilden
+\begin{csource}
+P -> F[-FF+FF[+F]F[-F]F]+F
+\end{csource}
+und
+\begin{csource}
+Q -> F[-FF+FF[+F]F[-F]F]+F
+\end{csource}
+das gleiche Muster.
+Um solche Redundanzen zu entfernen, wird das L-System in der vorgestellten Komprimierungs-Pipe reduziert.
+Hierbei werden identische, maximale Unterbäume und deren leere Kindknoten zusammengefasst.
+Der Gewichtungsparameter für das Beispiel wird auf 0.5 gesetzt.
+Es ergibt sich folgender Baum:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=16cm]{../images/compressed_tree.png}
+    \caption{Komprimierter Baum}
+\end{figure}
+
+Die Baumstruktur zeigt, dass der Komprimierungsalgorithmus die maximalen Subbäume erfolgreich reduziert.
+Das komprimierte L-System setzt sich wie folgt zusammen:
+\begin{csource}
+LSystem{
+    [F, S, A, B, C, D, E, G, H, I, J, K, L, M, N, O, P],
+    S,
+    [S -> A, A -> F[-FB][FC]+FD, B -> F+FE, C -> F[FG]+FH, D -> F[FI]+FJ, E -> F[-FK]+FL, G -> _, H -> F-FM, I -> F[+FN]F[-FO]FP, J -> F[FL]+FG, K -> _, L -> F[-FF+FF[+F]F[-F]F]+F, M -> _, N -> _, O -> _, P -> F[-FF+FF[+F]F[-F]F]+F]
+}
+\end{csource}
+
+\subsection*{Generalisieren des L-Systems}
+Der vorgestellte Generalisierungsalgorithmus setzt das L-System von der Eingabestruktur ab, in dem
+Produktionsregeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen werden.
+Der Gewichtungsparameter wird für das Beispiel auf 0.5 gesetzt.
+Es ergibt sich das finale L-System:
+\begin{csource}
+LSystem{
+    [F, S, E, G, K, M, N, A],
+    S,
+    [S -> A, E -> F[-FK]+FA, G -> _, K -> _, M -> _, N -> _, A -> F-FM, A -> F[-FA][FA]+FA, A -> F[FG]+FA, A -> F[FA]+FG, A -> F+FE, A -> F[+FN]F[-FA]FA, A -> F[-FF+FF[+F]F[-F]F]+F, A -> F[FA]+FA, A -> _]
+}
+\end{csource}
+
+Die Produktionsregelmenge zeigt einige Regeln auf, die dasselbe Ziel haben.
+Sie werden bei ihrer Anwendung zufällig ausgewählt.
+Führt man das generalisierte L-System aus, ergeben sich die Ähnlichkeitsstrukturen (8 Ausführungsiterationen
+pro generierter Struktur bei 30 Strukturen).
+
+\subsection*{Auswirkung der Gewichtungsparameter}
