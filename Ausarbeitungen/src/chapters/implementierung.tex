@@ -142,6 +142,16 @@ Ist die Verzweigungsstruktur vom Benutzer fertiggestellt, kann die Synthese zur 
 mit \textbf{10} erfolgen.
 \textbf{11} schließt die Anwendung.
 
+\subsection*{Templates}
+Eine Datei \textit{template.txt} wird im selben Verzeichnis wie die ausführbare jar-Datei hinerlegt.
+Die enthält je eine Template-Zeichenkette pro Zeile, die vom Programm eingelesen und als Template
+zur Verfügung gestellt wird.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{../images/templates_file.png}
+    \caption{Tempaltes-Datei zum Einlesen der Template-Strukturen}
+\end{figure}
+
 \subsection*{Visualisierung}
 
 Die grafische Oberfläche liegt als MVC-Pattern in Form des Application State (Model), der XML-basierten FXML-Datei (View)
@@ -1095,9 +1105,3 @@ public float averageParameterValueForTemplate(String parameter, int templateID) 
 }
 ...
 \end{lstlisting}
-
-\subsection*{Änderbarkeit}
-\subsection*{Risiken}
-\subsection*{Qualitätsmerkmale}
-\subsection*{Alternativen}
-\subsection*{Aufwand der Implementierung}
