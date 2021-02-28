@@ -184,8 +184,8 @@ ausgeführten L-System.
 Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden
 nun ähnliche Regeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische
 Regeln hinzuzufügen.
-Sowohl die Längenfunktionen und Kostenfunktionen, als auch der Grundalgorithmus sind aus ~\cite{guo_2020} entnommen
-und bauen sich wie folgt auf:
+Sowohl Längenfunktionen, Kostenfunktionen und Distanzalgorithmen, als auch der Grundalgorithmus sind aus ~\cite{guo_2020}
+entnommen und bauen sich wie folgt auf:
 
 \begin{itemize}
     \item Die Längenfunktion $L$, die auf eine Grammatik angewendet wird, summiert die Anzahl Symbole des Alphabets mit
@@ -197,7 +197,9 @@ und bauen sich wie folgt auf:
     \item Mit $D_s$ kann nun auch der Abstand zweier Grammatiken zueinander bestimmt werden. Diese Funktion wird mit
     $D_g$ abgebildet
     \item Die Kostenfunktion $C_g$ nutzt die Länge und Distanz von Grammatiken, um Kosten einer Überführung einer Grammatik
-    in eine andere messen zu können
+    in eine andere messen zu können. Sie berechnet also sie die Kosten, um $L^*$ in $L^+$ zu überführen.
+    Der Parameter $w_0$ gewichtet hierbei die Differenz der Länge der Grammatiken und die Anzahl Operationen, die zur
+    Überführung nötig sind. Die Überführungskosten werden in der Variable $C^{old}_g$ zur Verfügung gestellt.
 \end{itemize}
 
 \begin{algorithm}[caption={Längenfunktion $L$ für Grammatiken}]
@@ -217,8 +219,6 @@ Initialisierung (Zeile 2-4):
 \begin{itemize}
     \item Das zu untersuchendes Tuple bestehend aus zwei Produktionsregeln (Regelpaar) und wird in der Variable $p^*$ gehalten
     \item L-Systeme, die sich infolge eines Merges geändert haben, werden in $L^+$ und Eingabe-L-systeme in $L^*$ gespeichert
-    \item Die Kostenfunktion $C_g$ berechnet die Kosten, um $L^*$ in $L^+$ zu überführen. Diese Überführungskosten werden
-    in der Variable $C^{old}_g$ zur Verfügung gestellt
 \end{itemize}
 Generalisierung (Zeile 6-13):
 \begin{itemize}

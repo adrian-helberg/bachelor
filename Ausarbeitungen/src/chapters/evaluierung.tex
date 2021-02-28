@@ -12,6 +12,7 @@ Diese Aspekte umfassen
     \item Extrahierung von Regeln und Mustern
     \item Komprimierung von L-Systemen
     \item Erweitern von L-Systemen
+    \item Synthese der Ähnlichkeitsstrukturen
     \item Auswirkung der Gewichtungsparameter
 \end{itemize}
 
@@ -160,4 +161,43 @@ Sie werden bei ihrer Anwendung zufällig ausgewählt.
 Führt man das generalisierte L-System aus, ergeben sich die Ähnlichkeitsstrukturen (8 Ausführungsiterationen
 pro generierter Struktur bei 30 Strukturen).
 
+\subsection*{Synthese}
+Das generalisierte L-System wird in einer Anzahl Iterationen, die vom Benutzer festgelegt wird,
+ausgeführt und visualisiert:
+
+\begin{figure}[H]
+    \centering
+    
+    \caption{Synthetisierte Verzweigungsstrukturen}
+\end{figure}
+
 \subsection*{Auswirkung der Gewichtungsparameter}
+Der Parameter $w_l$ des vorgestellten Komprimierungsalgorithmus gewichtet eine Funktion,
+welche die Kosten eines L-Systems ermittelt, sodass der Algorithmus L-Systeme mit unterschiedlich
+großer Produktionsregelmenge anders behandelt.
+Hierbei bewertet ein Wert von $0.0$ eine große Produktionsregelmenge höher.
+Entspricht $w_l$ einem Wert von $1.0$, wird eine kleinere Produktionsregelmenge überbewertet.
+Der Durchschnittswert $0.5$, der im Beispiel verwendet wird, sorgt für eine moderate Menge an
+Produktionsregeln bei moderater Länge der einzelnen Regel.
+Der im Generalisierungsalgorithmus vorgestellte Gewichtungsparameter $w_0$ legt fest, inwiefern
+die Länge oder \textit{String Edit Distance} zweier Grammatiken von Bedeutung sind.
+Bei einem Wert von $0.0$ überbewertet der Algorithmus die Metrik zur Berechnung der Anzahl Operationen,
+um eine Grammatik in eine zweite zu überführen.
+Der Wert $1.0$ entspricht einer Überbewertung der Längenmetrik.
+Im Beispiel wird der Durchschnittswert $0.5$ verwendet.
+
+$w_l$ und $w_0$ sind im Programm als \textit{Rula application ratio} und \textit{Merge application ratio}
+bezeichnet und können vom Benutzer vor der Generierung festgelegt werden.
+
+Folgende Tabelle zeigt die Wahl der Gewichtungsparameter und gibt das jeweilige Beispiel an:
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{|l|c|c|}\hline
+    \diagbox[width=10em]{$w_0$}{$w_l$} & Niedrig & Hoch \\ \hline
+    Niedrig & Beispiel 1 & Beispiel 2 \\ \hline
+    Hoch & Beispiel 3 & Beispiel 4 \\ \hline
+    \end{tabular}
+    \caption{Wahl der Gewichtungsparameter}
+\end{figure}
+
+\underline{Beispiel 1}:

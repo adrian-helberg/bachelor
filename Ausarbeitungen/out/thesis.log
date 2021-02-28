@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  27 FEB 2021 21:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  28 FEB 2021 13:13
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1391,155 +1391,196 @@ l.59 \definecolor{comment}{HTML}{18873AFF}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/diagbox\diagbox.sty
+Package: diagbox 2020/02/09 v2.3 Making table heads with diagonal lines
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.sty
+Package: pict2e 2020/09/30 v0.4b Improved picture commands (HjG,RN,JT)
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\pict2e.cfg
+File: pict2e.cfg 2016/02/05 v0.1u pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 112.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 114.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pict2e\p2e-pdftex.def
+File: p2e-pdftex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks54
+\@arclen=\dimen318
+\@arcrad=\dimen319
+\pIIe@tempdima=\dimen320
+\pIIe@tempdimb=\dimen321
+\pIIe@tempdimc=\dimen322
+\pIIe@tempdimd=\dimen323
+\pIIe@tempdime=\dimen324
+\pIIe@tempdimf=\dimen325
+)
+\diagbox@boxa=\box85
+\diagbox@boxb=\box86
+\diagbox@boxm=\box87
+\diagbox@wd=\dimen326
+\diagbox@ht=\dimen327
+\diagbox@insepl=\dimen328
+\diagbox@insepr=\dimen329
+\diagbox@outsepl=\dimen330
+\diagbox@outsepr=\dimen331
+)
+Overfull \hbox (64.5761pt too wide) in paragraph at lines 59--62
+[]\T1/cmr/m/n/10.95 FF                                                         
+                                                                               
+                                                  
+ []
+
 \c@nalg=\count386
 \glswrite=\write4
 \glo@main@file=\write5
 \openout5 = `thesis.glo'.
 
-Package glossaries Info: Writing glossary file thesis.glo on input line 93.
+Package glossaries Info: Writing glossary file thesis.glo on input line 95.
 \glo@acronym@file=\write6
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 93.
+Package glossaries Info: Writing glossary file thesis.acn on input line 95.
 \glo@symbols@file=\write7
 \openout7 = `thesis.slo'.
 
-Package glossaries Info: Writing glossary file thesis.slo on input line 93.
+Package glossaries Info: Writing glossary file thesis.slo on input line 95.
 (thesisglossaries.tex) (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 96
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 98
 .
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/scsl' undefined
-(Font)              using `T1/pcr/m/sc' instead on input line 96.
+(Font)              using `T1/pcr/m/sc' instead on input line 98.
 
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 98.
 
 LaTeX Font Warning: Font shape `T1/pcr/b/scsl' undefined
-(Font)              using `T1/pcr/b/sc' instead on input line 96.
+(Font)              using `T1/pcr/b/sc' instead on input line 98.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/pcr/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/it' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/it' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/pcr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/pcr/bx/sl' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/sl' tried instead on input line 98.
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/scsl' undefined
-(Font)              using `T1/pcr/bx/sc' instead on input line 96.
+(Font)              using `T1/pcr/bx/sc' instead on input line 98.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/sc' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 96.
+(Font)              Font shape `T1/pcr/b/sc' tried instead on input line 98.
 
 LaTeX Font Warning: Font shape `T1/pcr/sbx/sc' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 96.
+(Font)              using `T1/pcr/sb/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 96.
+(Font)              using `T1/pcr/m/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/it' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 96.
+(Font)              using `T1/pcr/sb/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sl' undefined
-(Font)              using `T1/pcr/sb/it' instead on input line 96.
+(Font)              using `T1/pcr/sb/it' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/scit' undefined
-(Font)              using `T1/pcr/sb/sc' instead on input line 96.
+(Font)              using `T1/pcr/sb/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sb/sc' undefined
-(Font)              using `T1/pcr/sb/n' instead on input line 96.
+(Font)              using `T1/pcr/sb/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/sbc/sc' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 96.
+(Font)              using `T1/pcr/c/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 96.
+(Font)              using `T1/pcr/m/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/it' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 96.
+(Font)              using `T1/pcr/c/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sl' undefined
-(Font)              using `T1/pcr/c/it' instead on input line 96.
+(Font)              using `T1/pcr/c/it' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/scit' undefined
-(Font)              using `T1/pcr/c/sc' instead on input line 96.
+(Font)              using `T1/pcr/c/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/c/sc' undefined
-(Font)              using `T1/pcr/c/n' instead on input line 96.
+(Font)              using `T1/pcr/c/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/lc/sc' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 96.
+(Font)              using `T1/pcr/l/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 96.
+(Font)              using `T1/pcr/m/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/it' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 96.
+(Font)              using `T1/pcr/l/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sl' undefined
-(Font)              using `T1/pcr/l/it' instead on input line 96.
+(Font)              using `T1/pcr/l/it' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/scit' undefined
-(Font)              using `T1/pcr/l/sc' instead on input line 96.
+(Font)              using `T1/pcr/l/sc' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/l/sc' undefined
-(Font)              using `T1/pcr/l/n' instead on input line 96.
+(Font)              using `T1/pcr/l/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/ui' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 96.
+(Font)              using `T1/pcr/m/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/bx/ui' undefined
-(Font)              using `T1/pcr/bx/n' instead on input line 96.
+(Font)              using `T1/pcr/bx/n' instead on input line 98.
 
 
 LaTeX Font Warning: Font shape `T1/pcr/m/In' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 96.
+(Font)              using `T1/pcr/m/n' instead on input line 98.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx-abbrevi
@@ -1554,16 +1595,16 @@ Dictionary: translator-basic-dictionary, Language: English
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count387
-\scratchdimen=\dimen318
-\scratchbox=\box85
+\scratchdimen=\dimen332
+\scratchbox=\box88
 \nofMPsegments=\count388
 \nofMParguments=\count389
-\everyMPshowfont=\toks54
+\everyMPshowfont=\toks55
 \MPscratchCnt=\count390
-\MPscratchDim=\dimen319
+\MPscratchDim=\dimen333
 \MPnumerator=\count391
 \makeMPintoPDFobject=\count392
-\everyMPtoPDFconversion=\toks55
+\everyMPtoPDFconversion=\toks56
 )
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1617,7 +1658,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 96.
+Package hyperref Info: Link coloring ON on input line 98.
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -1630,9 +1671,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count393
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
  (D:/git\bachelor\Ausarbeitungen\out\thesis.out)
 (D:/git\bachelor\Ausarbeitungen\out\thesis.out)
 \@outlinefile=\write8
@@ -1645,7 +1686,7 @@ Class scrreprt Info: loading recommended package `bookmark'.
 (scrreprt)           `bookmarkpackage=false' before \begin{document} and
 (scrreprt)           you can avoid this message adding:
 (scrreprt)             \usepackage{bookmark}
-(scrreprt)           before \begin{document} on input line 96.
+(scrreprt)           before \begin{document} on input line 98.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1662,13 +1703,13 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \c@lstlisting=\count395
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1760,7 +1801,7 @@ Class scrreprt Warning: \float@listhead detected!
 (scrreprt)              Loading of package `scrhack' may help to
 (scrreprt)              avoid this warning, if you are using a
 (scrreprt)              a package that still implements the
-(scrreprt)              deprecated \float@listhead interface on input line 133.
+(scrreprt)              deprecated \float@listhead interface on input line 135.
 
 
 [9
@@ -1930,7 +1971,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--143
  []
 
 [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
 
@@ -2806,7 +2847,7 @@ Alternatively, save the file in UTF-8 using your editor or another tool
 [49] [50] [51] [52] [53]) (chapters/evaluierung.tex [54]
 chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--43
+Underfull \hbox (badness 10000) in paragraph at lines 20--44
 
  []
 
@@ -2817,10 +2858,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--43
 File: ../images/evaluierung_inferrieren.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren.png  used on input l
-ine 60.
+ine 61.
 (pdftex.def)             Requested size: 341.43306pt x 263.85619pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--62
+Underfull \hbox (badness 10000) in paragraph at lines 51--63
 
  []
 
@@ -2830,15 +2871,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--62
 File: ../images/evaluierung_inferrieren_baum.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren_baum.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren_baum.png  used on in
-put line 87.
+put line 88.
 (pdftex.def)             Requested size: 398.33858pt x 278.89041pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 66--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--89
+Underfull \hbox (badness 10000) in paragraph at lines 66--90
 
  []
 
@@ -2848,10 +2889,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--89
 File: ../images/evaluierung_inferrieren_lsystem.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren_lsystem.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren_lsystem.png  used on
- input line 98.
+ input line 99.
 (pdftex.def)             Requested size: 227.62204pt x 194.95332pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--100
+Underfull \hbox (badness 10000) in paragraph at lines 93--101
 
  []
 
@@ -2860,21 +2901,21 @@ ferrieren_lsystem.png>]
 <../images/compressed_tree.png, id=1320, 1072.75781pt x 338.76563pt>
 File: ../images/compressed_tree.png Graphic file (type png)
 <use ../images/compressed_tree.png>
-Package pdftex.def Info: ../images/compressed_tree.png  used on input line 131.
+Package pdftex.def Info: ../images/compressed_tree.png  used on input line 132.
 
 (pdftex.def)             Requested size: 455.24408pt x 143.75896pt.
 
-Overfull \hbox (36.9904pt too wide) in paragraph at lines 131--132
+Overfull \hbox (36.9904pt too wide) in paragraph at lines 132--133
  [][] 
  []
 
-[60 <../images/compressed_tree.png>]) (chapters/ausblick.tex [61]
+[60 <../images/compressed_tree.png>] [61]) (chapters/ausblick.tex [62]
 chapter 6.
-) (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [62
+) [63
 
-]
+] (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [64]
 chapter without number
-[63
+[65
 
 ]
 Underfull \hbox (badness 1038) in paragraph at lines 138--144
@@ -2883,15 +2924,15 @@ Underfull \hbox (badness 1038) in paragraph at lines 138--144
 Si-mon ; \T1/cmr/m/sc/10.95 Ul-mer\T1/cmr/m/n/10.95 , An-dre-as ;
  []
 
-[64] [65]) (appendix/example_appendix.tex [66]
+[66] [67]) (appendix/example_appendix.tex [68]
 chapter A.
-) [67
+) [69
 
-] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [68])
-(../style/statement_i.tex [69
+] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls [70])
+(../style/statement_i.tex [71
 
 
-] [70
+] [72
 
 ])
 (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
@@ -2906,24 +2947,24 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 40379 strings out of 479618
- 799005 string characters out of 2865027
- 1775941 words of memory out of 3000000
- 55812 multiletter control sequences out of 15000+200000
+ 40648 strings out of 479618
+ 803181 string characters out of 2865027
+ 1783042 words of memory out of 3000000
+ 56062 multiletter control sequences out of 15000+200000
  440781 words of font info for 98 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  117i,20n,116p,10636b,2429s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{chapter*.84} has been referenced but does not exi
-st, replaced by a fixed one
+pdfTeX warning (dest): name{figure.caption.83} has been referenced but does n
+ot exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{section*.83} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.88} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{chapter*.82} has been referenced but does not exist
+pdfTeX warning (dest): name{section*.87} has been referenced but does not exist
 , replaced by a fixed one
 
-pdfTeX warning (dest): name{subsection.5.0.1} has been referenced but does not 
-exist, replaced by a fixed one
+pdfTeX warning (dest): name{chapter*.86} has been referenced but does not exist
+, replaced by a fixed one
 
  <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti09
 00.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
@@ -2970,10 +3011,10 @@ ublic/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/Programs/MiKT
 eX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adria/AppData/Local/Programs/Mi
 KTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (82 pages, 1297
-904 bytes).
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (84 pages, 1306
+607 bytes).
 PDF statistics:
- 2580 PDF objects out of 2984 (max. 8388607)
- 875 named destinations out of 1000 (max. 500000)
+ 2599 PDF objects out of 2984 (max. 8388607)
+ 881 named destinations out of 1000 (max. 500000)
  487 words of extra memory for PDF output out of 10000 (max. 10000000)
 
