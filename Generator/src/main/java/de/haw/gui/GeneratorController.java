@@ -452,7 +452,7 @@ public class GeneratorController implements Logging {
 
         for (int i = 0; i < numberOfGenerations; i++) {
             Platform.runLater(() -> {
-                var derivation = result.lSystem.deriveAndPopulate((int) numberOfIterations, ctx.estimator);
+                var derivation = result.lSystem.deriveAndPopulate((int) numberOfIterations, result.estimator);
 
                 var turtleGraphic = new TurtleGraphic(300,300);
                 TemplateInstance templateInstance = new TemplateInstance(derivation);
@@ -461,7 +461,6 @@ public class GeneratorController implements Logging {
                 showPopup("Generierte Verzweigungsstruktur", turtleGraphic, templateInstance.getWord(), 600, 600);
             });
         }
-        //Templates.reset();
     }
 
     public static void showPopup(String title, TurtleGraphic turtleGraphic, String description, int posX, int posY) {
