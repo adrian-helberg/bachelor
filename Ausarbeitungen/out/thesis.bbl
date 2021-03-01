@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{28}
 % this bibliography was produced with the style dinat.bst v2.5
 \makeatletter
 \newcommand{\dinatlabel}[1]%
@@ -6,6 +6,12 @@
 \makeatother
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+
+\bibitem[aashish1995()]{editdistance}
+\dinatlabel{aashish1995 } \textsc{aashish1995}:
+\newblock \emph{Edit Distance | DP-5}.
+\newblock \url{https://www.geeksforgeeks.org/edit-distance-dp-5/}. --
+\newblock Zugegriffen: 25.01.2021
 
 \bibitem[Alhalawani u.\,a.(2013)Alhalawani, Yang, Liu und
   Mitra]{alhalawani_2013}
@@ -17,7 +23,7 @@
 
 \bibitem[Aliaga u.\,a.(2016)Aliaga, Demir, Benes und Wand]{aliaga_2016}
 \dinatlabel{Aliaga u.\,a. 2016} \textsc{Aliaga}, Daniel~G.~; \textsc{Demir},
-  undefinedlke~; \textsc{Benes}, Bedrich~; \textsc{Wand}, Michael:
+  Ilke~; \textsc{Benes}, Bedrich~; \textsc{Wand}, Michael:
 \newblock Inverse Procedural Modeling of 3D Models for Virtual Worlds.
 \newblock In: \emph{ACM SIGGRAPH 2016 Courses}.
 \newblock New York, NY, USA~: Association for Computing Machinery, 2016
@@ -61,21 +67,6 @@
 \newblock Springer Publishing Company, Incorporated, 2010. --
 \newblock ISBN 3642073638
 
-\bibitem[Git()]{git}
-\dinatlabel{Git } \emph{Git - the stupid content tracker}.
-\newblock \url{https://git-scm.com/}. --
-\newblock Git is a member of Software Freedom Conservancy
-
-\bibitem[Github()]{github}
-\dinatlabel{Github } \emph{Github}.
-\newblock \url{https://github.com/adrian-helberg/bachelor}. --
-\newblock GitHub, Inc. (2020)
-
-\bibitem[Gradle()]{gradle}
-\dinatlabel{Gradle } \emph{Gradle Build Tool}.
-\newblock \url{https://gradle.org/}. --
-\newblock Gradle Inc. 2020
-
 \bibitem[Guo u.\,a.(2020)Guo, Jiang, Benes, Deussen, Zhang, Lischinski und
   Huang]{guo_2020}
 \dinatlabel{Guo u.\,a. 2020} \textsc{Guo}, Jianwei~; \textsc{Jiang}, Haiyong~;
@@ -93,11 +84,6 @@
 \newblock \emph{Grammatical Inference: Learning Automata and Grammars}.
 \newblock USA~: Cambridge University Press, 2010. --
 \newblock ISBN 0521763169
-
-\bibitem[idea()]{idea}
-\dinatlabel{idea } \emph{Jetbrains IntelliJ IDEA}.
-\newblock \url{https://www.jetbrains.com/idea/}. --
-\newblock Capable and Ergonomic IDE for JVM
 
 \bibitem[Lindenmayer(1968)]{lindemayer_1968}
 \dinatlabel{Lindenmayer 1968} \textsc{Lindenmayer}, A:
@@ -188,10 +174,10 @@
 \newblock URL \url{https://doi.org/10.1111/cgf.12276}. --
 \newblock ISSN 0167-7055
 
-\bibitem[Stava u.\,a.(2014)Stava, Pirk, Kratt, Chen, Mundefinedch, Deussen und
+\bibitem[Stava u.\,a.(2014)Stava, Pirk, Kratt, Chen, Mech, Deussen und
   Benes]{stava_2014}
 \dinatlabel{Stava u.\,a. 2014} \textsc{Stava}, O.~; \textsc{Pirk}, S.~;
-  \textsc{Kratt}, J.~; \textsc{Chen}, B.~; \textsc{Mundefinedch}, R.~;
+  \textsc{Kratt}, J.~; \textsc{Chen}, B.~; \textsc{Mech}, R.~;
   \textsc{Deussen}, O.~; \textsc{Benes}, B.:
 \newblock Inverse Procedural Modelling of Trees.
 \newblock In: \emph{Comput. Graph. Forum}
@@ -226,11 +212,6 @@
   User Interface Software and Technology}
 \newblock (2012), 10.
 \newblock ISBN 978-1-4503-1580-7
-
-\bibitem[trello()]{trello}
-\dinatlabel{trello } \emph{Trello Board}.
-\newblock \url{https://trello.com/}. --
-\newblock Trello Board, 2020 Atlassian
 
 \bibitem[Vazquez und Siddi(2017)]{blender}
 \dinatlabel{Vazquez und Siddi 2017} \textsc{Vazquez}, Pablo~; \textsc{Siddi},

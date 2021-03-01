@@ -19,11 +19,14 @@ Um einen physikalischen Körper in ein digitales Objekt zu überführen, wird mi
 ein mathematisches Modell erstellt, das diesen Körper formal beschreibt.
 3D Grafiksoftware, wie bspw. Blender~\cite{blender}, wird genutzt um geometrische Körper zu modellieren, texturieren
 und zu animieren.
+
+\newpage
+
 \subsection*{Prozedurale Modellierung}
 \begin{quote}
-    It encompasses a wide variety of generative techniques that
+    "`It encompasses a wide variety of generative techniques that
     can (semi-−)automatically produce a specific type of content based on a set of input
-    parameters~\cite{smelik_2014}
+    parameters"'~\cite{smelik_2014}
 \end{quote}
 Prozedurale Modellierung beschreibt generative Techniken, die \\(semi-)automatisch spezifische, digitale
 Inhalte anhand von deskriptiven Parametern erzeugen (\textit{Übersetzt durch den Autor}).
@@ -49,6 +52,9 @@ Die Buchrezension~\cite{daelemans_2010} geht auf die Arbeit~\cite{higuera_2010} 
 einen wesentlichen Unterschied zwischen der Induktion einer Grammatik, also das Finden einer
 Grammatik, welche ein Datum am genauesten beschreibt, und der Grammatikinferrierung, also das Finden einer Zielgrammatik,
 welche eine bestimmte Zeichenfolge abdeckt, sieht.
+
+\newpage
+
 \citeauthor{higuera_2010} ordnet die inverse Generierung von L-Systemen zum Problem der Grammatikinferrenz, welches er
 als gut erforschtes Gebiet beschreibt.
 Verzweigungsstrukturen im Kontext der inversen prozeduralen Modellierung tauchen in wissenschaftlichen Studien wenig auf.
@@ -74,9 +80,12 @@ Sie zeigt, wie sich der Status von Zellen infolge ein oder mehrerer Einflüsse v
 Weiter führt er Ersetzungssysteme ein, die atomare Teile mithilfe von Produktionsregeln ersetzen.
 Diese L-Systeme nutzt er zur formalen Beschreibung von Zellteilung.
 Später werden Symbole zur formalen Beschreibung von Verzweigungen, die von Filamenten abgehen, eingeführt~\cite{prusinkiewicz_1990}.
-Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} eingeführt~\cite{chomsky_1956}.
+Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} in~\cite{chomsky_1956} eingeführt.
 Sie ersetzen parallel Symbole eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
-L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.\\~\\
+L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
+
+\newpage
+
 L-Systeme sind Grammatiken mit folgender Form:
 \begin{center}
     $\mathcal{L}=\langle M,\omega,R \rangle$, mit
@@ -111,6 +120,13 @@ Sie sind folgendermaßen aufgabaut:
 \end{center}
 Ist die RHS jeder Produktionsregel ein einzelnes Symbol und gibt es zu jeder Variablen eine Regel, spricht man
 von einem kontextfreien, andernfalls von einem kontextsensitiven L-System.
+
+\subsubsection*{L-System Interpretation}
+Lindenmayer-Systeme können Worte über ihr Alphabet interpretieren.
+Dafür werden Symbole des Wortes, die Ziel einer Produktionsregeln sind, in Iterationen durch die RHS
+der Produktionsregeln ersetzt.
+Bei der Ausführung eines L-Systems wird kein beliebiges Wort interpretiert, sondern das in der
+Grammatik definierte Axiom.
 
 \subsection*{Logo-Turtle-Algorithmus}
 Der Logo-Turtle-Algorithmus~\cite{prusinkiewicz_1986} setzt ein Vorgehen zur graphischen Beschreibung von L-Systemen, bei dem
@@ -169,6 +185,8 @@ Alles zwischen den Symbolen $[$ und $]$ wird als Verzweigung interpretiert.
     Bsp. $FF[FF]F$ mit Verzweigung $[FF]$
 \end{center}
 
+\newpage
+
 \subsection*{Extreme Programming}
 Eine Fallstudie der Universität Karlsruhe~\cite{muller_2001} untersucht den Einsatz der Softwaretechnik Extreme
 Programming (XP) im Kontext der Erstellung von Abschlussarbeiten im Universitätsumfeld.
@@ -186,7 +204,10 @@ Hierzu werden folgende Schlüsselpraktiken untersucht:
 Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
 einer Bachelorarbeit bietet.
 Zum Einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
-Anderen können Arbeitspakete durch Releases abgebildet werden.
+Anderen können Arbeitspakete durch Releases abgebildet werden.\\
+Diese Softwaretechnik wird in der Umsetzung des Softwareprojekts angewendet.
+
+\newpage
 
 \section{Verwandte Arbeiten}
 
@@ -205,11 +226,11 @@ Hier wird zunächst über eine Laplace-Glättung ein Grundgerüst gefunden, das 
 Das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
 Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren ~\cite{martinovic_2013}.
 Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Verteilung von zweidimensionalen Clustern
-wird in den Arbeit von ~\citeauthor{stava_2010} gegeben\\~\\
+wird in den Arbeit von ~\citeauthor{stava_2010} gegeben.
 
 urbanen Strukturen~\cite{nishida_2016}
-Polynomiale Algorithmen zum Inferrieren von L-Systemen~\cite{mcquillan_2018}
-Framework zum Inferrieren von L-Systemen aus Vektordaten~\cite{stava_2010}
+Polynomiale Algorithmen zum Inferieren von L-Systemen~\cite{mcquillan_2018}
+Framework zum Inferieren von L-Systemen aus Vektordaten~\cite{stava_2010}
 Generalisieren einen Regelsets aus einem Inputset mit Markov Chain Monte Carlo~\cite{talton_2012, talton_2011}
 Lernen von Regeln zum Layout für Gebäude~\cite{martinovic_2013}
 Inverse prozedurale Modellierung von Fassaden~\cite{xiao_2008}

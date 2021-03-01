@@ -50,6 +50,8 @@ In dieser Arbeit wird ein Algorithmus präsentiert, der die Knoten der Baumstruk
 Produktionregeln verknüpft und diese dem resultierenden L-System hinzufügt.
 Dieses L-System repräsentiert lediglich die Eingabestruktur.
 
+\newpage
+
 \subsection*{Komprimieren}
 Um ein kompaktes, gewichtetes L-System zu erzeugen, werden sich wiederholende Unterrbäume gesucht und ersetzt.
 Eine Gewichtung wird angewendet, um das zu erzeugende L-System mit kleiner Regelmenge oder mit
@@ -68,6 +70,8 @@ Die vom Benutzer vergeben Werte der Transformationsparameter werden während der
 einer Häufigkietsverteilung organisiert und bei Ausführung des generalisierten L-Systems angewendet.
 So werden Transformationen nach ihrer statistischen Häufigkeit angewendet.
 
+\newpage
+
 \section{Workflows \& Algorithmen}
 \label{algo}
 
@@ -83,7 +87,7 @@ Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgend
     Wähle nächsten Anker aus
 \end{algorithm}
 
-\subsubsection*{L-System inferrieren}
+\subsubsection*{L-System inferieren}
 Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden.
 Hierzu wird ein neuer Algorithm präsentiert:\\~\\
 Zunächst werden L-System-Komponenten initialisiert (Zeile 2-6) für $\mathcal{L}=\langle M,\omega,R \rangle$:
@@ -136,7 +140,7 @@ Produktionsregeln für das resultierende L-Systems (Zeile 8-17):
 \end{algorithm}
 
 \subsubsection*{L-System komprimieren}
-\citeauthor{guo_2020} führt einen Algorithmus zum Inferrieren einer Grammatik aus einer Baumstruktur ein~\cite{guo_2020}.
+\citeauthor{guo_2020} führt einen Algorithmus zum Inferieren einer Grammatik aus einer Baumstruktur ein~\cite{guo_2020}.
 Zum Einen wird ein L-System aufgebaut, zum Andern die Baumtopologie durch Finden maximaler Subbäume reduziert.
 Die Reduktion wird im folgenden Algorithmus adaptiert:\\~\\
 Initialisierung (Zeile 2-5):
@@ -214,6 +218,8 @@ $L(\mathcal{L}) = |M| + \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} |M^*|
 $C_g(\mathcal{L}^*, \mathcal{L}^+) = w_0 * (L(\mathcal{L}^*) - L(\mathcal{L}^+)) + (1 - w_0) + D_g(\mathcal{L}^+, \mathcal{L}^*)$
 \end{algorithm}
 
+\newpage
+
 Algorithmus zum Generalisieren eines L-Systems:\\~\\
 Initialisierung (Zeile 2-4):
 \begin{itemize}
@@ -246,9 +252,9 @@ Wenn $c^* > 0$
 Breche Schleife ab
 \end{algorithm}
 
-\section{Softwarearchitektur}
+\newpage
 
-\subsection{Grundkonzepte}
+\section{Softwarearchitektur}
 Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
 \subsection*{Qualitätsziele}
@@ -265,6 +271,8 @@ priorisiert (absteigend) und umgesetzt:
     \item \textbf{Plattformunabhängigkeit} durch Verwenden des Java-Frameworks
 \end{itemize}
 
+\newpage
+
 \subsection*{Kontextabgrenzung}
 Die Systemgrenzen werden zum Einen durch die Interaktion mit dem Benutzer, zum Anderen durch die Interaktion mit
 dem Dateisystem des Host-Systems und dem Zugreifen und Lesen der Template-Dateien definiert.
@@ -280,8 +288,6 @@ technische Interaktion gesehen.
     \includegraphics[width=10cm]{../images/Technischer_Kontext.PNG}
     \caption{Interaktion zwischen System und Systemumgebung}
 \end{figure}
-
-\newpage
 
 \subsection*{Lösungsstrategie}
 Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umgesetzt:
@@ -320,10 +326,12 @@ Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umges
     \end{tabular}
 \end{center}
 
+\newpage
+
 \subsection*{Bausteinsicht}
 Der Benutzer interagiert über das User Interface mit dem Subsystem GUI, das sich mit der Visualisierung, dem Aufbau der
-Eingabestruktur und dem Anglegen einer internen Baumtopologie beschäftigt.
-Die Pipeline zum Erzeugen der Ausgabestrukturen beginnt mit dem Inferrieren eines L-Systems aus der benutzerdefinierten
+Eingabestruktur und dem Anlegen einer internen Baumtopologie beschäftigt.
+Die Pipeline zum Erzeugen der Ausgabestrukturen beginnt mit dem Inferieren eines L-Systems aus der benutzerdefinierten
 Struktur und gibt das erzeuge Ersetzungssystem an die folgenden Komponenten weiter.
 Hierbei gilt der Pipeline-Kontext, welcher innerhalb der Pipeline an den jeweils nächsten Schritt weitergegeben und
 dort aktualisiert wird, als Eingabe der Pipeline.
@@ -373,46 +381,46 @@ Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf
     \caption{Infrastruktur Windows-PC}
 \end{figure}
 
-\subsection{Weitere Konzepte}
+%\subsection{Weitere Konzepte}
+%
+%\subsubsection{Testbarkeit}
+%Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmöglich zu testende Einheit definiert
+%und durch Komponententests geprüft.
+%Der Name eines Tests setzt sich aus dem Präfix als Name der zu testenden Klasse oder Releases und dem Suffix
+%"`Test"'
+%zusammen.
+%Testsubjekte werden als \textbf{Blackbox} behandelt, also anhand der Spezifikation getestet.
+%\begin{center}
+%    Bsp.: Klasse \textit{Inferer} mit Komponententest \textit{InfererTest}
+%\end{center}
+%Da jedes Release der Implementierung ein funktionsfähiges System beinhaltet, kann auf Integrationstests
+%verzichtet werden.
+%Weiter wird ein Release anhand von funktionalen und nicht-funktionalen Anforderungen getestet.
+%Anhand dieser Systemtests wird geprüft, ob Gesamtspezifikationen umgesetzt worden sind.
+%\begin{center}
+%    Bsp.: Release 2 mit Systemtest \textit{Release2Test}
+%\end{center}
+%Zum Schluss der Implementierung wird ein Akzeptanztest durchgeführt.
+%
+%\subsubsection{Validierung}
+%Der Benutzer des Systems nutzt eine grafische Schnittstelle.
+%Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
+%Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
+%protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
+%Eine \textit{IllegalArgumentException} wird verzeichnet und ausgegeben, wenn eingelesene Template-Dateien
+%strukturelle Fehler aufweisen.
+%
+%\subsubsection{Fehlerbehandlung}
+%Zur Fehlersuche und -behandlung biete sich eine Protokollierung über Vorgänge, Fehler und Ausnahmen an.
+%Bestimmte Fehler werden dem Benutzer weitergegeben und grafisch angezeigt.
+%Folgende Subsysteme werden in das Programm integriert:
+%\begin{itemize}
+%    \item Ausnahmebehandlung (Exception Handling) und
+%    \item Protokollierung (Logging)
+%\end{itemize}
+%Erwartete Exceptions werden jeweils mit eigenen Klassen abgebildet, die von einer entsprechenden Klasse aus der
+%Exception-Hierarchie abgeleitet sind.
+%Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
 
-\subsubsection{Testbarkeit}
-Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmöglich zu testende Einheit definiert
-und durch Komponententests geprüft.
-Der Name eines Tests setzt sich aus dem Präfix als Name der zu testenden Klasse oder Releases und dem Suffix
-"`Test"'
-zusammen.
-Testsubjekte werden als \textbf{Blackbox} behandelt, also anhand der Spezifikation getestet.
-\begin{center}
-    Bsp.: Klasse \textit{Inferer} mit Komponententest \textit{InfererTest}
-\end{center}
-Da jedes Release der Implementierung ein funktionsfähiges System beinhaltet, kann auf Integrationstests
-verzichtet werden.
-Weiter wird ein Release anhand von funktionalen und nicht-funktionalen Anforderungen getestet.
-Anhand dieser Systemtests wird geprüft, ob Gesamtspezifikationen umgesetzt worden sind.
-\begin{center}
-    Bsp.: Release 2 mit Systemtest \textit{Release2Test}
-\end{center}
-Zum Schluss der Implementierung wird ein Akzeptanztest durchgeführt.
-
-\subsubsection{Validierung}
-Der Benutzer des Systems nutzt eine grafische Schnittstelle.
-Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
-Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
-protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
-Eine \textit{IllegalArgumentException} wird verzeichnet und ausgegeben, wenn eingelesene Template-Dateien
-strukturelle Fehler aufweisen.
-
-\subsubsection{Fehlerbehandlung}
-Zur Fehlersuche und -behandlung biete sich eine Protokollierung über Vorgänge, Fehler und Ausnahmen an.
-Bestimmte Fehler werden dem Benutzer weitergegeben und grafisch angezeigt.
-Folgende Subsysteme werden in das Programm integriert:
-\begin{itemize}
-    \item Ausnahmebehandlung (Exception Handling) und
-    \item Protokollierung (Logging)
-\end{itemize}
-Erwartete Exceptions werden jeweils mit eigenen Klassen abgebildet, die von einer entsprechenden Klasse aus der
-Exception-Hierarchie abgeleitet sind.
-Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
-
-\subsection{Datenstrukturen}
-TODO: Klassendiagramm aus IntelliJ generieren
+\subsection*{Datenstrukturen}
+TODO

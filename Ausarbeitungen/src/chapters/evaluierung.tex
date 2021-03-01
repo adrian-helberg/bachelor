@@ -54,7 +54,10 @@ Darum bietet es sich an, einfache grafische Elemente zu nutzen, um Verzweigungss
 Das Programm nutzt stattdessen interaktive Elemente innerhalb eines JavaFX Pane gegenüber staatischen Elementen, um
 die Strukturen zu zeichnen, da der Prozess der Erstellung benutzergeführt und damit interagierbar sein muss.
 So können Elemente genutzt werden, mit denen der Benutzer kommunizieren kann (z.B. klickbare Kreise).
-Es ist nun möglich Verzweigungsstrukturen in einem simplen Arbeitsablauf zu ertstellen.\\~\\
+Es ist nun möglich Verzweigungsstrukturen in einem simplen Arbeitsablauf zu ertstellen.
+
+\newpage
+
 \underline{Beispiel}: Aus der Erstellung der Verzweigungsstruktur ergibt sich:
 \begin{figure}[H]
     \centering
@@ -72,7 +75,10 @@ Das von \citeauthor{benes_2011} vorgestellte System nutz beispielsweise einen ga
 Hier unterscheiden sich Strukturen, die zwar identische Verzweigungen aufweisen, sich aber in Ausprägungen
 von Transformationsparametern (z.B. der Winkel von Verzweigungen) voneinander entfernen.
 Auch in der Arbeit~\cite{stava_2010} von \citeauthor{stava_2010} zeigt sich eine Organisation von
-"`Clustern"' mit Transformationen, die in eine Signifikanzbewertung einfließen.\\
+"`Clustern"' mit Transformationen, die in eine Signifikanzbewertung einfließen.
+
+\newpage
+
 Auf der anderen Seite zeigen \citeauthor{nishida_2016} und \citeauthor{guo_2020},
 dass zum Einen eine seperate Untersuchung der Transformationen mithilfe eines zweiten,
 auf seine Aktivität zugeschnittenes, neuronales Netz~\cite{nishida_2016}, zum Anderen, dass die meisten
@@ -85,12 +91,12 @@ räumliche Transformationen als eingehende Kanten darstellt.\\~\\
 die die eingehenden Kanten jedes Knotens darstellen, sind hier nicht visualisiert):
 \begin{figure}[H]
     \centering
-    \includegraphics[width=14cm]{../images/evaluierung_inferrieren_baum.png}
+    \includegraphics[width=12cm]{../images/evaluierung_inferrieren_baum.png}
     \caption{Baumstruktur der erstellten Verzweigungsstruktur}
 \end{figure}
 
 \subsection*{Extrahieren von Regeln und Mustern}
-Die in~\ref{alg2} vorgestellte Methodik zum Inferrieren eines L-Systems aus einer Baumstruktur
+Die in~\ref{alg2} vorgestellte Methodik zum Inferieren eines L-Systems aus einer Baumstruktur
 stellt einen Algorithmus vor, der auf die spezielle Baumstruktur zugeschnitten ist.
 Die L-Systeme entsprechen lediglich der Eingabestruktur und beinhalten keine Transformationen.\\~\\
 \underline{Beispiel}: Ausgeführte Ersetzungssysteme werden über einen JavaFX Dialog visualisiert:
@@ -129,7 +135,7 @@ Der Gewichtungsparameter für das Beispiel wird auf 0.5 gesetzt.
 Es ergibt sich folgender Baum:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=16cm]{../images/compressed_tree.png}
+    \includegraphics[width=14cm]{../images/compressed_tree.png}
     \caption{Komprimierter Baum}
 \end{figure}
 
@@ -158,18 +164,38 @@ LSystem{
 
 Die Produktionsregelmenge zeigt einige Regeln auf, die dasselbe Ziel haben.
 Sie werden bei ihrer Anwendung zufällig ausgewählt.
-Führt man das generalisierte L-System aus, ergeben sich die Ähnlichkeitsstrukturen (8 Ausführungsiterationen
-pro generierter Struktur bei 30 Strukturen).
+
 
 \subsection*{Synthese}
-Das generalisierte L-System wird in einer Anzahl Iterationen, die vom Benutzer festgelegt wird,
-ausgeführt und visualisiert:
+Führt man das generalisierte L-System aus, ergeben sich die Ähnlichkeitsstrukturen.
+Eine Evaluierung wird stichprobenartig durchgeführt, erweist sich aber als schwierig, da
+es bei der Erstellung der Ausgabestrukturen um Wahrscheinlichkeiten beim Auftreten gewisser
+Muster handelt.
+Da die Algorithmen eine akzeptable Lösung eines schwierigen Problems liefern sollen,
+ist die Bewertung der Ergebnisse subjektiv.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14.5cm]{../images/synthesis.png}
+    \caption{Synthetisierte Verzweigungsstrukturen}
+\end{figure}
+
+Vergleicht man die Eingabestruktur mit den synthetisierten Strukturen, weisen diese
+gewisse Eigenschaften auf (siehe folgende Abbildung):
+\begin{itemize}
+    \item Wiederholtes Auftreten einer Struktur, die beim Synthetisieren als maximaler Unterbaum
+    erkannt wurde (rot)
+    \item Anwendung von benutzerdefinierten Transformationsparametern (blau)
+    \item Ähnliche Häufigkeiten (grün)
+    \item Isoliertes Auftreten von Templates des maximalen Subbaums,die über den Unterbaum
+    hinaus einzeln vorkommen (gelb)
+\end{itemize}
 
 \begin{figure}[H]
     \centering
-    
-    \caption{Synthetisierte Verzweigungsstrukturen}
+    \includegraphics[width=14.5cm]{../images/synthesis_marks.png}
+    \caption{Untersuchung der synthetisierten Verzweigungsstrukturen}
 \end{figure}
+
 
 \subsection*{Auswirkung der Gewichtungsparameter}
 Der Parameter $w_l$ des vorgestellten Komprimierungsalgorithmus gewichtet eine Funktion,
@@ -189,15 +215,34 @@ Im Beispiel wird der Durchschnittswert $0.5$ verwendet.
 $w_l$ und $w_0$ sind im Programm als \textit{Rula application ratio} und \textit{Merge application ratio}
 bezeichnet und können vom Benutzer vor der Generierung festgelegt werden.
 
-Folgende Tabelle zeigt die Wahl der Gewichtungsparameter und gibt das jeweilige Beispiel an:
-\begin{figure}[H]
-    \centering
-    \begin{tabular}{|l|c|c|}\hline
-    \diagbox[width=10em]{$w_0$}{$w_l$} & Niedrig & Hoch \\ \hline
-    Niedrig & Beispiel 1 & Beispiel 2 \\ \hline
-    Hoch & Beispiel 3 & Beispiel 4 \\ \hline
-    \end{tabular}
-    \caption{Wahl der Gewichtungsparameter}
-\end{figure}
-
-\underline{Beispiel 1}:
+%Folgende Tabelle zeigt die Wahl der Gewichtungsparameter und gibt ein zugehöriges Beispiel an:
+%\begin{figure}[H]
+%    \centering
+%    \begin{tabular}{|l|c|c|}\hline
+%    \diagbox[width=10em]{$w_l$}{$w_0$} & Niedrig & Hoch \\ \hline
+%    Niedrig & Beispiel 1 & Beispiel 2 \\ \hline
+%    Hoch & Beispiel 3 & Beispiel 4 \\ \hline
+%    \end{tabular}
+%    \caption{Wahl der Gewichtungsparameter}
+%\end{figure}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=9cm]{../images/low_low.png}
+%    \caption{\underline{Beispiel 1}: $w_l=0.1$, $w_0=0.1$}
+%\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=9cm]{../images/low_high.png}
+%    \caption{\underline{Beispiel 2}: $w_l=0.1$, $w_0=0.9$}
+%\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=9cm]{../images/high_low.png}
+%    \caption{\underline{Beispiel 3}: $w_l=0.9$, $w_0=0.1$}
+%\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=9cm]{../images/high_high.png}
+%    \caption{\underline{Beispiel 4}: $w_l=0.9$, $w_0=0.9$}
+%\end{figure}

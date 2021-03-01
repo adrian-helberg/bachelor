@@ -5,7 +5,7 @@
 Zur Umsetzung der vorgestellten Konzepte wird im Folgenden auf Softwarepakete, Technologien, Datenspeicherung,
 Benutzerinteraktion und Arbeitsablauf der erstellten Software eingegangen.
 Darüber hinaus wird ein Überblick über Quellcode und einige Implementierungsentscheidungen gegeben.
-Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht eingegangen.
+Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht im Detail eingegangen.
 Quellcode wird im Wesentlichen gezeigt und anhand von Zeilenangaben (z.B. \textbf{5}) erläutert.
 Softwareumgebungsspezifische Implmentierungsdetails werden unter Angabe von drei Punkten (\ldots) weggelassen.
 
@@ -109,6 +109,8 @@ Weitere Systeme zur Erstellung des Softwareprojektes sind:
     \item PlantUML zur Generierung von UML-Diagrammen
 \end{itemize}
 
+\newpage
+
 \section{Konzeptumsetzung}
 
 Das Skript \texttt{Generator.bat}, das zum Starten der Anwendung innerhalb eines Windows-Betriebssystems genutzt werden kann,
@@ -116,7 +118,7 @@ fügt dem Programm alle externen Module hinzu, die während der Laufzeit genutzt
 \begin{figure}[H]
     \centering
     \begin{csource}
-        java --module-path .\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-0.1.jar
+        java --module-path .\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-1.0.jar
         pause
     \end{csource}
     \caption{Startskript Generator.bat}
@@ -125,14 +127,13 @@ fügt dem Programm alle externen Module hinzu, die während der Laufzeit genutzt
 Beim Start der Anwendung findet der Benutzer die grafische Oberfläche vor.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=14cm]{../images/UI_numbers.png}
+    \includegraphics[width=14cm]{../images/UI_numbers1.png}
     \caption{Programm nach Ausführung des Start-Skripts}
 \end{figure}
 Der Menüeintrag \textbf{1} bietet Funktionen zum Öffnen des Dateipfades und zum Laden der angelegten Templates-Datei.
 \textbf{2} dient zur Konfiguration der Umgebungsparameter für die Anzahl Iterationen der Ausführung
 und die Anzahl an Ähnlichkeitsstrukturen, die aus dem resultierenden L-System abgeleitet werden können.
 Die Gewichtungsparameter der vorgestellten Algorithmen können ebenfalls hier eingestellt werden.
-Die Hilfe (\textbf{3}) gibt Informationen zum Projektkontext und zur Benutzung der Anwendung.
 Die Strukturen \textbf{4} und \textbf{5} gliedern das Programm in die Ansicht der Verzweiungsstruktur (\textbf{6}), die vom Benutzer
 angelegt wird, die Übersicht zur Auswahl eines Templates (\textbf{7}) und eine Sicht zur Setzung von Transformationsparametern (\textbf{7}).
 Der Kreis \textbf{8} stellt einen Anker dar, an welchen eine Template-Instanz angehängt werden kann.
@@ -152,20 +153,21 @@ zur Verfügung gestellt wird.
     \caption{Tempaltes-Datei zum Einlesen der Template-Strukturen}
 \end{figure}
 
-\subsection*{Visualisierung}
+\newpage
 
+\subsection*{Visualisierung}
 Die grafische Oberfläche liegt als MVC-Pattern in Form des Application State (Model), der XML-basierten FXML-Datei (View)
 und dem JavaFX-Controller vor.
 Der Arbeitsablauf zur Erstellung der Verzweigungsstruktur kann Schritt für Schritt umgesetzt werden, nachdem die Templates
 geladen wurden.
 Dies wird an folgendem Beispiel deutlich gemacht.
 Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application ratio} und
-\textbf{Merge application ratio} werden auf die Werte \textbf{8}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
+\textbf{Merge application ratio} werden auf die Werte \textbf{5}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
 (Standarteinstellung).
 \begin{figure}[H]
     \centering
-    \includegraphics[width=7cm]{../images/UI_templates.png}
-    \includegraphics[width=7cm]{../images/UI_parameters.png}
+    \includegraphics[width=6cm]{../images/UI_templates.png}
+    \includegraphics[width=6cm]{../images/UI_parameters.png}
     \caption{Erster Anker ist vorselektiert \& gesetzte Parameter}
 \end{figure}
 
@@ -199,11 +201,16 @@ Es ergeben sich 5 (\textbf{Number of generations}) Ähnlichkeitsstrukturen
 \begin{figure}[H]
     \includegraphics[width=6cm]{../images/example_1.png}
     \includegraphics[width=6cm]{../images/example_2.png}
+    \caption{Generierte Verzweigungsstrukturen (1/2)}
+\end{figure}
+\begin{figure}[H]
     \includegraphics[width=6cm]{../images/example_3.png}
     \includegraphics[width=6cm]{../images/example_4.png}
     \includegraphics[width=6cm]{../images/example_5.png}
-    \caption{Generierte Verzweigungsstrukturen}
+    \caption{Generierte Verzweigungsstrukturen (2/2)}
 \end{figure}
+
+\newpage
 
 \subsection*{Baumtopologie}
 Um eine interne Baumtopologie aufzubauen wird die Klasse \texttt{TreeNode} verwendet, um eine iterierbare Baumstruktur
@@ -242,6 +249,9 @@ macht.
 Sie stellt einen Iterator des Baumes zur Verfügung.
 Dieser Iterator (\texttt{TreeNodeIterator}) implementiert die \texttt{Iterator}-Schnittstelle und definiert so die Funktionen
 \texttt{hasNext} und \texttt{next}.
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
@@ -272,7 +282,7 @@ public class TreeNodeIterator<T> implements Iterator<TreeNode<T>>{
 }
 \end{lstlisting}
 Die Funktion \texttt{next} zeigt, wie eine Iteration des Baumes als Breitensuch e implementiert ist.
-Diese wird beim Inferrieren eines L-Systems aus der Baumstruktur benötigt.
+Diese wird beim Inferieren eines L-Systems aus der Baumstruktur benötigt.
 Das folgende Beispiel zeigt eine erstellte Baumstruktur (links) und deren erstellte Baumtopologie (rechts).
 \begin{figure}[H]
     \centering
@@ -285,6 +295,9 @@ Das folgende Beispiel zeigt eine erstellte Baumstruktur (links) und deren erstel
 Das angewendete Pipeline-Design-Pattern zur Umsetzung der Inferrierung, Komprimierung und Generalisierung von L-Systemem,
 sowie der Verteilung von Transformationsparametern bei deren Ausführung, setzt sich aus der \texttt{Pipeline}-Klasse und
 dem \texttt{Pipe}-Interface zusammen.
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
@@ -341,6 +354,9 @@ Die eigentliche Umsetzung der Prozesspipeline zur Synthese der Verzweigungsstruk
 Hierbei implementieren die Klassen \texttt{InfererPipe}, \texttt{CompressorPipe}, \texttt{GeneralizerPipe} und
 \texttt{EstimatorPipe} das \texttt{Pipe}-Interface und geben die Reihenfolge des Prozesses an.
 Das \texttt{ctx}-Objekt wird als Kontextobjekt in die Pipeline gegeben und bei jedem Prozessschritt angepasst.
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
@@ -364,8 +380,7 @@ var result = new Pipeline<>(new InfererPipe())
 
 \subsection*{Inferrierung eines L-Systems aus einer Baumstruktur}
 Die Inferrierung des L-Systems findet in der Klasse \texttt{Inferer} statt, die in der \texttt{InfererPipe}-Klasse erstellt wird.
-Sie nimmt die Baumstruktur entgegegen und stellt eine Funktion \texttt{infer} zum Inferrieren des L-Systems zur Verfügung.
-Die Initialisierung des Algorithmus findet im Konstruktor statt.
+Sie nimmt die Baumstruktur entgegegen und stellt eine Funktion \texttt{infer} zum Inferieren des L-Systems zur Verfügung.
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
@@ -400,7 +415,7 @@ public class Inferer {
 }
 \end{lstlisting}
 
-Das erstellte L-System (\textbf{8}) wird während des Inferrierens aktualisiert und am Schluss als Ergebnis zurückgegeben.
+Das erstellte L-System (\textbf{8}) wird während des Inferierens aktualisiert und am Schluss als Ergebnis zurückgegeben.
 Dann werden die initialen Symbole $F$ und $S$ hinzugefügt und das Axiom auf $S$ gesetzt (\textbf{10-12}).
 Die initiale Produktionsregel $\alpha: S \rightarrow A$ wird erstellt und der Produktionsregelmenge beigefügt (\textbf{14-15}).
 Es wird der erste zu untersuchende Knoten des Baumen über seinen Iterator zurückgegeben und als $\beta$ gesetzt (\textbf{17}).
@@ -690,6 +705,9 @@ private List<TreeNode<TemplateInstance>> getOccurrences(TreeNode<TemplateInstanc
     return occurrences;
 }
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
@@ -748,8 +766,9 @@ private int countRuleApplications(LSystem lSystem, String lhs) {
 }
 \end{lstlisting}
 
-\subsection*{Generalisierung des L-Systems}
+\newpage
 
+\subsection*{Generalisierung des L-Systems}
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
@@ -924,6 +943,9 @@ private float Dg(LSystem lStar) {
     return editDistance;
 }
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
@@ -954,7 +976,7 @@ private float Ds(String M_A, String M_B) {
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
-    caption=Modules Klasse mit staatischer Funktion zur Ermittlung der String Edit Distance,
+    caption=Modules Klasse mit Funktion zur Ermittlung der String Edit Distance,
     frame=tB,
     postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
 ]
@@ -984,6 +1006,9 @@ public class Modules {
     }
 }
 \end{lstlisting}
+
+Der Algorithmus \texttt{editDistanceOptimized} ist aus Praktikabilitätsgründen aus~\cite{editdistance}
+entnommen.
 
 \subsection*{Verteilung der Transformationsparameter}
 \begin{lstlisting}[

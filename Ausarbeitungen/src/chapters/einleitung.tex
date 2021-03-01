@@ -1,8 +1,8 @@
 % @author Arian Helberg
 
 \chapter{Einleitung}
-
-\gls{ac:haw}~\gls{sy:ohm}~\gls{gl:haw}(Damit das glossar keine fehler schmeißt)
+% TODO: Remove
+\gls{ac:haw}~\gls{sy:ohm}~\gls{gl:haw}\\(TODO: Remove; Damit das Glossar keine Fehler schmeißt -.-)
 
 Effizientes Objektdesign und -modellierung sind entscheidende Kernkompetenzen in verschiedenen Bereichen der
 digitalen Welt.
@@ -23,7 +23,7 @@ von Verzweigungsstrukturen und Selbstähnlichkeit zum Einsatz kommen.
 Diese Arbeit soll sich mit der Erstellung eines prozeduralen Systems zur Synthese von Ähnlichkeitsabbildern
 beschäftigen.
 Hierzu soll über eine Benutzerschnittstelle eine Struktur erzeugt werden, aus der ein parametrisiertes L-Systems
-inferiert werden kann, das dann zur Generierung von ähnlichen Strukturen genutzt werden kann.
+inferiert werden kann, welches dann zur Generierung von ähnlichen Strukturen genutzt werden kann.
 
 \newpage
 
@@ -47,11 +47,11 @@ Heutzutage werden die Objekte nach bestimmten Kriterien organisiert, um eine aus
 zu ermöglichen, um so aus einer Grundstruktur weitere Modelle zu erzeugen.
 Speicher- und Laufzeitkomplexität nähern sich an.
 Deshalb werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
-von Strukturen herausarbeiten ("`Reverse Engineering"'), um diese für die (inverse) prozedurale Modellierung zur
+von Strukturen herausarbeiten (Reverse Engineering), um diese für die (inverse) prozedurale Modellierung zur
 Verfügung zu stellen.
 \\~\\
-Diese Arbeit soll zeigen, wie sich durch die Erstellen eines Systems zur Generierung von ähnlichen Strukture aus einer
-Basistruktur aktuelle Ansätze aus der Forschung in einem Programm umsetzen lassen.
+Diese Arbeit soll zeigen, wie sich durch die Erstellung eines Systems zur Generierung von ähnlichen Strukture aus einer
+Basistruktur, aktuelle Ansätze aus der Forschung in einem Programm umsetzen lassen.
 
 \newpage
 
@@ -65,7 +65,7 @@ Aus der Fragestellung leiten sich folgende Teilziele ab:
     \item Die Erstellung eines Programms zur Umsetzung des erstellten Systems
     \item Anwenden von Algorithmen und Ansätzen der aktuellen Forschung
     \item Testen von Metriken und deren Auswirkung auf das Ergebnis
-    \item Erstellung eigener Methodiken und Algorithmen zur Effizienten Lösung der Problemstellung
+    \item Erstellung eigener Methodiken und Algorithmen zur effizienten Lösung der Problemstellung
     \item Schaffen eines Teilsystems zum Extrahieren von Eigenschaften und Regeln einer Basisstruktur
 \end{itemize}
 
@@ -101,13 +101,14 @@ nur auf die Topologie des Baumes und nicht auf geometrische Unterschiede der Ins
 
 \subsection*{Komprimieren}
 Um sich wiederholende Produktionregeln zu vermeiden und so sowohl das Alphabet, als auch die Produktionsregelmenge
-zu kompromieren, wird die Baumstrukturen nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
+zu kompromieren, wird die Baumstruktur nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
 Instanzen vereinfacht.
 Hierbei gilt die Baumstruktur selbst nicht als Unterbaum.
 
 \subsection*{Generalisieren}
 Ähnliche Produktionsregeln des L-Systems werden mithilfe einer Kostenfunktion zusammengefasst, um dises mit
 nicht-deterministischen Regeln und Rekursion zu generalisieren.
+Die Kostenfunktion entscheided hierbei über den Grad der Ähnlichkeit zweier Produktionsregeln
 
 \subsection*{Randomisieren}
 Jedes Symbol der Grammatik nimmt eine Liste an Parametern entgegen, die nach bestimmten Kriterien pseudo-randomisiert
@@ -128,5 +129,5 @@ Die Darstellung zeigt eine grobe Übersicht der Anwendungsfälle innerhalb des S
 Der Benutzer strukturiert vom System importierte Templates zu einer Basisstruktur mittels grafischer Bedienelemente.
 Die Template-Instanzen werden hierbei in einer Baumtopologie organisiert.
 Anschließend wird ein L-System aus der Baumstruktur generiert und komprimiert.
-Bevor randomisierte, geometrische Parameter auf das kompakte L-System angewendet werden, wird dieses generalisiert.
-Zuletzt wird das Axiom des abgeleiteten L-Systems durch die Ausführung erweitert und sichtbar gemacht.
+Das kompakte L-System wird generalisiert und ausgeführt.
+Zuletzt wird das abgeleitete Axiom parametrisiert und dann sichtbar gemacht.

@@ -14,45 +14,45 @@ Warning--empty pages in aliaga_2016
 Warning--empty booktitle in martinovic_2013
 Warning--empty booktitle in mcquillan_2018
 Warning--empty booktitle in parish_2001
-You've used 32 entries,
+You've used 28 entries,
             3552 wiz_defined-function locations,
-            999 strings with 11450 characters,
-and the built_in function-call counts, 25807 in all, are:
-= -- 3189
-> -- 383
-< -- 714
-+ -- 922
-- -- 284
-* -- 2497
-:= -- 4355
-add.period$ -- 36
-call.type$ -- 32
-change.case$ -- 200
-chr.to.int$ -- 32
-cite$ -- 36
-duplicate$ -- 631
-empty$ -- 1688
-format.name$ -- 501
-if$ -- 4982
+            982 strings with 11127 characters,
+and the built_in function-call counts, 24774 in all, are:
+= -- 3063
+> -- 390
+< -- 708
++ -- 913
+- -- 287
+* -- 2418
+:= -- 4210
+add.period$ -- 32
+call.type$ -- 28
+change.case$ -- 180
+chr.to.int$ -- 28
+cite$ -- 32
+duplicate$ -- 581
+empty$ -- 1567
+format.name$ -- 507
+if$ -- 4737
 int.to.chr$ -- 0
 int.to.str$ -- 1
 missing$ -- 68
-newline$ -- 210
-num.names$ -- 106
-pop$ -- 264
+newline$ -- 191
+num.names$ -- 110
+pop$ -- 233
 preamble$ -- 1
-purify$ -- 193
+purify$ -- 177
 quote$ -- 0
-skip$ -- 1041
+skip$ -- 1007
 stack$ -- 0
-substring$ -- 2244
-swap$ -- 168
-text.length$ -- 93
+substring$ -- 2188
+swap$ -- 165
+text.length$ -- 94
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 327
+type$ -- 283
 warning$ -- 4
-while$ -- 252
+while$ -- 248
 width$ -- 0
-write$ -- 353
+write$ -- 323
 (There were 4 warnings)
