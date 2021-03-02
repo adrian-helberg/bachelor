@@ -1,8 +1,9 @@
-package de.haw.gui.structure;
+package de.haw.gui.shape;
 
-import de.haw.gui.shape.Anchor;
 import de.haw.gui.turtle.Turtle;
 import org.junit.jupiter.api.Test;
+
+import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,21 +14,28 @@ public class AnchorTest {
     @Test void testAnchor() {
         Turtle turtle = new Turtle(0, 0);
         var anchor = new Anchor(turtle);
-
         assertEquals(turtle, anchor.getTurtle());
-        assertNotNull(anchor.selectedProperty());
-        assertNotNull(anchor.usedProperty());
+        assertFalse(anchor.selectedProperty().get());
+        assertFalse(anchor.usedProperty().get());
+        assertEquals(turtle.getPosition().get(0), anchor.getCenterX());
+        assertEquals(turtle.getPosition().get(1), anchor.getCenterY());
+        assertEquals(5.0f, anchor.getRadius());
+    }
+
+    @Test void testUse() {
+        var anchor = new Anchor(new Turtle(0, 0));
+        assertFalse(anchor.isUsed());
+        anchor.use();
+        assertTrue(anchor.isUsed());
+        anchor.neglect();
         assertFalse(anchor.isUsed());
     }
 
-    @Test void testIsSelection() {
+    @Test void testSelect() {
         var anchor = new Anchor(new Turtle(0,0));
         anchor.select();
-
         assertTrue(anchor.isSelected());
-
         anchor.unselect();
-
         assertFalse(anchor.isSelected());
     }
 
@@ -43,14 +51,20 @@ public class AnchorTest {
         assertFalse(anchor.isUsed());
     }
 
-    @Test void testInit() {
-        // Since it is not possible to test whether some event handlers are attached to an anchor this test remains empty
-    }
-
     @Test void testToString() {
         Turtle turtle = new Turtle(0, 0);
         var anchor = new Anchor(turtle);
 
         assertEquals("Anchor{" + turtle + "}", anchor.toString());
+    }
+
+    @Test void testEquals() {
+        var a1 = new Anchor(new Turtle(0,0));
+        var a2 = new Anchor(new Turtle(0,0));
+        var a3 = new Anchor(new Turtle(1,0));
+
+        assertEquals(a1, a2);
+        assertNotEquals(a1, a3);
+        assertNotEquals(a2, a3);
     }
 }

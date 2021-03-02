@@ -1,8 +1,6 @@
-package de.haw.gui.template;
+package de.haw.gui.turtle;
 
-import de.haw.gui.turtle.TurtleGraphic;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 /**

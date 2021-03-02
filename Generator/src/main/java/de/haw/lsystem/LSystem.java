@@ -9,6 +9,9 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+/**
+ * L-System representation
+ */
 public class LSystem {
     private final List<String> alphabet;
     private String axiom;
@@ -24,11 +27,6 @@ public class LSystem {
         this.axiom = axiom;
         this.productionRules = productionRules;
         randomizer = random;
-    }
-
-    // Copy constructor
-    public LSystem(LSystem lSystem) {
-        this(lSystem.getAlphabet(), lSystem.getAxiom(), lSystem.getProductionRules(), lSystem.randomizer);
     }
 
     // GETTERS
@@ -61,6 +59,10 @@ public class LSystem {
         productionRules.add(rule);
     }
 
+    /**
+     * Add and return a new symbol added to the alphabet lexicographically
+     * @return New symbol added to the alphabet
+     */
     public String addModuleNotPresentInAlphabet() {
         char[] alphabet = "ABCDEGHIJKLMNOPQRTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();
         for (var c : alphabet) {
@@ -73,6 +75,11 @@ public class LSystem {
         throw new RuntimeException("Unable to find a symbol not present in the alphabet");
     }
 
+    /**
+     * Execute this L-System by extending the axiom until there is no
+     * branching variable left
+     * @return Extended axiom
+     */
     public String derive() {
         var derivation = axiom;
         var pattern = Pattern.compile("[A-EG-Z]");
@@ -80,16 +87,6 @@ public class LSystem {
             derivation = derive(derivation);
         }
         return derivation;
-    }
-
-    public String derive(int instances) {
-        var derivation = axiom;
-        for (var i = 1; i <= instances; i++) {
-            derivation = derive(derivation);
-            if (derivation.isEmpty()) break;
-        }
-        // Prevent empty derivation
-        return derivation.isEmpty() ? derive(instances) : derivation;
     }
 
     /**
@@ -174,29 +171,11 @@ public class LSystem {
         return derivation;
     }
 
-    public LSystem clean() {
-        var toRemove = new ArrayList<String>();
-        for (var m : alphabet) {
-            if (m.equals("F")) continue;
-            var lhs = getProductionRules().stream()
-                    .map(ProductionRule::getLhs)
-                    .filter(x -> x.equals(m))
-                    .findFirst()
-                    .orElse(null);
-            if (lhs == null) {
-                toRemove.add(m);
-                // Clean production rules
-                productionRules.stream()
-                    .filter(rule -> rule.getRhs().contains(m))
-                    .forEach(rule -> rule.removeSymbol(m));
-            }
-        }
-        // Clean alphabet
-        alphabet.removeAll(toRemove);
-
-        return this;
-    }
-
+    /**
+     * Minimize this L-System by searching for duplicated production
+     * rule RHS and give them one LHS to be targeted
+     * @return Minimized L-System
+     */
     public LSystem minimize() {
         // Distinction of duplicated RHSs
         var items = new HashSet<>();
@@ -272,4 +251,16 @@ public class LSystem {
         return "LSystem{" + alphabet + ", " + axiom + ", " + productionRules + "}";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LSystem lSystem = (LSystem) o;
+        return Objects.equals(alphabet, lSystem.alphabet) && Objects.equals(axiom, lSystem.axiom) && Objects.equals(productionRules, lSystem.productionRules);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(alphabet, axiom, productionRules);
+    }
 }

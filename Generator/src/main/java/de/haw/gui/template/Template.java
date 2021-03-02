@@ -1,11 +1,16 @@
 package de.haw.gui.template;
 
 import de.haw.utils.Templates;
-
 import java.util.Objects;
 
+/**
+ * Template class containing a word and an identifier.
+ * Templates are distinct and can be created once for a given id
+ */
 public class Template {
+    // Unique identifier
     private final int id;
+    // Word
     private final String word;
 
     public Template(String word) {

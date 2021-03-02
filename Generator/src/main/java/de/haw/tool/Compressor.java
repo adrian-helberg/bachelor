@@ -89,7 +89,7 @@ public class Compressor {
             LPlus = L;
         }
 
-        return LPlus.clean();
+        return LPlus;
     }
 
     /**

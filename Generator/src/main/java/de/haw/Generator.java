@@ -47,8 +47,6 @@ public class Generator extends Application implements Logging {
         LOGGER.info("Create application state");
         State state = new State(primaryStage);
         mainController.init(state);
-        // TODO: Remove
-        mainController.loadTemplates();
     }
 
     /**

@@ -1,9 +1,11 @@
 package de.haw.lsystem;
 
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
+/**
+ * ProductionRule class to represent L-System production rules
+ * LHS -> RHS
+ */
 public class ProductionRule {
     private String lhs;
     private String rhs;
@@ -28,10 +30,6 @@ public class ProductionRule {
 
     public void setRhs(String rhs) {
         this.rhs = rhs;
-    }
-
-    public void removeSymbol(String symbol) {
-        rhs = rhs.replace(symbol, "");
     }
 
     @Override

@@ -316,9 +316,11 @@ public class GeneratorController implements Logging {
      * Generates the tree structure
      */
     @FXML public void generate() {
+        reset();
         var tree = state.getTree();
 
         if (tree.isEmpty()) {
+            loadTemplates();
             // 0
             var t1 = new TemplateInstance(Templates.getTemplateByID(7));
             var n1 = new TreeNode<>(t1);
