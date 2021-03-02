@@ -80,16 +80,16 @@ Um als Benutzer des Systems eine Verzweigungsstruktur zu erstellen, wird folgend
 \begin{algorithm}[caption={Erstellen einer Verzweigungsstruktur}, label={alg1}]
     Erster Anker ist vorselektiert
     Wiederhole, bis Struktur fertiggestellt ist:
-    Selektiere ein Template aus der Liste
-    Setzte Parameter
-    Bestätige Auswahl und Parameter
-    Zeichne ausgewähltes Template mit Parametern
-    Wähle nächsten Anker aus
+        Selektiere ein Template aus der Liste
+        Setzte Parameter
+        Bestätige Auswahl und Parameter
+        Zeichne ausgewähltes Template mit Parametern
+        Wähle nächsten Anker aus
 \end{algorithm}
 
 \subsubsection*{L-System inferieren}
 Aus der Verzweigungsstruktur kann nun ein L-System erzeugt werden.
-Hierzu wird ein neuer Algorithm präsentiert:\\~\\
+Hierzu wird ein neuer Algorithmus (siehe Algorithmus 32) präsentiert:\\~\\
 Zunächst werden L-System-Komponenten initialisiert (Zeile 2-6) für $\mathcal{L}=\langle M,\omega,R \rangle$:
 \begin{itemize}
     \item Das Alphabet wird mit den Sybolen F und S initialisiert, da F als Repräsentation einer grundlegenden
@@ -121,28 +121,28 @@ Produktionsregeln für das resultierende L-Systems (Zeile 8-17):
 
 \begin{algorithm}[caption={Inferieren eines L-Systems aus einer Baumstruktur}, label={alg2}]
     Initialisierung:
-    $M=\{F,S\}$
-    $\omega=S$
-    $R \gets \{\alpha$: $S \rightarrow A\}$
-    $\beta=$ nächster Knoten
-    $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$
+        $M=\{F,S\}$
+        $\omega=S$
+        $R \gets \{\alpha$: $S \rightarrow A\}$
+        $\beta=$ nächster Knoten
+        $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$
     Schleife:
-    $\delta=$ Wort von $\beta$
-    $\forall \{A,B,\dots,Z\} \setminus F \in \delta:$
-    Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$
-    $M \gets \zeta$
-    $R \gets \{\gamma\rightarrow\delta\}$
-    Wenn es ein Symbol $\eta$ in $M\setminus\{F,S\}$ gibt mit $\{\eta \rightarrow bel.\} \notin R$:
-    $\gamma=\eta$
-    Sonst:
-    Breche Schleife ab
-    $\beta=$ nächster Knoten
+        $\delta=$ Wort von $\beta$
+        $\forall \{A,B,\dots,Z\} \setminus F \in \delta:$
+        Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$
+        $M \gets \zeta$
+        $R \gets \{\gamma\rightarrow\delta\}$
+        Wenn es ein Symbol $\eta$ in $M\setminus\{F,S\}$ gibt mit $\{\eta \rightarrow bel.\} \notin R$:
+            $\gamma=\eta$
+        Sonst:
+            Breche Schleife ab
+        $\beta=$ nächster Knoten
 \end{algorithm}
 
 \subsubsection*{L-System komprimieren}
 \citeauthor{guo_2020} führt einen Algorithmus zum Inferieren einer Grammatik aus einer Baumstruktur ein~\cite{guo_2020}.
 Zum Einen wird ein L-System aufgebaut, zum Andern die Baumtopologie durch Finden maximaler Subbäume reduziert.
-Die Reduktion wird im folgenden Algorithmus adaptiert:\\~\\
+Die Reduktion wird im folgenden Algorithmus 33 adaptiert:\\~\\
 Initialisierung (Zeile 2-5):
 \begin{itemize}
     \item Das L-System, welches der Eingabe des Algorithmus entspricht, wird ausgeführt und
@@ -164,18 +164,18 @@ Die Schleife (Zeile 7-13) stellt die Reduzierung dar:
 
 \begin{algorithm}[caption={Erstellen eines kompakten L-Systems mit Gewichtung $w_l$}, label={alg3}]
 Initialisierung:
-$\mathcal{L}^+ \leftarrow L_s$
-$\mathcal{L}=\emptyset$
-Setze Gewichtungsparameter $w_l \in [0,1]$
-Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
+    $\mathcal{L}^+ \leftarrow L_s$
+    $\mathcal{L}=\emptyset$
+    Setze Gewichtungsparameter $w_l \in [0,1]$
+    Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
 Schleife (Reduzierung):
-Ersetze alle Vorkommen von $T'$ mit dem selben Symbol $\gamma \in \{A,B,\dots,Z\}$
-$R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$
-Wenn $C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$
-Breche Schleife ab
-$T \leftarrow T'$
-$\mathcal{L}^+ \leftarrow \mathcal{L}$
-Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
+    Ersetze alle Vorkommen von $T'$ mit dem selben Symbol $\gamma \in \{A,B,\dots,Z\}$
+    $R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$
+    Wenn $C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$:
+        Breche Schleife ab
+    $T \leftarrow T'$
+    $\mathcal{L}^+ \leftarrow \mathcal{L}$
+    Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
 \end{algorithm}
 
 \begin{algorithm}[caption={Kostenfunktion $C_i$ mit Gewichtung $w_l$}, label={alg4}]
@@ -211,7 +211,7 @@ $L(\mathcal{L}) = |M| + \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} |M^*|
 \end{algorithm}
 
 \begin{algorithm}[caption={Grammar Edit Distance}]
-    $D_g(\mathcal{L}^+, \mathcal{L}^*)= \sum\limits_{(A(P) \rightarrow M^*_A , B(P) \rightarrow M^*_B) \in M(\mathcal{L^+} \rightarrow \mathcal{L^*})} D_s(M^*_A, M^*_B)$
+$D_g(\mathcal{L}^+, \mathcal{L}^*)= \sum\limits_{(A(P) \rightarrow M^*_A , B(P) \rightarrow M^*_B) \in M(\mathcal{L^+} \rightarrow \mathcal{L^*})} D_s(M^*_A, M^*_B)$
 \end{algorithm}
 
 \begin{algorithm}[caption={Kostenfunktion $C_g$ mit Gewichtung $w_0$}]
@@ -220,7 +220,7 @@ $C_g(\mathcal{L}^*, \mathcal{L}^+) = w_0 * (L(\mathcal{L}^*) - L(\mathcal{L}^+))
 
 \newpage
 
-Algorithmus zum Generalisieren eines L-Systems:\\~\\
+Algorithmus 38 zum Generalisieren eines L-Systems:\\~\\
 Initialisierung (Zeile 2-4):
 \begin{itemize}
     \item Das zu untersuchendes Tuple bestehend aus zwei Produktionsregeln (Regelpaar) und wird in der Variable $p^*$ gehalten
@@ -238,18 +238,18 @@ Generalisierung (Zeile 6-13):
 
 \begin{algorithm}[caption={Generalisieren eines L-Systems mit Gewichtung $w_0$}]
 Initialisierung:
-Regelpaar $p^* = \emptyset$
-$\mathcal{L}^* = \mathcal{L}^+$
-$C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+    Regelpaar $p^* = \emptyset$
+    $\mathcal{L}^* = \mathcal{L}^+$
+    $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
 Schleife:
-Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*), \forall p_i \in \mathcal{P}$
-Wenn $C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$
-Breche Schleife ab
-$c^* = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) - C_g^{old}$
-$C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
-$\mathcal{L}^* = \mathcal{L}^* + \{p^*\}$
-Wenn $c^* > 0$
-Breche Schleife ab
+    Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*), \forall p_i \in \mathcal{P}$
+    Wenn $C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$:
+        Breche Schleife ab
+    $c^* = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) - C_g^{old}$
+    $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+    $\mathcal{L}^* = \mathcal{L}^* + \{p^*\}$
+    Wenn $c^* > 0$:
+        Breche Schleife ab
 \end{algorithm}
 
 \newpage
@@ -423,4 +423,4 @@ Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf
 %Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
 
 \subsection*{Datenstrukturen}
-TODO
+Das Datenmodell ist als UML-Diagramm modelliert (siehe ~\ref{uml})

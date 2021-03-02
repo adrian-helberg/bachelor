@@ -31,14 +31,14 @@ von Templates zu einer Verzweigungsstruktur.\\~\\
 \begin{figure}[H]
     \centering
     \begin{csource}
-FX
-F-FX
-F+FX
-F[-FX]+FY
-F[-FX]FY
-F[FX]+FY
-F[-FX][FY]+FZ
-F[+FX]F[-FY]FZ
+    FX
+    F-FX
+    F+FX
+    F[-FX]+FY
+    F[-FX]FY
+    F[FX]+FY
+    F[-FX][FY]+FZ
+    F[+FX]F[-FY]FZ
     \end{csource}
     \caption{templates.txt}
 \end{figure}
@@ -122,11 +122,11 @@ der aufgebauten Baumstruktur.
 Die Zeichenkettenrepräsentation des inferrierten L-Systems zeigt einige Redundanzen auf.
 Zum Beispiel bilden
 \begin{csource}
-P -> F[-FF+FF[+F]F[-F]F]+F
+    P -> F[-FF+FF[+F]F[-F]F]+F
 \end{csource}
 und
 \begin{csource}
-Q -> F[-FF+FF[+F]F[-F]F]+F
+    Q -> F[-FF+FF[+F]F[-F]F]+F
 \end{csource}
 das gleiche Muster.
 Um solche Redundanzen zu entfernen, wird das L-System in der vorgestellten Komprimierungs-Pipe reduziert.

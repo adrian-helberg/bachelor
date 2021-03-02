@@ -118,8 +118,8 @@ fügt dem Programm alle externen Module hinzu, die während der Laufzeit genutzt
 \begin{figure}[H]
     \centering
     \begin{csource}
-        java --module-path .\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-1.0.jar
-        pause
+    java --module-path .\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics -jar Generator-1.0.jar
+    pause
     \end{csource}
     \caption{Startskript Generator.bat}
 \end{figure}
@@ -141,6 +141,8 @@ Sowohl über einen Doppelklick, also auch über einen Button (\textbf{9}) kann e
 ausgewählt werden.
 Ist die Verzweigungsstruktur vom Benutzer fertiggestellt, kann die Synthese zur Erstellung der Ähnlichkeitsabbildungen
 mit \textbf{10} erfolgen.
+Wird der Generieren-Button ohne eine Basisstruktur gedrückt, lässt sich das Beispiel aus
+dieser Arbeit erzeugen (ohne visualisierung der Basisstruktur).
 \textbf{11} schließt die Anwendung.
 
 \subsection*{Templates}
@@ -197,28 +199,18 @@ Dieser Vorgang wiederholt sich, bis der Benutzer die Struktur fertiggestellt hat
 
 Über den \textbf{Generate}-Button kann nun die Synthese gestartet werden.
 Es ergeben sich 5 (\textbf{Number of generations}) Ähnlichkeitsstrukturen
-
-\begin{figure}[H]
-    \includegraphics[width=6cm]{../images/example_1.png}
-    \includegraphics[width=6cm]{../images/example_2.png}
-    \caption{Generierte Verzweigungsstrukturen (1/2)}
-\end{figure}
-\begin{figure}[H]
-    \includegraphics[width=6cm]{../images/example_3.png}
-    \includegraphics[width=6cm]{../images/example_4.png}
-    \includegraphics[width=6cm]{../images/example_5.png}
-    \caption{Generierte Verzweigungsstrukturen (2/2)}
-\end{figure}
-
-\newpage
+(siehe ~\ref{resulting_structures})
 
 \subsection*{Baumtopologie}
 Um eine interne Baumtopologie aufzubauen wird die Klasse \texttt{TreeNode} verwendet, um eine iterierbare Baumstruktur
 aufzubauen:
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     caption=Klasse TreeNode zur Erstellung einer Baumstruktur,
     frame=tB,
@@ -226,15 +218,11 @@ aufzubauen:
 ]
 /**
  * Iterable tree node structure containing a payload and children
- * as tree nodes.
- * Every node represents a whole tree
- * @param <T> Tree node content
+ * as tree nodes. Every node represents a whole tree
  */
 public class TreeNode<T> implements Iterable<TreeNode<T>> {
-    // Payload
-    private T data;
-    // Children
-    protected List<TreeNode<T>> children;
+    private T data;// Payload
+    protected List<TreeNode<T>> children;// Child nodes
     ...
     @Override
     public Iterator<TreeNode<T>> iterator() {
@@ -250,12 +238,10 @@ Sie stellt einen Iterator des Baumes zur Verfügung.
 Dieser Iterator (\texttt{TreeNodeIterator}) implementiert die \texttt{Iterator}-Schnittstelle und definiert so die Funktionen
 \texttt{hasNext} und \texttt{next}.
 
-\newpage
-
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     caption=Klasse TreeNodeIterator als Iterator für die Baumstruktur,
     frame=tB,
@@ -301,7 +287,7 @@ dem \texttt{Pipe}-Interface zusammen.
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     caption=Pipeline Klasse zur Organisation von Prozessen,
     frame=tB,
@@ -334,7 +320,7 @@ public class Pipeline<IN, OUT> {
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     caption=Pipe Interface als Vorlage zur Erstellung eines Teilprozesses einer Pipeline,
     frame=tB,
@@ -360,7 +346,7 @@ Das \texttt{ctx}-Objekt wird als Kontextobjekt in die Pipeline gegeben und bei j
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     caption=Erstellen des Pipeline Kontextes,
     frame=tB,
@@ -384,7 +370,7 @@ Sie nimmt die Baumstruktur entgegegen und stellt eine Funktion \texttt{infer} zu
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     caption=Inferer Klasse zur Inferrierung eines L-Systems aus einer Baumstruktur,
@@ -429,7 +415,7 @@ werden
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -465,67 +451,7 @@ Wird kein solches Symbol gefunden, terminiert die \texttt{infer}-Methode und dam
 Der aktuelle Knoten wird durch den Iterator der Baumstruktur mit dem nächsten Knoten nach Breitensuche ersetzt (\textbf{46}).
 Zum Schluss wird das inferrierte L-System zurückgegeben (\textbf{48}).
 
-\begin{lstlisting}[
-    basicstyle=\footnotesize,
-    breaklines = true,
-    commentstyle=\color{comment},
-    keywordstyle=\color{orange},
-    language=Java,
-    numberstyle=\color{gray},
-    numbers = left,
-    caption=Inferrierungsalgorithmus der Inferer Klasse,
-    frame=tB,
-    postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
-]
-/**
- * Return a L-System inferred from the given tree structure
- * @return Inferred L-System
- */
-public LSystem infer() {
-    var done = false;
-    while (!done) {
-        // delta = word of beta
-        var delta = (beta == null || beta.isEmpty()) ? "" : beta.getData().getTemplate().getWord();
-        // For all variables in delta
-        var variableMatches = Pattern.compile("[A-EG-Z]")
-                .matcher(delta)
-                .results()
-                .collect(Collectors.toList());
-        for (var v : variableMatches) {
-            var index = delta.indexOf(v.group(0));
-            // Add new module not present in the alphabet
-            String zeta = lSystem.addModuleNotPresentInAlphabet();
-            // Replace variable with new module not present in alphabet
-            delta = delta.substring(0, index) + zeta + delta.substring(index + 1);
-        }
-
-        // R <- { gamma -> delta }
-        lSystem.addProductionRule(new ProductionRule(gamma, delta));
-
-        // Find an eta that is in the alphabet but not part of the LHS of any production rule
-        var modules = lSystem.getAlphabet();
-        for (var eta : modules) {
-            if (eta.equals("F")) continue;
-            if (eta.equals("S")) continue;
-            var lhs = lSystem.getProductionRules().stream()
-                    .map(ProductionRule::getLhs)
-                    .filter(x -> x.equals(eta))
-                    .findFirst()
-                    .orElse(null);
-
-            if (lhs == null) {
-                gamma = eta;
-                break;
-            }
-
-            // There is no symbol in the alphabet not being part of a lhs of a production rule?
-            if (modules.indexOf(eta) == modules.size() - 1) done = true;
-        }
-        beta = iterator.next();
-    }
-    return lSystem;
-}
-\end{lstlisting}
+Für die Implementierung des Inferrierungsalgorithmus siehe \ref{infer}
 
 Die übrigen Prozessschritte sind ähnlich aufgebaut.
 Auch die Klassen \texttt{Compressor}, \texttt{Generalizer} und \texttt{Estimator} implementieren eine Funktion zum Ausführer
@@ -538,7 +464,7 @@ Alle weiteren Klassen der Basisalgorithmen werden im Folgenden gezeigt und Spezi
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -566,77 +492,16 @@ public class Compressor {
     ...
 }
 \end{lstlisting}
+
+Für den Komprimierungsalgorithmus siehe~\ref{compress}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
-    language=Java,
-    numberstyle=\color{gray},
-    numbers = left,
-    caption=Komprimierungsalgorithmus der Compressor Klasse,
-    frame=tB,
-    postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
-]
-/**
- * Return a compressed L-System by finding maximum sub-trees
- * and replacing them
- * @return Compressed L-System
- */
-public LSystem compress() {
-    // T' <- T
-    var subtree = FindMaximumSubTree(tree);
-    while (subtree != null && !subtree.isEmpty()) {
-        // Get extended string representation from (repetitive) sub tree
-        var subTreeDerivation = new Inferer(subtree).infer().derive();
-        // Data to be set in the tree to replace old node structure representing the subtree
-        Template template = new Template(subTreeDerivation);
-        // Estimate parameters for new template instance derivation
-        var estimator = new Estimator(randomizer);
-        var occurrences = getOccurrences(subtree, tree);
-        // Average parameter
-        for (var o : occurrences) {
-            estimator.estimateParameters(o);
-        }
-        // Replace occurrences of the sub tree
-        for (var o : occurrences) {
-            var derivationInstance = new TemplateInstance(template);
-
-            int scalingSum = 0, rotationSum = 0, branchingAngleSum = 0;
-            int counter = 0;
-            for (var node : o) {
-                if (node.isEmpty()) continue;
-                counter++;
-                scalingSum += estimator.averageParameterValueForTemplate("Scaling", node.getData().getTemplate().getId());
-                rotationSum += estimator.averageParameterValueForTemplate("Rotation", node.getData().getTemplate().getId());
-                branchingAngleSum += estimator.averageParameterValueForTemplate("Branching angle", node.getData().getTemplate().getId());
-            }
-
-            derivationInstance.setParameter("Scaling", (float) (scalingSum / counter));
-            derivationInstance.setParameter("Rotation", (float) (rotationSum / counter));
-            derivationInstance.setParameter("Branching angle", (float) (branchingAngleSum / counter));
-
-            o.setData(derivationInstance);
-            o.removeChildren();
-        }
-        L = new Inferer(tree).infer().minimize();
-        if (Ci(L) >= Ci(LPlus)) {
-            break;
-        }
-        // T <- T'
-        subtree = FindMaximumSubTree(tree);
-        // L+ <- L
-        LPlus = L;
-    }
-
-    return LPlus.clean();
-}
-\end{lstlisting}
-\begin{lstlisting}[
-    basicstyle=\footnotesize,
-    breaklines = true,
-    commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     linewidth=15cm,
     numberstyle=\color{gray},
@@ -671,11 +536,14 @@ private TreeNode<TemplateInstance> FindMaximumSubTree(TreeNode<TemplateInstance>
     return null;
 }
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -705,14 +573,11 @@ private List<TreeNode<TemplateInstance>> getOccurrences(TreeNode<TemplateInstanc
     return occurrences;
 }
 \end{lstlisting}
-
-\newpage
-
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -734,11 +599,14 @@ private float Ci(LSystem lSystem) {
     return costs;
 }
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -766,14 +634,12 @@ private int countRuleApplications(LSystem lSystem, String lhs) {
 }
 \end{lstlisting}
 
-\newpage
-
 \subsection*{Generalisierung des L-Systems}
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -782,8 +648,7 @@ private int countRuleApplications(LSystem lSystem, String lhs) {
     postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
 ]
 /**
- * Generalizer class to add non-deterministic rules
- * to a L-System
+ * Generalizer class to add non-deterministic rules to an L-System
  */
 public class Generalizer {
     ...
@@ -801,55 +666,14 @@ public class Generalizer {
     ...
 }
 \end{lstlisting}
-\begin{lstlisting}[
-    basicstyle=\footnotesize,
-    breaklines = true,
-    commentstyle=\color{comment},
-    keywordstyle=\color{orange},
-    language=Java,
-    numberstyle=\color{gray},
-    numbers = left,
-    caption=Generalisierungsalgorithmus der Generalizer Klasse,
-    frame=tB,
-    postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
-]
-/**
- * Generalize a L-System by adding non-deterministic rules
- * @return Generalized L-System
- */
-public LSystem generalize() {
-    do {
-        // Exclude S -> A from set combinations
-        var productionRulesWithoutS = new ArrayList<>(LStar.getProductionRules());
-        if (productionRulesWithoutS.remove(0) == null)
-            throw new RuntimeException("No rule S -> A found");
-        // Generate all possible merging rule pairs P ∈ L*
-        var combinations = Sets.combinations(new HashSet<>(productionRulesWithoutS), 2);
-        var minimalCosts = Float.MAX_VALUE;
-        LSystem minimalLSystem = null;
-        // Find a pair p_i with the minimal Cg(L* + {p_i}, L*)
-        for (var c : combinations) {
-            var LStarMerged = LStar.merge(c);
-            float costs = Cg(LStarMerged, LStar);
-            if (costs < minimalCosts) {
-                minimalCosts = costs;
-                minimalLSystem = LStarMerged;
-            }
-        }
-        if (minimalCosts >= 0) break;
-        cStar = minimalCosts - Cg_old;
-        Cg_old = minimalCosts;
-        LStar = minimalLSystem;
-    } while (cStar <= 0);
 
-    return LStar;
-}
-\end{lstlisting}
+Für den Generalisierungsalgorithmus siehe~\ref{generalize}
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -870,7 +694,7 @@ private float Cg(LSystem lStar, LSystem lPlus) {
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -894,11 +718,14 @@ private int L(LSystem lSystem) {
     return M_size + sum_rulesRHSs;
 }
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     linewidth=15cm,
     numberstyle=\color{gray},
@@ -950,7 +777,7 @@ private float Dg(LSystem lStar) {
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -972,7 +799,7 @@ private float Ds(String M_A, String M_B) {
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -1015,7 +842,7 @@ entnommen.
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -1037,50 +864,14 @@ public class Estimator {
     ...
 }
 \end{lstlisting}
+
+Für den Verteilungsalgorithmus siehe~\ref{estimate}
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
-    keywordstyle=\color{orange},
-    language=Java,
-    numberstyle=\color{gray},
-    numbers = left,
-    caption=Verteilungsalgorithmus der Estimator Klasse,
-    frame=tB,
-    postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
-]
-...
-/**
- * Create transformation parameter distribution of a given tree
- * @param tree Tree the parameters are distributed from
- */
-public void estimateParameters(TreeNode<TemplateInstance> tree) {
-    // Determine different parameters
-    tree.getData().getParameters().forEach((key, value) -> parameters.putIfAbsent(key, new HashMap<>()));
-    // Iterate tree and extract parameters
-    for (var node : tree) {
-        if (node == null || node.isEmpty()) continue;
-        var templateID = node.getData().getTemplate().getId();
-        for (var p : node.getData().getParameters().entrySet()) {
-            var parameterEntry = parameters.get(p.getKey());
-            var templateEntry = parameterEntry.get(templateID);
-            if (templateEntry == null) {
-                var valueList = new ArrayList<Float>();
-                valueList.add(p.getValue().floatValue());
-                parameterEntry.put(templateID, valueList);
-            } else {
-                templateEntry.add(p.getValue().floatValue());
-            }
-        }
-    }
-}
-...
-\end{lstlisting}
-\begin{lstlisting}[
-    basicstyle=\footnotesize,
-    breaklines = true,
-    commentstyle=\color{comment},
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
@@ -1101,13 +892,16 @@ public float estimateParameterValueForTemplate(String parameter, int templateID)
 }
 ...
 \end{lstlisting}
+
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
     commentstyle=\color{comment},
     caption=test algo,
     frame=tB,
-    keywordstyle=\color{orange},
+    keywordstyle=\color{keyword},
     language=Java,
     linewidth=15cm,
     numberstyle=\color{gray},

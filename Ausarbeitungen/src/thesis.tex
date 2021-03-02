@@ -22,6 +22,10 @@
 \usepackage{caption}
 % Icons
 \usepackage{bbding}
+% Custom colors
+\definecolor{cmd}{HTML}{dbdbdb}
+\definecolor{comment}{HTML}{066d06}
+\definecolor{keyword}{HTML}{72530a}
 % Directories structure
 \usepackage{fontawesome}
 \usepackage{tikz}
@@ -48,15 +52,13 @@
   numberstyle=\tiny\color{darkgray},
   numbers=left,
   frame=lines,
-  backgroundcolor=\color{lightgray},
+  backgroundcolor=\color{cmd},
   showstringspaces=false,
   breaklines=true,
   postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space},
   linewidth=15cm,
   escapeinside={(*@}{@*)},#1}}
 {}
-% Custom colors
-\definecolor{comment}{HTML}{18873AFF}
 % Diagonal table
 \usepackage{diagbox}
 
@@ -126,10 +128,10 @@
 %\IListOfTables
 
 % List of accronyms here
-\IListOfAccronyms
+%\IListOfAccronyms
 
 % List of symbols here
-\IListOfSymbols
+%\IListOfSymbols
 
 % Uncomment if list of source code is needed (rarely).
 \lstlistoflistings  % requires package listings, needs to uncommenting of usepackage
@@ -153,8 +155,8 @@
 \bibliography{literature}
 
 % Appendix
-%\appendix
-%\input{appendix/example_appendix}
+\appendix
+\input{appendix/anhang}
 
 \IGlossary
 
