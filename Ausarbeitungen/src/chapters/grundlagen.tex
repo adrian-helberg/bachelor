@@ -8,7 +8,7 @@ Hierbei hat der Designer (Modellierer) die volle Kontrolle über die Strukturen 
 Bei der prozeduralen Modellierung werden spezifische Strukturen eines zu erstellenden physikalischen Objektes
 generalisiert und meist über eine Grammatik und globale Parameter abgebildet.
 Während bei der klassischen Modellierung die menschliche Intuition und bei der prozeduralen Modellierung eine
-parametrisierte Grammatik vorausgesetzt wird, arbeitet die inverse prozedurale Modellierung mit bestehenden Modellen und
+parametrisierte Grammatik genutzt werden kann, arbeitet die inverse prozedurale Modellierung mit bestehenden Modellen und
 extrahiert ("`lernt"') die Strukturen des Objektes, die automatisch in eine formale Grammatik überführt werden können.
 Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\cite{benes_2011}.
 
@@ -42,37 +42,46 @@ Computergrafik und aktueller Gegenstand der Forschung.
 
 \citeauthor{smelik_2014} untersucht prozedurale Methoden, um diverse Strukturen, wie Vegetation, Straßen u.v.m zu erzeugen.
 Es wird ein Überblick aktueller, vielversprechender Studien gegeben, deren Anwendung sowohl in technischen Bereichen,
-als auch in nicht-technischen, kreativen Bereichen, diskutiert wird.~\cite{smelik_2014} gilt als grundlegender Einstiegspunkt
-in die Bereiche der prozeduralen Modellierung.
-Einen aktuellen Stand der Forschung der inversen prozeduralen Modellierung liefert~\cite{aliaga_2016}.~\Citeauthor{aliaga_2016}
-zeigt, dass IPM-Ansätze in entsprechende Kernprobleme der Informatik aufgeteilt und meist getrennt voneinander durch
-verschiedene Methodiken und Algorithmen bearbeitet werden.
+als auch in nicht-technischen, kreativen Bereichen, diskutiert wird.
+Diese Übersicht gilt als grundlegender Einstiegspunkt in die Bereiche der prozeduralen
+Modellierung~\cite{smelik_2014}.
+Einen aktuellen Stand der Forschung der inversen prozeduralen Modellierung (IPM) liefert~\citeauthor{aliaga_2016}.
+Es wird gezeigt, dass IPM-Ansätze in entsprechende Kernprobleme der Informatik aufgeteilt und meist getrennt voneinander durch
+verschiedene Methodiken und Algorithmen bearbeitet werden~\cite{aliaga_2016}.
 Weiter wird ein Einblick in die Kategorisierung und Bewertung einiger Ergebnisse von IPM-Systemem gegeben.
-Die Buchrezension~\cite{daelemans_2010} geht auf die Arbeit~\cite{higuera_2010} ein und weist darauf hin, dass~\citeauthor{higuera_2010}
-einen wesentlichen Unterschied zwischen der Induktion einer Grammatik und der Grammatikinferrierung sieht.
+\citeauthor{higuera_2010} weist darauf hin, dass ein wesentlicher Unterschied zwischen der Induktion einer Grammatik
+und der Grammatikinferierung besteht~\cite{higuera_2010}.
 Die Induktion beschreibt das Finden einer Grammatik, welche ein Datum am genauesten beschreibt.
 Die Gammatikinferierung ist das Finden einer Grammatik, die eine bestimmte Zeichenfolge abdeckt.
 
 \newpage
 
-\citeauthor{higuera_2010} ordnet die inverse Generierung von L-Systemen zum Problem der Grammatikinferrenz, welches er
+\citeauthor{higuera_2010} ordnet die inverse Generierung von L-Systemen zum Problem der Grammatikinferenz, welches er
 als gut erforschtes Gebiet beschreibt.
 Verzweigungsstrukturen im Kontext der inversen prozeduralen Modellierung tauchen in wissenschaftlichen Studien wenig auf.
-~\cite{guo_2020} adressiert diese in seiner Arbeit~\cite{guo_2020} und liefert einige Ansätze hierzu.\\~\\
+~\citeauthor{guo_2020} adressiert einige IPM-Ansätze in seiner Arbeit~\cite{guo_2020}:\\~\\
+Die Anwendung von modellierten Bäumen und Landschaften in den Bereichen wie Simulation, VR, Botanik und Architektur
+wird in der Arbeit von \citeauthor{deussen_2010} gezeigt~\cite{deussen_2010}.
+Hier geht es hauptsächlich um die Erstellung und Kombination künstlicher Modelle, um natürlich wirkende Umgebungen zu
+schaffen.\\~\\
+Mit der Erkennung von Wiederholungsmustern in Hausfassaden beschäftigt sich~\citeauthor{alhalawani_2013}.
+Durch das Finden diverser Verformungsparameter mithilfe einer faktorisierten Fassadendarstellung werden neue
+Bildbearbeitungsmöglichkeiten  vorgestellt~\cite{alhalawani_2013}.\\~\\
+Ein virtueller Wiederaufbau der archäologischen Stätte von Pompeji mithilfe der Erstellung von Gebäudemodellen wird
+von~\citeauthor{mueller_2006} vorgestellt.\\~\\
+Das Modellieren ganzer Städte über das \texttt{CityEngine}-System wird in der Arbeit von ~\citeauthor{parish_2001}
+gezeigt.
+Zunächst werden geografische Bilder eingelesen, aus welchen dann die Anordnung von Straßen, Gärten und Gebäude
+ausgelesen werden können.
+Anschließend können virtuelle Städte nach dem Vorbild der Eingabe erstellt werden.\\~\\
+Sowohl ~\citeauthor{merrell_2011}, als auch ~\citeauthor{zhang_2019} stellen Systeme zur Erzeugung von Inneneinrichtung
+vor.
+Über ein Layout-System werden Design Patterns gelernt, in Terme eine Dichtefunktion überführt, um dann virtuelle
+Möbel zu erstellen~\cite{merrell_2011}.
+Eine Übersicht über diverse Kriterien, die zur Erstellung von Innenraumszenen nötig sind, zeigt die
+Wichtigkeit über die Auswahl sinnvoller Objekte und deren Anordnung um plausible Räume zu erstellen~\cite{zhang_2019}.
 
-Im Folgenden wird eine Übersicht zu einigen Arbeiten zur Modellierung von bestimmten Strukturen gegeben.
-\begin{center}
-    \begin{tabular}{l|l|l|l}
-        Subjekt & Autor & Jahr & Arbeit\\
-        \hline
-        Bäume und Landschaften & ~\citeauthor{deussen_2010} & 2010 & ~\cite{deussen_2010} \\
-        Fassaden & ~\citeauthor{alhalawani_2013} & 2016 & ~\cite{alhalawani_2013} \\
-        Gebäude & ~\citeauthor{mueller_2006} & 2006 & ~\cite{mueller_2006} \\
-        Städte & ~\citeauthor{parish_2001} & 2001 & ~\cite{parish_2001} \\
-        Möbel & ~\citeauthor{merrell_2011} & 2011 &  ~\cite{merrell_2011} \\
-        Inneneinrichtung & ~\citeauthor{zhang_2019} & 2019 & ~\cite{zhang_2019} \\
-    \end{tabular}
-\end{center}
+\newpage
 
 \subsection*{L-Systeme}
 \citeauthor{lindemayer_1968} führt eine mathematische Beschreibung zum Wachstum fadenförmiger Organismen ein.
@@ -80,11 +89,9 @@ Sie zeigt, wie sich der Status von Zellen infolge ein oder mehrerer Einflüsse v
 Weiter führt er Ersetzungssysteme ein, die atomare Teile mithilfe von Produktionsregeln ersetzen.
 Diese L-Systeme nutzt er zur formalen Beschreibung von Zellteilung.
 Später werden Symbole zur formalen Beschreibung von Verzweigungen, die von Filamenten abgehen, eingeführt~\cite{prusinkiewicz_1990}.
-Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} in~\cite{chomsky_1956} eingeführt.
+Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} eingeführt~\cite{chomsky_1956}.
 Sie ersetzen parallel Symbole eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
 L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
-
-\newpage
 
 L-Systeme sind Grammatiken mit folgender Form:
 \begin{center}
@@ -102,15 +109,15 @@ Das Alphabet eines parametrisierten Systems enthält Module (Symbole mit Paramet
         \item $P=p_1,p_2,\dots$ als Modulparameter
     \end{itemize}
 \end{center}
-Zeichen des Alphabets, die Ziel einer Produktionsregel sind, heißen Variablen.
-Alle anderen Zeichen aus $M$ sind Konstanten.
+Zeichen des Alphabets, die Ziel einer Produktionsregel sind, heißen Variablen oder Nonterminale.
+Alle anderen Zeichen aus $M$ sind Konstanten oder Terminale.
 Das Axiom $\omega$ ist eine nicht-leere Sequenz an Modulen aus $M^+$ mit
 \begin{itemize}
     \item $M^+$ als Menge aller möglichen Zeichenketten aus Modulen aus $M$
 \end{itemize}
 Produktionsregeln sind geordnete Paare aus Wörtern über dem Alphabet, die bestimmte Ersetzungsregeln umsetzen.
-Hierbei werden Symbole aus einem Wort, die einer rechten Seite (\textit{engl. right hand side (RHS)}) einer
-Produktionsregel entsprechen, durch die linke Seite des Paares (\textit{engl. left hand side (LHS)}) ersetzt.
+Hierbei werden Symbole aus einem Wort, die einer linke Seite (\textit{engl. left hand side (LHS)}) einer
+Produktionsregel entsprechen, durch die rechten Seite (\textit{engl. right hand side (RHS)}) ersetzt.
 Sie sind folgendermaßen aufgabaut:
 \begin{center}
     $A(P)\rightarrow x,x\in M^*$, mit
@@ -181,32 +188,6 @@ Symbole mit zugehörigen Steuerungsbefehlen und Statusveränderung:
     \end{tabular}
 \end{center}
 
-\subsection*{Extreme Programming}
-Eine Fallstudie der Universität Karlsruhe~\cite{muller_2001} untersucht den Einsatz der Softwaretechnik Extreme
-Programming (XP) im Kontext der Erstellung von Abschlussarbeiten im Universitätsumfeld.
-Hierzu werden folgende Schlüsselpraktiken untersucht:
-\begin{itemize}
-    \item XP als Softwaretechnik zur schrittweisen Annäherung an die Anforderungen eines Systems
-    \item Änderung der Anforderungen an das Systems
-    \item Funktionalitäten (Features) werden als Tätigkeiten des Benutzers (User Stories) definiert
-    \item Zuerst werden Komponententests (Modultests) geschrieben und anschließend die Features (Test-driven Design)
-    \item Keine seperaten Testing-Phasen
-    \item Keine formalen Reviews oder Inspektionen
-    \item Regelmäßige Integration von Änderungen
-    \item Gemeinsame Implementierung (Pair Programming) in Zweiergruppen
-\end{itemize}
-Aus der Fallstudie geht hervor, dass Extreme Programming einige Vorteile bei der Bearbeitung eines Softwareprojektes
-einer Bachelorarbeit bietet.
-Zum Einen können sich Anforderungen an das zu erstellende System durch parallele Literaturrecherche ändern, zum
-Anderen können Arbeitspakete durch Releases abgebildet werden.
-Diese Softwaretechnik wird in der Umsetzung des Softwareprojekts zu dieser Arbeit angewendet.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12.8cm]{../images/extreme_programming.png}
-    \caption{Zyklische Umsetzung des Softwareprojektes}
-\end{figure}
-
 \section{Verwandte Arbeiten}
 
 \citeauthor{guo_2020} führt ein Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen
@@ -215,20 +196,13 @@ Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarc
 aufgebaut, aus der ein L-System inferiert und mit einem Greedy Algorithmus optimiert wird.
 Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
 erstellt werden können.\\
-Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
-~\cite{talton_2012} führt ein System zur Generierung geometrischer Modelle und Websites ein, das eine organisierte
+Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken~\cite{talton_2012} ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
+Ein System zur Generierung geometrischer Modelle und Websites wird eingeführt, welches eine organisierte
 Struktur von bezeichneten Teilmodellen entgegennimmt und über einen Prozess der MCMC-Optimierung eine Bayes-optimale
 Grammatik erstellt, um neue Modelle zu generieren.\\
-Auch ~\cite{stava_2014} etabliert einen MCMC-Ansatz zum Finden prozeduraler Repräsentationen für biologische Bäume.
-Hier wird zunächst über eine Laplace-Glättung ein Grundgerüst gefunden, das dann in einer Baumtopologie organisiert wird.\\
+Auch~\citeauthor{stava_2014} etabliert einen MCMC-Ansatz zum Finden prozeduraler Repräsentationen für biologische Bäume.
+Hier wird zunächst über eine Laplace-Glättung ein Grundgerüst gefunden, das dann in einer Baumtopologie organisiert wird~\cite{stava_2014}.\\
 Das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
 Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren ~\cite{martinovic_2013}.
 Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Verteilung von zweidimensionalen Clustern
-wird in den Arbeit von ~\citeauthor{stava_2010} gegeben.
-
-%urbanen Strukturen~\cite{nishida_2016}
-%Polynomiale Algorithmen zum Inferieren von L-Systemen~\cite{mcquillan_2018}
-%Framework zum Inferieren von L-Systemen aus Vektordaten~\cite{stava_2010}
-%Generalisieren einen Regelsets aus einem Inputset mit Markov Chain Monte Carlo~\cite{talton_2012, talton_2011}
-%Lernen von Regeln zum Layout für Gebäude~\cite{martinovic_2013}
-%Inverse prozedurale Modellierung von Fassaden~\cite{xiao_2008}
+wird in einer Arbeit von~\citeauthor{stava_2010} gegeben~\cite{stava_2010}.

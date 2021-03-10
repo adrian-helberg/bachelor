@@ -1,13 +1,12 @@
 % @author Arian Helberg
 
 \chapter{Implementierung}
-
 Zur Umsetzung der vorgestellten Konzepte wird im Folgenden auf Softwarepakete, Technologien, Datenspeicherung,
 Benutzerinteraktion und Arbeitsablauf der erstellten Software eingegangen.
 Darüber hinaus wird ein Überblick über Quellcode und einige Implementierungsentscheidungen gegeben.
 Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht im Detail eingegangen.
 Quellcode wird im Wesentlichen gezeigt und anhand von Zeilenangaben (z.B. \textbf{5}) erläutert.
-Softwareumgebungsspezifische Implmentierungsdetails werden unter Angabe von drei Punkten (\ldots) weggelassen.
+Softwareumgebungsspezifische Implementierungsdetails werden unter Angabe von drei Punkten (\ldots) weggelassen.
 
 \section{Projektstruktur}
 Das Softwareprojekt ist nach der Gradle-Source-Code-Konvention organisiert.
@@ -165,7 +164,7 @@ geladen wurden.
 Dies wird an folgendem Beispiel deutlich gemacht.
 Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application ratio} und
 \textbf{Merge application ratio} werden auf die Werte \textbf{5}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
-(Standarteinstellung).
+(Standardeinstellung).
 \begin{figure}[H]
     \centering
     \includegraphics[width=6cm]{../images/UI_templates.png}
@@ -442,7 +441,7 @@ public class InfererPipe implements Pipe<PipelineContext, PipelineContext>, Logg
 
 Die \texttt{infer}-Methode extrahiert die Zeichenkette (Wort) des im aktuellen Baumknoten gespeicherten Template-Instanz
 (\textbf{9}) und speichert sie zur Bearbeitung in \texttt{delta}.
-Delta wird nach Verzweiungsvariables durchsucht (\textbf{11-14}) und diese dann durch ein neues Symbol,
+Delta wird nach Verzweigungsvariablen durchsucht (\textbf{11-14}) und diese dann durch ein neues Symbol,
 das dem Alphabet hinzugefügt wird (\textbf{18}), ersetzt (\textbf{20}).
 Eine neue Produktionsregel, die \texttt{gamma} auf das veränderte Wort abbildet, wird dem L-System beigefügt (\textbf{24}).
 \textbf{31-35} sucht nach Symbolen im Alphabet, die noch kein Ziel einer Produktionsregel sind und hält diese in der

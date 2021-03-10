@@ -9,18 +9,19 @@
 \contentsline {chapter}{\numberline {2}Grundlagen}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Grundbegriffe}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Grundlegende Arbeiten}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Verwandte Arbeiten}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Verwandte Arbeiten}{11}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Konzepte}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Probleme \& Lösungsansätze}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Workflows \& Algorithmen}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Softwarearchitektur}{22}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Implementierung}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Projektstruktur}{29}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Technologien}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Konzeptumsetzung}{32}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Evaluierung}{51}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{60}{chapter.6}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{62}{chapter*.79}%
-\contentsline {chapter}{\numberline {A}Anhang}{65}{appendix.A}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{72}{lstnumber.A.4.26}%
+\contentsline {section}{\numberline {3.3}Softwaretechnik}{22}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Softwarearchitektur}{23}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Implementierung}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Projektstruktur}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Technologien}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Konzeptumsetzung}{33}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Evaluierung}{52}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{61}{chapter.6}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{63}{chapter*.79}%
+\contentsline {chapter}{\numberline {A}Anhang}{66}{appendix.A}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{73}{lstnumber.A.4.26}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

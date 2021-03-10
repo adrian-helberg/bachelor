@@ -1,10 +1,10 @@
 % @author Arian Helberg
 
 \chapter{Einleitung}
-Effizientes Objektdesign und -modellierung sind entscheidende Kernkompetenzen in verschiedenen Bereichen der
+Effizientes Objektdesign und -modellierung sind entscheidende Kernfunktionalitäten in verschiedenen Bereichen der
 digitalen Welt.
 Da die Erstellung geometrischer Objekte für Laien unintuitiv ist und ein großes Maß an Erfahrung und Expertise
-erfordert, ist dieses stetig wachsende Feld für Neueinsteiger nur sehr schwer zu erschließen.
+erfordert, ist dieses stetig komplexer werdende Feld für Neueinsteiger nur sehr schwer zu erschließen.
 Die Forschung liefert hierzu einige Arbeiten zur prozeduralen Modellierung, um digitale Inhalte schneller
 und automatisiert zu erstellen.
 Gerade wenn es um die Darstellung natürlicher Umgebung geht, ist die Erstellung von ähnlichen Objekten, wie
@@ -17,25 +17,20 @@ der Informatik, um Strukturen zu beschreiben.
 Eine spezielle Untergruppe sind die L-Systeme, die häufig bei der Beschreibung
 von Verzweigungsstrukturen und Selbstähnlichkeit zum Einsatz kommen.
 \\~\\
-Diese Arbeit soll sich mit der Erstellung eines prozeduralen Systems zur Synthese von Ähnlichkeitsabbildern
-beschäftigen.
+Diese Arbeit beschäftigt sich mit der Erstellung eines prozeduralen Systems zur Synthese von Ähnlichkeitsabbildern.
 Hierzu soll über eine Benutzerschnittstelle eine Struktur erzeugt werden, aus der ein parametrisiertes L-Systems
 inferiert werden kann, welches dann zur Generierung von ähnlichen Strukturen genutzt werden kann.
 
 \newpage
 
 \section{Problemstellung}
-
-Mit der Digitalisierung der Welt steigt auch der Bedarf an digitalen Inhalten.
-Zu den größten Feldern gehören Gaming- und Unterhaltungsindustrie, Datenvisualisierung und interaktive Anwendungen.
-Um eine erhöhte Quantität dieser Inhalte liefern zu können, werden Methodiken und Algorithmen gesucht, die eine Erstellung
-vereinfachen.
 Während Methodiken zur Kodifizierung bestimmter Strukturen in den Bereich der prozeduralen Modellierung fällt,
 findet das Ableiten von Regeln Anwendung in der inversen prozeduralen Modellierung.
 Weiter steigt mit dem digitalen und naturwissenschaftlichen Fortschritt die Anwendung immer komplexerer Strukturen, die
 ein Herausarbeiten der schwer zu kontrollierenden, prozeduralen Regeln immer schwieriger machen.
 \\~\\
-Ein Beispiel hierzu aus der Gaming-Industrie ist die frühere Verwendung unorganisierter Modelle.
+Ein Beispiel hierzu aus der Gaming-Industrie ist die frühere Verwendung unorganisierter Modelle (ugs. Dreieckssuppe).
+Diese Modelle weisen keine hierarchische Struktur auf und werden erst durch Datenstrukturen, wie bspw. Octrees organisiert.
 Unorganisierte Modelle sind nur bedingt wiederverwendbar, da nur die vorliegende Modellierung verwendet werden kann.
 Es besteht eine hohe Speicherkomplexität bei geringer Laufzeitkomplexität.
 Für kleinste Veränderungen am Modell ist eine erneute Modellierung nötig, die wiederum Speicher benötigt, um sie
@@ -53,23 +48,20 @@ Basistruktur, aktuelle Ansätze aus der Forschung in einem Programm umsetzen las
 \newpage
 
 \section{Ziele}
-
-Die Erstellung eines Systems zur Synthese von ähnlichen Struktures aus einer Basisstruktur soll zentrale Aufgabe dieser
+Die Erstellung eines Systems zur Synthese von ähnlichen Struktures aus einer Basis-struktur soll zentrale Aufgabe dieser
 Arbeit sein.
-Aus der Fragestellung leiten sich folgende Teilziele ab:
-
-\begin{itemize}
-    \item Die Erstellung eines Programms zur Umsetzung des erstellten Systems
-    \item Anwenden von Algorithmen und Ansätzen der aktuellen Forschung
-    \item Testen von Metriken und deren Auswirkung auf das Ergebnis
-    \item Erstellung eigener Methodiken und Algorithmen zur effizienten Lösung der Problemstellung
-    \item Schaffen eines Teilsystems zum Extrahieren von Eigenschaften und Regeln einer Basisstruktur
-\end{itemize}
+Zunächst wird ein System benötigt, das eine Verzweigungsstruktur bestimmt, aus der die ählichen Strukturen erzeugt
+werden sollen.
+Um bestimmte Methodiken und Algorithmen der aktuellen Forschung auf die Eingabestruktur anwenden zu können, sollte diese
+in einer Datenstruktur organisiert werden.
+Anschließend kann ein L-System aus der Struktur inferiert werden.
+Die inferierte Grammatik soll durch diverse Algorithmen manipuliert werden, bis das erzeugte L-System in der Lage ist
+Ähnlichkeitsstrukturen zu bilden.
 
 \section{Methodik}
 Der Benutzer des Systems legt atomare Strukturen in Form von Zeichenketten an, die vom Programm eingelesen und
 als Templates zur Verfügung gestellt werden.
-Die Templates sind beliebig und können eine einfach Linie oder eine komplexe Verzweiung darstellen.
+Die Templates sind beliebig und können eine einfache Linie oder eine komplexe Verzweigung darstellen.
 Werden diese Strukturen auf der graphischen Oberfläche platziert und mit diversen Transformationen verändert, spricht man
 von Instanzen oder Template-Instanzen.
 
