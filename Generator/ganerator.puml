@@ -1,0 +1,11 @@
+@startuml
+class de.haw.Generator {
+- Logger LOGGER
++ void start(Stage)
++ {static} void main(String[])
+}
+
+
+de.haw.utils.Logging <|.. de.haw.Generator
+javafx.application.Application <|-- de.haw.Generator
+@enduml
