@@ -1,0 +1,40 @@
+@startuml
+class de.haw.tool.Compressor {
+- TreeNode<TemplateInstance> tree
+- LSystem LPlus
+- LSystem L
+- float weighting
+- Random randomizer
++ LSystem compress()
+- TreeNode<TemplateInstance> FindMaximumSubTree(TreeNode<TemplateInstance>)
+- List<TreeNode<TemplateInstance>> getOccurrences(TreeNode<TemplateInstance>,TreeNode<TemplateInstance>)
+- float Ci(LSystem)
+- int countRuleApplications(LSystem,String)
+}
+class de.haw.tool.Generalizer {
+- LSystem LStar
+- float w0
+- float Cg_old
+- float cStar
++ LSystem generalize()
+- float Cg(LSystem,LSystem)
+- int L(LSystem)
+- float Dg(LSystem)
+- float Ds(String,String)
+}
+class de.haw.tool.Estimator {
+- Map<String,Map<Integer,List<Float>>> parameters
+- Random randomizer
++ void estimateParameters(TreeNode<TemplateInstance>)
++ float estimateParameterValueForTemplate(String,int)
++ float averageParameterValueForTemplate(String,int)
++ String toString()
+}
+class de.haw.tool.Inferer {
+- Iterator<TreeNode<TemplateInstance>> iterator
+- TreeNode<TemplateInstance> beta
+- String gamma
+- LSystem lSystem
++ LSystem infer()
+}
+@enduml

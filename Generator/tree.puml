@@ -1,0 +1,28 @@
+@startuml
+class de.haw.tree.TreeNode {
+- T data
+# List<TreeNode<T>> children
++ T getData()
++ List<TreeNode<T>> getChildren()
++ boolean isEmpty()
++ boolean isLeaf()
++ void setData(T)
++ void removeChildren()
++ void addChild(TreeNode<T>)
++ TreeNode<T> copy()
++ String toString()
++ Iterator<TreeNode<T>> iterator()
++ boolean equals(Object)
++ int hashCode()
+}
+class de.haw.tree.TreeNodeIterator {
+- Deque<TreeNode<T>> queue
++ boolean hasNext()
++ TreeNode<T> next()
++ void remove()
+}
+
+
+de.haw.tree.Iterable <|.. de.haw.tree.TreeNode
+java.util.Iterator <|.. de.haw.tree.TreeNodeIterator
+@enduml

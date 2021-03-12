@@ -1,0 +1,10 @@
+@startuml
+class de.haw.pipeline.Pipeline {
+- Pipe<IN,OUT> current
++ Pipeline<IN,NewO> pipe(Pipe<OUT,NewO>)
++ OUT execute(IN)
+}
+interface de.haw.pipeline.Pipe {
+~ OUT process(IN)
+}
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+class de.haw.pipeline.pipe.EstimatorPipe {
+- {static} Logger logger
++ PipelineContext process(PipelineContext)
+}
+class de.haw.pipeline.pipe.CompressorPipe {
+- {static} Logger logger
++ PipelineContext process(PipelineContext)
+}
+class de.haw.pipeline.pipe.GeneralizerPipe {
+- {static} Logger logger
++ PipelineContext process(PipelineContext)
+}
+class de.haw.pipeline.pipe.PipelineContext {
++ LSystem lSystem
++ TreeNode<TemplateInstance> tree
++ float wL
++ float w0
++ Random randomizer
++ Estimator estimator
+}
+class de.haw.pipeline.pipe.InfererPipe {
+- {static} Logger logger
++ PipelineContext process(PipelineContext)
+}
+
+de.haw.pipeline.Pipe <|.. de.haw.pipeline.pipe.EstimatorPipe
+de.haw.pipeline.Pipe <|.. de.haw.pipeline.pipe.CompressorPipe
+de.haw.pipeline.Pipe <|.. de.haw.pipeline.pipe.GeneralizerPipe
+de.haw.pipeline.Pipe <|.. de.haw.pipeline.pipe.InfererPipe
+@enduml
