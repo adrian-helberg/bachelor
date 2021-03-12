@@ -14,6 +14,7 @@ Folgende Kernkonzepte werden erläutert und umgesetzt:
 \end{itemize}
 
 \section{Probleme \& Lösungsansätze}
+\label{probleme}
 
 \subsection*{Visualisierung}
 Um eine geführte Erstellung der Basisstruktur zu ermöglichen, muss diese während der Erstellung sichtbar gemacht werden.
@@ -287,18 +288,87 @@ Diese Softwaretechnik wird in der Umsetzung des Softwareprojekts zu dieser Arbei
 Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
 
 \subsection*{Qualitätsziele}
-Um die wesentlichen Features des Systems in einem Programm umzusetzen, werden folgende Qualitätsziele definiert,
-priorisiert (absteigend) und umgesetzt:
-\begin{itemize}
-    \item \textbf{Funktionalität} durch Umsetzen aller Teilsysteme in Vollständigkeit, Korrektheit, Angemessenheit
-    \item \textbf{Interoperabilität} durch Nutzen einer allgemeinen Repräsentation von L-Systemen, damit diese
-    auch in anderen Programmen oder Algorithmen verwendet werden kann
-    \item \textbf{Erweiterbarkeit} durch offene Entwurfsmuster (Design Patterns)
-    \item \textbf{Modularität} durch Implementierung für effiziente Wartung und Erweiterung
-    \item \textbf{Effizienz} durch effiziente Programmierung
-    \item \textbf{Attraktivität} durch intuitive Benutzung (Benutzerfreundlichkeit)
-    \item \textbf{Plattformunabhängigkeit} durch Verwenden des Java-Frameworks
-\end{itemize}
+Um die wesentlichen Features des Systems in einem Programm umzusetzen, werden Qualitätsziele in einem Qualitätsbaum
+(siehe~\ref{baum}) definiert und Szenarien zugeordnet (Nummerierung).
+Die nichtfunktionalen Anforderungen sind nach der DIN-Norm \texttt{DIN 66272} strukturiert.\\~\\
+Der Benutzer ist in der Lage eine Verzweigungsstruktur zu erstellen, aus der dann eine oder mehrere ähnliche Strukturen
+erzeugt werden können \textbf{(1)}.
+Vordefinierte Templates sollen verwendet werden, um die Basisstruktur zu erzeugen \textbf{(2)}.
+Dabei soll der Benutzer visuelles Feedback während des Erstellungsprozesses bekommen \textbf{(3)}.
+Für den Benutzer besteht die Möglichkeit Parameter zu setzen, die die resultierenden Ähnlichkeitsstrukturen beeinflussen,
+um so zu einem akzeptablen Ergebnis zu gelangen \textbf{(4)}.
+Es soll nicht möglich sein eine ungültige Verzweigungsstruktur zu erstellen \textbf{(5)}.
+Der Erstellungsvorgang soll jeder Zeit neu begonnen werden können, ohne das Programm neu starten zu müssen \textbf{(6)}.
+Weiter sollte das Programm robust gegenüber Benutzereingaben sein \textbf{(7)}.
+Eine intuitive Nutzung des Programms soll gegeben sein, sodass der Benutzer wenig Zeit für die Nutzung der Bedienelemente
+aufbringen muss \textbf{(8)}.
+Das Erzeugen der Struktur aus Kapitel~\ref{eval} (Evaluierung) soll ohne händische Nachbildung möglich sein \textbf{(9)}.\\
+Zur Nachvollziehbarkeit sollten die verschiedenen L-System-Varianten in der Systemkonsole ausgegeben werden \textbf{(10)}.
+Der Generierungsprozess nach dem Erstellen der Basisstruktur sollte nicht länger als vier Sekunden in Anspruch nehmen \textbf{(11)}.
+Über ein Textfeld sollte der Benutzer auch Fließkommazahlen als parameter festlegen können \textbf{(12)}.
+Ein Entwickler soll zur Manipulation von L-Systemen weitere Algorithmen hinzufügen können \textbf{(13)}.
+Das Programm sollte unter eine Java-Laufzeitumgebung auf mehreren Systemen nutzbar sein \textbf{(14)}.
+
+\subsection*{Lösungsstrategie}
+Zur Erreichung der nichtfunktionalen Qualitätsziele werden folgende Architekuransätze umgesetzt.
+Die funktionalen Ziele werden durch die in Kapitel~\ref{probleme} vorgestellten Lösungsansätze abgedeckt.
+\begin{center}
+    \begin{tabular}{l|l}
+        \textbf{Qualitätsziel} & \textbf{Architekturansatz} \\
+        \hline \\
+        Funktionalität &
+        \begin{minipage}[t]{0.8\textwidth}
+            Einlesen von Templates\\
+            Grafische Benutzerschnittstelle zur Anordnungen von Templates zu einer Verzweigungsstruktur\\
+            Generieren der Baumstruktur\\
+            Verarbeiten von L-Systemen
+        \end{minipage} \\
+        \\ \hline \\
+        Zuverlässigkeit &
+        \begin{minipage}[t]{0.8\textwidth}
+            Durch den User vorgegebene Parameter, wie Anzahl erzeugter Ähnlichkeitsstrukturen, maximale Ausführungstiefe
+            des resultieren L-Systems und Gewichtungsparameter der Algorithmen\\
+            Definieren der grafischen Bedienelemente, sodass kein unerwartetes Verhalten auftritt
+        \end{minipage} \\
+        \\ \hline \\
+    \end{tabular}
+\end{center}
+\begin{center}
+    \begin{tabular}{l|l}
+        \textbf{Qualitätsziel} & \textbf{Architekturansatz} \\
+        \hline \\
+        Benutzbarkeit &
+        \begin{minipage}[t]{0.8\textwidth}
+            Zeichnen der Verzweigungssstruktur und voläufige Änderungen von Parametern während der Erstellung\\
+            Zurücksetzen des Erstellungsprozesses durch den Benutzer\\
+            Intuitive Benennung von Schaltflächen\\
+            Schaltfläche zur Erzeugung des Beispiels aus Kapitel~\ref{eval}\\
+            Steuern des Generierungsprozesses durch Setzen von Parametern durch den Benutzer
+        \end{minipage} \\
+        \\ \hline \\
+        Effizienz &
+        \begin{minipage}[t]{0.8\textwidth}
+            Ausgabe der Teilschritte in der Systemkonsole
+        \end{minipage} \\
+        \\ \hline \\
+        Änderbarkeit &
+        \begin{minipage}[t]{0.8\textwidth}
+            Das Nutzen des Pipeline Design Patterns soll das Erweitern des Systems durch
+            Hinzufügen weiterer Teilschritte (Pipes) erleichtern.
+            Trennung der grafischen Oberfläche und der Logik durch Aufbauen des Szenengraphen über ein
+            XML-Dateiformat
+        \end{minipage} \\
+        \\ \hline \\
+        Übertragbarkeit &
+        \begin{minipage}[t]{0.8\textwidth}
+            Erstellung einer ausführbaren Java-Archiv-Datei\\
+            Sowohl eine sinnvolle Aufteilung von Funktionalitäten auf Dateien und Software-Pakete, als
+            auch effiziente Datenkapselung und geschlossene Informationskontexte sorgen für Modularität des
+            Programms
+        \end{minipage} \\
+        \\ \hline
+    \end{tabular}
+\end{center}
 
 \newpage
 
@@ -317,45 +387,6 @@ technische Interaktion gesehen.
     \includegraphics[width=10cm]{../images/Technischer_Kontext.PNG}
     \caption{Interaktion zwischen System und Systemumgebung}
 \end{figure}
-
-\subsection*{Lösungsstrategie}
-Zur Erreichung der o.g. Qualitätsziele werden folgende Architekuransätze umgesetzt:
-\begin{center}
-    \begin{tabular}{l|l}
-        \textbf{Qualitätsziel} & \textbf{Architekturansatz} \\
-        \hline \\
-        Funktionalität &
-        \begin{minipage}[t]{0.8\textwidth}
-            Grafische Benutzerschnittstelle\\
-            Generieren der Baumstruktur\\
-            Verarbeiten von L-Systemen
-        \end{minipage} \\
-        \\ \hline \\
-        Interoperabilität &
-        \begin{minipage}[t]{0.8\textwidth}
-            Durch das Nutzen allgemeingültiger mathematischer Beschreibungen sollen erstellte
-            L-Systeme in Fremdsystemen, wie Online Visualisierer, genutzt werden können
-        \end{minipage} \\
-        \\ \hline \\
-        Erweiterbarkeit &
-        \begin{minipage}[t]{0.8\textwidth}
-            Das Nutzen des Pipeline Design Patterns soll das Erweitern des Systems durch
-            Hinzufügen weiterer Teilschritte (Pipes) erleichtern.
-            Trennung der grafischen Oberfläche und der Logik durch Aufbauen des Szenengraphen über ein
-            XML-Dateiformat
-        \end{minipage} \\
-        \\ \hline \\
-        Modularität &
-        \begin{minipage}[t]{0.8\textwidth}
-            Sowohl eine sinnvolle Aufteilung von Funktionalitäten auf Dateien und Software-Pakete, als
-            auch effiziente Datenkapselung und geschlossene Informationskontexte sorgen für Modularität des
-            Programms
-        \end{minipage} \\
-        \\ \hline
-    \end{tabular}
-\end{center}
-
-\newpage
 
 \subsection*{Bausteinsicht}
 Der Benutzer interagiert über das User Interface mit dem Subsystem GUI, das sich mit der Visualisierung, dem Aufbau der
@@ -410,46 +441,22 @@ Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf
     \caption{Infrastruktur Windows-PC}
 \end{figure}
 
-%\subsection{Weitere Konzepte}
-%
-%\subsubsection{Testbarkeit}
-%Um eine ausreichende Testabdeckung zu erreichen, werden Klassen als kleinstmöglich zu testende Einheit definiert
-%und durch Komponententests geprüft.
-%Der Name eines Tests setzt sich aus dem Präfix als Name der zu testenden Klasse oder Releases und dem Suffix
-%"`Test"'
-%zusammen.
-%Testsubjekte werden als \textbf{Blackbox} behandelt, also anhand der Spezifikation getestet.
-%\begin{center}
-%    Bsp.: Klasse \textit{Inferer} mit Komponententest \textit{InfererTest}
-%\end{center}
-%Da jedes Release der Implementierung ein funktionsfähiges System beinhaltet, kann auf Integrationstests
-%verzichtet werden.
-%Weiter wird ein Release anhand von funktionalen und nicht-funktionalen Anforderungen getestet.
-%Anhand dieser Systemtests wird geprüft, ob Gesamtspezifikationen umgesetzt worden sind.
-%\begin{center}
-%    Bsp.: Release 2 mit Systemtest \textit{Release2Test}
-%\end{center}
-%Zum Schluss der Implementierung wird ein Akzeptanztest durchgeführt.
-%
-%\subsubsection{Validierung}
-%Der Benutzer des Systems nutzt eine grafische Schnittstelle.
-%Somit kann sichergestellt werden, dass dieser keine ungültigen Eingaben tätigt.
-%Werden Template-Dateien unter einem bestimmten Dateipfad nicht gefunden, wird eine \textit{NotFound}-Exception
-%protokolliert und dem Benutzer eine Nachricht über ein Pop-up mitgeteilt.
-%Eine \textit{IllegalArgumentException} wird verzeichnet und ausgegeben, wenn eingelesene Template-Dateien
-%strukturelle Fehler aufweisen.
-%
-%\subsubsection{Fehlerbehandlung}
-%Zur Fehlersuche und -behandlung biete sich eine Protokollierung über Vorgänge, Fehler und Ausnahmen an.
-%Bestimmte Fehler werden dem Benutzer weitergegeben und grafisch angezeigt.
-%Folgende Subsysteme werden in das Programm integriert:
-%\begin{itemize}
-%    \item Ausnahmebehandlung (Exception Handling) und
-%    \item Protokollierung (Logging)
-%\end{itemize}
-%Erwartete Exceptions werden jeweils mit eigenen Klassen abgebildet, die von einer entsprechenden Klasse aus der
-%Exception-Hierarchie abgeleitet sind.
-%Das Logging ist statisch und überall im System zugreifbar, um eine einheitliche Protokollierung zu gewährleisten.
-
 \subsection*{Datenstrukturen}
-Das Datenmodell ist als UML-Diagramm modelliert (siehe ~\ref{uml})
+Das wesentliche Datenmodell ist als UML-Diagramm modelliert (siehe Seite~\pageref{anhang} Anhang).\\~\\
+Die während der Strukturierung der Templates zu einer Verzweigungsstruktur entstehenden Baumstuktur wird in~\ref{baum} gezeigt.
+\texttt{TreeNode} implementiert das \texttt{Iterable}-Interface, sodass durch die Überladung der \texttt{iterate}-Funktion
+ein Iterator zurückgegeben werden kann, der eine Iterierung über die Baumtopologie möglich macht.
+Dieser Iterator ist durch die Klasse \texttt{TreeNodeIterator}, die das \texttt{Iterator}-Interface implementiert, definiert.
+Die überladene \texttt{next}-Funktion beschreibt eine Iterierung des Baums durch eine Breitensuche.\\~\\
+~\ref{pipeline} beschreibt den Generierungsprozess im Pipeline Design Pattern.
+Jeder Teilschritt des Prozesses ist durch eine Klasse, die das \texttt{Pipe}-Interface nutzt, definiert.
+Die überladene \texttt{process}-Funktion nimmt den \texttt{PipelineContext} entgegen, verändert diesen und gibt ihn
+anschließend zurück.
+Das \texttt{PipelineContext}-Objekt hält die Daten, die die eizelnen Pipes benötigen und zurückgeben (Pipeline-Kontext).
+Die Pipes lassen sich in einer festen Reihenfolge durch die überladene \texttt{pipe}-Funktion eines
+\texttt{Pipeline}-Objekts in die Pipeline einreihen.
+Diese wird durch \texttt{execute} ausgeführt.\\~\\
+Die verschiedenen Algorithmen zur Manipulation von L-Systemen werden in~\ref{tool} durch verschiedene Objekte definiert.
+Sie werden in der entsprechenden Pipe erstellt und durch eine Funktion ausgeführt, die das veränderte L-System
+zurückgibt.
+Im Konstruktor werden benötigen Daten aus dem Pipeline-Kontext an den Algorithmus übergeben.
