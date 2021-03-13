@@ -93,6 +93,8 @@ public class TreeNodeIterator<T> implements Iterator<TreeNode<T>>{
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     label=pipeline1,
     basicstyle=\footnotesize,
@@ -146,6 +148,8 @@ public interface Pipe<IN, OUT> {
     OUT process(IN input);
 }
 \end{lstlisting}
+
+\newpage
 
 \begin{lstlisting}[
     label=ctx,
@@ -203,6 +207,8 @@ public class Inferer {
     ...
 }
 \end{lstlisting}
+
+\newpage
 
 \begin{lstlisting}[
     label=infererpipe,
@@ -297,6 +303,8 @@ public LSystem infer() {
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     label=komp,
     basicstyle=\footnotesize,
@@ -321,9 +329,9 @@ public class Compressor {
         //// Initializing
         this.tree = tree.copy();
         this.LPlus = lSystem;
-        // L = ∅
+        // L = {}
         this.L = new LSystem();
-        // wl ∈ [0, 1]
+        // wl in [0, 1]
         weighting = wL;
         this.randomizer = randomizer;
     }
@@ -399,6 +407,8 @@ public LSystem compress() {
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
@@ -439,6 +449,8 @@ private TreeNode<TemplateInstance> FindMaximumSubTree(TreeNode<TemplateInstance>
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     basicstyle=\footnotesize,
     breaklines = true,
@@ -447,7 +459,7 @@ private TreeNode<TemplateInstance> FindMaximumSubTree(TreeNode<TemplateInstance>
     language=Java,
     numberstyle=\color{gray},
     numbers = left,
-    caption=Algorithmus zum Finden alle Vorkommen eines Unterbaums in einem Baum,
+    caption=Algorithmus zum Finden aller Vorkommen eines Unterbaums in einem Baum,
     frame=tB,
     postbreak=\mbox{\textcolor{gray}{\ArrowBoldDownRight}\space}
 ]
@@ -500,6 +512,8 @@ private float Ci(LSystem lSystem) {
     return costs;
 }
 \end{lstlisting}
+
+\newpage
 
 \begin{lstlisting}[
     basicstyle=\footnotesize,
@@ -565,6 +579,8 @@ public class Generalizer {
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     label=generalize,
     basicstyle=\footnotesize,
@@ -611,7 +627,7 @@ public LSystem generalize() {
 }
 \end{lstlisting}
 
-
+\newpage
 
 \begin{lstlisting}[
     basicstyle=\footnotesize,
@@ -737,6 +753,8 @@ private float Ds(String M_A, String M_B) {
 }
 \end{lstlisting}
 
+\newpage
+
 \begin{lstlisting}[
     label=editdistance,
     basicstyle=\footnotesize,
@@ -754,8 +772,6 @@ public class Modules {
     ...
     /**
      * Calculate and return the edit distance between two strings
-     * Time complexity: O(m*n)
-     * Space complexity: O(m)
      * @param str1 String A
      * @param str2 String B
      * @return Edit distance between A and B
