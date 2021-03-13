@@ -189,20 +189,43 @@ Symbole mit zugehörigen Steuerungsbefehlen und Statusveränderung:
 \end{center}
 
 \section{Verwandte Arbeiten}
-
-\citeauthor{guo_2020} führt ein Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen
-Lernens (Deep Learning) anhand beliebiger Grafiken ein~\cite{guo_2020}.
-Hierzu werden atomare Strukturen mit einem neuronalen Netz erkannt, eine hierarchische Topologie (Baumstruktur)
-aufgebaut, aus der ein L-System inferiert und mit einem Greedy Algorithmus optimiert wird.
-Ausgabe des Systems ist ein generalisiertes L-System, aus dem ähnliche Strukturen, wie die der Inputgrafik,
-erstellt werden können.\\
-Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken~\cite{talton_2012} ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
+Die Erstellung von ähnlichen 3D-Objekten aus komplexen, dreidimensionalen Eingabeobjekten wird in der Arbeit von~\citeauthor{bokeloh_2010}
+präsentiert~\cite{bokeloh_2010}.
+Durch ein "`Zerschneiden"' des Eingabeobjektes in mehrere Unterobjekte, ist es möglich ähnliche Modelle aus den
+Abschnitten zusammenzusetzen.
+Hierbei werden Regeln zu Veränderung des Eingabeobjektes gefunden, die eine bestimmte lokale Ähnlichkeit beibehalten.
+Alle benötigten Informationen werden direkt aus dem Modell und ohne Benutzerinteraktion abgeleitet.\\
+Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
 Ein System zur Generierung geometrischer Modelle und Websites wird eingeführt, welches eine organisierte
 Struktur von bezeichneten Teilmodellen entgegennimmt und über einen Prozess der MCMC-Optimierung eine Bayes-optimale
-Grammatik erstellt, um neue Modelle zu generieren.\\
+Grammatik erstellt, um neue Modelle zu generieren~\cite{talton_2012}.
+Das Markow-Chain-Monte-Carlo-Verfahren (MCMC-Verfahren) ist eine speicherlose, stichprobenartige Auswahl aus
+Wahrscheinlichkeitsverteilungen aus einem definierten Bereich, der für das Erreichen eines bestimmten Ziels von
+Interesse ist.
+
+\newpage
+
 Auch~\citeauthor{stava_2014} etabliert einen MCMC-Ansatz zum Finden prozeduraler Repräsentationen für biologische Bäume.
 Hier wird zunächst über eine Laplace-Glättung ein Grundgerüst gefunden, das dann in einer Baumtopologie organisiert wird~\cite{stava_2014}.\\
 Das von ~\citeauthor{martinovic_2013} eingeführte System nutzt ähnlich organisierte Eingabestrukturen in Form von
-Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren ~\cite{martinovic_2013}.
+Gebäudefassaden, um durch bayesische Grammatikinduktion eine kontextfreie Grammatik zu induzieren~\cite{martinovic_2013}.\\
 Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Verteilung von zweidimensionalen Clustern
-wird in einer Arbeit von~\citeauthor{stava_2010} gegeben~\cite{stava_2010}.
+wird in einer Arbeit von~\citeauthor{stava_2010} gezeigt~\cite{stava_2010}.\\~\\
+Die meisten Arbeiten im Bereich der inversen prozeduralen Modellierung beschäftigen sich eher mit der Rekonstruierung von
+gegebenen Modellen, als mit der Generalisierung von Daten.
+Deswegen führt \citeauthor{guo_2020} ein Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen
+Lernens (Deep Learning) anhand beliebiger Grafiken ein~\cite{guo_2020}.
+Hierzu werden häufig genutzte Verzweigungen bezeichnet und in zufällige Verzweigungsstrukturen zusammengebaut.
+Mit diesen Trainingsdaten wird ein neuronales Netz angelernt, sodass dieses die atomaren Verzweigungen in beliebigen
+Strukturen erkennen kann.
+In einer Eingabestruktur erkennt das System die atomaren Strukturen und kennzeichnet diese mit einem Rechteck als Begrenzung.
+Anhand von Überlappungen der Rechtecke kann dann eine hierarchische Baumtopologie aufgebaut werden, aus der ein kompaktes
+L-System inferiert und generalisiert wird.
+Das generalisiertes L-System wird genutzt, um der Eingabestruktur ähnliche Strukturen zu erzeugen.\\~\\
+Die Algorithmen zur Inferierung und Generalisierung von L-Systemen aus der Arbeit von~\citeauthor{guo_2020} sind
+Gegenstand dieser Arbeit und werden für die Fragestellung adaptiert und implementiert.
+Ein neuronales Netz zur Erkennung von Verzweigungsstrukturen liefert die vielversprechensten Ergebnisse bei der Analyse
+von Verzweigungsstrukturen.
+Da die Implementierung eines neuronalen Netzes für diese Arbeit aus Praktikabilitätsgründen nicht möglich ist,
+werden die für die Algorithmen benötigen Baumstrukturen während der benutzergesteuerten Erstellung einer Basisstruktur
+geliefert.

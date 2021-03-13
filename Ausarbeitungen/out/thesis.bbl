@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL: }
@@ -31,6 +31,13 @@
 \textsc{Benes, B./Stava, O./Mech, R./Miller, G.} (2011): Guided Procedural
   Modeling, in: Computer Graphics Forum, 30, S. 325--334,
   \doi{10.1111/j.1467-8659.2011.01886.x}.
+
+\bibitem[{\textsc{Bokeloh et~al.}(2010)\textsc{Bokeloh,
+  Wand/Seidel}}]{bokeloh_2010}
+\textsc{Bokeloh, M./Wand, M./Seidel, H.-P.} (2010): A Connection between
+  Partial Symmetry and Inverse Procedural Modeling, in: ACM Trans. Graph.,
+  29(4), ISSN 0730-0301, \doi{10.1145/1778765.1778841},
+  \urlprefix\url{https://doi.org/10.1145/1778765.1778841}.
 
 \bibitem[{\textsc{Charikar et~al.}(2005)\textsc{Charikar, Lehman, Liu,
   Panigrahy, Prabhakaran, Sahai/Shelat}}]{charikar_2005}

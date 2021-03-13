@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  12 MAR 2021 12:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  13 MAR 2021 18:50
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -1905,7 +1905,17 @@ Overfull \hbox (12.2505pt too wide) in paragraph at lines 149--189
  [] 
  []
 
-[10]) (chapters/konzepte.tex [11] [12]
+[10] [11]) (chapters/konzepte.tex
+Underfull \hbox (badness 10000) in paragraph at lines 208--2
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--2
+
+ []
+
+[12]
 chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--8
@@ -1933,7 +1943,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--227
  []
 
 [21]
-<../images/extreme_programming.png, id=534, 633.11531pt x 243.15843pt>
+<../images/extreme_programming.png, id=538, 633.11531pt x 243.15843pt>
 File: ../images/extreme_programming.png Graphic file (type png)
 <use ../images/extreme_programming.png>
 Package pdftex.def Info: ../images/extreme_programming.png  used on input line 
@@ -1950,39 +1960,39 @@ Overfull \hbox (16.96649pt too wide) in paragraph at lines 337--371
  []
 
 [24] [25]
-<../images/Fachlicher_Kontext.PNG, id=562, 235.63031pt x 333.49594pt>
+<../images/Fachlicher_Kontext.PNG, id=566, 235.63031pt x 333.49594pt>
 File: ../images/Fachlicher_Kontext.PNG Graphic file (type png)
 <use ../images/Fachlicher_Kontext.PNG>
 Package pdftex.def Info: ../images/Fachlicher_Kontext.PNG  used on input line 3
 82.
 (pdftex.def)             Requested size: 176.407pt x 249.6786pt.
-<../images/Technischer_Kontext.PNG, id=563, 564.60938pt x 230.36063pt>
+<../images/Technischer_Kontext.PNG, id=567, 564.60938pt x 230.36063pt>
 File: ../images/Technischer_Kontext.PNG Graphic file (type png)
 <use ../images/Technischer_Kontext.PNG>
 Package pdftex.def Info: ../images/Technischer_Kontext.PNG  used on input line 
 387.
 (pdftex.def)             Requested size: 284.52756pt x 116.08688pt.
  [26 <../images/Fachlicher_Kontext.PNG> <../images/Technischer_Kontext.PNG>]
-<../images/Bausteinsicht_Ebene_1.PNG, id=571, 751.30687pt x 520.19344pt>
+<../images/Bausteinsicht_Ebene_1.PNG, id=575, 751.30687pt x 520.19344pt>
 File: ../images/Bausteinsicht_Ebene_1.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_1.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_1.PNG  used on input lin
 e 404.
 (pdftex.def)             Requested size: 341.43306pt x 236.40262pt.
-<../images/Bausteinsicht_Ebene_2.PNG, id=572, 671.50874pt x 529.98pt>
+<../images/Bausteinsicht_Ebene_2.PNG, id=576, 671.50874pt x 529.98pt>
 File: ../images/Bausteinsicht_Ebene_2.PNG Graphic file (type png)
 <use ../images/Bausteinsicht_Ebene_2.PNG>
 Package pdftex.def Info: ../images/Bausteinsicht_Ebene_2.PNG  used on input lin
 e 418.
 (pdftex.def)             Requested size: 256.0748pt x 202.09804pt.
  [27 <../images/Bausteinsicht_Ebene_1.PNG>]
-<../images/Laufzeitsicht.PNG, id=580, 1350.54562pt x 723.45282pt>
+<../images/Laufzeitsicht.PNG, id=584, 1350.54562pt x 723.45282pt>
 File: ../images/Laufzeitsicht.PNG Graphic file (type png)
 <use ../images/Laufzeitsicht.PNG>
 Package pdftex.def Info: ../images/Laufzeitsicht.PNG  used on input line 430.
 (pdftex.def)             Requested size: 398.33858pt x 213.37257pt.
  [28 <../images/Bausteinsicht_Ebene_2.PNG>]
-<../images/Verteilungssicht.PNG, id=587, 639.13782pt x 335.00156pt>
+<../images/Verteilungssicht.PNG, id=591, 639.13782pt x 335.00156pt>
 File: ../images/Verteilungssicht.PNG Graphic file (type png)
 <use ../images/Verteilungssicht.PNG>
 Package pdftex.def Info: ../images/Verteilungssicht.PNG  used on input line 440
@@ -2458,324 +2468,91 @@ LaTeX Font Info:    Trying to load font information for U+ding on input line 12
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/bbding\uding.fd
 File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 )
-<../images/UI_numbers1.png, id=618, 454.69875pt x 324.46219pt>
+<../images/UI_numbers1.png, id=622, 454.69875pt x 324.46219pt>
 File: ../images/UI_numbers1.png Graphic file (type png)
 <use ../images/UI_numbers1.png>
 Package pdftex.def Info: ../images/UI_numbers1.png  used on input line 129.
 (pdftex.def)             Requested size: 398.33858pt x 284.25026pt.
 
 [34 <../images/UI_numbers1.png>]
-<../images/templates_file.png, id=628, 473.51906pt x 125.71968pt>
+<../images/templates_file.png, id=632, 473.51906pt x 125.71968pt>
 File: ../images/templates_file.png Graphic file (type png)
 <use ../images/templates_file.png>
 Package pdftex.def Info: ../images/templates_file.png  used on input line 153.
 (pdftex.def)             Requested size: 341.43306pt x 90.65237pt.
  [35 <../images/templates_file.png>]
-<../images/UI_templates.png, id=635, 454.69875pt x 324.46219pt>
+<../images/UI_templates.png, id=639, 454.69875pt x 324.46219pt>
 File: ../images/UI_templates.png Graphic file (type png)
 <use ../images/UI_templates.png>
 Package pdftex.def Info: ../images/UI_templates.png  used on input line 170.
 (pdftex.def)             Requested size: 170.71652pt x 121.82153pt.
-<../images/UI_parameters.png, id=636, 284.56313pt x 140.77594pt>
+<../images/UI_parameters.png, id=640, 284.56313pt x 140.77594pt>
 File: ../images/UI_parameters.png Graphic file (type png)
 <use ../images/UI_parameters.png>
 Package pdftex.def Info: ../images/UI_parameters.png  used on input line 171.
 (pdftex.def)             Requested size: 170.71652pt x 84.45761pt.
-<../images/UI_template.png, id=637, 454.69875pt x 324.46219pt>
+<../images/UI_template.png, id=641, 454.69875pt x 324.46219pt>
 File: ../images/UI_template.png Graphic file (type png)
 <use ../images/UI_template.png>
 Package pdftex.def Info: ../images/UI_template.png  used on input line 177.
 (pdftex.def)             Requested size: 341.43306pt x 243.64308pt.
-<../images/UI_applied.png, id=638, 454.69875pt x 324.46219pt>
+<../images/UI_applied.png, id=642, 454.69875pt x 324.46219pt>
 File: ../images/UI_applied.png Graphic file (type png)
 <use ../images/UI_applied.png>
 Package pdftex.def Info: ../images/UI_applied.png  used on input line 188.
 (pdftex.def)             Requested size: 341.43306pt x 243.64308pt.
  [36 <../images/UI_templates.png> <../images/UI_parameters.png> <../images/UI_t
 emplate.png>]
-<../images/UI_finished.png, id=645, 768.62157pt x 488.57532pt>
+<../images/UI_finished.png, id=649, 768.62157pt x 488.57532pt>
 File: ../images/UI_finished.png Graphic file (type png)
 <use ../images/UI_finished.png>
 Package pdftex.def Info: ../images/UI_finished.png  used on input line 195.
 (pdftex.def)             Requested size: 369.88582pt x 235.1248pt.
  [37 <../images/UI_applied.png>] [38 <../images/UI_finished.png>]
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-<../images/graph_tree.png, id=656, 252.19218pt x 167.12437pt>
+<../images/graph_tree.png, id=662, 252.19218pt x 167.12437pt>
 File: ../images/graph_tree.png Graphic file (type png)
 <use ../images/graph_tree.png>
-Package pdftex.def Info: ../images/graph_tree.png  used on input line 274.
+Package pdftex.def Info: ../images/graph_tree.png  used on input line 219.
 (pdftex.def)             Requested size: 227.62204pt x 150.84404pt.
-<../images/tree_graph.png, id=657, 235.63031pt x 387.69844pt>
+<../images/tree_graph.png, id=663, 235.63031pt x 387.69844pt>
 File: ../images/tree_graph.png Graphic file (type png)
 <use ../images/tree_graph.png>
-Package pdftex.def Info: ../images/tree_graph.png  used on input line 275.
+Package pdftex.def Info: ../images/tree_graph.png  used on input line 220.
 (pdftex.def)             Requested size: 142.26378pt x 234.07613pt.
 
-[39] [40 <../images/graph_tree.png> <../images/tree_graph.png>] [41] [42]
-[43]
+Underfull \hbox (badness 10000) in paragraph at lines 225--232
 
-chapters/implementierung.tex:485: Package inputenc Error: Invalid UTF-8 byte se
-quence.
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.485         // L = ∅
-                        
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
+[39 <../images/graph_tree.png> <../images/tree_graph.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--257
+
+ []
 
 
-chapters/implementierung.tex:485: Package inputenc Error: Invalid UTF-8 byte "8
-5.
+Underfull \hbox (badness 10000) in paragraph at lines 244--257
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.485         // L = ∅
-                        
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
+ []
 
-
-chapters/implementierung.tex:487: Package inputenc Error: Invalid UTF-8 byte se
-quence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.487         // wl ∈ 
-                        [0, 1]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:487: Package inputenc Error: Invalid UTF-8 byte "8
-8.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.487         // wl ∈ 
-                        [0, 1]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-[44] [45] [46]
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte se
-quence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ 
-                                   + {p∗}, L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "8
-8.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ 
-                                   + {p∗}, L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "9
-7.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ 
-                                   + {p∗}, L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte se
-quence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}
-                                           , L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "8
-8.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}
-                                           , L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "9
-7.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}
-                                           , L∗)
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte se
-quence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}, L∗)
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "8
-8.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}, L∗)
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:660: Package inputenc Error: Invalid UTF-8 byte "9
-7.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.660         // C^old_g = Cg(L∗ + {p∗}, L∗)
-                                                  
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-[47]
-
-chapters/implementierung.tex:686: Package inputenc Error: Invalid UTF-8 byte se
-quence.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.686  * balancing w0 ∈ 
-                          [0.0, 1.0]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-chapters/implementierung.tex:686: Package inputenc Error: Invalid UTF-8 byte "8
-8.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.686  * balancing w0 ∈ 
-                          [0.0, 1.0]
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-[48] [49] [50] [51]) (chapters/evaluierung.tex [52]
+) (chapters/evaluierung.tex [40]
 chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--45
 
  []
 
-[53
+[41
 
-] [54]
-<../images/evaluierung_inferrieren.png, id=1106, 569.87906pt x 440.39531pt>
+] [42]
+<../images/evaluierung_inferrieren.png, id=708, 569.87906pt x 440.39531pt>
 File: ../images/evaluierung_inferrieren.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren.png  used on input l
 ine 65.
 (pdftex.def)             Requested size: 341.43306pt x 263.85619pt.
- [55 <../images/evaluierung_inferrieren.png>]
-<../images/evaluierung_inferrieren_baum.png, id=1118, 554.82281pt x 388.45125pt
->
+ [43 <../images/evaluierung_inferrieren.png>]
+<../images/evaluierung_inferrieren_baum.png, id=720, 554.82281pt x 388.45125pt>
+
 File: ../images/evaluierung_inferrieren_baum.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren_baum.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren_baum.png  used on in
@@ -2791,8 +2568,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--97
 
  []
 
-<../images/evaluierung_inferrieren_lsystem.png, id=1120, 309.40594pt x 264.99pt
->
+<../images/evaluierung_inferrieren_lsystem.png, id=722, 309.40594pt x 264.99pt>
+
 File: ../images/evaluierung_inferrieren_lsystem.png Graphic file (type png)
 <use ../images/evaluierung_inferrieren_lsystem.png>
 Package pdftex.def Info: ../images/evaluierung_inferrieren_lsystem.png  used on
@@ -2803,80 +2580,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--108
 
  []
 
-[56 <../images/evaluierung_inferrieren_baum.png>] [57 <../images/evaluierung_in
+[44 <../images/evaluierung_inferrieren_baum.png>] [45 <../images/evaluierung_in
 ferrieren_lsystem.png>]
-<../images/compressed_tree.png, id=1138, 1072.75781pt x 338.76563pt>
+<../images/compressed_tree.png, id=740, 1072.75781pt x 338.76563pt>
 File: ../images/compressed_tree.png Graphic file (type png)
 <use ../images/compressed_tree.png>
 Package pdftex.def Info: ../images/compressed_tree.png  used on input line 139.
 
 (pdftex.def)             Requested size: 398.33858pt x 125.79103pt.
- [58 <../images/compressed_tree.png>]
-<../images/synthesis.png, id=1152, 906.38625pt x 548.0475pt>
+ [46 <../images/compressed_tree.png>]
+<../images/synthesis.png, id=754, 906.38625pt x 548.0475pt>
 File: ../images/synthesis.png Graphic file (type png)
 <use ../images/synthesis.png>
 Package pdftex.def Info: ../images/synthesis.png  used on input line 179.
 (pdftex.def)             Requested size: 412.56496pt x 249.45398pt.
- [59]
-<../images/synthesis_marks.png, id=1167, 906.38625pt x 548.0475pt>
+ [47]
+<../images/synthesis_marks.png, id=769, 906.38625pt x 548.0475pt>
 File: ../images/synthesis_marks.png Graphic file (type png)
 <use ../images/synthesis_marks.png>
 Package pdftex.def Info: ../images/synthesis_marks.png  used on input line 196.
 
 (pdftex.def)             Requested size: 412.56496pt x 249.45398pt.
- [60 <../images/synthesis.png>]) (chapters/ausblick.tex [61 <../images/synthesi
+ [48 <../images/synthesis.png>]) (chapters/ausblick.tex [49 <../images/synthesi
 s_marks.png>]
 chapter 6.
-) [62
+) [50
 
-] (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [63]
+] (D:/git\bachelor\Ausarbeitungen\out\thesis.bbl [51]
 chapter without number
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--40
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 []\T1/cmr/m/sc/10.95 Charikar, M./Lehman, E./Liu, D./Panigrahy, R./Prabhakaran,
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
 []\T1/cmr/m/sc/10.95 Guo, J./Jiang, H./Benes, B./Deussen, O./Zhang, X./Lischins
 ki,
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 54--57
+Underfull \hbox (badness 1596) in paragraph at lines 61--64
 \T1/cmr/m/sc/10.95 D./Huang, H. \T1/cmr/m/n/10.95 (2020): In-ver-se Pro-ce-du-r
 al Mo-de-ling of Bran-ching Struc-tu-
  []
 
-[64
+[52
 
 ]
-Underfull \hbox (badness 1533) in paragraph at lines 63--66
+Underfull \hbox (badness 1533) in paragraph at lines 70--73
 []\T1/cmr/m/sc/10.95 Hruschka, D. P./Starke, D. G. \T1/cmr/m/n/10.95 (): arc42 
 Softwarearchitektur-Template,
  []
 
-[65]) (appendix/anhang.tex [66]
+[53]) (appendix/anhang.tex [54]
 chapter A.
-<../images/tree.png, id=1218, 335.75438pt x 622.57594pt>
+<../images/tree.png, id=822, 335.75438pt x 622.57594pt>
 File: ../images/tree.png Graphic file (type png)
 <use ../images/tree.png>
 Package pdftex.def Info: ../images/tree.png  used on input line 8.
 (pdftex.def)             Requested size: 170.71652pt x 316.55005pt.
-<../images/pipeline.png, id=1219, 953.81343pt x 306.39468pt>
+<../images/pipeline.png, id=823, 953.81343pt x 306.39468pt>
 File: ../images/pipeline.png Graphic file (type png)
 <use ../images/pipeline.png>
 Package pdftex.def Info: ../images/pipeline.png  used on input line 15.
 (pdftex.def)             Requested size: 625.96062pt x 201.0897pt.
-[67
+[55
 
  <../images/tree.png>]
 Overfull \vbox (58.03041pt too high) has occurred while \output is active []
 
 
-[68 <../images/pipeline.png>]
-<../images/tool.png, id=1229, 855.94781pt x 462.97969pt>
+[56 <../images/pipeline.png>]
+<../images/tool.png, id=833, 855.94781pt x 462.97969pt>
 File: ../images/tool.png Graphic file (type png)
 <use ../images/tool.png>
 Package pdftex.def Info: ../images/tool.png  used on input line 22.
@@ -2886,27 +2663,27 @@ Overfull \hbox (2.84718pt too wide) in paragraph at lines 22--23
  [][] 
  []
 
-<../images/example_1.png, id=1230, 406.51875pt x 319.94531pt>
+<../images/example_1.png, id=834, 406.51875pt x 319.94531pt>
 File: ../images/example_1.png Graphic file (type png)
 <use ../images/example_1.png>
 Package pdftex.def Info: ../images/example_1.png  used on input line 28.
 (pdftex.def)             Requested size: 170.71652pt x 134.35658pt.
-<../images/example_2.png, id=1231, 277.78781pt x 319.94531pt>
+<../images/example_2.png, id=835, 277.78781pt x 319.94531pt>
 File: ../images/example_2.png Graphic file (type png)
 <use ../images/example_2.png>
 Package pdftex.def Info: ../images/example_2.png  used on input line 29.
 (pdftex.def)             Requested size: 170.71652pt x 196.62605pt.
-<../images/example_3.png, id=1232, 456.95718pt x 341.77687pt>
+<../images/example_3.png, id=836, 456.95718pt x 341.77687pt>
 File: ../images/example_3.png Graphic file (type png)
 <use ../images/example_3.png>
 Package pdftex.def Info: ../images/example_3.png  used on input line 30.
 (pdftex.def)             Requested size: 170.71652pt x 127.68622pt.
-<../images/example_4.png, id=1233, 589.4522pt x 536.0025pt>
+<../images/example_4.png, id=837, 589.4522pt x 536.0025pt>
 File: ../images/example_4.png Graphic file (type png)
 <use ../images/example_4.png>
 Package pdftex.def Info: ../images/example_4.png  used on input line 31.
 (pdftex.def)             Requested size: 170.71652pt x 155.23227pt.
-<../images/example_5.png, id=1234, 339.51843pt x 295.1025pt>
+<../images/example_5.png, id=838, 339.51843pt x 295.1025pt>
 File: ../images/example_5.png Graphic file (type png)
 <use ../images/example_5.png>
 Package pdftex.def Info: ../images/example_5.png  used on input line 32.
@@ -2921,17 +2698,218 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--33
 [] []
  []
 
-[69 <../images/tool.png>] [70 <../images/example_1.png> <../images/example_2.pn
+[57 <../images/tool.png>] [58 <../images/example_1.png> <../images/example_2.pn
 g> <../images/example_3.png> <../images/example_4.png> <../images/example_5.png
->] [71] [72] [73]
+>]
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+[59] [60] [61] [62]
 
-appendix/anhang.tex:195: Package inputenc Error: Invalid UTF-8 byte sequence.
+appendix/anhang.tex:324: Package inputenc Error: Invalid UTF-8 byte sequence.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.195 ...te all possible merging rule pairs P ∈ 
+l.324         // L = ∅
+                        
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:324: Package inputenc Error: Invalid UTF-8 byte "85.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.324         // L = ∅
+                        
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:326: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.326         // wl ∈ 
+                        [0, 1]
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:326: Package inputenc Error: Invalid UTF-8 byte "88.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.326         // wl ∈ 
+                        [0, 1]
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[63] [64] [65] [66]
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ 
+                                   + {p∗}, L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "88.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ 
+                                   + {p∗}, L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "97.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ 
+                                   + {p∗}, L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}
+                                           , L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "88.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}
+                                           , L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "97.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}
+                                           , L∗)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}, L∗)
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "88.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}, L∗)
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:559: Package inputenc Error: Invalid UTF-8 byte "97.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.559         // C^old_g = Cg(L∗ + {p∗}, L∗)
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[67]
+
+appendix/anhang.tex:591: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.591 ...te all possible merging rule pairs P ∈ 
                                                   L*
 The document does not appear to be in UTF-8 encoding.
 Try adding \UseRawInputEncoding as the first line of the file
@@ -2940,13 +2918,13 @@ in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
 
-appendix/anhang.tex:195: Package inputenc Error: Invalid UTF-8 byte "88.
+appendix/anhang.tex:591: Package inputenc Error: Invalid UTF-8 byte "88.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.195 ...te all possible merging rule pairs P ∈ 
+l.591 ...te all possible merging rule pairs P ∈ 
                                                   L*
 The document does not appear to be in UTF-8 encoding.
 Try adding \UseRawInputEncoding as the first line of the file
@@ -2954,21 +2932,51 @@ or specify an encoding such as \usepackage [latin1]{inputenc}
 in the document preamble.
 Alternatively, save the file in UTF-8 using your editor or another tool
 
-[74]
-<../images/baum_nummern.png, id=1393, 1397.97281pt x 739.26187pt>
+
+appendix/anhang.tex:631: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.631  * balancing w0 ∈ 
+                          [0.0, 1.0]
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+appendix/anhang.tex:631: Package inputenc Error: Invalid UTF-8 byte "88.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.631  * balancing w0 ∈ 
+                          [0.0, 1.0]
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+[68] [69] [70] [71]
+<../images/baum_nummern.png, id=1385, 1397.97281pt x 739.26187pt>
 File: ../images/baum_nummern.png Graphic file (type png)
 <use ../images/baum_nummern.png>
-Package pdftex.def Info: ../images/baum_nummern.png  used on input line 263.
+Package pdftex.def Info: ../images/baum_nummern.png  used on input line 907.
 (pdftex.def)             Requested size: 512.1496pt x 270.82663pt.
-) [75] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls)
-(../style/statement_i.tex [76 <../images/baum_nummern.png>]
+) [72] (D:/git\bachelor\Ausarbeitungen\out\thesis.gls)
+(../style/statement_i.tex [73 <../images/baum_nummern.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 4
 .
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[77
+[74
 
 ]) (D:/git\bachelor\Ausarbeitungen\out\thesis.aux)
 
@@ -2982,13 +2990,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 40632 strings out of 479618
- 802920 string characters out of 2865027
- 1783214 words of memory out of 3000000
- 56071 multiletter control sequences out of 15000+200000
+ 40640 strings out of 479618
+ 803199 string characters out of 2865027
+ 1793155 words of memory out of 3000000
+ 56084 multiletter control sequences out of 15000+200000
  440008 words of font info for 97 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 117i,21n,116p,10636b,2372s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 117i,21n,116p,10636b,2413s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx
 1095.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecti0900.pk> <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -3034,10 +3042,10 @@ amsfonts/cm/cmsy5.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1
 ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/Programs/Mi
 KTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/adria/AppData/Local/Programs/
 MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (87 pages, 1752
-764 bytes).
+Output written on D:/git\bachelor\Ausarbeitungen\out\thesis.pdf (84 pages, 1751
+905 bytes).
 PDF statistics:
- 2557 PDF objects out of 2984 (max. 8388607)
- 859 named destinations out of 1000 (max. 500000)
+ 2554 PDF objects out of 2984 (max. 8388607)
+ 854 named destinations out of 1000 (max. 500000)
  474 words of extra memory for PDF output out of 10000 (max. 10000000)
 
