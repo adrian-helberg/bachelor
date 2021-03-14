@@ -10,7 +10,7 @@ Softwareumgebungsspezifische Implementierungsdetails werden unter Angabe von dre
 
 \section{Projektstruktur}
 Das Softwareprojekt ist nach der Gradle-Source-Code-Konvention organisiert.
-Das gesamte Programm befindet sich im Ordner Generator, der obligatorische Gradle-Dateien und den
+Das gesamte Programm befindet sich im Ordner \texttt{Generator}, der obligatorische Gradle-Dateien und den
 Source-Ordner enthält.
 Sowohl die Quelldateien, also auch die Testdateien sind der Paketstruktur \textbf{de.haw} untergeordnet.
 Die folgende Tabelle gibt einen Überblick über grundlegende Pakete und deren Funktion.
@@ -85,27 +85,27 @@ Die folgende Tabelle gibt einen Überblick über grundlegende Pakete und deren F
 \end{figure}
 
 \section{Technologien}
-Zur Umsetzung des Softwarepojektes wird eine Java-Anwendung für die Java-Laufzeitumgebung entwickelt.
-Sie liegt in der Distribution \textbf{Amazon Corretto} in der Version 11.0.3\_7 vor.
-Grafische Oberflächen werden mit der JavaFX-Spezifikation von Oracle in der Version 11.0.2 umgesetzt.
-Zur Automatisierung von Abhängigkeits- und Buildmanagement wird Gradle (Version 6.7) verwendet.
+Zur Umsetzung des Softwarepojekts wird eine \textbf{Java}-Anwendung für die \textbf{Java}-Laufzeit-umgebung entwickelt.
+Sie liegt in der Distribution \textbf{Amazon Corretto} in der Version 11.0.2 vor.
+Grafische Oberflächen werden mit der JavaFX-Spezifikation von \textbf{Oracle} in der Version 11.0.2 umgesetzt.
+Zur Automatisierung von Abhängigkeits- und Buildmanagement wird \textbf{Gradle} (Version 6.7) verwendet.
 Eine Testumgebung, eine Vektorbibliothek, eine Tupelrepräsentation und eine Erweiterung zur mathematischen
-Standartbibliothek werden über Abhängigkeiten vom Gradle-Framework im Build-Prozess geladen und zur Verfügung
+Standardbibliothek werden über Abhängigkeiten vom Gradle-Framework im Build-Prozess geladen und zur Verfügung
 gestellt.\\
-Um den test-driven Implementierungsansatz umzusetzen wird JUnit 5 Jupiter als Testumgebung genutzt.
+Um den test-driven Implementierungsansatz umzusetzen wird \textbf{JUnit 5 Jupiter} als\\ Testumgebung genutzt.
 Sie setzt sich aus einem Programmierschema und einem Erweiterungsmodell zusammen.
 Das Jupiter-Projekt liefert zudem die Laufzeitumgebung für Softwaretests.
-Googles Guava liefert eine Bibliothek mit mathematischen Funktionen.
-Sie wird benötigt, um eine praktikable Lösung zu Mengenmanipulation nutzen zu können (Bsp. Erstellen
+\textbf{Google Guava} liefert eine Bibliothek mit mathematischen Funktionen.
+Sie wird benötigt, um eine praktikable Lösung zur Mengenmanipulation nutzen zu können (Bsp. Erstellen
 von Kombinationspaaren einer Menge).
 Ausschließlich JavaFX wird außerhalb des Projektes installiert und als Modul im Start-Skript des Programmes
 hinzugefügt.
 \\~\\
 Weitere Systeme zur Erstellung des Softwareprojektes sind:
 \begin{itemize}
-    \item Versionierung via Git,
-    \item Dot zur Visualisierung von Graphen und
-    \item PlantUML zur Generierung von UML-Diagrammen
+    \item Versionierung via \textbf{Git}
+    \item \textbf{Dot} zur Visualisierung von Graphen
+    \item \textbf{PlantUML} zur Generierung von UML-Diagrammen
 \end{itemize}
 
 \newpage
@@ -135,23 +135,23 @@ und die Anzahl an Ähnlichkeitsstrukturen, die aus dem resultierenden L-System a
 Die Gewichtungsparameter der vorgestellten Algorithmen können ebenfalls hier eingestellt werden.
 Die Strukturen \textbf{4} und \textbf{5} gliedern das Programm in die Ansicht der Verzweiungsstruktur (\textbf{6}), die vom Benutzer
 angelegt wird, die Übersicht zur Auswahl eines Templates (\textbf{7}) und eine Sicht zur Setzung von Transformationsparametern (\textbf{7}).
-Der Kreis \textbf{8} stellt einen Anker dar, an welchen eine Template-Instanz angehängt werden kann.
+Der Kreis \textbf{8} stellt einen Anker dar, an welchem eine Template-Instanz angehängt werden kann.
 Sowohl über einen Doppelklick, also auch über einen Button (\textbf{9}) kann ein Template aus der Tempalte-Liste (\textbf{7})
 ausgewählt werden.
 Ist die Verzweigungsstruktur vom Benutzer fertiggestellt, kann die Synthese zur Erstellung der Ähnlichkeitsabbildungen
 mit \textbf{10} erfolgen.
-Wird der Generieren-Button ohne eine Basisstruktur gedrückt, lässt sich das Beispiel aus
-dieser Arbeit erzeugen (ohne visualisierung der Basisstruktur).
+Wird der \texttt{Generate}-Button ohne eine Basisstruktur gedrückt, lässt sich das Beispiel aus
+dieser Arbeit erzeugen (ohne Visualisierung der Basisstruktur).
 \textbf{11} schließt die Anwendung.
 
 \subsection*{Templates}
-Eine Datei \textit{template.txt} wird im selben Verzeichnis wie die ausführbare jar-Datei hinerlegt.
-Die enthält je eine Template-Zeichenkette pro Zeile, die vom Programm eingelesen und als Template
+Eine Datei \textit{template.txt} wird im selben Verzeichnis wie die ausführbare jar-Datei hinterlegt.
+Die enthält je eine Template-Zeichenkette pro Zeile, welche vom Programm eingelesen und als Template
 zur Verfügung gestellt wird.
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{../images/templates_file.png}
-    \caption{Tempaltes-Datei zum Einlesen der Template-Strukturen}
+    \caption{Templates-Datei zum Einlesen der Template-Strukturen}
 \end{figure}
 
 \newpage
@@ -161,7 +161,7 @@ Die grafische Oberfläche liegt als MVC-Pattern in Form des Application State (M
 und dem JavaFX-Controller vor.
 Der Arbeitsablauf zur Erstellung der Verzweigungsstruktur kann Schritt für Schritt umgesetzt werden, nachdem die Templates
 geladen wurden.
-Dies wird an folgendem Beispiel deutlich gemacht.
+Dies wird an folgendem Beispiel deutlich.
 Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application ratio} und
 \textbf{Merge application ratio} werden auf die Werte \textbf{5}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
 (Standardeinstellung).
@@ -169,7 +169,7 @@ Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \te
     \centering
     \includegraphics[width=6cm]{../images/UI_templates.png}
     \includegraphics[width=6cm]{../images/UI_parameters.png}
-    \caption{Erster Anker ist vorselektiert \& gesetzte Parameter}
+    \caption{Erster Anker ist vorselektiert (links) \& ein gesetzter Parameter (rechts)}
 \end{figure}
 
 \begin{figure}[H]
@@ -178,31 +178,30 @@ Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \te
     \caption{Auswahl des ersten Templates}
 \end{figure}
 
-Nachdem ein Template ausgewählt wurde, können die Transformationsparameter gesetzt (Doppelklick) werden und die Auswahl
-rückgängig gemacht (\textbf{1}) oder bestätigt (\textbf{2}) werden.
-\textbf{3} zeigt einen Entwurf der Tempalte-Instanz, die mit den aktuellen Transformationsparametern angepasst wurde.
-Mit der Bestätigung wird die Template-Instanz endgültig der Basisstruktur hinzugefügt und der Benutzer gelangt wieder
-in die Übersich der zur Verfügung stehenden Templates.
+Nachdem ein Template ausgewählt wird, können die Transformationsparameter gesetzt (Doppelklick) und bestätigt (\textbf{2})
+werden oder der Vorgang abgebrochen werden (\textbf{1}).
+\textbf{3} zeigt einen Entwurf der Template-Instanz, die mit den aktuellen Transformationsparametern angepasst wurde.
+Mit der Bestätigung (\textbf{2}) wird die Template-Instanz der Basisstruktur hinzugefügt und der Benutzer gelangt wieder
+in die Übersicht der zur Verfügung stehenden Templates.
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{../images/UI_applied.png}
     \caption{Der Verzweigungsstruktur hinzugefügte Template-Instanz}
 \end{figure}
 
-Dieser Vorgang wiederholt sich, bis der Benutzer die Struktur fertiggestellt hat.
+Bis zur gewünschten Fertigstellung kann der Benutzer den Vorgang beliebig oft wiederholen.
 \begin{figure}[H]
     \centering
     \includegraphics[width=13cm]{../images/UI_finished.png}
     \caption{Vom Benutzer fertiggestellte Verzweigungsstruktur}
 \end{figure}
 
-Über den \textbf{Generate}-Button kann nun die Synthese gestartet werden.
+Über den \texttt{Generate}-Button kann nun die Synthese gestartet werden.
 Es ergeben sich 5 (\textbf{Number of generations}) Ähnlichkeitsstrukturen
 (siehe ~\ref{resulting_structures})
 
 \subsection*{Baumtopologie}
-Um eine interne Baumtopologie aufzubauen wird die Klasse \texttt{TreeNode} verwendet, um eine iterierbare Baumstruktur
-aufzubauen (siehe~\ref{treestructure}).
+Die Klasse \texttt{TreeNode} wird verwendet, um eine iterierbare Baumstruktur aufzubauen (siehe~\ref{treestructure}).
 \texttt{TreeNode} implementiert die \texttt{Iterable}-Schnittstelle, was ein Überladen der \texttt{iterator}-Funktion möglich
 macht.
 Sie stellt einen Iterator des Baumes zur Verfügung.
@@ -222,8 +221,8 @@ Das folgende Beispiel zeigt eine erstellte Baumstruktur (links) und deren erstel
 \end{figure}
 
 \subsection*{Prozesspipeline}
-Das angewendete Pipeline-Design-Pattern zur Umsetzung der Inferrierung, Komprimierung und Generalisierung von L-Systemem,
-sowie der Verteilung von Transformationsparametern bei deren Ausführung, setzt sich aus der \texttt{Pipeline}-Klasse und
+Das verwendete Pipeline-Design-Pattern zur Umsetzung der Inferrierung, Komprimierung und Generalisierung von L-Systemem,
+sowie die Verteilung von Transformationsparametern bei deren Ausführung, setzt sich aus der \texttt{Pipeline}-Klasse und
 dem \texttt{Pipe}-Interface zusammen (siehe~\ref{pipeline1} und~\ref{pipeline2}).\\~\\
 Die eigentliche Umsetzung der Prozesspipeline zur Synthese der Verzweigungsstrukturen wird wie folgt implementiert.
 Hierbei implementieren die Klassen \texttt{InfererPipe}, \texttt{CompressorPipe}, \texttt{GeneralizerPipe} und
@@ -231,32 +230,32 @@ Hierbei implementieren die Klassen \texttt{InfererPipe}, \texttt{CompressorPipe}
 Das \texttt{ctx}-Objekt wird als Kontextobjekt in die Pipeline gegeben und bei jedem Prozessschritt angepasst (siehe~\ref{ctx}).
 
 \subsection*{L-System Manipulation}
-Die Inferrierung des L-Systems findet in der Klasse \texttt{Inferer} statt, die in der \texttt{InfererPipe}-Klasse erstellt wird.
+Die Inferrierung des L-Systems findet in der Klasse \texttt{Inferer} statt, deren Objekt in der \texttt{InfererPipe}-Klasse erstellt wird.
 Sie nimmt die Baumstruktur entgegegen und stellt eine Funktion \texttt{infer} zum Inferieren des L-Systems zur Verfügung (siehe~\ref{inferer}).\\
 Das erstellte L-System (\textbf{8}) wird während des Inferierens aktualisiert und am Schluss als Ergebnis zurückgegeben.
 Dann werden die initialen Symbole $F$ und $S$ hinzugefügt und das Axiom auf $S$ gesetzt (\textbf{10-12}).
 Die initiale Produktionsregel $\alpha: S \rightarrow A$ wird erstellt und der Produktionsregelmenge beigefügt (\textbf{14-15}).
-Es wird der erste zu untersuchende Knoten des Baumen über seinen Iterator zurückgegeben und als $\beta$ gesetzt (\textbf{17}).
+Es wird der erste zu untersuchende Knoten des Baumes über seinen Iterator zurückgegeben und als $\beta$ gesetzt (\textbf{17}).
 Am Ende der Initialisierung fügt die Methode \texttt{addModuleNotPresentInAlphabet} dem Alphabet ein neues Symbol (\texttt{gamma}) hinzu,
 das dort nicht vorhanden ist (\textbf{19}).
-Dies geschieht nach lexikografischer Reihenfolge.
+Dies geschieht in lexikografischer Reihenfolge.
 
 Nach der Erstellung des \texttt{Inferer}-Objektes kann in der zugehörigen Pipe \texttt{InfererPipe} das L-System inferriert
 werden (siehe~\ref{infererpipe}).\\~\\
-Für die Implementierung des Inferrierungsalgorithmus siehe~\ref{infer}.\\
-Die \texttt{infer}-Methode extrahiert die Zeichenkette (Wort) des im aktuellen Baumknoten gespeicherten Template-Instanz
+Für die Implementierung des Inferierungsalgorithmus siehe~\ref{infer}.\\
+Die \texttt{infer}-Methode extrahiert die Zeichenkette (Wort) der im aktuellen Baumknoten gespeicherten Template-Instanz
 (\textbf{9}) und speichert sie zur Bearbeitung in \texttt{delta}.
 Delta wird nach Verzweigungsvariablen durchsucht (\textbf{11-14}) und diese dann durch ein neues Symbol,
 das dem Alphabet hinzugefügt wird (\textbf{18}), ersetzt (\textbf{20}).
 Eine neue Produktionsregel, die \texttt{gamma} auf das veränderte Wort abbildet, wird dem L-System beigefügt (\textbf{24}).
 \textbf{31-35} sucht nach Symbolen im Alphabet, die noch kein Ziel einer Produktionsregel sind und hält diese in der
 Variablen \texttt{gamma}.
-Wird kein solches Symbol gefunden, terminiert die \texttt{infer}-Methode und damit der Algorithmus (\textbf{44}).
+Wird ein solches Symbol nicht gefunden, terminiert die Methode und damit der Algorithmus (\textbf{44}).
 Der aktuelle Knoten wird durch den Iterator der Baumstruktur mit dem nächsten Knoten nach Breitensuche ersetzt (\textbf{46}).
-Zum Schluss wird das inferrierte L-System zurückgegeben (\textbf{48}).\\
+Zum Schluss wird das inferierte L-System zurückgegeben (\textbf{48}).\\
 
 Die übrigen Prozessschritte sind ähnlich aufgebaut.
-Auch die Klassen \texttt{Compressor}, \texttt{Generalizer} und \texttt{Estimator} implementieren eine Funktion zum Ausführer
+Auch die Klassen \texttt{Compressor}, \texttt{Generalizer} und \texttt{Estimator} implementieren eine Funktion zum Ausführen
 der jeweiligen Algorithmen, während die Initialisierung im Konstruktor ausgeführt wird.
 Dabei wird die Implementierung der Algorithmen eng an der Konzeptionierung gehalten (siehe Kapitel ~\ref{algo}).
 Alle weiteren Klassen der Basisalgorithmen werden in~\ref{komp} bis~\ref{durchschnittparameter} gezeigt.

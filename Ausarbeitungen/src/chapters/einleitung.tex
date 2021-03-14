@@ -11,7 +11,7 @@ Gerade wenn es um die Darstellung natürlicher Umgebung geht, ist die Erstellung
 zum Beispiel verschiedene Bäume derselben Gattung eines Waldes, ein schwieriges Problem.
 Kleine Änderungen in prozeduralen Systemen können zu großen Veränderungen der Ergebnisse führen.
 Darum beschäftigt sich die inverse prozedurale Modellierung unter anderem mit dem Inferieren von Regeln
-und Mustern aus gegeben Objekten, um diese nach bestimmten Regeln zu modellieren.
+und Mustern aus gegebenen Objekten, um diese nach bestimmten Regeln zu modellieren.
 Ein wichtiges Werkzeug hierbei ist die Verwendung formaler Grammatiken als fundamentale Datenstruktur
 der Informatik, um Strukturen zu beschreiben.
 Eine spezielle Untergruppe sind die L-Systeme, die häufig bei der Beschreibung
@@ -26,36 +26,36 @@ inferiert werden kann, welches dann zur Generierung von ähnlichen Strukturen ge
 \section{Problemstellung}
 Während Methodiken zur Kodifizierung bestimmter Strukturen in den Bereich der prozeduralen Modellierung fällt,
 findet das Ableiten von Regeln Anwendung in der inversen prozeduralen Modellierung.
-Weiter steigt mit dem digitalen und naturwissenschaftlichen Fortschritt die Anwendung immer komplexerer Strukturen, die
+Mit dem digitalen und naturwissenschaftlichen Fortschritt steigt die Anwendung immer komplexerer Strukturen, die
 ein Herausarbeiten der schwer zu kontrollierenden, prozeduralen Regeln immer schwieriger machen.
 \\~\\
 Ein Beispiel hierzu aus der Gaming-Industrie ist die frühere Verwendung unorganisierter Modelle (ugs. Dreieckssuppe).
 Diese Modelle weisen keine hierarchische Struktur auf und werden erst durch Datenstrukturen, wie bspw. Octrees organisiert.
 Unorganisierte Modelle sind nur bedingt wiederverwendbar, da nur die vorliegende Modellierung verwendet werden kann.
 Es besteht eine hohe Speicherkomplexität bei geringer Laufzeitkomplexität.
-Für kleinste Veränderungen am Modell ist eine erneute Modellierung nötig, die wiederum Speicher benötigt, um sie
+Für kleinste Veränderungen am Modell ist eine erneute Modellierung erforderlich, die wiederum Speicher benötigt, um sie
 persistent speichern zu können.
-Heutzutage werden die Objekte nach bestimmten Kriterien organisiert, um eine austomatisierte Modellierung durch Algorithmen
+Heutzutage werden die Objekte nach bestimmten Kriterien organisiert, um eine automatisierte Modellierung durch Algorithmen
 zu ermöglichen, um so aus einer Grundstruktur weitere Modelle zu erzeugen.
 Speicher- und Laufzeitkomplexität nähern sich an.
-Deshalb werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
+Aus diesem Grund werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
 von Strukturen herausarbeiten (Reverse Engineering), um diese für die (inverse) prozedurale Modellierung zur
 Verfügung zu stellen.
 \\~\\
-Diese Arbeit soll zeigen, wie sich durch die Erstellung eines Systems zur Generierung von ähnlichen Strukture aus einer
+Diese Arbeit soll zeigen, wie sich durch die Erstellung eines Systems zur Generierung von ähnlichen Strukturen aus einer
 Basistruktur, aktuelle Ansätze aus der Forschung in einem Programm umsetzen lassen.
 
 \newpage
 
 \section{Ziele}
-Die Erstellung eines Systems zur Synthese von ähnlichen Struktures aus einer Basis-struktur soll zentrale Aufgabe dieser
+Die Erstellung eines Systems zur Synthese von ähnlichen Strukturen aus einer Basis-struktur soll zentrale Aufgabe dieser
 Arbeit sein.
 Zunächst wird ein System benötigt, das eine Verzweigungsstruktur bestimmt, aus der die ählichen Strukturen erzeugt
 werden sollen.
 Um bestimmte Methodiken und Algorithmen der aktuellen Forschung auf die Eingabestruktur anwenden zu können, sollte diese
 in einer Datenstruktur organisiert werden.
 Anschließend kann ein L-System aus der Struktur inferiert werden.
-Die inferierte Grammatik soll durch diverse Algorithmen manipuliert werden, bis das erzeugte L-System in der Lage ist
+Die inferierte Grammatik soll durch diverse Algorithmen verändert werden, bis das erzeugte L-System in der Lage ist
 Ähnlichkeitsstrukturen zu bilden.
 
 \section{Methodik}
@@ -68,7 +68,7 @@ von Instanzen oder Template-Instanzen.
 \subsection*{Strukturieren}
 Der Benutzer nutzt die grafische Benutzerschnittstelle, um aus einzelnen Templates eine zusammenhängende Basisstruktur zu
 erstellen.
-Neben der Position der Instanzen werden Transformationensparameter, wie Rotation oder Skalierung, angepasst.
+Neben der Position der Instanzen werden Transformationsparameter, wie Rotation oder Skalierung, angepasst.
 
 \subsection*{Visualisieren}
 Der aktuelle Stand der Strukturierung ist jederzeit sichtbar.
@@ -86,15 +86,15 @@ Diese Grammatik beschreibt lediglich die erstellte Basisstruktur und beinhaltet 
 nur auf die Topologie des Baumes und nicht auf geometrische Unterschiede der Instanzen eingegangen wird.
 
 \subsection*{Komprimieren}
-Um sich wiederholende Produktionregeln zu vermeiden und so sowohl das Alphabet, als auch die Produktionsregelmenge
-zu kompromieren, wird die Baumstruktur nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
+Um sich wiederholende Produktionsregeln zu vermeiden und so sowohl das Alphabet, als auch die Produktionsregelmenge
+zu komprimieren, wird die Baumstruktur nach identischen, maximalen Unterbäumen durchsucht und durch zusammengefasste
 Instanzen vereinfacht.
 Hierbei gilt die Baumstruktur selbst nicht als Unterbaum.
 
 \subsection*{Generalisieren}
 Ähnliche Produktionsregeln des L-Systems werden mithilfe einer Kostenfunktion zusammengefasst, um diese mit
 nicht-deterministischen Regeln zu generalisieren.
-Die Kostenfunktion entscheided hierbei über den Grad der Ähnlichkeit zweier Produktionsregeln
+Die Kostenfunktion entscheidet hierbei über den Grad der Ähnlichkeit zweier Produktionsregeln.
 
 \subsection*{Randomisieren}
 Jedes Symbol der Grammatik nimmt eine Liste an Parametern entgegen, die nach bestimmten Kriterien pseudo-randomisiert

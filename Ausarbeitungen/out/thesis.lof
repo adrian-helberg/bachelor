@@ -4,38 +4,38 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Systemarchitektur}}{5}{figure.caption.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Zyklische Umsetzung des Softwareprojektes\relax }}{23}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces System und Systemumgebung\relax }}{26}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Interaktion zwischen System und Systemumgebung\relax }}{26}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Subsysteme mit fachlichen Abhängigkeiten\relax }}{27}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Subsystem GUI\relax }}{28}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Laufzeitsicht\relax }}{29}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Infrastruktur Windows-PC\relax }}{29}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Zyklische Umsetzung des Softwareprojektes\relax }}{24}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces System und Systemumgebung\relax }}{27}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Interaktion zwischen System und Systemumgebung\relax }}{27}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Subsysteme mit fachlichen Abhängigkeiten\relax }}{28}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Subsystem GUI\relax }}{29}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Laufzeitsicht\relax }}{30}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Infrastruktur Windows-PC\relax }}{31}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Softwareprojekt Dateistruktur\relax }}{32}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Softwarepakete mit zugehörigen Funktionen\relax }}{32}{figure.caption.45}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Startskript Generator.bat\relax }}{34}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Programm nach Ausführung des Start-Skripts\relax }}{34}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tempaltes-Datei zum Einlesen der Template-Strukturen\relax }}{35}{figure.caption.49}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Erster Anker ist vorselektiert \& gesetzte Parameter\relax }}{36}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Auswahl des ersten Templates\relax }}{36}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Der Verzweigungsstruktur hinzugefügte Template-Instanz\relax }}{37}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Vom Benutzer fertiggestellte Verzweigungsstruktur\relax }}{38}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Verzweigungsstruktur \& zugehörige Baumstruktur\relax }}{39}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Softwareprojekt Dateistruktur\relax }}{34}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Softwarepakete mit zugehörigen Funktionen\relax }}{34}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Startskript Generator.bat\relax }}{36}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Programm nach Ausführung des Start-Skripts\relax }}{36}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Templates-Datei zum Einlesen der Template-Strukturen\relax }}{37}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Erster Anker ist vorselektiert (links) \& ein gesetzter Parameter (rechts)\relax }}{38}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Auswahl des ersten Templates\relax }}{38}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Der Verzweigungsstruktur hinzugefügte Template-Instanz\relax }}{39}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Vom Benutzer fertiggestellte Verzweigungsstruktur\relax }}{40}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Verzweigungsstruktur \& zugehörige Baumstruktur\relax }}{41}{figure.caption.56}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces templates.txt\relax }}{42}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Grafische Benutzeroberfläche nach der Erstellung einer Basisstruktur\relax }}{43}{figure.caption.62}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Baumstruktur der erstellten Verzweigungsstruktur\relax }}{44}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Inferriertes L-System\relax }}{45}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Komprimierter Baum\relax }}{46}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Synthetisierte Verzweigungsstrukturen\relax }}{48}{figure.caption.71}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Untersuchung der synthetisierten Verzweigungsstrukturen\relax }}{49}{figure.caption.72}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces templates.txt\relax }}{44}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Grafische Benutzeroberfläche nach der Erstellung einer Basisstruktur\relax }}{45}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Baumstruktur der erstellten Verzweigungsstruktur\relax }}{46}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Inferriertes L-System\relax }}{47}{figure.caption.66}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Komprimierter Baum\relax }}{48}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Synthetisierte Verzweigungsstrukturen\relax }}{50}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Untersuchung der synthetisierten Verzweigungsstrukturen\relax }}{51}{figure.caption.72}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Baumstruktur\relax }}{55}{figure.caption.77}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Pipeline\relax }}{56}{figure.caption.78}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Subsysteme der Generierungs-Pipeline\relax }}{57}{figure.caption.79}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Generierte Verzweigungsstrukturen\relax }}{58}{figure.caption.80}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Qualitätsbaum\relax }}{75}{figure.caption.81}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Baumstruktur\relax }}{57}{figure.caption.77}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Pipeline\relax }}{58}{figure.caption.78}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Subsysteme der Generierungs-Pipeline\relax }}{59}{figure.caption.79}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Generierte Verzweigungsstrukturen\relax }}{60}{figure.caption.80}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Qualitätsbaum\relax }}{77}{figure.caption.81}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

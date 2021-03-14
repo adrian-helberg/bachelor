@@ -10,18 +10,18 @@
 \contentsline {section}{\numberline {2.1}Grundbegriffe}{6}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Grundlegende Arbeiten}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Verwandte Arbeiten}{11}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Konzepte}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Probleme \& Lösungsansätze}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Workflows \& Algorithmen}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Softwaretechnik}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Softwarearchitektur}{23}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Implementierung}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Projektstruktur}{31}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Technologien}{33}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Konzeptumsetzung}{34}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Evaluierung}{41}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{50}{chapter.6}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{52}{chapter*.76}%
-\contentsline {chapter}{\numberline {A}Anhang}{55}{appendix.A}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{76}{figure.caption.81}%
+\contentsline {chapter}{\numberline {3}Konzepte}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Probleme \& Lösungsansätze}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Workflows \& Algorithmen}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Softwaretechnik}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Softwarearchitektur}{24}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Implementierung}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Projektstruktur}{33}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Technologien}{35}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Konzeptumsetzung}{36}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Evaluierung}{43}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{52}{chapter.6}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{54}{chapter*.76}%
+\contentsline {chapter}{\numberline {A}Anhang}{57}{appendix.A}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{78}{figure.caption.81}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
