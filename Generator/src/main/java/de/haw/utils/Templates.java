@@ -27,6 +27,11 @@ public class Templates {
         return templates.stream().filter(t -> t.getId() == id).findFirst().orElse(null);
     }
 
+    /**
+     * Return a template matching its word with a given one
+     * @param word Given word
+     * @return Templates that matches
+     */
     public static Template getTemplateByWord(String word) {
         return templates.stream().filter(t -> {
             // Do not take variables into account
@@ -61,6 +66,12 @@ public class Templates {
         templates.clear();
     }
 
+    /**
+     * Populates the given template word by applying standard transformation parameters
+     * @param word Given word
+     * @param parametersMap Standard parameters
+     * @return Populated word
+     */
     public static String populate(String word, Map<String, Number> parametersMap) {
         // Fetch rotation property value
         var rotation = (float) parametersMap.get("Rotation");

@@ -42,19 +42,16 @@ public class AnchorTest {
     @Test void testUsage() {
         var anchor = new Anchor(new Turtle(0,0));
         anchor.use();
-
         assertFalse(anchor.isSelected());
         assertTrue(anchor.isUsed());
 
         anchor.neglect();
-
         assertFalse(anchor.isUsed());
     }
 
     @Test void testToString() {
         Turtle turtle = new Turtle(0, 0);
         var anchor = new Anchor(turtle);
-
         assertEquals("Anchor{" + turtle + "}", anchor.toString());
     }
 
@@ -62,7 +59,6 @@ public class AnchorTest {
         var a1 = new Anchor(new Turtle(0,0));
         var a2 = new Anchor(new Turtle(0,0));
         var a3 = new Anchor(new Turtle(1,0));
-
         assertEquals(a1, a2);
         assertNotEquals(a1, a3);
         assertNotEquals(a2, a3);

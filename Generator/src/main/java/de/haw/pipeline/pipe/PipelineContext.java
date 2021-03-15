@@ -7,6 +7,9 @@ import de.haw.tree.TreeNode;
 
 import java.util.Random;
 
+/**
+ * Context class providing data for a pipeline
+ */
 public class PipelineContext {
     public LSystem lSystem;
     public TreeNode<TemplateInstance> tree;

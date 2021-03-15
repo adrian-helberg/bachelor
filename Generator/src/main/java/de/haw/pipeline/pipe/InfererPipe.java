@@ -6,15 +6,12 @@ import de.haw.tool.Inferer;
 import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 import de.haw.utils.Templates;
-
 import java.util.HashMap;
 import java.util.logging.Logger;
-
 import static de.haw.gui.GeneratorController.showPopup;
 
 /**
- * Pipe for executing the infer algorithm.
- * It takes the pipeline context, set it to the result and returns it to the next pipe
+ * Pipe for executing the infer algorithm
  */
 public class InfererPipe implements Pipe<PipelineContext, PipelineContext>, Logging {
     private static Logger logger;
@@ -35,7 +32,7 @@ public class InfererPipe implements Pipe<PipelineContext, PipelineContext>, Logg
         p.put("Branching angle", 45.0f);
         TemplateInstance templateInstance = new TemplateInstance(Templates.populate(input.lSystem.derive(), p));
         turtleGraphic.parseWord(templateInstance, false);
-        showPopup("Inferriertes L-System", turtleGraphic, input.lSystem.toString(), 10, 10);
+        showPopup("Inferiertes L-System", turtleGraphic, input.lSystem.toString(), 10, 10);
 
         // Pass pipeline context to next pipe
         return input;

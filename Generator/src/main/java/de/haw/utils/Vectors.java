@@ -2,6 +2,9 @@ package de.haw.utils;
 
 import mikera.vectorz.Vector;
 
+/**
+ * Vectors class providing operations on vectors
+ */
 public class Vectors {
     /**
      * Return a vector rotated by a given angle
@@ -29,6 +32,12 @@ public class Vectors {
         );
     }
 
+    /**
+     * Calculate and return the distance between two vectors
+     * @param v1 Vector 1
+     * @param v2 Vector 2
+     * @return Distance between vector 1 and vector 2
+     */
     public static double distanceBetweenTwoVectors(Vector v1, Vector v2) {
         return Math.sqrt(Math.pow(v1.get(0) - v2.get(0), 2) + Math.pow(v1.get(1) - v2.get(1), 2));
     }

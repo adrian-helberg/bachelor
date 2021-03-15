@@ -5,6 +5,9 @@ import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 import java.util.logging.Logger;
 
+/**
+ * Pipe for estimating parameter values
+ */
 public class EstimatorPipe implements Pipe<PipelineContext, PipelineContext>, Logging {
     private static Logger logger;
     @Override

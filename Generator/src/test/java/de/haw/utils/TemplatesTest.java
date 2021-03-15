@@ -2,7 +2,6 @@ package de.haw.utils;
 
 import de.haw.gui.template.Template;
 import de.haw.gui.template.TemplateInstance;
-import de.haw.utils.Templates;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

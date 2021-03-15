@@ -5,6 +5,9 @@ import de.haw.pipeline.Pipe;
 import de.haw.utils.Logging;
 import java.util.logging.Logger;
 
+/**
+ * Pipe for executing the compress algorithm
+ */
 public class CompressorPipe implements Pipe<PipelineContext, PipelineContext>, Logging {
     private static Logger logger;
     @Override

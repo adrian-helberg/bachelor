@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test object:
+ * Test object: ProductionRule
  */
 public class ProductionRuleTest {
     @Test void testProductionRule() {

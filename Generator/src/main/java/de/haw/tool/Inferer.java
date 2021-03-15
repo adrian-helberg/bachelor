@@ -1,20 +1,12 @@
 package de.haw.tool;
 
-import de.haw.gui.GeneratorController;
-import de.haw.gui.template.Template;
-import de.haw.gui.turtle.TurtleGraphic;
 import de.haw.lsystem.LSystem;
 import de.haw.lsystem.ProductionRule;
 import de.haw.gui.template.TemplateInstance;
 import de.haw.tree.TreeNode;
-import de.haw.utils.Templates;
-
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
-import static de.haw.gui.GeneratorController.showPopup;
 
 /**
  * Inferer to infer a L-System out of a tree-like data structure

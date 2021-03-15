@@ -11,7 +11,6 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -174,7 +173,6 @@ public class State {
     }
 
     // OVERRIDES
-
     @Override
     public String toString() {
         return "State{" + availableAnchors + ", " + currentDraft + ", " + tree + "}";

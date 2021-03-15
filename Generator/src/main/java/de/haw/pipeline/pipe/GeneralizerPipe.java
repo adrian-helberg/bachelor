@@ -6,6 +6,9 @@ import de.haw.utils.Logging;
 
 import java.util.logging.Logger;
 
+/**
+ * Pipe for executing the generalize algorithm
+ */
 public class GeneralizerPipe implements Pipe<PipelineContext, PipelineContext>, Logging {
     private static Logger logger;
     @Override

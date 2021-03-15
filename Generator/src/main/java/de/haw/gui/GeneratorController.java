@@ -1,6 +1,5 @@
 package de.haw.gui;
 
-import de.haw.Generator;
 import de.haw.State;
 import de.haw.gui.shape.Anchor;
 import de.haw.gui.structure.BranchingStructurePane;
@@ -30,7 +29,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -39,8 +37,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import java.awt.*;
 import java.io.*;
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Objects;
 import java.util.Random;
 import java.util.logging.Logger;
@@ -316,9 +312,10 @@ public class GeneratorController implements Logging {
      * Generates the tree structure
      */
     @FXML public void generate() {
-        reset();
         var tree = state.getTree();
 
+        // Create example branching structure from thesis paper
+        // when the user have not created one
         if (tree.isEmpty()) {
             loadTemplates();
             // 0

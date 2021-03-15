@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Representation of a template istance
+ * Representation of a template instance
  */
 public class TemplateInstance {
     // Populated word

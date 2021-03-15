@@ -2,6 +2,9 @@ package de.haw.utils;
 
 import java.util.TreeMap;
 
+/**
+ * Util class to convert number to the corresponding roman representation
+ */
 public class RomanNumber {
     private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
 
@@ -21,6 +24,11 @@ public class RomanNumber {
         map.put(1, "I");
     }
 
+    /**
+     * Convert and return a corresponding roman number for a given number
+     * @param number Given number
+     * @return Roman number
+     */
     public static String toRoman(int number) {
         int l =  map.floorKey(number);
         if ( number == l ) {
