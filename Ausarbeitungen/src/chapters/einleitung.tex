@@ -31,12 +31,12 @@ ein Herausarbeiten der schwer zu kontrollierenden, prozeduralen Regeln immer sch
 \\~\\
 Ein Beispiel hierzu aus der Gaming-Industrie ist die frühere Verwendung unorganisierter Modelle (ugs. Dreieckssuppe).
 Diese Modelle weisen keine hierarchische Struktur auf und werden erst durch Datenstrukturen, wie bspw. Octrees organisiert.
-Unorganisierte Modelle sind nur bedingt wiederverwendbar, da nur die vorliegende Modellierung verwendet werden kann.
+Unorganisierte Modelle sind nur bedingt wiederverwendbar, da nur die vorliegende Modellierung genutzt werden kann.
 Es besteht eine hohe Speicherkomplexität bei geringer Laufzeitkomplexität.
 Für kleinste Veränderungen am Modell ist eine erneute Modellierung erforderlich, die wiederum Speicher benötigt, um sie
 persistent speichern zu können.
 Heutzutage werden die Objekte nach bestimmten Kriterien organisiert, um eine automatisierte Modellierung durch Algorithmen
-zu ermöglichen, um so aus einer Grundstruktur weitere Modelle zu erzeugen.
+zu ermöglichen, und so aus einer Grundstruktur weitere Modelle zu erzeugen.
 Speicher- und Laufzeitkomplexität nähern sich an.
 Aus diesem Grund werden allgemeingültige, vielseitig anwendbare Algorithmen gesucht, die bestimmte natürliche Eigenschaften
 von Strukturen herausarbeiten (Reverse Engineering), um diese für die (inverse) prozedurale Modellierung zur
@@ -51,11 +51,11 @@ Basistruktur, aktuelle Ansätze aus der Forschung in einem Programm umsetzen las
 Die Erstellung eines Systems zur Synthese von ähnlichen Strukturen aus einer Basis-struktur soll zentrale Aufgabe dieser
 Arbeit sein.
 Zunächst wird ein System benötigt, das eine Verzweigungsstruktur bestimmt, aus der die ählichen Strukturen erzeugt
-werden sollen.
+werden können.
 Um bestimmte Methodiken und Algorithmen der aktuellen Forschung auf die Eingabestruktur anwenden zu können, sollte diese
 in einer Datenstruktur organisiert werden.
 Anschließend kann ein L-System aus der Struktur inferiert werden.
-Die inferierte Grammatik soll durch diverse Algorithmen verändert werden, bis das erzeugte L-System in der Lage ist
+Die inferierte Grammatik kann durch diverse Algorithmen verändert werden, bis das erzeugte L-System in der Lage ist
 Ähnlichkeitsstrukturen zu bilden.
 
 \section{Methodik}
@@ -66,7 +66,7 @@ Werden diese Strukturen auf der graphischen Oberfläche platziert und mit divers
 von Instanzen oder Template-Instanzen.
 
 \subsection*{Strukturieren}
-Der Benutzer nutzt die grafische Benutzerschnittstelle, um aus einzelnen Templates eine zusammenhängende Basisstruktur zu
+Der Benutzer verwendet die grafische Schnittstelle, um aus einzelnen Templates eine zusammenhängende Basisstruktur zu
 erstellen.
 Neben der Position der Instanzen werden Transformationsparameter, wie Rotation oder Skalierung, angepasst.
 
@@ -77,7 +77,7 @@ gestellt.
 
 \subsection*{Datenaufbereitung}
 Das Ergebnis der Strukturierung wird in einer Baumstruktur
-organisiert, in der jeder Knoten einer bestimmten Template-Instanz entspricht und die eingehenden Kanten die
+organisiert, in der jeder Knoten einer bestimmten Template-Instanz entspricht und die eingehende Kante die
 geometrischen Transformationen relativ zum Elternknoten beschreibt.
 
 \subsection*{Inferieren}
@@ -115,4 +115,4 @@ Der Benutzer strukturiert vom System importierte Templates zu einer Basisstruktu
 Die Template-Instanzen werden hierbei in einer Baumtopologie organisiert.
 Anschließend wird ein L-System aus der Baumstruktur generiert und komprimiert.
 Das kompakte L-System wird generalisiert und ausgeführt.
-Zuletzt wird das abgeleitete Axiom parametrisiert und dann sichtbar gemacht.
+Zuletzt wird das abgeleitete Axiom parametrisiert und sichtbar gemacht.

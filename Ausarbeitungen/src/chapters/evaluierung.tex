@@ -23,8 +23,9 @@ Die Nutzung von Templates als Terminale einer Grammatik findet Anwendung in viel
 Mit der Verwendung einer allgemeinen Repräsentation mithilfe von \textit{turtle}-Befehlen, wird eine
 Wiederverwendbarkeit der genutzten Templates sichergestellt.
 Die in dieser Arbeit erstellte Software nutzt ein minimalistisches System zum Einlesen der Templates aus
-einer textbasierten Datei, während die Forschung zur inversen prozeduralen Modellierung den Einsatz von
-neuronalen Netzen als vielversprechende Methode Strukturen zu erkennen und Regeln abzuleiten, zeigt.\\
+einer textbasierten Datei.
+Die Forschung zur inversen prozeduralen Modellierung zeigt wiederum den Einsatz von
+neuronalen Netzen als vielversprechende Methode Strukturen zu erkennen und Regeln abzuleiten.\\
 Während neuronale Netze eine Eingabestruktur analysieren und in einer baumähnlichen Struktur organisieren,
 knüpft diese Arbeit hier an und nutzt aus Praktikabilitätsgründen stattdessen eine benutzergeführte Anordnung
 von Templates zu einer Verzweigungsstruktur.\\~\\
@@ -53,7 +54,8 @@ Durch die Ausführung bestimmter \textit{turtle}-Befehle der template-basierten 
 Deshalb bietet es sich an, einfache grafische Elemente zu nutzen, um Verzweigungsstrukturen sichtbar zu machen
 (z.B. Canvas).
 Das Programm nutzt stattdessen interaktive Elemente innerhalb eines JavaFX Pane gegenüber statischen Elementen, um
-die Strukturen zu zeichnen, da der Prozess der Erstellung benutzergeführt und damit interagierbar sein muss.
+die Strukturen zu zeichnen.
+Der Prozess der Erstellung ist benutzergeführt und muss somit interagierbar sein.
 So können Elemente genutzt werden, mit denen der Benutzer kommunizieren kann (z.B. klickbare Kreise).
 Es ist nun möglich Verzweigungsstrukturen in einem simplen Arbeitsablauf zu erstellen.
 
@@ -67,9 +69,9 @@ Es ist nun möglich Verzweigungsstrukturen in einem simplen Arbeitsablauf zu ers
 \end{figure}
 
 \subsection*{Aufbau einer Baumstruktur}
-Baumähnliche Strukturen eignen sich gut, um Tansformationsparameter und topologische Anordnung von Templates
+Baumähnliche Strukturen eignen sich gut, um Tansformationsparameter und topolo-gische Anordnung von Templates
 datenstrukturell zu trennen.\\
-Ein ganzheitlicher Ansatz zur Analyse von Verzweigungsstrukturen ist die Kombination aus Strukturtopologie und
+Ein ganzheitlicher Ansatz zur Analyse von Verzweigungsstrukturen ist die Kombina-tion aus Strukturtopologie und
 räumlichen Transformationen.
 Ein weiterer Ansatz ist die separate Betrachtung von Topologie und Transformation.
 Beide Ansätze sind derzeit Gegenstand der Forschung.\\
@@ -85,7 +87,7 @@ Auch in der Arbeit von \citeauthor{stava_2010} zeigt sich eine Organisation von
 Bei einer separaten Betrachtung von Topologie und Transformation zeigen \citeauthor{nishida_2016} und \citeauthor{guo_2020},
 dass es sinnvoll ist zwei spezialisierte, neuronale Netze zu verwenden, da die räumlichen Transformationen das Erkennen
 der Topologie nicht signifikant beeinflussen~\cite{nishida_2016, guo_2020}.\\
-Diese Arbeit legt den Fokus auf die datenstrukturelle Trennung von Transformationen und topologischer
+Diese Arbeit legt den Fokus auf die datenstrukturelle Trennung von \mbox{Transformationen} und topologischer
 Anordnung und erstellt somit eine Baumstruktur, die Template-Instanzen als Knoten und
 räumliche Transformationen als eingehende Kanten darstellt.\\~\\
 \underline{Beispiel}: Aus der Eingabestruktur ergibt sich folgender Baum (die räumlichen Transformationen sind hier nicht visualisiert):
@@ -103,7 +105,7 @@ Die L-Systeme entsprechen lediglich der Eingabestruktur und beinhalten keine Tra
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{../images/evaluierung_inferrieren_lsystem.png}
-    \caption{Inferriertes L-System}
+    \caption{Inferiertes L-System}
 \end{figure}
 Die Zeichenkettenrepräsentation des L-Systems ($\mathcal{L}=\{M,\omega,R\}$) lautet:
 \begin{csource}
@@ -130,7 +132,7 @@ und
 \end{csource}
 das gleiche Muster.
 Um solche Redundanzen zu entfernen, wird das L-System in der vorgestellten Komprimierungs-Pipe reduziert.
-Hierbei werden identische, maximale Unterbäume und deren leere Kindknoten zusammengefasst.
+Hierbei werden identische, maximale\\Unterbäume und deren leere Kindknoten zusammengefasst.
 Der Gewichtungsparameter für das Beispiel wird auf 0.5 gesetzt.
 Es ergibt sich folgender Baum:
 \begin{figure}[H]
@@ -150,7 +152,7 @@ LSystem{
 \end{csource}
 
 \subsection*{Generalisieren des L-Systems}
-Der vorgestellte Generalisierungsalgorithmus setzt das L-System von der Eingabestruktur ab, indem
+Der vorgestellte Generalisierungsalgorithmus verändert das L-System der Eingabestruktur, indem
 Produktionsregeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen werden.
 Der Gewichtungsparameter wird für das Beispiel auf 0.5 gesetzt.
 Es ergibt sich das finale L-System:
@@ -168,7 +170,7 @@ Sie werden bei ihrer Anwendung zufällig ausgewählt.
 
 \subsection*{Synthese}
 Führt man das generalisierte L-System aus, ergeben sich die Ähnlichkeitsstrukturen.
-Eine Evaluierung wird stichprobenartig durchgeführt, erweist sich aber als schwierig, da
+Eine Evaluierung wird stichprobenartig durchgeführt, erweist sich jedoch als schwierig, da
 es bei der Erstellung der Ausgabestrukturen um Wahrscheinlichkeiten beim Auftreten gewisser
 Muster handelt.
 Da die Algorithmen eine akzeptable Lösung eines schwierigen Problems liefern sollen,
@@ -182,7 +184,7 @@ ist die Bewertung der Ergebnisse subjektiv.
 Vergleicht man die Eingabestruktur mit den synthetisierten Strukturen, weisen diese
 gewisse Eigenschaften auf (siehe folgende Abbildung):
 \begin{itemize}
-    \item Wiederholtes Auftreten einer Struktur, die beim Synthetisieren als maximaler Unterbaum
+    \item Wiederholtes Auftreten einer Struktur, die beim Synthetisieren als maximaler\\Unterbaum
     erkannt wurde (rot)
     \item Anwendung von benutzerdefinierten Transformationsparametern (blau)
     \item Ähnliche Häufigkeiten (grün)

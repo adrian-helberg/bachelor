@@ -8,8 +8,8 @@ Hierbei hat der Designer (Modellierer) die volle Kontrolle über die Strukturen 
 Bei der prozeduralen Modellierung werden spezifische Strukturen eines zu erstellenden physikalischen Objektes
 generalisiert und meist über eine Grammatik und globale Parameter abgebildet.
 Während bei der klassischen Modellierung die menschliche Intuition und bei der prozeduralen Modellierung eine
-parametrisierte Grammatik genutzt werden kann, arbeitet die inverse prozedurale Modellierung mit bestehenden Modellen und
-extrahiert ("`lernt"') die Strukturen des Objektes, die automatisch in eine formale Grammatik überführt werden können.
+parametrisierte Grammatik genutzt werden kann, arbeitet die inverse prozedurale Modellierung mit bestehenden Modellen.
+Sie extrahiert ("`lernt"') die Strukturen des Objekts, die automatisch in eine formale Grammatik überführt werden können.
 Die Generierung von prozeduralen Modellen ist ein wichtiges, offenes Problem~\cite{benes_2011}.
 
 \section{Grundbegriffe}
@@ -53,17 +53,17 @@ Weiter wird ein Einblick in die Kategorisierung und Bewertung einiger Ergebnisse
 \citeauthor{higuera_2010} weist darauf hin, dass ein wesentlicher Unterschied zwischen der Induktion einer Grammatik
 und der Grammatikinferierung besteht~\cite{higuera_2010}.
 Die Induktion beschreibt das Finden einer Grammatik, welche ein Datum am genauesten beschreibt.
-Die Gammatikinferierung ist das Finden einer Grammatik, die eine bestimmte Zeichenfolge abdeckt.
+Die Grammatikinferierung ist das Finden einer Grammatik, die eine bestimmte Zeichenfolge abdeckt.
 
 \newpage
 
-\citeauthor{higuera_2010} ordnet die inverse Generierung von L-Systemen zum Problem der Grammatikinferenz, welches er
-als gut erforschtes Gebiet beschreibt, ein.
+\citeauthor{higuera_2010} zählt die inverse Generierung von L-Systemen zum Problem der Grammatikinferenz, welches er
+als gut erforschtes Gebiet beschreibt.
 Verzweigungsstrukturen im Kontext der inversen prozeduralen Modellierung tauchen in wissenschaftlichen Studien wenig auf.
 ~\citeauthor{guo_2020} adressiert einige IPM-Ansätze in seiner Arbeit~\cite{guo_2020}:\\~\\
 Die Anwendung von modellierten Bäumen und Landschaften in den Bereichen wie Simulation, VR, Botanik und Architektur
 wird in der Arbeit von \citeauthor{deussen_2010} gezeigt~\cite{deussen_2010}.
-Hier geht es hauptsächlich um die Erstellung und Kombination künstlicher Modelle, um natürlich wirkende Umgebungen zu
+Hier liegt der Fokus auf der Erstellung und Kombination künstlicher Modelle, um natürlich wirkende Umgebungen zu
 schaffen.\\~\\
 Mit der Erkennung von Wiederholungsmustern in Hausfassaden beschäftigt sich\\~\citeauthor{alhalawani_2013}.
 Durch das Finden diverser Verformungsparameter mithilfe einer faktorisierten Fassadendarstellung werden neue
@@ -77,9 +77,9 @@ ausgelesen werden können.
 Anschließend können virtuelle Städte nach dem Vorbild der Eingabe erstellt werden.\\~\\
 Sowohl ~\citeauthor{merrell_2011}, als auch ~\citeauthor{zhang_2019} stellen Systeme zur Erzeugung von Inneneinrichtung
 vor.
-Über ein Layout-System werden Design-Patterns gelernt, in Terme einer Dichtefunktion überführt, um dann virtuelle
+Mithilfe eines Layout-Systems werden Design-Patterns gelernt, in Terme einer Dichtefunktion überführt, um dann virtuelle
 Möbel zu erstellen~\cite{merrell_2011}.
-Eine Übersicht über diverse Kriterien, die zur Erstellung von Innenraumszenen nötig sind, zeigt die
+Eine Übersicht diverser Kriterien, die zur Erstellung von Innenraumszenen nötig sind, zeigt die
 Wichtigkeit über die Auswahl sinnvoller Objekte und deren Anordnung, um plausible Räume zu erstellen~\cite{zhang_2019}.
 
 \newpage
@@ -87,11 +87,11 @@ Wichtigkeit über die Auswahl sinnvoller Objekte und deren Anordnung, um plausib
 \subsection*{L-Systeme}
 \citeauthor{lindemayer_1968} führt eine mathematische Beschreibung zum Wachstum fadenförmiger Organismen ein.
 Sie zeigt, wie sich der Status von Zellen infolge ein oder mehrerer Einflüsse verhält~\cite{lindemayer_1968}.
-Darüber hinaus führt er Ersetzungssysteme ein, die atomare Teile mithilfe von Produktionsregeln ersetzen.
+Darüber hinaus führt er Systeme ein, die atomare Teile mithilfe von Produktionsregeln ersetzen (Ersetzungssysteme).
 Diese L-Systeme (Lindenmayer-Systeme) nutzt er zur formalen Beschreibung von Zellteilung.
 Später werden Symbole zur formalen Beschreibung von Verzweigungen, die von Filamenten abgehen, eingeführt~\cite{prusinkiewicz_1990}.
 Die bekanntesten L-Systeme sind zeichenketten-basiert und werden von \textit{Noam Chomsky} eingeführt~\cite{chomsky_1956}.
-Sie ersetzen parallel Symbole eines Wortes, die von einer Grammatik über eine Sprache akzeptiert werden.
+Sie ersetzen parallel Symbole eines Wortes, welche von einer Grammatik über eine Sprache akzeptiert werden.
 L-Systeme können unter anderem parametrisiert oder nicht-parametrisiert und kontextfrei oder kontextsensitiv sein.
 
 L-Systeme sind Grammatiken mit folgender Form:
@@ -131,7 +131,7 @@ von einem kontextfreien, andernfalls von einem kontextsensitiven L-System.
 
 \subsubsection*{L-System Interpretation}
 Lindenmayer-Systeme können Worte über ihr Alphabet interpretieren.
-Dafür werden Symbole des Wortes, die Ziel einer Produktionsregel sind, in Iterationen durch die RHS
+Hierzu werden Symbole des Wortes, die Ziel einer Produktionsregel sind, in Iterationen durch die RHS
 der Produktionsregel ersetzt.
 Bei der Ausführung eines L-Systems wird kein beliebiges Wort interpretiert, sondern das in der
 Grammatik definierte Axiom.
@@ -158,51 +158,51 @@ Symbole mit zugehörigen Steuerungsbefehlen und Statusveränderungen:
         $F(d)$ &
         \begin{minipage}{0.6\textwidth}
             Gehe vom derzeitigen Punkt $p_1$ $d$ Einheiten in die Blickrichtung zu dem Punkt $p_2$.
-            Zeichne ein Liniensegment zwischen $p_1$ und $p_2$\\
+            Zeichne ein Liniensegment zwischen $p_1$ und $p_2$.\\
         \end{minipage} &
         ja
         \\ \hline \\
         % ROW 3
         $+(\alpha)$ &
         \begin{minipage}{0.6\textwidth}
-            Setze neuen Rotationswinkel $\theta=\theta+\alpha$\\
+            Setze neuen Rotationswinkel $\theta=\theta+\alpha$.\\
         \end{minipage} &
         ja
         \\ \hline \\
         % ROW 4
         $-(\alpha)$ &
         \begin{minipage}{0.6\textwidth}
-            Setze neuen Rotationswinkel $\theta=\theta-\alpha$\\
+            Setze neuen Rotationswinkel $\theta=\theta-\alpha$.\\
         \end{minipage} &
         ja
         \\ \hline \\
         % ROW 5
         $[$ &
         \begin{minipage}{0.6\textwidth}
-            Lege den aktuellen State auf einen Stack\\
+            Lege den aktuellen State auf einen Stack.\\
         \end{minipage} &
         nein
         \\ \hline \\
         % ROW 6
         $]$ &
         \begin{minipage}{0.6\textwidth}
-            Hole den State vom Stack und überschreibe den aktuellen mit diesem\\
+            Hole den State vom Stack.\\
         \end{minipage} &
         nein
     \end{tabular}
 \end{center}
 
 \section{Verwandte Arbeiten}
-Die Erstellung von ähnlichen 3D-Objekten aus komplexen, dreidimensionalen Eingabeobjekten wird in der Arbeit von~\citeauthor{bokeloh_2010}
+Die Erstellung von ähnlichen 3D-Objekten aus komplexen, dreidimensionalen Eingabe-objekten wird in der Arbeit von~\citeauthor{bokeloh_2010}
 präsentiert~\cite{bokeloh_2010}.
 Durch ein "`Zerschneiden"' des Eingabeobjektes in mehrere Unterobjekte, ist es möglich ähnliche Modelle aus den
 Abschnitten zusammenzusetzen.
 Hierbei werden Regeln zur Veränderung des Eingabeobjektes gefunden, die eine bestimmte lokale Ähnlichkeit beibehalten.
 Alle benötigten Informationen werden direkt aus dem Modell und ohne Benutzerinteraktion abgeleitet.\\
 Das Lernen von Design-Patterns mithilfe von Bayes-Grammatiken ist Gegenstand der Arbeit von~\citeauthor{talton_2012}.
-Ein System zur Generierung geometrischer Modelle und Websites wird hier eingeführt, welches eine organisierte
-Struktur von bezeichneten Teilmodellen entgegennimmt und über einen Prozess der MCMC-Optimierung eine Bayes-optimale
-Grammatik erstellt, um neue Modelle zu generieren~\cite{talton_2012}.
+Ein System zur Generierung geometrischer Modelle und\\Websites wird hier eingeführt, welches eine organisierte
+Struktur von bezeichneten Teil-modellen entgegennimmt.
+Über einen Prozess der MCMC-Optimierung wird eine Bayes-optimale Grammatik erstellt, um neue Modelle zu generieren~\cite{talton_2012}.
 Das Markow-Chain-Monte-Carlo-Verfahren (MCMC-Verfahren) ist eine speicherlose, stichprobenartige Auswahl aus
 Wahrscheinlichkeitsverteilungen eines definierten Bereichs, der für das Erreichen eines bestimmten Ziels von
 Interesse ist.
@@ -217,11 +217,10 @@ Das Erstellen kontextfreier Grammatiken mithilfe statistischer Methoden zur Vert
 wird in einer Arbeit von~\citeauthor{stava_2010} gezeigt~\cite{stava_2010}.\\~\\
 Die meisten Arbeiten im Bereich der inversen prozeduralen Modellierung beschäftigen sich eher mit der Rekonstruierung von
 gegebenen Modellen, als mit der Generalisierung von Information.
-Deswegen führt \citeauthor{guo_2020} ein Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen
+Aus diesem Grund führt \citeauthor{guo_2020} ein Modell zum Lernen von L-Systemen von Verzweigungsstrukturen mithilfe maschinellen
 Lernens (Deep Learning) anhand beliebiger Grafiken ein~\cite{guo_2020}.
 Hierzu werden häufig genutzte Verzweigungen bezeichnet und in zufällige Verzweigungsstrukturen zusammengesetzt.
-Mit diesen Trainingsdaten wird ein neuronales Netz angelernt, sodass dieses die atomaren Verzweigungen in beliebigen
-Strukturen erkennen kann.
+Mit diesen Trainings-daten wird ein neuronales Netz angelernt, sodass atomaren Verzweigungen in beliebigen Strukturen erkannt werden können.
 In einer Eingabestruktur identifiziert das System die atomaren Strukturen und kennzeichnet diese mit einem Rechteck als Begrenzung.
 Anhand von Überlappungen der Rechtecke kann dann eine hierarchische Baumtopologie aufgebaut werden, aus der ein kompaktes
 L-System inferiert und generalisiert wird.
@@ -229,7 +228,7 @@ Das generalisierte L-System wird genutzt, um der Eingabestruktur ähnliche Struk
 Die Algorithmen zur Inferierung und Generalisierung von L-Systemen aus der Arbeit von~\citeauthor{guo_2020} sind
 Gegenstand dieser Arbeit und werden für die Fragestellung adaptiert und implementiert.
 Ein neuronales Netz zur Erkennung von Verzweigungsstrukturen liefert die vielversprechensten Ergebnisse bei der Analyse
-von Verzweigungsstrukturen.
+solcher Strukturen.
 Da die Implementierung eines neuronalen Netzes für diese Arbeit aus Praktikabilitätsgründen nicht möglich ist,
 werden die für die Algorithmen benötigen Baumstrukturen während der benutzergesteuerten Erstellung einer Basisstruktur
 erstellt.

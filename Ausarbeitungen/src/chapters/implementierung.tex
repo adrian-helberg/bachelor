@@ -2,7 +2,7 @@
 
 \chapter{Implementierung}
 Zur Umsetzung der vorgestellten Konzepte wird im Folgenden auf Softwarepakete, Technologien, Datenspeicherung,
-Benutzerinteraktion und Arbeitsablauf der erstellten Software eingegangen.
+Benutzerinteraktion und Arbeitsablauf der erstellten \mbox{Software} eingegangen.
 Darüber hinaus wird ein Überblick über Quellcode und einige Implementierungsentscheidungen gegeben.
 Auf Implementierungsdetails zur Nutzung der vorgestellten Technologien wird nicht im Detail eingegangen.
 Quellcode wird im Wesentlichen gezeigt und anhand von Zeilenangaben (z.B. \textbf{5}) erläutert.
@@ -88,20 +88,20 @@ Die folgende Tabelle gibt einen Überblick über grundlegende Pakete und deren F
 Zur Umsetzung des Softwarepojekts wird eine \textbf{Java}-Anwendung für die \textbf{Java}-Laufzeit-umgebung entwickelt.
 Sie liegt in der Distribution \textbf{Amazon Corretto} in der Version 11.0.2 vor.
 Grafische Oberflächen werden mit der JavaFX-Spezifikation von \textbf{Oracle} in der Version 11.0.2 umgesetzt.
-Zur Automatisierung von Abhängigkeits- und Buildmanagement wird \textbf{Gradle} (Version 6.7) verwendet.
-Eine Testumgebung, eine Vektorbibliothek, eine Tupelrepräsentation und eine Erweiterung zur mathematischen
+Zur Automatisierung von Abhängigkeits- und Build-management wird \textbf{Gradle} (Version 6.7) verwendet.
+Eine Testumgebung, eine Vektor-bibliothek, eine Tupelrepräsentation und eine Erweiterung zur mathematischen
 Standardbibliothek werden über Abhängigkeiten vom Gradle-Framework im Build-Prozess geladen und zur Verfügung
 gestellt.\\
 Um den test-driven Implementierungsansatz umzusetzen wird \textbf{JUnit 5 Jupiter} als\\ Testumgebung genutzt.
 Sie setzt sich aus einem Programmierschema und einem Erweiterungsmodell zusammen.
 Das Jupiter-Projekt liefert zudem die Laufzeitumgebung für Softwaretests.
-\textbf{Google Guava} liefert eine Bibliothek mit mathematischen Funktionen.
+\textbf{Google Guava} ist eine Bibliothek mit mathematischen Funktionen.
 Sie wird benötigt, um eine praktikable Lösung zur Mengenmanipulation nutzen zu können (Bsp. Erstellen
 von Kombinationspaaren einer Menge).
-Ausschließlich JavaFX wird außerhalb des Projektes installiert und als Modul im Start-Skript des Programmes
+Ausschließlich JavaFX wird\\außerhalb des Projektes installiert und als Modul im Start-Skript des Programmes
 hinzugefügt.
 \\~\\
-Weitere Systeme zur Erstellung des Softwareprojektes sind:
+Weitere Systeme zur Erstellung des Softwareprojekts sind:
 \begin{itemize}
     \item Versionierung via \textbf{Git}
     \item \textbf{Dot} zur Visualisierung von Graphen
@@ -135,7 +135,7 @@ und die Anzahl an Ähnlichkeitsstrukturen, die aus dem resultierenden L-System a
 Die Gewichtungsparameter der vorgestellten Algorithmen können ebenfalls hier eingestellt werden.
 Die Strukturen \textbf{4} und \textbf{5} gliedern das Programm in die Ansicht der Verzweiungsstruktur (\textbf{6}), die vom Benutzer
 angelegt wird, die Übersicht zur Auswahl eines Templates (\textbf{7}) und eine Sicht zur Setzung von Transformationsparametern (\textbf{7}).
-Der Kreis \textbf{8} stellt einen Anker dar, an welchem eine Template-Instanz angehängt werden kann.
+Der Kreis \textbf{8} stellt einen Anker dar, an welchen eine Template-Instanz angehängt werden kann.
 Sowohl über einen Doppelklick, also auch über einen Button (\textbf{9}) kann ein Template aus der Tempalte-Liste (\textbf{7})
 ausgewählt werden.
 Ist die Verzweigungsstruktur vom Benutzer fertiggestellt, kann die Synthese zur Erstellung der Ähnlichkeitsabbildungen
@@ -146,7 +146,7 @@ dieser Arbeit erzeugen (ohne Visualisierung der Basisstruktur).
 
 \subsection*{Templates}
 Eine Datei \textit{template.txt} wird im selben Verzeichnis wie die ausführbare jar-Datei hinterlegt.
-Die enthält je eine Template-Zeichenkette pro Zeile, welche vom Programm eingelesen und als Template
+Sie enthält je eine Template-Zeichenkette pro Zeile, welche vom Programm eingelesen und als Template
 zur Verfügung gestellt wird.
 \begin{figure}[H]
     \centering
@@ -162,7 +162,7 @@ und dem JavaFX-Controller vor.
 Der Arbeitsablauf zur Erstellung der Verzweigungsstruktur kann Schritt für Schritt umgesetzt werden, nachdem die Templates
 geladen wurden.
 Dies wird an folgendem Beispiel deutlich.
-Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application ratio} und
+Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \textbf{Rule application\\ratio} und
 \textbf{Merge application ratio} werden auf die Werte \textbf{5}, \textbf{5}, \textbf{0.5} und \textbf{0.5} gesetzt
 (Standardeinstellung).
 \begin{figure}[H]
@@ -179,7 +179,7 @@ Die Parameter \textbf{Number of iterations}, \textbf{Number of generations}, \te
 \end{figure}
 
 Nachdem ein Template ausgewählt wird, können die Transformationsparameter gesetzt (Doppelklick) und bestätigt (\textbf{2})
-werden oder der Vorgang abgebrochen werden (\textbf{1}).
+oder der Vorgang abgebrochen werden (\textbf{1}).
 \textbf{3} zeigt einen Entwurf der Template-Instanz, die mit den aktuellen Transformationsparametern angepasst wurde.
 Mit der Bestätigung (\textbf{2}) wird die Template-Instanz der Basisstruktur hinzugefügt und der Benutzer gelangt wieder
 in die Übersicht der zur Verfügung stehenden Templates.
@@ -217,12 +217,12 @@ Das folgende Beispiel zeigt eine erstellte Baumstruktur (links) und deren erstel
     \centering
     \includegraphics[width=8cm]{../images/graph_tree.png}
     \includegraphics[width=5cm]{../images/tree_graph.png}
-    \caption{Verzweigungsstruktur \& zugehörige Baumstruktur}
+    \caption{Verzweigungsstruktur \& dazugehörige Baumstruktur}
 \end{figure}
 
 \subsection*{Prozesspipeline}
-Das verwendete Pipeline-Design-Pattern zur Umsetzung der Inferrierung, Komprimierung und Generalisierung von L-Systemem,
-sowie die Verteilung von Transformationsparametern bei deren Ausführung, setzt sich aus der \texttt{Pipeline}-Klasse und
+Das verwendete Pipeline-Design-Pattern zur Umsetzung der Inferierung, Komprimierung und Generalisierung von L-Systemem,
+sowie die Verteilung von Transformationspara-metern bei deren Ausführung, setzt sich aus der \texttt{Pipeline}-Klasse und
 dem \texttt{Pipe}-Interface zusammen (siehe~\ref{pipeline1} und~\ref{pipeline2}).\\~\\
 Die eigentliche Umsetzung der Prozesspipeline zur Synthese der Verzweigungsstrukturen wird wie folgt implementiert.
 Hierbei implementieren die Klassen \texttt{InfererPipe}, \texttt{CompressorPipe}, \texttt{GeneralizerPipe} und
@@ -230,7 +230,7 @@ Hierbei implementieren die Klassen \texttt{InfererPipe}, \texttt{CompressorPipe}
 Das \texttt{ctx}-Objekt wird als Kontextobjekt in die Pipeline gegeben und bei jedem Prozessschritt angepasst (siehe~\ref{ctx}).
 
 \subsection*{L-System Manipulation}
-Die Inferrierung des L-Systems findet in der Klasse \texttt{Inferer} statt, deren Objekt in der \texttt{InfererPipe}-Klasse erstellt wird.
+Die Inferierung des L-Systems findet in der Klasse \texttt{Inferer} statt, deren Objekt in der \texttt{InfererPipe}-Klasse erstellt wird.
 Sie nimmt die Baumstruktur entgegegen und stellt eine Funktion \texttt{infer} zum Inferieren des L-Systems zur Verfügung (siehe~\ref{inferer}).\\
 Das erstellte L-System (\textbf{8}) wird während des Inferierens aktualisiert und am Schluss als Ergebnis zurückgegeben.
 Dann werden die initialen Symbole $F$ und $S$ hinzugefügt und das Axiom auf $S$ gesetzt (\textbf{10-12}).
@@ -240,7 +240,7 @@ Am Ende der Initialisierung fügt die Methode \texttt{addModuleNotPresentInAlpha
 das dort nicht vorhanden ist (\textbf{19}).
 Dies geschieht in lexikografischer Reihenfolge.
 
-Nach der Erstellung des \texttt{Inferer}-Objektes kann in der zugehörigen Pipe \texttt{InfererPipe} das L-System inferriert
+Nach der Erstellung des \texttt{Inferer}-Objektes kann in der zugehörigen Pipe \mbox{\texttt{InfererPipe}} das L-System inferiert
 werden (siehe~\ref{infererpipe}).\\~\\
 Für die Implementierung des Inferierungsalgorithmus siehe~\ref{infer}.\\
 Die \texttt{infer}-Methode extrahiert die Zeichenkette (Wort) der im aktuellen Baumknoten gespeicherten Template-Instanz

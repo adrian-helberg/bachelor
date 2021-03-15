@@ -28,24 +28,23 @@ Ein L-System wird durch Ausführung in eine erweiterte Zeichenkette überführt 
 
 \subsection*{Basisstruktur}
 Der Benutzer verwendet grafische Bendienelemente, um eingelesene Templates auszuwählen, Transformationsparameter anzupassen
-und um anschließend die Instanzen der Basisstruktur hinzuzufügen.
+und anschließend die Instanzen der Basisstruktur hinzuzufügen.
 Im Folgenden wird diese Basisstruktur u.a. Grundstruktur oder Eingabestruktur genannt.
 
 \subsection*{Baumstruktur}
 Um Grundstrukturen mittels verschiedener Algorithmen untersuchen zu können, werden die einzelnen Template-Instanzen in
 einer baumähnlichen Struktur organisiert.
-Transformationsparameter einer Instanz beschreiben die räumlichen Veränderung gegenüber des zugrundeliegenden Templates
+Transformationsparameter einer Instanz beschreiben die räumlichen Veränderungen gegenüber des zugrundeliegenden Templates
 und haben daher keine Aussagekraft in Bezug auf die Strukturtopologie der Basisstruktur.
-Diese Arbeit fokussiert sich auf topologische Eigenschaften von Verzweigungsstrukturen (z.B. Rekursionen).
+Der Fokus dieser Arbeit liegt auf topologischen\\Eigenschaften von Verzweigungsstrukturen (z.B. Rekursion).
 Darum bilden die einzelnen Template-Instanzen die Knoten der Baumtopologie, während die Kanten die räumlichen Transformationen
 darstellen.
 So wird eine datenstrukturelle Trennung zwischen Topologie und räumlicher Transformationen geschaffen.
-Diese baumähnliche Struktur ist inspiriert durch die Arbeit von~\citeauthor{guo_2020}~\cite{guo_2020}, Kapitel 4.2 \textit{Grammar inference}.
+Diese baumähnliche Struktur ist inspiriert durch die Arbeit von~\citeauthor{guo_2020}~\cite{guo_2020}.
 
 \subsection*{Inferieren}
 Das Smallest Grammar Problem, also das Finden der kleinsten, kontextfreien Grammatik, welche eine bestimmte Zeichenkette
-generiert, ist ein offenes Problem der Informatik mit einem Annäherungsverhältnis von weniger als $\frac{8569}{8568}$
-(NP-hard)\cite{charikar_2005}.
+generiert, ist ein offenes Problem der Informatik~\cite{charikar_2005}.
 Primär wird in der Forschung nach Algorithmen gesucht, die ein akzeptables Ergebnis liefern.
 In dieser Arbeit wird ein Algorithmus präsentiert, der die Knoten der Baumstruktur in einzelne Symbole umwandelt, mit
 Produktionsregeln verknüpft und diese dem resultierenden L-System hinzufügt.
@@ -54,7 +53,7 @@ Dieses L-System repräsentiert lediglich die Eingabestruktur.
 \newpage
 
 \subsection*{Komprimieren}
-Um ein kompaktes, gewichtetes L-System zu erzeugen, werden sich wiederholende Unterbäume gesucht und ersetzt.
+Zur Erzeugung eines kompakten, gewichteten L-Systems werden sich wiederholende\\Unterbäume gesucht und ersetzt.
 Um das zu erzeugende L-System mit einer kleinen oder großen Regelmenge auszustatten, wird eine Gewichtung angewendet.
 Eine Kostenfunk-tion stellt hierbei die Anzahl Symbole aller RHS der Produktionsregeln mit der Menge an Anwendungen der
 LHS gegenüber.
@@ -114,7 +113,7 @@ Produktionsregeln für das resultierende L-System (Zeile 8-17):
     \item In Zeile 9-12 wird die genannte Zeichenkette auf Verzweiungsvariablen ($A-Z$; $F$ ausgeschlossen) untersucht.
     Ein neues Symbol ersetzt das dem Alphabet hinzugefügte Symbol. Anschließend wird eine Produktionregel,
     die auf die veränderte Zeichenkette abbildet, der Produktionsregelmenge hinzugefügt.
-    \item Zeile 13 prüft, ob es ein Symbol im Alphabet gibt, das nicht als Ziel einer Produktionsregel in der Produktionsregelmenge
+    \item Zeile 13 prüft, ob es ein Symbol im Alphabet gibt, das nicht als Ziel einer Produk-tionsregel in der Produktionsregelmenge
     definiert ist. In diesem Fall wird das Symbol als Ziel der nächsten Produktion gesetzt. Andernfalls schließt der Algorithmus ab.
     \item Das Schleifen-Attribut ist das Setzen des nächsten Knotens am Ende der Schleife (Zeile 17).
 \end{itemize}
@@ -181,26 +180,25 @@ Schleife (Reduzierung):
 \begin{algorithm}[caption={Kostenfunktion $C_i$ mit Gewichtung $w_l$}, label={alg4}]
 $C_i(\mathcal{L})= \sum\limits_{A(P) \rightarrow M^* \in \mathcal{L}} w_l * |M^*| + (1 - w_l) * N(A(P)\rightarrow M^*)$
 \end{algorithm}
-$N(\cdot)$ dient als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} einer Regel in einem
-ausgeführten L-System.
+$N(\cdot)$ dient als Zählfunktion für die Anzahl Wiederholungen einer \textit{LHS} in einem ausgeführten L-System.
 
 \subsubsection*{L-System generalisieren}
 Da das kompakte L-System eine Repräsentation der vom Benutzer erzeugten Verzweigungsstruktur darstellt, werden
-nun ähnliche Regeln miteinander verbunden und mit einer Wahrscheinlichkeit versehen, um nicht-deterministische
-Regeln hinzuzufügen.
-Sowohl Längenfunktionen, Kostenfunktionen und Distanzalgorithmen, als auch der Grundalgorithmus sind aus einer Arbeit
+nun ähnliche Regeln miteinander verbunden und mit\\einer Wahrscheinlichkeit versehen, um nicht-deterministische
+Regeln hinzuzufügen.\\
+Sowohl Längenfunktionen, Kostenfunktionen und Distanzalgorithmen, als auch der Grund-algorithmus sind aus einer Arbeit
 von~\citeauthor{guo_2020} entnommen und bauen sich wie folgt auf~\cite{guo_2020}:
 
 \begin{itemize}
     \item Die Längenfunktion $L$, die auf eine Grammatik angewendet wird, summiert die Anzahl Symbole des Alphabets mit
-    der Anzahl an RHS der Produktionsregeln. Sie somit die Gesamtheit aller Symbole, die das L-System abbilden soll.
+    der Anzahl an RHS der Produktionsregeln. Sie berechnet somit die Gesamtheit aller Symbole, die das L-System abbilden soll.
     (Länge der Grammatik).
     \item Der Abstand zweier Zeichenketten kann mit der \textit{String Edit Distance} ermittelt werden. Diese wird über
     die Funktion $D_s$ abgebildet. Hierbei wird die Anzahl an Operationen summiert, die für die Überführung einer Zeichenkette
     in eine Andere nötig sind (Zeichenkettenaustausch, -einschub und -löschung)
     \item Mit $D_s$ kann nun auch der Abstand zweier Grammatiken zueinander bestimmt werden. Diese Funktion wird mit
     $D_g$ abgebildet.
-    \item Die Kostenfunktion $C_g$ nutzt die Länge und Distanz von Grammatiken, um Kosten einer Überführung einer Grammatik
+    \item Die Kostenfunktion $C_g$ nutzt die Länge und Distanz von Grammatiken, um Kosten einer Überführung von einer Grammatik
     in eine andere messen zu können. Sie berechnet somit die Kosten, um $L^*$ in $L^+$ zu überführen.
     Der Parameter $w_0$ gewichtet hierbei die Differenz der Länge der Grammatiken und die Anzahl Operationen, die zur
     Überführung nötig sind. Die Überführungskosten werden in der Variable $C^{old}_g$ zur Verfügung gestellt.
@@ -224,7 +222,7 @@ Algorithmus 38 zum Generalisieren eines L-Systems:\\~\\
 Initialisierung (Zeile 2-4):
 \begin{itemize}
     \item Das zu untersuchende Tuple besteht aus zwei Produktionsregeln (Regelpaar) und wird in der Variable $p^*$ gehalten.
-    \item L-Systeme, die sich infolge eines Merges geändert haben, werden in $L^+$ und Eingabe-L-systeme in $L^*$ gespeichert.
+    \item L-Systeme, die sich infolge eines Merges geändert haben, werden in $L^+$ und Eingabe-L-Systeme in $L^*$ gespeichert.
 \end{itemize}
 Generalisierung (Zeile 6-13):
 \begin{itemize}
@@ -283,7 +281,7 @@ Diese Softwaretechnik wird in der Umsetzung des Softwareprojekts zu dieser Arbei
 \end{figure}
 
 \section{Softwarearchitektur}
-Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}
+Die Gliederung der Inhalte für die Softwarearchitektur erfolgt nach der arc42-Vorlage~\cite{arc42}.
 
 \subsection*{Qualitätsziele}
 Um die wesentlichen Features des Systems in einem Programm umzusetzen, werden Qualitätsziele in einem Qualitätsbaum
@@ -336,8 +334,8 @@ Die funktionalen Ziele werden durch die in Kapitel~\ref{probleme} vorgestellten 
         \hline \\
         Benutzbarkeit &
         \begin{minipage}[t]{0.8\textwidth}
-            - Zeichnen der Verzweigungssstruktur\\
-            - Zeichnen voläufiger Änderungen von Parametern an der Struktur\\
+            - Zeichnen der Verzweigungsstruktur\\
+            - Zeichnen vorläufiger Änderungen von Parametern an der Struktur\\
             - Zurücksetzen des Erstellungsprozesses durch den Benutzer\\
             - Intuitive Benennung von Schaltflächen\\
             - Schaltfläche zur Erzeugung des Beispiels aus Kapitel~\ref{eval}\\
@@ -351,7 +349,7 @@ Die funktionalen Ziele werden durch die in Kapitel~\ref{probleme} vorgestellten 
         \\ \hline \\
         Änderbarkeit &
         \begin{minipage}[t]{0.8\textwidth}
-            - Nutzen des Pipeline Design Patterns
+            - Nutzen des Pipeline-Design-Patterns\\
             - Trennung der grafischen Oberfläche und der Logik
         \end{minipage} \\
         \\ \hline \\
@@ -359,7 +357,7 @@ Die funktionalen Ziele werden durch die in Kapitel~\ref{probleme} vorgestellten 
         \begin{minipage}[t]{0.8\textwidth}
             - Erstellung einer ausführbaren Java-Archiv-Datei\\
             - Sinnvolle Aufteilung von Funktionalitäten auf Dateien und Software-Pakete\\
-            - Effiziente Datenkapselung
+            - Effiziente Datenkapselung\\
             - Geschlossene Informationskontexte
         \end{minipage} \\
         \\ \hline
@@ -391,8 +389,8 @@ Die Pipeline zum Erzeugen der Ausgabestrukturen beginnt mit dem Inferieren eines
 Struktur und gibt das erzeugte Ersetzungssystem an die folgende Komponente weiter.
 Hierbei gilt der Pipeline-Kontext, welcher innerhalb der Pipeline an den jeweils nächsten Schritt weitergegeben und
 dort aktualisiert wird, als Eingabe der Pipeline.
-Hat die \texttt{Estimator}-Komponente eine Verteilung über vom Benutzer angelegte Transformationsparameter angelegt, gilt
-der Kontext als Ausgabe der Pipeline.
+Hat die \texttt{Estimator}-Komponente eine Verteilung über Transformationsparameter angelegt, gilt der Kontext als
+Ausgabe der Pipeline.
 
 \underline{Ebene 1}
 \begin{figure}[H]
@@ -444,18 +442,18 @@ Die folgende Abbildung der Verteilungssicht stellt lediglich die Ausführung auf
 \end{figure}
 
 \subsection*{Datenstrukturen}
-Das wesentliche Datenmodell ist als UML-Diagramm modelliert (siehe Seite~\pageref{anhang} Anhang).\\~\\
-Die während der Strukturierung der Templates zu einer Verzweigungsstruktur entstehenden Baumstuktur wird in~\ref{baum} gezeigt.
+Das wesentliche Datenmodell ist als UML-Diagramm modelliert (siehe Seite~\pageref{anhang} Anhang).\\
+Die während der Strukturierung entstehende Baumstuktur wird in~\ref{baum} gezeigt.\\
 \texttt{TreeNode} implementiert das \texttt{Iterable}-Interface, sodass durch die Überladung der \texttt{iterate}-Funktion
 ein Iterator zurückgegeben werden kann, der ein Durchgehen der Baumtopologie möglich macht.
-Dieser Iterator ist durch die Klasse \texttt{TreeNodeIterator}, die das \texttt{Iterator}-Interface implementiert, definiert.
+Dieser Iterator ist durch die Klasse \mbox{\texttt{TreeNodeIterator}}, die das \texttt{Iterator}-Interface implementiert, definiert.
 Die überladene \texttt{next}-Funktion beschreibt eine Iterierung des Baums durch eine Breitensuche.\\~\\
 ~\ref{pipeline} beschreibt den Generierungsprozess im Pipeline-Design-Pattern.
 Jeder Teilschritt des Prozesses ist durch eine Klasse, die das \texttt{Pipe}-Interface nutzt, definiert.
 Die überladene \texttt{process}-Funktion nimmt den \texttt{PipelineContext} entgegen, verändert diesen und gibt ihn
 anschließend zurück.
 Das \texttt{PipelineContext}-Objekt hält die Daten, die die eizelnen Schritte benötigen und zurückgeben (Pipeline-Kontext).\\
-Die Pipes lassen sich in einer festen Reihenfolge durch die überladene \texttt{pipe}-Funktion eines
+Die Pipes lassen sich in einer festen Reihenfolge durch die überladene \texttt{pipe}-Funktion\\eines
 \texttt{Pipeline}-Objekts einreihen.
 Die Prozesspipeline wird durch die \texttt{execute}-Funktion ausgeführt.\\~\\
 Die verschiedenen Algorithmen zur Manipulation von L-Systemen werden in~\ref{tool} durch verschiedene Objekte definiert.
