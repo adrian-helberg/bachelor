@@ -23,5 +23,5 @@
 \contentsline {chapter}{\numberline {6}Fazit und Ausblick}{51}{chapter.6}%
 \contentsline {chapter}{\nonumberline Literaturverzeichnis}{53}{chapter*.76}%
 \contentsline {chapter}{\numberline {A}Anhang}{56}{appendix.A}%
-\contentsline {chapter}{Selbstständigkeitserklärung}{77}{figure.caption.81}%
+\contentsline {chapter}{Selbstständigkeitserklärung}{76}{figure.caption.81}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
