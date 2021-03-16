@@ -317,6 +317,7 @@ public class GeneratorController implements Logging {
         // Create example branching structure from thesis paper
         // when the user have not created one
         if (tree.isEmpty()) {
+            reset();
             loadTemplates();
             // 0
             var t1 = new TemplateInstance(Templates.getTemplateByID(7));

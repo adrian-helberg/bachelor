@@ -32,7 +32,8 @@ public class InfererPipe implements Pipe<PipelineContext, PipelineContext>, Logg
         p.put("Branching angle", 45.0f);
         TemplateInstance templateInstance = new TemplateInstance(Templates.populate(input.lSystem.derive(), p));
         turtleGraphic.parseWord(templateInstance, false);
-        showPopup("Inferiertes L-System", turtleGraphic, input.lSystem.toString(), 10, 10);
+        // Uncomment to create a popup window showing the inferred L-System
+        //showPopup("Inferiertes L-System", turtleGraphic, input.lSystem.toString(), 10, 10);
 
         // Pass pipeline context to next pipe
         return input;
