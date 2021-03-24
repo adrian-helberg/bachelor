@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  22 MAR 2021 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  24 MAR 2021 14:06
 entering extended mode
 **./kolloquium.tex
 (kolloquium.tex
@@ -807,186 +807,106 @@ default.sty
 )
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameroutertheme
 default.sty)))
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis\
-beamerthemeMetropolis.sty
-
-LaTeX Warning: You have requested package `beamerthemeMetropolis',
-               but the package provides `beamerthememetropolis'.
-
-Package: beamerthememetropolis 2017/01/23 v1.2 Metropolis Beamer theme
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
-Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
-ty
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
-.code.tex))
-\pgfopts@list@add@a@toks=\toks44
-\pgfopts@list@add@b@toks=\toks45
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis\
-beamerinnerthememetropolis.sty
-Package: beamerinnerthememetropolis 2017/01/23 Metropolis inner theme
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count320
-\calc@Bcount=\count321
-\calc@Adimen=\dimen284
-\calc@Bdimen=\dimen285
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count322
-\calc@Cskip=\skip66
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
-sty
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
-Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-shapes.code.tex
-File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfnodeparttextbox=\box72
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-plot.code.tex
-File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
-mp-version-0-65.sty
-Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@nodesepstart=\dimen286
-\pgf@nodesepend=\dimen287
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
-mp-version-1-18.sty
-Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
-))
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
-y (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
-.tex))
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
-code.tex
-Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
-.tex)
-\pgffor@iter=\dimen288
-\pgffor@skip=\dimen289
-\pgffor@stack=\toks46
-\pgffor@toks=\toks47
-))
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z\tikz.code.tex
-Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
-aryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count323
-\pgfplotmarksize=\dimen290
-)
-\tikz@lastx=\dimen291
-\tikz@lasty=\dimen292
-\tikz@lastxsaved=\dimen293
-\tikz@lastysaved=\dimen294
-\tikz@lastmovetox=\dimen295
-\tikz@lastmovetoy=\dimen296
-\tikzleveldistance=\dimen297
-\tikzsiblingdistance=\dimen298
-\tikz@figbox=\box73
-\tikz@figbox@bg=\box74
-\tikz@tempbox=\box75
-\tikz@tempbox@bg=\box76
-\tikztreelevel=\count324
-\tikznumberofchildren=\count325
-\tikznumberofcurrentchild=\count326
-\tikz@fig@count=\count327
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
-matrix.code.tex
-File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count328
-\pgfmatrixcurrentcolumn=\count329
-\pgf@matrix@numberofcolumns=\count330
-)
-\tikz@expandcount=\count331
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)))
-\metropolis@titleseparator@linewidth=\skip67
-\metropolis@progressonsectionpage=\skip68
-\metropolis@progressonsectionpage@linewidth=\skip69
-\metropolis@blocksep=\skip70
-\metropolis@blockadjust=\skip71
-\metropolis@parskip=\skip72
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis\
-beamerouterthememetropolis.sty
-Package: beamerouterthememetropolis 2017/01/23 Metropolis outer theme
-\metropolis@frametitle@padding=\skip73
-\metropolis@progressinheadfoot=\skip74
-\metropolis@progressinheadfoot@linewidth=\skip75
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis\
-beamercolorthememetropolis.sty
-Package: beamercolorthememetropolis 2017/01/23 Metropolis color theme
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamertheme-metropolis\
-beamerfontthememetropolis.sty
-Package: beamerfontthememetropolis 2017/01/23 Metropolis font theme
-
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-
-Package beamerthememetropolis Warning: You need to compile with XeLaTeX or LuaL
-aTeX to use the Fira fonts on input line 95.
-
-)) (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerthemeBoadi
+lla.sty
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolortheme
+rose.sty)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerinnertheme
+rounded.sty)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamercolortheme
+dolphin.sty)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameroutertheme
+infolines.sty))
+\bibdata{literature}
+No file kolloquium.bbl.
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks48
-\inpenc@posthook=\toks49
+\inpenc@prehook=\toks44
+\inpenc@posthook=\toks45
 )
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/german\ngerman.sty
 v2.5e 1998-07-08
 Package: ngerman 1998/07/08 v2.5e Support for writing german texts (br)
-\grmnU@D=\dimen299
+\grmnU@D=\dimen284
 ngerman -- \language number for naustrian undefined, default 48 used.
 )
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks46
+\XKV@tempa@toks=\toks47
+)
+\XKV@depth=\count320
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.s
+ty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box72
+)
+\tc@llx=\dimen285
+\tc@lly=\dimen286
+\tc@urx=\dimen287
+\tc@ury=\dimen288
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen289
+\adjbox@Height=\dimen290
+\adjbox@Depth=\dimen291
+\adjbox@Totalheight=\dimen292
+\adjbox@pwidth=\dimen293
+\adjbox@pheight=\dimen294
+\adjbox@pdepth=\dimen295
+\adjbox@ptotalheight=\dimen296
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count321
+) (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box73
+\sift@deathcycles=\count322
+\@vwid@loff=\dimen297
+\@vwid@roff=\dimen298
+))
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count332
-\l__pdf_internal_box=\box77
+\l__kernel_color_stack_int=\count323
+\l__pdf_internal_box=\box74
 ) (D:/git\bachelor\kolloquium\out\kolloquium.aux)
 \openout1 = `kolloquium.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -996,14 +916,14 @@ LaTeX Font Info:    ... okay on input line 22.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* h-part:(L,W,R)=(11.74988pt, 340.6956pt, 11.74988pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=307.28987pt
+* \textwidth=340.6956pt
 * \textheight=244.6939pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \oddsidemargin=-60.52011pt
+* \evensidemargin=-60.52011pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -1026,17 +946,17 @@ LaTeX Font Info:    ... okay on input line 22.
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen300
-\scratchbox=\box78
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen301
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count324
+\scratchdimen=\dimen299
+\scratchbox=\box75
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen300
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks49
 )
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1044,7 +964,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 31.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1056,68 +976,68 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
  (D:/git\bachelor\kolloquium\out\kolloquium.out)
 (D:/git\bachelor\kolloquium\out\kolloquium.out)
 \@outlinefile=\write5
 \openout5 = `kolloquium.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 22.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 22.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 22.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 22.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 22.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 22.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 22.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 22.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 31.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 22.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 31.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 22.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 22.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 22.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 22.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 31.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 22.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 22.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 31.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 31.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 2
-2.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 2
-2.
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 22.
+ut line 31.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1143,39 +1063,31 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (D:/git\bachelor\kolloquium\out\kolloquium.nav)
-Overfull \vbox (45.59155pt too high) detected at line 23
- []
-
-<../images/HAW_Marke_CMYK.pdf, id=24, 387.4475pt x 142.5325pt>
+<../images/HAW_Marke_CMYK.pdf, id=33, 387.4475pt x 142.5325pt>
 File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
 <use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 23.
+Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 32.
 (pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
 [1
 
 {C:/Users/adria/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <../images/HAW_M
-arke_CMYK.pdf>] (D:/git\bachelor\kolloquium\out\kolloquium.toc)
-File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
-<use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 24.
-(pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
- [2
+arke_CMYK.pdf>] (D:/git\bachelor\kolloquium\out\kolloquium.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 26.
+ut line 52.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
@@ -1183,44 +1095,91 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 ) [3
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-35.
+] [4
 
-(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
-<use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 35.
-(pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
-
-[4
+] [5
 
 ]
-File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
-<use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 35.
-(pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
- [5
+<../images/bokeloh_2010_system.PNG, id=215, 1827.07594pt x 328.22626pt>
+File: ../images/bokeloh_2010_system.PNG Graphic file (type png)
+<use ../images/bokeloh_2010_system.PNG>
+Package pdftex.def Info: ../images/bokeloh_2010_system.PNG  used on input line 
+99.
+(pdftex.def)             Requested size: 341.43306pt x 61.33693pt.
 
-] [6
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 99--99
+ [] 
+ []
+
+[6
+
+ <../images/bokeloh_2010_system.PNG>]
+<../images/talton_2012_system.PNG, id=246, 1530.46782pt x 341.77687pt>
+File: ../images/talton_2012_system.PNG Graphic file (type png)
+<use ../images/talton_2012_system.PNG>
+Package pdftex.def Info: ../images/talton_2012_system.PNG  used on input line 1
+09.
+(pdftex.def)             Requested size: 341.43306pt x 76.24458pt.
+
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 109--109
+ [] 
+ []
+
+[7
+
+ <../images/talton_2012_system.PNG>]
+<../images/martinovic_2013_system.PNG, id=275, 1486.05188pt x 497.60907pt>
+File: ../images/martinovic_2013_system.PNG Graphic file (type png)
+<use ../images/martinovic_2013_system.PNG>
+Package pdftex.def Info: ../images/martinovic_2013_system.PNG  used on input li
+ne 119.
+(pdftex.def)             Requested size: 341.43306pt x 114.32619pt.
+
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 119--119
+ [] 
+ []
+
+[8
+
+ <../images/martinovic_2013_system.PNG>]
+<../images/stava_2010_system.PNG, id=303, 1480.78218pt x 486.31688pt>
+File: ../images/stava_2010_system.PNG Graphic file (type png)
+<use ../images/stava_2010_system.PNG>
+Package pdftex.def Info: ../images/stava_2010_system.PNG  used on input line 12
+9.
+(pdftex.def)             Requested size: 341.43306pt x 112.1325pt.
+
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 129--129
+ [] 
+ []
+
+[9
+
+ <../images/stava_2010_system.PNG>]
+<../images/guo_2020_system.PNG, id=330, 1857.94125pt x 750.55406pt>
+File: ../images/guo_2020_system.PNG Graphic file (type png)
+<use ../images/guo_2020_system.PNG>
+Package pdftex.def Info: ../images/guo_2020_system.PNG  used on input line 139.
+
+(pdftex.def)             Requested size: 341.43306pt x 137.92267pt.
+
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 139--139
+ [] 
+ []
+
+[10
+
+ <../images/guo_2020_system.PNG>] [11
 
 ]
-File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
-<use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 53.
-(pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
- [7
+<../images/UI.PNG, id=383, 454.69875pt x 324.46219pt>
+File: ../images/UI.PNG Graphic file (type png)
+<use ../images/UI.PNG>
+Package pdftex.def Info: ../images/UI.PNG  used on input line 176.
+(pdftex.def)             Requested size: 227.62204pt x 162.42871pt.
+ [12
 
-] [8
-
-]
-File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
-<use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 67.
-(pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
- [9
+ <../images/UI.PNG>] [13
 
 ]
 \tf@nav=\write6
@@ -1232,28 +1191,30 @@ Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 67.
 \tf@snm=\write8
 \openout8 = `kolloquium.snm'.
 
- (D:/git\bachelor\kolloquium\out\kolloquium.aux)
+
+(D:/git\bachelor\kolloquium\out\kolloquium.aux)
 Package rerunfilecheck Info: File `kolloquium.out' has not changed.
-(rerunfilecheck)             Checksum: 80A9BF9D6476AB9244EE6966B117082C;123.
+(rerunfilecheck)             Checksum: 37E7ED384F0EF106C2141909435CE3F7;217.
  ) 
 Here is how much of TeX's memory you used:
- 21617 strings out of 479618
- 441229 string characters out of 2865027
- 707974 words of memory out of 3000000
- 38237 multiletter control sequences out of 15000+200000
- 412018 words of font info for 57 fonts, out of 3000000 for 9000
+ 19494 strings out of 479618
+ 379958 string characters out of 2865027
+ 656808 words of memory out of 3000000
+ 36128 multiletter control sequences out of 15000+200000
+ 412133 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,15n,132p,1811b,735s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\adria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss
-1200.pk><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmss10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmss12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmss8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (9 pages, 95545
- bytes).
+ 131i,16n,132p,436b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmss10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmss12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmss17.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/adria/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (13 pages, 2967
+920 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

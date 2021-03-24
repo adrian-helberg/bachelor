@@ -5,12 +5,18 @@
 % Theme
 \usetheme{Boadilla}
 
+% Bibliography
+\bibliography{literature}
+\bibliographystyle{plain}
+
 % Packages
 \usepackage{amsmath}
 \usepackage[utf8]{inputenc}
 \usepackage{ngerman}
 \usepackage{graphicx}
 \usepackage{color}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
 % Remove frame break numbering
 \setbeamertemplate{frametitle continuation}{}
 
@@ -29,7 +35,7 @@
     \section{Einleitung}
     \label{sec:thema}
     \begin{frame}[allowframebreaks]
-        \frametitle{Einleitung}
+        \frametitle{Einleitung: Titel}
 
         \begin{block}{Titel}
             \color{olive}\underline{\color{black}Template-basierte} \color{teal}\underline{\color{black}Synthese} 
@@ -45,16 +51,91 @@
         \end{itemize}
     \end{frame}
 
-    \section{Forschungsgegenstand}
-    \label{sec:forschungsgegenstand}
     \begin{frame}
-        \frametitle{Forschungsgegenstand}
+        \frametitle{Einleitung: Relevanz}
 
         \begin{itemize}
-            \item Fachbegriffe erklären
-            \item Theorien zeigen
-            \item Diagramme anderer Forschungen zeigen
+            \setlength\itemsep{1em}
+            \item Digitalisierung
+            \item Kein einsteigerfreundliches Gebiet
+            \item Automatisierte Erstellung von digitalen Inhalten
+            \begin{itemize}
+                \item "`Natürlichkeit der Dinge"'
+            \end{itemize}
+            \item Regeln und Muster kodifizieren
+            \item Künstliche Intelligenz
         \end{itemize}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Einleitung: Ziele}
+
+        \begin{block}{Zentrale Aufgabe}
+            System zur Umsetzung einer Synthese von Strukturen, die einer Eingabestruktur ähneln
+        \end{block}
+
+        \begin{itemize}
+            \setlength\itemsep{1.4em}
+            \item Methodiken und Algorithmen aus der aktuellen Forschung
+            \begin{itemize}
+                \item Praktikabilität
+                \item Anwendung am Beispiel eines Programms
+            \end{itemize}
+            \item Erzeugen von Ähnlichkeit
+            \item Automatisierte Erstellung
+        \end{itemize}
+    \end{frame}
+
+    \section{Forschung}
+    \label{sec:forschung}
+    \begin{frame}
+        \frametitle{Forschung: Verwandte Arbeiten}
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=12cm]{../images/bokeloh_2010_system.PNG}
+            \caption{Textur- und Geometriesynthese anhand lokaler Ähnlichkeit}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Forschung: Verwandte Arbeiten}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=12cm]{../images/talton_2012_system.PNG}
+            \caption{Algorithmische Methode zum Lernen von Design Patterns}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Forschung: Verwandte Arbeiten}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=12cm]{../images/martinovic_2013_system.PNG}
+            \caption{Synthetisierung neuer Baustile und Rekonstruktion von Gebäuden}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Forschung: Verwandte Arbeiten}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=12cm]{../images/stava_2010_system.PNG}
+            \caption{System-Pipeline zur Erzeugung eines L-Systems eines 2D-Modells}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Forschung: Verwandte Arbeiten}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=12cm]{../images/guo_2020_system.PNG}
+            \caption{Bearbeitung von L-System-Repreäsentationen zur Erzeugung von Ähnlichkeit}
+        \end{figure}
     \end{frame}
 
     \section{Methodik}
@@ -62,73 +143,42 @@
     \begin{frame}
         \frametitle{Methodik}
 
-        \begin{itemize}
-            \item Strukturieren
-            \item Datenaufbereitung
-            \item Inferieren
-            \item Komprimieren
-            \item Generalisieren
-        \end{itemize}
-        \\~\\
-        \begin{itemize}
-            \item Visualisieren
-            \item Randomisieren
-        \end{itemize}
+        \begin{columns}
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \setlength\itemsep{1em}
+                \item Strukturieren
+                \item Datenaufbereitung
+                \item Inferieren
+                \item Komprimieren
+                \item Generalisieren
+            \end{itemize}
+
+            \column{0.5\textwidth}
+            \begin{itemize}
+                \setlength\itemsep{1em}
+                \item Visualisieren
+                \item Randomisieren
+            \end{itemize}
+        \end{columns}
     \end{frame}
 
     \section{Ergebnisse}
     \label{sec:ergebnisse}
     \begin{frame}
         \frametitle{Ergebnisse}
+
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm,cfbox=blue 0.4pt 1pt]{../images/UI.PNG}
+            \caption{Umgesetztes Programm}
+        \end{figure}
     \end{frame}
 
     \section{Fazit}
     \label{sec:fazit}
     \begin{frame}
         \frametitle{Fazit}
-    \end{frame}
-
-    \section{Items}
-    \label{sec:items}
-    \begin{frame}
-        \frametitle{Items}
-
-        \begin{itemize}
-            \item<1-> Test 1
-            \item<2-> Test 2
-        \end{itemize}
-    \end{frame}
-
-    \section{Blocks}
-    \label{sec:blocks}
-    \begin{frame}
-        \frametitle{Blocks}
-
-        \begin{block}{Remark}
-            Content
-        \end{block}
-
-        \begin{alertblock}{Alert}
-            Content
-        \end{alertblock}
-
-        \begin{examples}
-            Content
-        \end{examples}
-    \end{frame}
-
-    \section{Columns}
-    \label{sec:columns}
-    \begin{frame}
-        \frametitle{Columns}
-
-        \begin{columns}
-            \column{0.5\textwidth}
-            Column 1
-            \column{0.5\textwidth}
-            Column 2
-        \end{columns}
-
     \end{frame}
 
 \end{document}
