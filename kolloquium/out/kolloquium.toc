@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Einleitung}{3}{0}{1}
-\beamer@sectionintoc {2}{Forschung}{14}{0}{2}
-\beamer@sectionintoc {3}{Methodik}{19}{0}{3}
-\beamer@sectionintoc {4}{Ergebnisse}{35}{0}{4}
-\beamer@sectionintoc {5}{Fazit}{36}{0}{5}
+\beamer@sectionintoc {2}{Forschung}{15}{0}{2}
+\beamer@sectionintoc {3}{Methodik}{21}{0}{3}
+\beamer@sectionintoc {4}{Ergebnisse}{40}{0}{4}
+\beamer@sectionintoc {5}{Fazit}{41}{0}{5}

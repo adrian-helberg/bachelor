@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  25 MAR 2021 10:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  25 MAR 2021 15:39
 entering extended mode
 **./kolloquium.tex
 (kolloquium.tex
@@ -1167,9 +1167,15 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 ) [3
 
-] [4
+]
+<../images/relevanz.jpg, id=150, 843.15pt x 521.95pt>
+File: ../images/relevanz.jpg Graphic file (type jpg)
+<use ../images/relevanz.jpg>
+Package pdftex.def Info: ../images/relevanz.jpg  used on input line 64.
+(pdftex.def)             Requested size: 284.52756pt x 176.13857pt.
+ [4
 
-] [5
+ <../images/relevanz.jpg>] [5
 
 ] [6
 
@@ -1179,110 +1185,128 @@ thkerncmss.
 
 ] [9
 
-] [10
+]
+<../images/ziel.jpeg, id=312, 1967.35pt x 1342.01375pt>
+File: ../images/ziel.jpeg Graphic file (type jpg)
+<use ../images/ziel.jpeg>
+Package pdftex.def Info: ../images/ziel.jpeg  used on input line 89.
+(pdftex.def)             Requested size: 284.52756pt x 194.08531pt.
+ [10
 
-] [11
+ <../images/ziel.jpeg>] [11
 
 ] [12
 
 ] [13
 
+] [14
+
 ]
-<../images/bokeloh_2010_system.PNG, id=452, 1827.07594pt x 328.22626pt>
+<../images/forschung.jpg, id=481, 1284.8pt x 722.7pt>
+File: ../images/forschung.jpg Graphic file (type jpg)
+<use ../images/forschung.jpg>
+Package pdftex.def Info: ../images/forschung.jpg  used on input line 119.
+(pdftex.def)             Requested size: 284.52756pt x 160.0421pt.
+ [15
+
+ <../images/forschung.jpg>]
+<../images/bokeloh_2010_system.PNG, id=510, 1827.07594pt x 328.22626pt>
 File: ../images/bokeloh_2010_system.PNG Graphic file (type png)
 <use ../images/bokeloh_2010_system.PNG>
 Package pdftex.def Info: ../images/bokeloh_2010_system.PNG  used on input line 
-102.
+129.
 (pdftex.def)             Requested size: 341.43306pt x 61.33693pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 102--102
- [] 
- []
-
-[14
-
- <../images/bokeloh_2010_system.PNG>]
-<../images/talton_2012_system.PNG, id=483, 1530.46782pt x 341.77687pt>
-File: ../images/talton_2012_system.PNG Graphic file (type png)
-<use ../images/talton_2012_system.PNG>
-Package pdftex.def Info: ../images/talton_2012_system.PNG  used on input line 1
-12.
-(pdftex.def)             Requested size: 341.43306pt x 76.24458pt.
-
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 112--112
- [] 
- []
-
-[15
-
- <../images/talton_2012_system.PNG>]
-<../images/martinovic_2013_system.PNG, id=511, 1486.05188pt x 497.60907pt>
-File: ../images/martinovic_2013_system.PNG Graphic file (type png)
-<use ../images/martinovic_2013_system.PNG>
-Package pdftex.def Info: ../images/martinovic_2013_system.PNG  used on input li
-ne 122.
-(pdftex.def)             Requested size: 341.43306pt x 114.32619pt.
-
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 122--122
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 129--129
  [] 
  []
 
 [16
 
- <../images/martinovic_2013_system.PNG>]
-<../images/stava_2010_system.PNG, id=539, 1480.78218pt x 486.31688pt>
-File: ../images/stava_2010_system.PNG Graphic file (type png)
-<use ../images/stava_2010_system.PNG>
-Package pdftex.def Info: ../images/stava_2010_system.PNG  used on input line 13
-2.
-(pdftex.def)             Requested size: 341.43306pt x 112.1325pt.
+ <../images/bokeloh_2010_system.PNG>]
+<../images/talton_2012_system.PNG, id=539, 1530.46782pt x 341.77687pt>
+File: ../images/talton_2012_system.PNG Graphic file (type png)
+<use ../images/talton_2012_system.PNG>
+Package pdftex.def Info: ../images/talton_2012_system.PNG  used on input line 1
+39.
+(pdftex.def)             Requested size: 341.43306pt x 76.24458pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 132--132
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 139--139
  [] 
  []
 
 [17
 
- <../images/stava_2010_system.PNG>]
-<../images/guo_2020_system.PNG, id=566, 1857.94125pt x 750.55406pt>
-File: ../images/guo_2020_system.PNG Graphic file (type png)
-<use ../images/guo_2020_system.PNG>
-Package pdftex.def Info: ../images/guo_2020_system.PNG  used on input line 142.
+ <../images/talton_2012_system.PNG>]
+<../images/martinovic_2013_system.PNG, id=567, 1486.05188pt x 497.60907pt>
+File: ../images/martinovic_2013_system.PNG Graphic file (type png)
+<use ../images/martinovic_2013_system.PNG>
+Package pdftex.def Info: ../images/martinovic_2013_system.PNG  used on input li
+ne 149.
+(pdftex.def)             Requested size: 341.43306pt x 114.32619pt.
 
-(pdftex.def)             Requested size: 341.43306pt x 137.92267pt.
-
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 142--142
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 149--149
  [] 
  []
 
 [18
 
- <../images/guo_2020_system.PNG>] [19
+ <../images/martinovic_2013_system.PNG>]
+<../images/stava_2010_system.PNG, id=595, 1480.78218pt x 486.31688pt>
+File: ../images/stava_2010_system.PNG Graphic file (type png)
+<use ../images/stava_2010_system.PNG>
+Package pdftex.def Info: ../images/stava_2010_system.PNG  used on input line 15
+9.
+(pdftex.def)             Requested size: 341.43306pt x 112.1325pt.
 
-] [20
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 159--159
+ [] 
+ []
 
-] [21
+[19
 
-] [22
+ <../images/stava_2010_system.PNG>]
+<../images/guo_2020_system.PNG, id=623, 1857.94125pt x 750.55406pt>
+File: ../images/guo_2020_system.PNG Graphic file (type png)
+<use ../images/guo_2020_system.PNG>
+Package pdftex.def Info: ../images/guo_2020_system.PNG  used on input line 169.
 
-] [23
+(pdftex.def)             Requested size: 341.43306pt x 137.92267pt.
 
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 169--169
+ [] 
+ []
+
+[20
+
+ <../images/guo_2020_system.PNG>]
+<../images/methodik.jpg, id=650, 754.82pt x 451.6875pt>
+File: ../images/methodik.jpg Graphic file (type jpg)
+<use ../images/methodik.jpg>
+Package pdftex.def Info: ../images/methodik.jpg  used on input line 180.
+(pdftex.def)             Requested size: 284.52756pt x 170.25769pt.
+ [21
+
+ <../images/methodik.jpg>] [22
+
+]
+[23
 
 ] [24
 
 ] [25
 
-]
-[26
+] [26
+
 
 ] [27
-
 
 ] [28
 
 ] [29
 
 ] [30
+
 
 ] [31
 
@@ -1291,17 +1315,77 @@ Overfull \hbox (0.73746pt too wide) in paragraph at lines 142--142
 
 ] [33
 
-] [34
+]
+
+kolloquium.tex:327: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     \end{frame}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+kolloquium.tex:327: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     \end{frame}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+kolloquium.tex:327: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327     \end{frame}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[34
+
+] [35
+
+
+] [36
+
+
+] [37
+
+] [38
+
+] [39
 
 ]
-<../images/UI.PNG, id=1018, 454.69875pt x 324.46219pt>
+<../images/UI.PNG, id=1157, 454.69875pt x 324.46219pt>
 File: ../images/UI.PNG Graphic file (type png)
 <use ../images/UI.PNG>
-Package pdftex.def Info: ../images/UI.PNG  used on input line 306.
+Package pdftex.def Info: ../images/UI.PNG  used on input line 361.
 (pdftex.def)             Requested size: 227.62204pt x 162.42871pt.
- [35
+ [40
 
- <../images/UI.PNG>] [36
+ <../images/UI.PNG>]
+<../images/fazit.jpg, id=1184, 126.7134pt x 86.724pt>
+File: ../images/fazit.jpg Graphic file (type jpg)
+<use ../images/fazit.jpg>
+Package pdftex.def Info: ../images/fazit.jpg  used on input line 372.
+(pdftex.def)             Requested size: 284.52756pt x 194.7725pt.
+ [41
+
+ <../images/fazit.jpg>] [42
 
 ]
 \tf@nav=\write6
@@ -1313,36 +1397,38 @@ Package pdftex.def Info: ../images/UI.PNG  used on input line 306.
 \tf@snm=\write8
 \openout8 = `kolloquium.snm'.
 
-
-(D:/git\bachelor\kolloquium\out\kolloquium.aux)
+ (D:/git\bachelor\kolloquium\out\kolloquium.aux)
 Package rerunfilecheck Info: File `kolloquium.out' has not changed.
 (rerunfilecheck)             Checksum: 37E7ED384F0EF106C2141909435CE3F7;217.
  ) 
 Here is how much of TeX's memory you used:
- 20982 strings out of 479618
- 403152 string characters out of 2865027
- 694096 words of memory out of 3000000
- 37549 multiletter control sequences out of 15000+200000
+ 21040 strings out of 479618
+ 404061 string characters out of 2865027
+ 694611 words of memory out of 3000000
+ 37588 multiletter control sequences out of 15000+200000
  412786 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,18n,132p,436b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmss10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmss12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/adria/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/adria/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/adria/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Users/ad
-ria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:
-/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/symbols/msam7.pfb>
-Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (36 pages, 3162
-055 bytes).
+cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/adria/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/adria/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/adria/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/adria/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/U
+sers/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12
+.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmssi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (42 pages, 3980
+670 bytes).
 PDF statistics:
- 1127 PDF objects out of 1200 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1305 PDF objects out of 1440 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 323 words of extra memory for PDF output out of 10000 (max. 10000000)
 
