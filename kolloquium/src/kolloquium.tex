@@ -17,6 +17,9 @@
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage[export]{adjustbox}
+\usepackage{algorithm2e}
+\usepackage{algpseudocode}
+
 % Remove frame break numbering
 \setbeamertemplate{frametitle continuation}{}
 
@@ -56,14 +59,14 @@
 
         \begin{itemize}
             \setlength\itemsep{1em}
-            \item Digitalisierung
-            \item Kein einsteigerfreundliches Gebiet
-            \item Automatisierte Erstellung von digitalen Inhalten
+            \item<2-> Digitalisierung
+            \item<3-> Kein einsteigerfreundliches Gebiet
+            \item<4-> Automatisierte Erstellung von digitalen Inhalten
             \begin{itemize}
                 \item "`Natürlichkeit der Dinge"'
             \end{itemize}
-            \item Regeln und Muster kodifizieren
-            \item Künstliche Intelligenz
+            \item<5-> Regeln und Muster kodifizieren
+            \item<6-> Künstliche Intelligenz
         \end{itemize}
     \end{frame}
 
@@ -76,13 +79,13 @@
 
         \begin{itemize}
             \setlength\itemsep{1.4em}
-            \item Methodiken und Algorithmen aus der aktuellen Forschung
+            \item<2-> Methodiken und Algorithmen aus der aktuellen Forschung
             \begin{itemize}
                 \item Praktikabilität
                 \item Anwendung am Beispiel eines Programms
             \end{itemize}
-            \item Erzeugen von Ähnlichkeit
-            \item Automatisierte Erstellung
+            \item<3-> Erzeugen von Ähnlichkeit
+            \item<4-> Automatisierte Erstellung
         \end{itemize}
     \end{frame}
 
@@ -134,7 +137,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=12cm]{../images/guo_2020_system.PNG}
-            \caption{Bearbeitung von L-System-Repreäsentationen zur Erzeugung von Ähnlichkeit}
+            \caption{Bearbeitung von L-System-Repräsentationen zur Erzeugung von Ähnlichkeit}
         \end{figure}
     \end{frame}
 
@@ -143,22 +146,149 @@
     \begin{frame}
         \frametitle{Methodik}
 
+        \begin{itemize}
+            \setlength\itemsep{1em}
+            \item<1-> Strukturieren
+            \item<2-> Datenaufbereitung
+            \item<3-> Inferieren
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]
+        \frametitle{Methodik: Inferieren}
+
+        \underline{Initialisieren}\\
+        ~\\
+        \begin{algorithm}[H]
+            $M=\{F,S\}$\\
+            $\omega=S$\\
+            $R \gets \{\alpha$: $S \rightarrow A\}$\\
+            $\beta=$ nächster Knoten\\
+            $M \gets \gamma \in \{A,B,\dots,Z\}$, mit $\gamma \notin M$\\
+        \end{algorithm}
+
+        \framebreak
+
+        \begin{algorithm}[H]
+            \While{true}{
+                $\delta=$ Wort von $\beta$\\
+                $\forall \{A,B,\dots,Z\} \setminus F \in \delta:$ Ersetze mit $\zeta \in \{A,B,\dots,Z\}$, mit $\zeta \notin M$\\
+                $M \gets \zeta$\\
+                $R \gets \{\gamma\rightarrow\delta\}$\\
+                ~\\
+                \eIf{$\exists\eta$ in $M\setminus\{F,S\}$ mit $\{\eta \rightarrow bel.\} \notin R$}{
+                    $\gamma=\eta$
+                }{
+                    break
+                }
+                $\beta=$ nächster Knoten
+            }
+        \end{algorithm}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Methodik}
+
+        \begin{itemize}
+            \setlength\itemsep{1em}
+            \item<1-> Strukturieren
+            \item<1-> Datenaufbereitung
+            \item<1-> Inferieren
+            \item<2-> Komprimieren
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]
+        \frametitle{Methodik: Komprimieren}
+
+        \underline{Initialisieren}\\
+        ~\\
+        \begin{algorithm}[H]
+            $\mathcal{L}^+ \leftarrow L_s$\\
+            $\mathcal{L}=\emptyset$\\
+            $w_l \in [0,1]$\\
+            Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
+        \end{algorithm}
+
+        \framebreak
+
+        \begin{algorithm}[H]
+            \While{true}{
+                Ersetze alle Vorkommen von $T'$ mit demselben Symbol $\gamma \in \{A,B,\dots,Z\}$\\
+                $R \leftarrow \{\gamma \rightarrow L_s\}$ mit $L_s$ aus $T'$, $R$ aus $\mathcal{L}$\\
+                \If{$C_i(\mathcal{L}) \geq C_i(\mathcal{L}^+)$}{
+                    break
+                }
+                $T \leftarrow T'$\\
+                $\mathcal{L}^+ \leftarrow \mathcal{L}$\\
+                Finde maximalen Unterbaum $T'$ aus $T$ mit Wiederholungen $n>1$
+            }
+        \end{algorithm}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Methodik}
+
+        \begin{itemize}
+            \setlength\itemsep{1em}
+            \item<1-> Strukturieren
+            \item<1-> Datenaufbereitung
+            \item<1-> Inferieren
+            \item<1-> Komprimieren
+            \item<2-> Generalisieren
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]
+        \frametitle{Methodik: Generalisieren}
+
+        \underline{Initialisieren}\\
+        ~\\
+        \begin{algorithm}[H]
+            Regelpaar $p^* = \emptyset$\\
+            $\mathcal{L}^* = \mathcal{L}^+$\\
+            $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$
+        \end{algorithm}
+
+        \framebreak
+
+        \begin{algorithm}[H]
+            \While{true}{
+                Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*),$\\
+                ~~~~$\forall p_i \in \mathcal{P}$\\
+                \If{$C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$}
+                {
+                    break
+                }
+                $c^* = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) - C_g^{old}$\\
+                $C_g^{old} = C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*)$\\
+                $\mathcal{L}^* = \mathcal{L}^* + \{p^*\}$\\
+                \If{$c^* > 0$}
+                {
+                    break
+                }
+            }
+        \end{algorithm}
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Methodik}
+
         \begin{columns}
             \column{0.5\textwidth}
             \begin{itemize}
                 \setlength\itemsep{1em}
-                \item Strukturieren
-                \item Datenaufbereitung
-                \item Inferieren
-                \item Komprimieren
-                \item Generalisieren
+                \item<1-> Strukturieren
+                \item<1-> Datenaufbereitung
+                \item<1-> Inferieren
+                \item<1-> Komprimieren
+                \item<1-> Generalisieren
             \end{itemize}
-
             \column{0.5\textwidth}
             \begin{itemize}
                 \setlength\itemsep{1em}
-                \item Visualisieren
-                \item Randomisieren
+                \item<2-> Visualisieren
+                \item<3-> Randomisieren
             \end{itemize}
         \end{columns}
     \end{frame}
@@ -179,6 +309,8 @@
     \label{sec:fazit}
     \begin{frame}
         \frametitle{Fazit}
+
+        
     \end{frame}
 
 \end{document}
