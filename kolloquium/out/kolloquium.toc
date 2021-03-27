@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Einleitung}{3}{0}{1}
-\beamer@sectionintoc {2}{Forschung}{15}{0}{2}
-\beamer@sectionintoc {3}{Methodik}{20}{0}{3}
-\beamer@sectionintoc {4}{Ergebnisse}{39}{0}{4}
-\beamer@sectionintoc {5}{Fazit}{40}{0}{5}
-\beamer@sectionintoc {6}{Ausblick}{44}{0}{6}
+\beamer@sectionintoc {2}{Forschung}{12}{0}{2}
+\beamer@sectionintoc {3}{Methodik}{16}{0}{3}
+\beamer@sectionintoc {4}{Ergebnisse}{34}{0}{4}
+\beamer@sectionintoc {5}{Fazit}{35}{0}{5}
+\beamer@sectionintoc {6}{Ausblick}{38}{0}{6}
