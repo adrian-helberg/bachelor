@@ -1,0 +1,248 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{ref_1}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BM}{%
+         family={Bokeloh},
+         familyi={B\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Wand},
+         familyi={W\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SHP}{%
+         family={Seidel},
+         familyi={S\bibinitperiod},
+         given={Hans-Peter},
+         giveni={H\bibinithyphendelim P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{inverse procedural modeling, modeling by example, geometry synthesis}
+    \strng{namehash}{BMWMSHP1}
+    \strng{fullhash}{BMWMSHP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \verb{doi}
+    \verb 10.1145/1778765.1778841
+    \endverb
+    \field{issn}{0730-0301}
+    \field{number}{4}
+    \field{title}{A Connection between Partial Symmetry and Inverse Procedural
+  Modeling}
+    \verb{url}
+    \verb https://doi.org/10.1145/1778765.1778841
+    \endverb
+    \field{volume}{29}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Graph.}
+    \field{month}{07}
+    \field{year}{2010}
+  \endentry
+
+  \entry{ref_4}{article}{}
+    \name{author}{7}{}{%
+      {{hash=GJ}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Jianwei},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JH}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Haiyong},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Benes},
+         familyi={B\bibinitperiod},
+         given={Bedrich},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=DO}{%
+         family={Deussen},
+         familyi={D\bibinitperiod},
+         given={Oliver},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=ZX}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Xiaopeng},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lischinski},
+         familyi={L\bibinitperiod},
+         given={Dani},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Hui},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{procedural generation, L-systems, grammar induction}
+    \strng{namehash}{GJ+1}
+    \strng{fullhash}{GJJHBBDOZXLDHH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{issn}{0730-0301}
+    \field{number}{5}
+    \field{title}{Inverse Procedural Modeling of Branching Structures by
+  Inferring L-Systems}
+    \field{volume}{39}
+    \list{location}{1}{%
+      {New York, NY, USA}%
+    }
+    \field{journaltitle}{ACM Trans. Graph.}
+    \field{month}{06}
+    \field{year}{2020}
+  \endentry
+
+  \entry{ref_3}{article}{}
+    \name{author}{5}{}{%
+      {{hash=SO}{%
+         family={Stava},
+         familyi={S\bibinitperiod},
+         given={Ondrej},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BB}{%
+         family={Benes},
+         familyi={B\bibinitperiod},
+         given={Bedrich},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={Mech},
+         familyi={M\bibinitperiod},
+         given={Radomir},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Aliaga},
+         familyi={A\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kristof},
+         familyi={K\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SO+1}
+    \strng{fullhash}{SOBBMRADKP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{pages}{1467\bibrangedash 8659}
+    \field{title}{Inverse Procedural Modeling by Automatic Generation of
+  L-systems}
+    \field{volume}{29}
+    \field{journaltitle}{Computer Graphics Forum}
+    \field{month}{05}
+    \field{year}{2010}
+  \endentry
+
+  \entry{ref_2}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=TJ}{%
+         family={Talton},
+         familyi={T\bibinitperiod},
+         given={Jerry},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YL}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Lingfeng},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KR}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={Ranjitha},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lim},
+         familyi={L\bibinitperiod},
+         given={Maxine},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GN}{%
+         family={Goodman},
+         familyi={G\bibinitperiod},
+         given={Noah},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=MR}{%
+         family={M\v{e}ch},
+         familyi={M\bibinitperiod},
+         given={Radom\'{\i}r},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{design patterns, grammar induction}
+    \strng{namehash}{TJ+1}
+    \strng{fullhash}{TJYLKRLMGNMR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{booktitle}{Proceedings of the 25th Annual ACM Symposium on User
+  Interface Software and Technology}
+    \field{isbn}{9781450315807}
+    \field{pages}{63–74}
+    \field{series}{UIST '12}
+    \field{title}{Learning Design Patterns with Bayesian Grammar Induction}
+    \list{location}{1}{%
+      {Cambridge, Massachusetts, USA}%
+    }
+    \field{year}{2012}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+\enddatalist
+\endinput

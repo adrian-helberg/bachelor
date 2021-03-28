@@ -6,7 +6,8 @@
 \usetheme{Boadilla}
 
 % Bibliography
-\bibliography{literature}
+\usepackage[natbib=true,style=numeric,backend=bibtex,useprefix=true]{biblatex}
+\bibliography{references}
 \bibliographystyle{plain}
 
 % Packages
@@ -80,7 +81,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=12cm]{../images/bokeloh_2010_system.PNG}
-            \caption{Textur- und Geometriesynthese anhand lokaler Ähnlichkeit}
+            \caption{Max-Planck-Institut der Informatik, Saarland~\cite{ref_1}}
         \end{figure}
     \end{frame}
 
@@ -90,7 +91,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=12cm]{../images/talton_2012_system.PNG}
-            \caption{Algorithmische Methode zum Lernen von Design Patterns}
+            \caption{Stanford University, USA~\cite{ref_2}}
         \end{figure}
     \end{frame}
 
@@ -100,7 +101,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=12cm]{../images/stava_2010_system.PNG}
-            \caption{System-Pipeline zur Erzeugung eines L-Systems eines 2D-Modells}
+            \caption{Purdue University, Adobe Systems, USA~\cite{ref_3}}
         \end{figure}
     \end{frame}
 
@@ -110,7 +111,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=12cm]{../images/guo_2020_system.PNG}
-            \caption{Bearbeitung von L-System-Repräsentationen zur Erzeugung von Ähnlichkeit}
+            \caption{Kooperation China, Singapur, USA, Deutschland, Israel~\cite{ref_4}}
         \end{figure}
     \end{frame}
 
@@ -235,7 +236,7 @@
         \begin{algorithm}[H]
             \While{true}{
                 Finde Regelpaar $p^*$ mit minimalen Kosten $C_g(\mathcal{L}^* + \{p_i\}, \mathcal{L}^*),$\\
-                ~~~~$\forall p_i \in \mathcal{P}$\\
+                ~~~~$\forall p_i \in \mathcal{P}, \mathcal{P}$ als Menge aller Regelpaare\\
                 \If{$C_g(\mathcal{L}^* + \{p^*\}, \mathcal{L}^*) \geq 0$}
                 {
                     break
@@ -332,6 +333,11 @@
             \item<2-> L-Systeme lassen sich erweitern
             \item<3-> Erweiterung auf höhere geometrische Räume
         \end{itemize}
+    \end{frame}
+
+    \begin{frame}[t,allowframebreaks]
+        \frametitle{Quellen}
+        \printbibliography
     \end{frame}
 
     \begin{frame}

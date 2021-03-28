@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  27 MAR 2021 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2021.2.9)  28 MAR 2021 14:52
 entering extended mode
 **./kolloquium.tex
 (kolloquium.tex
@@ -817,8 +817,260 @@ rounded.sty)
 dolphin.sty)
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beameroutertheme
 infolines.sty))
-\bibdata{literature}
-No file kolloquium.bbl.
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count320
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count321
+\c@listtotal=\count322
+\c@listcount=\count323
+\c@liststart=\count324
+\c@liststop=\count325
+\c@citecount=\count326
+\c@citetotal=\count327
+\c@multicitecount=\count328
+\c@multicitetotal=\count329
+\c@instcount=\count330
+\c@maxnames=\count331
+\c@minnames=\count332
+\c@maxitems=\count333
+\c@minitems=\count334
+\c@citecounter=\count335
+\c@maxcitecounter=\count336
+\c@savedcitecounter=\count337
+\c@uniquelist=\count338
+\c@uniquename=\count339
+\c@refsection=\count340
+\c@refsegment=\count341
+\c@maxextratitle=\count342
+\c@maxextratitleyear=\count343
+\c@maxextraname=\count344
+\c@maxextradate=\count345
+\c@maxextraalpha=\count346
+\c@abbrvpenalty=\count347
+\c@highnamepenalty=\count348
+\c@lownamepenalty=\count349
+\c@maxparens=\count350
+\c@parenlevel=\count351
+\blx@tempcnta=\count352
+\blx@tempcntb=\count353
+\blx@tempcntc=\count354
+\blx@maxsection=\count355
+\blx@maxsegment@0=\count356
+\blx@notetype=\count357
+\blx@parenlevel@text=\count358
+\blx@parenlevel@foot=\count359
+\blx@sectionciteorder@0=\count360
+\blx@entrysetcounter=\count361
+\blx@biblioinstance=\count362
+\labelnumberwidth=\skip64
+\labelalphawidth=\skip65
+\biblabelsep=\skip66
+\bibitemsep=\skip67
+\bibnamesep=\skip68
+\bibinitsep=\skip69
+\bibparsep=\skip70
+\bibhang=\skip71
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\blx@langwohyphens=\language79
+\c@mincomprange=\count363
+\c@maxcomprange=\count364
+\c@mincompwidth=\count365
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
+File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count366
+\c@savedafterword=\count367
+\c@annotator=\count368
+\c@savedannotator=\count369
+\c@author=\count370
+\c@savedauthor=\count371
+\c@bookauthor=\count372
+\c@savedbookauthor=\count373
+\c@commentator=\count374
+\c@savedcommentator=\count375
+\c@editor=\count376
+\c@savededitor=\count377
+\c@editora=\count378
+\c@savededitora=\count379
+\c@editorb=\count380
+\c@savededitorb=\count381
+\c@editorc=\count382
+\c@savededitorc=\count383
+\c@foreword=\count384
+\c@savedforeword=\count385
+\c@holder=\count386
+\c@savedholder=\count387
+\c@introduction=\count388
+\c@savedintroduction=\count389
+\c@namea=\count390
+\c@savednamea=\count391
+\c@nameb=\count392
+\c@savednameb=\count393
+\c@namec=\count394
+\c@savednamec=\count395
+\c@translator=\count396
+\c@savedtranslator=\count397
+\c@shortauthor=\count398
+\c@savedshortauthor=\count399
+\c@shorteditor=\count400
+\c@savedshorteditor=\count401
+\c@labelname=\count402
+\c@savedlabelname=\count403
+\c@institution=\count404
+\c@savedinstitution=\count405
+\c@lista=\count406
+\c@savedlista=\count407
+\c@listb=\count408
+\c@savedlistb=\count409
+\c@listc=\count410
+\c@savedlistc=\count411
+\c@listd=\count412
+\c@savedlistd=\count413
+\c@liste=\count414
+\c@savedliste=\count415
+\c@listf=\count416
+\c@savedlistf=\count417
+\c@location=\count418
+\c@savedlocation=\count419
+\c@organization=\count420
+\c@savedorganization=\count421
+\c@origlocation=\count422
+\c@savedoriglocation=\count423
+\c@origpublisher=\count424
+\c@savedorigpublisher=\count425
+\c@publisher=\count426
+\c@savedpublisher=\count427
+\c@language=\count428
+\c@savedlanguage=\count429
+\c@origlanguage=\count430
+\c@savedoriglanguage=\count431
+\c@pageref=\count432
+\c@savedpageref=\count433
+\shorthandwidth=\skip72
+\shortjournalwidth=\skip73
+\shortserieswidth=\skip74
+\shorttitlewidth=\skip75
+\shortauthorwidth=\skip76
+\shorteditorwidth=\skip77
+\locallabelnumberwidth=\skip78
+\locallabelalphawidth=\skip79
+\localshorthandwidth=\skip80
+\localshortjournalwidth=\skip81
+\localshortserieswidth=\skip82
+\localshorttitlewidth=\skip83
+\localshortauthorwidth=\skip84
+\localshorteditorwidth=\skip85
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-bibtex.def
+File: blx-bibtex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+\c@textcitecount=\count434
+\c@textcitetotal=\count435
+\c@textcitemaxnames=\count436
+\c@biburlbigbreakpenalty=\count437
+\c@biburlbreakpenalty=\count438
+\c@biburlnumpenalty=\count439
+\c@biburlucpenalty=\count440
+\c@biburllcpenalty=\count441
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count442
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-natbib.def
+File: blx-natbib.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
+ overwriting.
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx
+File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count443
+\c@bbx:relatedtotal=\count444
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cb
+x
+File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+))
+
+kolloquium.tex:11: Package biblatex Error: '\bibliographystyle' invalid.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \bibliographystyle{plain}
+                              
+Use the package option 'style' instead.
+I'm ignoring this command.
+
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks44
@@ -840,7 +1092,7 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 \XKV@toks=\toks46
 \XKV@tempa@toks=\toks47
 )
-\XKV@depth=\count320
+\XKV@depth=\count445
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
@@ -875,61 +1127,58 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count321
+\c@checkoddpage=\count446
 ) (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box73
-\sift@deathcycles=\count322
+\sift@deathcycles=\count447
 \@vwid@loff=\dimen297
 \@vwid@roff=\dimen298
 ))
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e
 .sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count323
- (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\algocf@hangindent=\skip64
+\c@AlgoLine=\count448
+\algocf@hangindent=\skip86
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip65
-\skiplinenumber=\skip66
-\skiprule=\skip67
-\skiphlne=\skip68
-\skiptext=\skip69
-\skiplength=\skip70
-\algomargin=\skip71
-\skipalgocfslide=\skip72
+\skiptotal=\skip87
+\skiplinenumber=\skip88
+\skiprule=\skip89
+\skiphlne=\skip90
+\skiptext=\skip91
+\skiplength=\skip92
+\algomargin=\skip93
+\skipalgocfslide=\skip94
 \algowidth=\dimen299
 \inoutsize=\dimen300
 \inoutindent=\dimen301
 \interspacetitleruled=\dimen302
 \interspacealgoruled=\dimen303
 \interspacetitleboxruled=\dimen304
-\algocf@ruledwidth=\skip73
+\algocf@ruledwidth=\skip95
 \algocf@inoutbox=\box74
 \algocf@inputbox=\box75
-\AlCapSkip=\skip74
-\AlCapHSkip=\skip75
-\algoskipindent=\skip76
+\AlCapSkip=\skip96
+\AlCapHSkip=\skip97
+\algoskipindent=\skip98
 \algocf@nlbox=\box76
 \algocf@hangingbox=\box77
 \algocf@untilbox=\box78
-\algocf@skipuntil=\skip77
+\algocf@skipuntil=\skip99
 \algocf@capbox=\box79
-\algocf@lcaptionbox=\skip78
-\algoheightruledefault=\skip79
-\algoheightrule=\skip80
-\algotitleheightruledefault=\skip81
-\algotitleheightrule=\skip82
-\c@algocfline=\count324
-\c@algocfproc=\count325
-\c@algocf=\count326
+\algocf@lcaptionbox=\skip100
+\algoheightruledefault=\skip101
+\algoheightrule=\skip102
+\algotitleheightruledefault=\skip103
+\algotitleheightrule=\skip104
+\c@algocfline=\count449
+\c@algocfproc=\count450
+\c@algocf=\count451
 \algocf@algoframe=\box80
 \algocf@algobox=\box81
 )
@@ -942,43 +1191,46 @@ cx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count327
-\c@ALG@rem=\count328
-\c@ALG@nested=\count329
-\ALG@tlm=\skip83
-\ALG@thistlm=\skip84
-\c@ALG@Lnr=\count330
-\c@ALG@blocknr=\count331
-\c@ALG@storecount=\count332
-\c@ALG@tmpcounter=\count333
-\ALG@tmplength=\skip85
+\c@ALG@line=\count452
+\c@ALG@rem=\count453
+\c@ALG@nested=\count454
+\ALG@tlm=\skip105
+\ALG@thistlm=\skip106
+\c@ALG@Lnr=\count455
+\c@ALG@blocknr=\count456
+\c@ALG@storecount=\count457
+\c@ALG@tmpcounter=\count458
+\ALG@tmplength=\skip107
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
+\@quotelevel=\count459
+\@quotereset=\count460
+
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count334
+\l__kernel_color_stack_int=\count461
 \l__pdf_internal_box=\box82
 ) (D:/git\bachelor\kolloquium\out\kolloquium.aux)
 \openout1 = `kolloquium.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1018,16 +1270,16 @@ LaTeX Font Info:    ... okay on input line 34.
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
+\scratchcounter=\count462
 \scratchdimen=\dimen305
 \scratchbox=\box83
-\nofMPsegments=\count336
-\nofMParguments=\count337
+\nofMPsegments=\count463
+\nofMParguments=\count464
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count338
+\MPscratchCnt=\count465
 \MPscratchDim=\dimen306
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
+\MPnumerator=\count466
+\makeMPintoPDFobject=\count467
 \everyMPtoPDFconversion=\toks49
 )
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1036,7 +1288,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 35.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1048,68 +1300,68 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count341
+\c@section@level=\count468
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
  (D:/git\bachelor\kolloquium\out\kolloquium.out)
 (D:/git\bachelor\kolloquium\out\kolloquium.out)
-\@outlinefile=\write5
-\openout5 = `kolloquium.out'.
+\@outlinefile=\write6
+\openout6 = `kolloquium.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 34.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 34.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 34.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 34.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 34.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 34.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 34.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 34.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 34.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 34.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 34.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 34.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 34.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 34.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 34.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 34.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 34.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 34.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 34.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 35.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-4.
+5.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
-4.
+5.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 34.
+ut line 35.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1134,32 +1386,79 @@ Dictionary: translator-numbers-dictionary, Language: English
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-t
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (D:/git\bachelor\kolloquium\out\kolloquium.nav)
-<../images/HAW_Marke_CMYK.pdf, id=37, 387.4475pt x 142.5325pt>
+)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lb
+x
+File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+Package biblatex Info: Document encoding is UTF8 ....
+ (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-01-09 L3 programming layer (loader) 
+)
+Package biblatex Info: ... and expl3
+(biblatex)             2021-01-09 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2020-10-27 L3 Experimental document command parser
+
+(C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e-generic.tex))
+Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
+)
+\openout5 = `kolloquium-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'kolloquium.bbl' found.
+ (D:/git\bachelor\kolloquium\out\kolloquium.bbl
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'ref_2':
+(biblatex)                - Can't use 'location' + 'address'.
+
+)
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
+ (D:/git\bachelor\kolloquium\out\kolloquium.nav)
+<../images/HAW_Marke_CMYK.pdf, id=41, 387.4475pt x 142.5325pt>
 File: ../images/HAW_Marke_CMYK.pdf Graphic file (type pdf)
 <use ../images/HAW_Marke_CMYK.pdf>
-Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 35.
+Package pdftex.def Info: ../images/HAW_Marke_CMYK.pdf  used on input line 36.
 (pdftex.def)             Requested size: 96.86163pt x 35.63303pt.
-[1
+ [1
 
 {C:/Users/adria/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <../images/HAW_M
-arke_CMYK.pdf>] (D:/git\bachelor\kolloquium\out\kolloquium.toc) [2
+arke_CMYK.pdf>]
+(D:/git\bachelor\kolloquium\out\kolloquium.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
 
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 54.
+ut line 55.
 
 (C:\Users\adria\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
@@ -1184,56 +1483,56 @@ thkerncmss.
 ] [11
 
 ]
-<../images/bokeloh_2010_system.PNG, id=393, 1827.07594pt x 328.22626pt>
+<../images/bokeloh_2010_system.PNG, id=397, 1827.07594pt x 328.22626pt>
 File: ../images/bokeloh_2010_system.PNG Graphic file (type png)
 <use ../images/bokeloh_2010_system.PNG>
 Package pdftex.def Info: ../images/bokeloh_2010_system.PNG  used on input line 
-85.
+86.
 (pdftex.def)             Requested size: 341.43306pt x 61.33693pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 85--85
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 86--86
  [] 
  []
 
 [12
 
  <../images/bokeloh_2010_system.PNG>]
-<../images/talton_2012_system.PNG, id=424, 1530.46782pt x 341.77687pt>
+<../images/talton_2012_system.PNG, id=430, 1530.46782pt x 341.77687pt>
 File: ../images/talton_2012_system.PNG Graphic file (type png)
 <use ../images/talton_2012_system.PNG>
 Package pdftex.def Info: ../images/talton_2012_system.PNG  used on input line 9
-5.
+6.
 (pdftex.def)             Requested size: 341.43306pt x 76.24458pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 95--95
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 96--96
  [] 
  []
 
 [13
 
  <../images/talton_2012_system.PNG>]
-<../images/stava_2010_system.PNG, id=453, 1480.78218pt x 486.31688pt>
+<../images/stava_2010_system.PNG, id=461, 1480.78218pt x 486.31688pt>
 File: ../images/stava_2010_system.PNG Graphic file (type png)
 <use ../images/stava_2010_system.PNG>
 Package pdftex.def Info: ../images/stava_2010_system.PNG  used on input line 10
-5.
+6.
 (pdftex.def)             Requested size: 341.43306pt x 112.1325pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 105--105
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 106--106
  [] 
  []
 
 [14
 
  <../images/stava_2010_system.PNG>]
-<../images/guo_2020_system.PNG, id=480, 1857.94125pt x 750.55406pt>
+<../images/guo_2020_system.PNG, id=490, 1857.94125pt x 750.55406pt>
 File: ../images/guo_2020_system.PNG Graphic file (type png)
 <use ../images/guo_2020_system.PNG>
-Package pdftex.def Info: ../images/guo_2020_system.PNG  used on input line 115.
+Package pdftex.def Info: ../images/guo_2020_system.PNG  used on input line 116.
 
 (pdftex.def)             Requested size: 341.43306pt x 137.92267pt.
 
-Overfull \hbox (0.73746pt too wide) in paragraph at lines 115--115
+Overfull \hbox (0.73746pt too wide) in paragraph at lines 116--116
  [] 
  []
 
@@ -1269,39 +1568,39 @@ Overfull \hbox (0.73746pt too wide) in paragraph at lines 115--115
 
 ]
 
-kolloquium.tex:264: LaTeX Error: There's no line here to end.
+kolloquium.tex:265: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.264     \end{frame}
+l.265     \end{frame}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-kolloquium.tex:264: LaTeX Error: There's no line here to end.
+kolloquium.tex:265: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.264     \end{frame}
+l.265     \end{frame}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-kolloquium.tex:264: LaTeX Error: There's no line here to end.
+kolloquium.tex:265: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.264     \end{frame}
+l.265     \end{frame}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1322,10 +1621,10 @@ or  <return>  to continue without it.
 ] [33
 
 ]
-<../images/UI.PNG, id=988, 454.69875pt x 324.46219pt>
+<../images/UI.PNG, id=1000, 454.69875pt x 324.46219pt>
 File: ../images/UI.PNG Graphic file (type png)
 <use ../images/UI.PNG>
-Package pdftex.def Info: ../images/UI.PNG  used on input line 298.
+Package pdftex.def Info: ../images/UI.PNG  used on input line 299.
 (pdftex.def)             Requested size: 227.62204pt x 162.42871pt.
  [34
 
@@ -1342,50 +1641,65 @@ Package pdftex.def Info: ../images/UI.PNG  used on input line 298.
 
 ] [40
 
-] [41
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 341.
+
+[41
+
+] [42
+
+
+] [43
 
 ]
-\tf@nav=\write6
-\openout6 = `kolloquium.nav'.
+\tf@nav=\write7
+\openout7 = `kolloquium.nav'.
 
-\tf@toc=\write7
-\openout7 = `kolloquium.toc'.
+\tf@toc=\write8
+\openout8 = `kolloquium.toc'.
 
-\tf@snm=\write8
-\openout8 = `kolloquium.snm'.
+\tf@snm=\write9
+\openout9 = `kolloquium.snm'.
 
  (D:/git\bachelor\kolloquium\out\kolloquium.aux)
 Package rerunfilecheck Info: File `kolloquium.out' has not changed.
-(rerunfilecheck)             Checksum: A4DAE67E5AFF9B741F8CC1ACC91D41B1;260.
+(rerunfilecheck)             Checksum: 5766BB605C72993D6C86896F492C4AAF;305.
+Package logreq Info: Writing requests to 'kolloquium.run.xml'.
+\openout1 = `kolloquium.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 20989 strings out of 479618
- 402848 string characters out of 2865027
- 695268 words of memory out of 3000000
- 37545 multiletter control sequences out of 15000+200000
- 412786 words of font info for 60 fonts, out of 3000000 for 9000
+ 27974 strings out of 479618
+ 544268 string characters out of 2865027
+ 1202771 words of memory out of 3000000
+ 44459 multiletter control sequences out of 15000+200000
+ 413256 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,18n,132p,436b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 131i,18n,132p,1851b,1583s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/adria/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/adria/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/adria/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/adria/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/U
-sers/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi12
+cmcsc10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmex10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/adria/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/adria/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/adria/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Users/adri
+a/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Us
+ers/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10
 .pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmssi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (41 pages, 2187
-858 bytes).
+cm/cmssi12.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmssi8.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/Users/adria/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/adria/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/adria/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/adria/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on D:/git\bachelor\kolloquium\out\kolloquium.pdf (43 pages, 2221
+848 bytes).
 PDF statistics:
- 1266 PDF objects out of 1440 (max. 8388607)
- 95 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1343 PDF objects out of 1440 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
